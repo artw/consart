@@ -26,7 +26,7 @@ chomp($_ = <STDIN>);
 foreach my $c (@configus) {
    my $dest = "$ENV{'HOME'}/.$c";
    # delete destination if it exists
-   $_ = $dest; `rm -rf $_` if -e ;
+   $_ = $dest; `rm -rf $_`;
    # and make the link
    symlink "$Bin/$c", $dest;
 }

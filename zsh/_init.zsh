@@ -14,11 +14,11 @@ if [[ "$(uname)" == "Linux" ]]; then
    fi
 
 elif [[ "$(uname)" == "OpenBSD" ]]; then
-   OS="bsd"
+   OS="openbsd"
    OS_FLAVOR="openbsd"
 
 elif [[ "$(uname)" == "FreeBSD" ]]; then
-   OS="bsd"
+   OS="freebsd"
    OS_FLAVOR="freebsd"
 
 elif [[ "$(uname)" == "Darwin" ]]; then
