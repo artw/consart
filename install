@@ -16,8 +16,6 @@ print $Bin;
 
 print "\n";
 #-#
- use File::Path qw(remove_tree);
-
 
 # prompt before action
 print "warning, this will overwrite all existing console configs without prompting, continue? ";
