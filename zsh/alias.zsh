@@ -10,6 +10,10 @@ case $OS in
       alias locate="mdfind"
       ;;
 
+   freebsd)
+      alias ls="ls -GF"
+      ;;
+
    openbsd)
       alias cvsupd="sudo cvsup -g -L 2 /etc/cvsupfile"
       alias out-of-date="sudo /usr/ports/infrastructure/build/out-of-date"
