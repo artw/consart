@@ -42,10 +42,9 @@ alias la='ls -la'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias sudo='sudo'
 alias '#'='sudo'
 alias '£'='sudo'
 alias '_e'='sudo vim'
 alias h='fc -l 1'
 
-alias rcconf="sudo -E vim /etc/rc.conf"
+alias rcconf="sudo vim /etc/rc.conf"
