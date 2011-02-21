@@ -5,6 +5,7 @@ my @configus = qw(
    zshrc
    vimrc
    tmux.conf
+   hgrc
 );
 #-#
 
