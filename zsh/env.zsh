@@ -15,4 +15,7 @@ case $OS_FLAVOR in
       export TERM=wsvt25
       export PKG_PATH=ftp://ftp.bsd.lv/pub/OpenBSD/snapshots/packages/`uname -m`
       ;;
+   freebsd)
+      export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-8-stable/Latest/
+      ;;
 esac
