@@ -21,7 +21,7 @@ print "\n";
 # prompt before action
 print "warning, this will overwrite all existing console configs without prompting, continue? ";
 chomp($_ = <STDIN>);
- exit unless /^y/;
+ exit unless /^ye?s?/;
 #-#
 
 foreach my $c (@configus) {
