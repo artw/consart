@@ -21,15 +21,15 @@ case $OS in
       alias compile-system="sudo rm -rf /usr/obj/* && cd /usr/src && sudo make obj && cd /usr/src/etc && env DESTDIR=/ sudo make distrib-dirs && cd /usr/src && sudo make build && echo completed!"
       alias compile-kernel="cd /usr/src/sys/arch/i386/conf/ && sudo config GENERIC && cd ../compile/GENERIC && sudo make clean && sudo make depend && sudo make && sudo make install && echo completed!"
       alias ls="colorls -GF"
-      alias pf="sudo pfctl"
-      alias rpf="sudo pfctl -f /etc/pf.conf"
-      alias epf="sudo $EDITOR /etc/pf.conf"
+      alias pf="sudo -E pfctl"
+      alias rpf="sudo -E pfctl -f /etc/pf.conf"
+      alias epf="sudo -E vim /etc/pf.conf"
       ;;
 esac
 
 
 alias ya="sudo yaourt"
-
+alias sudo="sudo -E"
 
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
@@ -42,10 +42,10 @@ alias la='ls -la'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias sudo='sudo -E'
-alias '#'='sudo -E'
-alias '£'='sudo -E'
-alias '_e'='sudo -eE'
+alias sudo='sudo'
+alias '#'='sudo'
+alias '£'='sudo'
+alias '_e'='sudo vim'
 alias h='fc -l 1'
 
-alias rcconf="sudo -eE /etc/rc.conf"
+alias rcconf="sudo -E vim /etc/rc.conf"
