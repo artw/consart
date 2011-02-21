@@ -48,4 +48,4 @@ alias '£'='sudo -E'
 alias '_e'='sudo -eE'
 alias h='fc -l 1'
 
-alias rcconf="sudo $EDITOR /etc/rc.conf"
+alias rcconf="sudo -eE /etc/rc.conf"
