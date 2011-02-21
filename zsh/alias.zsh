@@ -42,9 +42,10 @@ alias la='ls -la'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias '#'='sudo'
-alias '£'='sudo'
-alias '_e'='sudo -e'
+alias sudo='sudo -E'
+alias '#'='sudo -E'
+alias '£'='sudo -E'
+alias '_e'='sudo -eE'
 alias h='fc -l 1'
 
 alias rcconf="sudo $EDITOR /etc/rc.conf"
