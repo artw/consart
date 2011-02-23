@@ -53,3 +53,5 @@ alias rcconf="sudo vim /etc/rc.conf"
 alias svc="sudo service"
 alias tmux-b="tmux set-option -g prefix C-b"
 alias tmux-a="tmux set-option -g prefix C-a"
+
+alias hgu="hg pull -u"
