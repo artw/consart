@@ -49,3 +49,5 @@ alias '_e'='sudo vim'
 alias h='fc -l 1'
 
 alias rcconf="sudo vim /etc/rc.conf"
+
+alias svc="sudo service"
