@@ -13,7 +13,7 @@ case $OS in
    freebsd)
       alias ls="ls -GF"
       alias pkga="sudo -E pkg_add -r" 
-      alias portupdate="portsnap fetch update"
+      alias portupdate="sudo portsnap fetch update"
       ;;
 
    openbsd)
