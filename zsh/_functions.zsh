@@ -7,12 +7,12 @@ function ssh-copy-id {
 
 	if [ -z "`eval $GET_ID`" ]; then
 	  notice "$0: ERROR: No identities found" >&2
-	  exit 1
+	  return 1
 	fi
 
 	if [ "$#" -lt 1 ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
 	  notice "Usage: $0 [-i [identity_file]] [user@]machine" >&2
-	  exit 1
+	  return 1
 	fi
 
 	{ eval "$GET_ID" ; } | ssh $1 "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys" || exit 1
