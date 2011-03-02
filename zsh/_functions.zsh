@@ -15,7 +15,7 @@ function ssh-copy-id {
 	  return 1
 	fi
 
-	{ eval "$GET_ID" ; } | ssh $1 "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys" || exit 1
+	{ eval "$GET_ID" ; } | ssh $1 "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys" || return 1
 
 	echo "Done."
 }
