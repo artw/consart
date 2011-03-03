@@ -1,0 +1,22 @@
+#URxvt*transparent:true
+#URxvt*tintColor:blue
+#URxvt*shading:40
+URxvt*saveLines:12000
+URxvt*foreground:White
+URxvt*background:Grey25
+URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13
+#URxvt*font:-*-courier-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
+#URxvt*boldFont:-*-courier-bold-r-normal-*-*-140-*-*-*-*-iso8859-1
+URxvt*color4:RoyalBlue
+URxvt*color12:RoyalBlue
+URxvt*scrollBar:true
+URxvt*scrollBar_right:false
+URxvt*scrollstyle:rxvt
+
+URxvt*iconFile:/home/leet/.icons/terminal_icon.png
+
+XTerm*Background: black
+XTerm*Foreground: white
+XTerm*font: 9x15
+XTerm*saveLines: 1000
+XTerm*geometry: +50+100
