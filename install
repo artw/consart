@@ -9,6 +9,7 @@ my @configus = qw(
    vim
    tmux.conf
    hgrc
+   Xdefaults
 );
 #-#
 
