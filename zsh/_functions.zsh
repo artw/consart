@@ -39,3 +39,6 @@ function notice {
    echo $1
 }
 
+function xorg-nvidia {
+	sudo cp -i ~/.consart/cfg/nvidia.xorg.conf /etc/X11/xorg.conf
+}
