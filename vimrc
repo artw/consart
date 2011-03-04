@@ -16,3 +16,7 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+set t_Co=256
+
+color xoria256 
+
