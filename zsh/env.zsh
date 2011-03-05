@@ -17,5 +17,6 @@ case $OS_FLAVOR in
       ;;
    freebsd)
       export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-8-stable/Latest/
+      export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
       ;;
 esac
