@@ -12,6 +12,6 @@ function ssh-start {
    fi
    source $SSH_AGENT_ENV
 }
-
-ssh-start
-
+if [[ $OS_FLAVOR != "macosx" ]];then
+   ssh-start
+fi
