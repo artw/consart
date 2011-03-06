@@ -3,15 +3,20 @@
 #URxvt*shading:40
 URxvt*saveLines:12000
 URxvt*foreground:White
-URxvt*background:Grey25
-URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13
+URxvt*background:Black
+URxvt*font: xft:terminus:pixelsize=17
 #URxvt*font:-*-courier-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
 #URxvt*boldFont:-*-courier-bold-r-normal-*-*-140-*-*-*-*-iso8859-1
 URxvt*color4:RoyalBlue
 URxvt*color12:RoyalBlue
-URxvt*scrollBar:true
+URxvt*scrollBar:false
 URxvt*scrollBar_right:false
 URxvt*scrollstyle:rxvt
+
+URxvt*perl-ext-common:  default,matcher
+URxvt*urlLauncher:      /usr/bin/firefox
+URxvt*matcher.button:   1 
+
 
 URxvt*iconFile:/home/leet/.icons/terminal_icon.png
 
