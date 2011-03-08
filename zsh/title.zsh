@@ -1,5 +1,5 @@
 function title {
-  if [[ $TERM == "screen" || $TERM == "screen.linux" ]]; then
+  if [[ $TERM == "screen" || $TERM == "screen.linux" || $TERM == "screen-256color" ]]; then
     # Use these two for GNU Screen:
     print -nR $'\033k'$1$'\033'
     print -nR $'\033]0;'$2$'\a'

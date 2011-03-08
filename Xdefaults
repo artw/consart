@@ -20,6 +20,7 @@ URxvt*matcher.button:   1
 
 URxvt*iconFile:/home/leet/.icons/terminal_icon.png
 
+XTerm*termName:   xterm-256color
 XTerm*Background: black
 XTerm*Foreground: white
 XTerm*font: 9x15
