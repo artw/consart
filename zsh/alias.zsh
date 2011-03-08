@@ -8,6 +8,7 @@ case $OS in
       alias ls="ls -GF"
       alias finder="open /System/Library/CoreServices/Finder.app"
       alias locate="mdfind"
+      alias eject="diskutil eject"
       ;;
 
    freebsd)
