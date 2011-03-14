@@ -15,6 +15,7 @@ function ssh-copy-id {
 	  return 1
 	fi
 
+   sudo mount -o bind /dev $1/dev
 	{ eval "$GET_ID" ; } | ssh $1 "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys" || return 1
 
 	echo "Done."
@@ -45,4 +46,10 @@ function xorg-nvidia {
    fi
 
 	sudo cp -i ~/.consart/cfg/nvidia.xorg.conf /etc/X11/xorg.conf
+}
+
+function chroot-mount {
+   sudo mount -o bind /dev $1/dev
+   sudo mount -o bind /sys $1/sys
+   sudo mount -o bind /proc $1/proc
 }
