@@ -54,6 +54,7 @@ alias hs='fc -l 1 | grep '
 alias rcconf="sudo vim /etc/rc.conf"
 
 alias svc="sudo service"
+alias tx="tmux -2"
 alias tmux-b="tmux set-option -g prefix C-b"
 alias tmux-a="tmux set-option -g prefix C-a"
 
