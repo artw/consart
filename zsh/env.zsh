@@ -1,5 +1,3 @@
-export LSCOLORS=ExFxCxDxCxEGECACAGACAD
-
 if which vim >/dev/null; then
 	export EDITOR=vim
 fi
@@ -20,3 +18,6 @@ case $OS_FLAVOR in
       export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
       ;;
 esac
+
+
+export PATH=${HOME}/.consart/bin:${PATH}
