@@ -9,7 +9,6 @@ case $OS in
       alias finder="open /System/Library/CoreServices/Finder.app"
       alias locate="mdfind"
       alias eject="diskutil eject"
-      alias vpn-ep="osascript ~/.consart/progs/Office_VPN.scpt"
       ;;
 
    freebsd)
