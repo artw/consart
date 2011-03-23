@@ -1,18 +1,28 @@
 SSH_AGENT_ENV=$HOME/.ssh-agent
 
 function ssh-agent-stop {
-   killall ssh-agent
-   rm $SSH_AGENT_ENV
+   # check if running, then kill
+   if [[ -f $SSH_AGENT_ENV ]]; then
+      source $SSH_AGENT_ENV
+      kill $SSH_AGENT_PID
+      rm $SSH_AGENT_ENV
+   else
+      return 1
+   fi
 }
 
 function ssh-agent-start {
-   if [[ ! -f $SSH_AGENT_ENV ]]; then
-     ssh-agent | grep 'export' > $SSH_AGENT_ENV
-     chmod 600 $SSH_AGENT_ENV
+   # run if not already
+   if [[ -f $SSH_AGENT_ENV ]]; then
+     source $SSH_AGENT_ENV
+     ps -p $SSH_AGENT_PID > /dev/null
+     if [[ $? -eq 0 ]]; then
+        return
+     fi
    fi
+   ssh-agent | grep 'export' > $SSH_AGENT_ENV
+   chmod 600 $SSH_AGENT_ENV
    source $SSH_AGENT_ENV
 }
-
-if [[ $OS != "macosx" ]];then
+# run automatically, comment this if not needed
    ssh-agent-start;
-fi
