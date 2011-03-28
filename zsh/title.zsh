@@ -1,7 +1,8 @@
 function title {
   if [[ $TERM == "screen" || $TERM == "screen.linux" || $TERM == "screen-256color" ]]; then
-    # Use these two for GNU Screen:
-    print -nR $'\033k'$1$'\033'
+    # pane title
+    #print -nR $'\033k'$1$'\033'
+    # window title
     print -nR $'\033]0;'$2$'\a'
   elif [[ $TERM == "xterm" || $TERM == "xterm-color" || $TERM == "wsvt25" || $TERM == "xterm-256color" ]]; then
     # Use this one instead for XTerms:
