@@ -11,7 +11,7 @@ end
 case $OS_FLAVOR in
    openbsd)
       export TERM=wsvt25
-      export PKG_PATH=ftp://ftp.bsd.lv/pub/OpenBSD/snapshots/packages/`uname -m`
+      export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
       ;;
    freebsd)
       export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-8-stable/Latest/
