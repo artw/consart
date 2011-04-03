@@ -47,6 +47,7 @@ alias ....='cd ../../..'
 alias '#'='sudo'
 alias '£'='sudo'
 alias '_e'='sudo vim'
+alias 'e'='vim'
 
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '

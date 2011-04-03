@@ -17,6 +17,9 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" change . to not move cursor after repeat
+nmap . .`[
+
 set t_Co=256
 color xoria256 
 
