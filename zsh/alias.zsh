@@ -46,6 +46,7 @@ alias ....='cd ../../..'
 
 alias '#'='sudo'
 alias '£'='sudo'
+alias '_'='sudo'
 alias '_e'='sudo vim'
 alias 'e'='vim'
 
