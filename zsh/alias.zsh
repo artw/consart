@@ -35,14 +35,18 @@ alias sudo="sudo -E"
 
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
-alias rcp='rsync -avh --progress'
-alias rmv='rsync -avh --remove-source-files --progress'
+
 alias mkdir='nocorrect mkdir'
 alias l='ls -l'
 alias la='ls -la'
 
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+alias rcp='rsync -avh --progress'
+alias rmv='rsync -avh --remove-source-files --progress'
+alias _rcp='sudo rsync -avh --progress'
+alias _rmv='sudo rsync -avh --remove-source-files --progress'
 
 alias '#'='sudo'
 alias '£'='sudo'
