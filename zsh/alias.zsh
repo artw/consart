@@ -62,4 +62,4 @@ alias tmux-a="tmux set-option -g prefix C-a"
 
 alias hgu="hg pull -u"
 
-alias svnc="ssh -L5901:localhost5900 "
+alias svnc="ssh -L5901:localhost:5900 "
