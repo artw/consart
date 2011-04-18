@@ -29,7 +29,7 @@ case $OS in
       ;;
 esac
 
-alias rezsh="source $HOME/.zshrc"
+alias rezsh="rehash && source $HOME/.zshrc"
 alias ya="sudo yaourt"
 alias sudo="sudo -E"
 
