@@ -1,3 +1,4 @@
+fpath=(~/.zsh/completion $fpath)
 autoload -U zutil
 autoload -U compinit
 autoload -U complist
