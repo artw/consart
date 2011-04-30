@@ -32,6 +32,7 @@ case $OS in
       ;;
 esac
 
+alias xlock="xscreensaver-command -lock"
 alias rezsh="rehash && source $HOME/.zshrc"
 alias ya="sudo yaourt"
 alias sudo="sudo -E"
