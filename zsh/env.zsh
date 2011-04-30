@@ -2,7 +2,7 @@ if which vim >/dev/null; then
 	export EDITOR=vim
 fi
 # add to PATH 
-foreach dir (/usr/sbin /usr/local/sbin $HOME/android-sdk-mac_86/tools $HOME/android-sdk-mac_86/platform-tools /usr/local/kde4 /opt/local/bin)
+foreach dir (/usr/sbin /usr/local/sbin $HOME/Applications/android-sdk-mac_86/tools $HOME/android-sdk-mac_86/platform-tools /usr/local/kde4 /opt/local/bin)
    if [[ -d $dir ]]; then
       export PATH=$dir:$PATH
    fi
