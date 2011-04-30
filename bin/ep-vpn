@@ -5,8 +5,10 @@ tell application "System Events"
 		set isConnected to connected of current configuration of VPNservice
 		if isConnected then
 			disconnect VPNservice
+         return "Disconnected from Office"
 		else
 			connect VPNservice
+         return "Connecting to Office..."
 		end if
 	end tell
 end tell
