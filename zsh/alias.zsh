@@ -8,7 +8,10 @@ case $OS in
       alias ls="ls -GF"
       alias finder="open /System/Library/CoreServices/Finder.app"
       alias locate="mdfind"
-      alias eject="diskutil eject"
+      alias eject="hdiutil eject"
+      alias port="sudo port"
+      alias portup="sudo port -v selfupdate"
+      alias portupg="sudo port -v upgrade outdated && sudo port uninstall inactive"
       ;;
 
    freebsd)
