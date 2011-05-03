@@ -20,7 +20,7 @@ function ssh-agent-start {
         return
      fi
    fi
-   ssh-agent | sed -e 's/setenv/export/' | grep 'export' > $SSH_AGENT_ENV
+   ssh-agent | sed -e 's/setenv/export/' | grep 'export' | awk '{ print $1 " " $2 "=" $3 }' > $SSH_AGENT_ENV
    chmod 600 $SSH_AGENT_ENV
    source $SSH_AGENT_ENV
 }
