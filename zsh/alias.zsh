@@ -7,7 +7,6 @@ case $OS in
    macos) 
       alias ls="ls -GF"
       alias finder="open /System/Library/CoreServices/Finder.app"
-      alias locate="mdfind"
       alias eject="hdiutil eject"
       alias port="sudo port"
       alias portup="sudo port -v selfupdate"
