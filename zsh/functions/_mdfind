@@ -1,0 +1,5 @@
+#compdef mdfind
+
+_arguments -C \
+   '-name[filename only]' \
+&& return 0
