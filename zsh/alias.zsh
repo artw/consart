@@ -1,25 +1,25 @@
 # system speciefic aliases:
-case $(uname) in 
-   Linux)
+case $OSTYPE in 
+   linux*)
       alias ls='ls --color=auto -F'
+      alias ya="sudo yaourt"
       ;;
 
-   Darwin) 
+   darwin*) 
       alias ls="ls -GF"
-      alias finder="open /System/Library/CoreServices/Finder.app"
       alias eject="hdiutil eject"
       alias port="sudo port"
       alias portup="sudo port -v selfupdate"
       alias portupg="sudo port -v upgrade outdated && sudo port uninstall inactive"
       ;;
 
-   FreeBSD)
+   freebsd*)
       alias ls="ls -GF"
       alias pkga="sudo -E pkg_add -r" 
       alias portupdate="sudo portsnap fetch update"
       ;;
 
-   OpenBSD)
+   openbsd*)
       alias cvsupd="sudo cvsup -g -L 2 /etc/cvsupfile"
       alias out-of-date="sudo /usr/ports/infrastructure/build/out-of-date"
       alias compile-system="sudo rm -rf /usr/obj/* && cd /usr/src && sudo make obj && cd /usr/src/etc && env DESTDIR=/ sudo make distrib-dirs && cd /usr/src && sudo make build && echo completed!"
@@ -33,7 +33,6 @@ esac
 
 alias xlock="xscreensaver-command -lock"
 alias rezsh="rehash && source $HOME/.zshrc"
-alias ya="sudo yaourt"
 alias sudo="sudo -E"
 
 alias mv='nocorrect mv -i'
