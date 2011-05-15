@@ -10,7 +10,6 @@ my @configus = qw(
    tmux.conf
    hgrc
    Xdefaults
-   xinitrc
 );
 #-#
 
