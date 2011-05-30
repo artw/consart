@@ -45,10 +45,10 @@ alias la='ls -la'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias rcp='rsync -avh --progress'
-alias rmv='rsync -avh --remove-source-files --progress'
-alias _rcp='sudo rsync -avh --progress'
-alias _rmv='sudo rsync -avh --remove-source-files --progress'
+alias cpr='rsync -avh --progress'
+alias mvr='rsync -avh --remove-source-files --progress'
+alias _cpr='sudo rsync -avh --progress'
+alias _mvr='sudo rsync -avh --remove-source-files --progress'
 
 alias '#'='sudo'
 alias '£'='sudo'
@@ -69,3 +69,6 @@ alias tmux-a="tmux set-option -g prefix C-a"
 alias hgu="hg pull -u"
 
 alias svnc="ssh -L5901:localhost:5900 "
+alias strans="ssh -L9092:localhost:9091 "
+
+alias wget="wget --trust-server-names"

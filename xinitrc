@@ -7,6 +7,6 @@ while true; do
    sleep 1
 done &
 
-dwm
+#dwm
 #awesome
-#wmii
+wmii
