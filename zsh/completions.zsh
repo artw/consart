@@ -16,13 +16,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # process completion
 zstyle ':completion:*:processes' command 'ps -au$USER'
-zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=37=31"
 
 # zstyle
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 
 zstyle ':completion:*' menu select=2
-zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
+zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=37=31"
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{green}%d%f%u'
 
