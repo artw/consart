@@ -25,4 +25,6 @@ function ssh-agent-start {
    source $SSH_AGENT_ENV
 }
 # run automatically, comment this if not needed
+if [[ $(uname) != 'Darwin' ]]; then
    ssh-agent-start;
+fi

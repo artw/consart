@@ -1,6 +1,7 @@
 XTerm*termName:   xterm-256color
 XTerm*Background: black
 XTerm*Foreground: white
-XTerm*font: 9x15
+#XTerm*font: 9x15
+XTerm*faceName: Terminus:pixelsize=15
 XTerm*saveLines: 1000
 XTerm*geometry: +50+100

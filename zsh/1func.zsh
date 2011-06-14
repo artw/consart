@@ -95,9 +95,12 @@ recompl() {
    autoload -U $f:t
 }
 
-
 mvln() {         
-   mv $1 $2 && ln -sf $2 $1
+   if [[ -d $2 ]]; then
+      mv $1 $2 && ln -sf $2/${1##*/} $1
+   else
+      mv $1 $2 && ln -sf $2 $1
+   fi
 }
    
 
