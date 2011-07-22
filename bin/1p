@@ -1,1 +1,1 @@
-env WINEPREFIX="~/.wine" wine C:\\Program\ Files\\1Password\\1Password.exe & 2>/dev/null
+env WINEPREFIX="$HOME/.wine" wine C:\\Program\ Files\\1Password\\1Password.exe & 2>/dev/null

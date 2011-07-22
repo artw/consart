@@ -1,7 +1,14 @@
+# settings for xterm
 XTerm*termName:   xterm-256color
 XTerm*Background: black
 XTerm*Foreground: white
-#XTerm*font: 9x15
-XTerm*faceName: Terminus:pixelsize=15
+XTerm*faceName: Terminus:pixelsize=14
 XTerm*saveLines: 1000
 XTerm*geometry: +50+100
+# same for uxterm
+UXTerm*termName:   xterm-256color
+UXTerm*Background: black
+UXTerm*Foreground: white
+UXTerm*faceName: Terminus:pixelsize=14
+UXTerm*saveLines: 1000
+UXTerm*geometry: +50+100
