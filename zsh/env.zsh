@@ -5,12 +5,14 @@ fi
 # add to PATH 
 foreach dir (
    /usr/sbin
+   /usr/local/bin
    /usr/local/sbin
    $HOME/Applications/android-sdk-mac_86/tools
    $HOME/Applications/android-sdk-mac_86/platform-tools
    /usr/local/kde4
    /opt/local/bin
    /opt/local/sbin
+   /usr/libexec
    $HOME/.consart/bin
    )
    if [[ -d $dir ]]; then

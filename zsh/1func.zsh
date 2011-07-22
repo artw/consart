@@ -103,5 +103,15 @@ mvln() {
    fi
 }
    
+syng() {
+   syng-stop $1;
+   ssh $1 synergys -1 -a localhost && 
+   ssh -fN -L24800:localhost:24800 $1 && 
+   synergyc -1 localhost
+}
 
-
+syng-stop() {
+   killall synergyc > /dev/null ;
+   ssh $1 killall synergys > /dev/null ;
+   kill `ps x | grep "24800:localhost:24800" | grep -v grep | awk '{ print $1}'` > /dev/null ;
+}
