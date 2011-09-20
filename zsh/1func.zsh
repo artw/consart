@@ -102,6 +102,10 @@ mvln() {
       mv $1 $2 && ln -sf $2 $1
    fi
 }
+
+figlet-motd() {
+   figlet $1 | ssh root@$2. "rm /etc/motd && tee /etc/motd"
+}
    
 syng() {
    syng-stop $1;
