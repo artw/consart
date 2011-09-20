@@ -1,3 +1,12 @@
+case $OSTYPE in 
+   cygwin)
+      HOSTNAME=`hostname`
+      ;;
+   *) 
+      HOSTNAME=`hostname -s`
+      ;;
+esac
+   
 function title {
   if [[ $TERM == "screen" || $TERM == "screen.linux" || $TERM == "screen-256color" ]]; then
     # pane title
@@ -11,7 +20,7 @@ function title {
 }
   
 function precmd {
-  title "`hostname -s`:${PWD/$HOME/~}"
+  title "$HOSTNAME:${PWD/$HOME/~}"
   echo -ne '\033[?17;0;127c'
 }
   
@@ -19,10 +28,10 @@ function preexec {
   emulate -L zsh
   local -a cmd; cmd=(${(z)1})
   if [[ $cmd[1]:t == "ssh" ]]; then
-    title `hostname -s`":" "@"$cmd[2] "$cmd[3,-1]"
+    title $HOSTNAME":" "@"$cmd[2] "$cmd[3,-1]"
   elif [[ $cmd[1]:t == "sudo" ]]; then
-    title `hostname -s`":" "#"$cmd[2]:t "$cmd[3,-1]"
+    title $HOSTNAME":" "#"$cmd[2]:t "$cmd[3,-1]"
   else
-    title `hostname -s`":" $cmd[1]:t "$cmd[2,-1]"
+    title $HOSTNAME":" $cmd[1]:t "$cmd[2,-1]"
   fi
 }
