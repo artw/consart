@@ -119,3 +119,11 @@ syng-stop() {
    ssh $1 killall synergys > /dev/null ;
    kill `ps x | grep "24800:localhost:24800" | grep -v grep | awk '{ print $1}'` > /dev/null ;
 }
+
+kvm-vnc() {
+   echo server: $1
+   echo vmid: $2
+   echo vncport: $3
+   ssh -L $3:127.0.0.1:$3 root@$1 "nc -l -p $3 -c 'qm vncproxy $2 megapass'"
+}
+   
