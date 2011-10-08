@@ -73,7 +73,12 @@ alias tmux-a="tmux set-option -g prefix C-a"
 
 alias hgu="hg pull -u"
 
-alias svnc="ssh -L5901:localhost:5900 "
-alias strans="ssh -L9092:localhost:9091 "
+alias ssh-vnc="ssh -L5901:localhost:5900 "
+alias ssh-transmission="ssh -L9092:localhost:9091 "
 
 alias wget="wget --trust-server-names"
+
+alias apti="apt-get install "
+alias aptr="apt-get remove "
+alias aptu="apt-get update "
+alias apts="apt-cache search "

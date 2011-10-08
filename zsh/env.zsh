@@ -12,6 +12,7 @@ foreach dir (
    /usr/local/kde4
    /opt/local/bin
    /opt/local/sbin
+   /Applications/VMware\ Fusion.app/Contents/Library
    /usr/libexec
    $HOME/.consart/bin
    )
