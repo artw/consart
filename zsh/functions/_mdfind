@@ -2,13 +2,13 @@
 
 _arguments -C \
    '-name[filename only]' \
-   '-live[provide live updates]' \
-   '-0[NUL character after each result]' \
-   '-live[provide live updates to results]' \
-   '-count[count results only]' \     
-   '-onlyin[search only in provided dir]' \ 
-   '-name[search for matching file names only]' \
-   '-literal[without interpretation ]' \
-   '-interpret[interpret as in Spotlight]' \
+   #'-live[provide live updates]' \
+   #'-0[NUL character after each result]' \
+   #'-live[provide live updates to results]' \
+   #'-count[count results only]' \     
+   #'-onlyin[search only in provided dir]' \ 
+   #'-name[search for matching file names only]' \
+   #'-literal[without interpretation ]' \
+   #'-interpret[interpret as in Spotlight]' \
 
 && return 0
