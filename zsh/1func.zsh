@@ -126,4 +126,15 @@ kvm-vnc() {
    echo vncport: $3
    ssh -L $3:127.0.0.1:$3 root@$1 "nc -l -p $3 -c 'qm vncproxy $2 megapass'"
 }
-   
+
+trim-enable() {
+#1. Backup the file we’re patching
+   sudo cp /System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCIBlockStorage.kext/Contents/MacOS/IOAHCIBlockStorage /System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCIBlockStorage.kext/Contents/MacOS/IOAHCIBlockStorage.original
+
+#2. Patch the file to enable TRIM support
+   sudo perl -pi -e 's|(\x52\x6F\x74\x61\x74\x69\x6F\x6E\x61\x6C\x00{1,20})[^\x00]{9}(\x00{1,20}\x51)|$1\x00\x00\x00\x00\x00\x00\x00\x00\x00$2|sg' /System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCIBlockStorage.kext/Contents/MacOS/IOAHCIBlockStorage
+
+#3. Clear the system kernel extension cache
+   sudo kextcache -system-prelinked-kernel
+   sudo kextcache -system-caches   
+}
