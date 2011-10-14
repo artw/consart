@@ -16,6 +16,7 @@ case $OSTYPE in
       alias portup="sudo port -v selfupdate"
       alias portupg="sudo port -v upgrade outdated ; sudo port uninstall inactive"
       alias no-guid-is-available="sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist"
+      alias finder="open -a finder"
       ;;
 
    freebsd*)
