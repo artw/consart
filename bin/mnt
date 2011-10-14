@@ -1,7 +1,0 @@
-#!/usr/bin/osascript
-#           on run argv
-on run argv
-   tell application "Finder"
-       mount volume item 1 of argv 
-   end tell
-end run
