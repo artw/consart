@@ -6,6 +6,7 @@ set expandtab
 set mouse=a
 " vimcommander
 noremap <silent> <F11> :cal VimCommanderToggle()<CR>
+map <F2> :NERDTreeToggle<CR>
 
 " unmap arrow keys
 "map <up> <nop>
@@ -20,8 +21,12 @@ noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 " change . to not move cursor after repeat
 nmap . .`[
 
+" set colorscheme
 set t_Co=256
 color xoria256 
 
 filetype plugin on
 let mapleader = ","
+
+"change font to profont
+set gfn=ProFont:h14
