@@ -5,6 +5,7 @@ case $OSTYPE in
       alias ya="yaourt"
       alias em="sudo emerge"
       alias esync="sudo eix-sync"
+      alias udav="sudo emerge -uDavN world"
       ;;
 
    cygwin)
