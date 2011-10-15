@@ -3,6 +3,8 @@ case $OSTYPE in
    linux*)
       alias ls='ls --color=auto -F'
       alias ya="yaourt"
+      alias em="sudo emerge"
+      alias esync="eix-sync"
       ;;
 
    cygwin)
