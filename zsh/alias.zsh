@@ -4,7 +4,7 @@ case $OSTYPE in
       alias ls='ls --color=auto -F'
       alias ya="yaourt"
       alias em="sudo emerge"
-      alias esync="eix-sync"
+      alias esync="sudo eix-sync"
       ;;
 
    cygwin)
