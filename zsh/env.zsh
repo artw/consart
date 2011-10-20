@@ -1,6 +1,8 @@
 # set EDITOR
 if which vim >/dev/null; then
 	export EDITOR=vim
+elsif which vi >/dev/null; then
+   export EDITOR=vi
 fi
 # add to PATH 
 foreach dir (

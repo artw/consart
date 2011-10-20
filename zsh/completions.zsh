@@ -27,6 +27,3 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{green}%d%f%u'
 
 zstyle ':completion:*:sudo:*' command-path assign /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin
-
-# highlight completions
-export ZLS_COLORS="=(#b) #([0-9]#)*=37=31:(all-files)=(#b) #([0-9]#)*=37=31"
