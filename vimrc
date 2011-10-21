@@ -1,19 +1,30 @@
 """ settings:
-   syntax on
    set smartindent
    set autoindent
-   set tabstop=3
+   set scrolljump=5                                   " faster scrolling
+   set expandtab                                      " tab emulates multiple spaces
    set shiftwidth=3
-   set expandtab
    set mouse=a
-   set vb
-   filetype plugin on
+   set vb                                             " visual bell, disables annoying beep
+   set wildmenu                                       " completion menu
+   set wildmode=list:longest,full
+   set ruler
+   set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " megaruler
+   set virtualedit=onemore                            " allow cursor beyond last character
+   set incsearch                                      " search as we type
+   set hlsearch                                       " highligh search matches
+   set list                                           " show line markers
+   set linespace=0                                    " more compact text
+
+   syntax on
+   filetype plugin indent on
 
 """ appearance:
    set bg=dark 
    set gfn=ProFont:h14
 
    if has('gui_running')
+      set guioptions-=T " disable the ugly toolbar
       color xoria256
    else
       set term=$TERM
