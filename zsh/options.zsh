@@ -1,3 +1,5 @@
+## disable stty stop (needed for vim surround plugin)
+stty stop ''
 setopt autocd autolist extendedglob notify correctall nobeep 
 
 ## smart urls
@@ -20,3 +22,5 @@ export LS_COLORS="di=1;;40:ln=1;;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 export CLICOLOR=1    # enable color in cli
 export GREP_COLOR=32 # enable color in grep
 export GREPCOLOR=32
+
+
