@@ -1,15 +1,19 @@
 # system speciefic aliases:
 case $OSTYPE in 
    linux*)
-      alias ls='ls --color=auto -F'
+      alias ls="ls --color=auto -F"
       alias ya="yaourt"
       alias em="sudo emerge"
       alias esync="sudo eix-sync"
       alias udav="sudo emerge -uDavN world"
+      alias apti="apt-get install"
+      alias aptr="apt-get remove"
+      alias aptu="apt-get update"
+      alias apts="apt-cache search"
       ;;
 
    cygwin)
-      alias ls='ls --color=auto -F'
+      alias ls="ls --color=auto -F"
       ;;
 
    darwin*) 
@@ -37,7 +41,7 @@ case $OSTYPE in
       alias ls="colorls -GF"
       alias pf="sudo -E pfctl"
       alias rpf="sudo -E pfctl -f /etc/pf.conf"
-      alias epf="sudo -E vim /etc/pf.conf"
+      alias epf="sudo -E $EDITOR /etc/pf.conf"
       ;;
 esac
 
@@ -51,6 +55,7 @@ alias cp='nocorrect cp -i'
 alias mkdir='nocorrect mkdir'
 alias l='ls -l'
 alias la='ls -la'
+alias lah='ls -lah'
 
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -83,7 +88,3 @@ alias ssh-transmission="ssh -L9092:localhost:9091 "
 
 alias wget="wget --trust-server-names"
 
-alias apti="apt-get install "
-alias aptr="apt-get remove "
-alias aptu="apt-get update "
-alias apts="apt-cache search "
