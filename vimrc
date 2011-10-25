@@ -32,7 +32,7 @@
          set t_Co=256
          color xoria256
       else 
-         color desert
+         color torte
       endif
    endif
 
