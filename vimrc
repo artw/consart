@@ -1,7 +1,7 @@
 """ settings:
    set smartindent
    set autoindent
-   set scrolljump=5                                   " faster scrolling
+   "set scrolljump=5                                   " faster scrolling
    set expandtab                                      " tab emulates multiple spaces
    set shiftwidth=3
    set mouse=a
@@ -13,7 +13,7 @@
    set virtualedit=onemore                            " allow cursor beyond last character
    set incsearch                                      " search as we type
    set hlsearch                                       " highligh search matches
-   set list                                           " show line markers
+   "set list                                           " show line markers
    set linespace=0                                    " more compact text
 
    syntax on
