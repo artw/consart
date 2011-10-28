@@ -12,7 +12,7 @@
    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " megaruler
    set virtualedit=onemore                            " allow cursor beyond last character
    set incsearch                                      " search as we type
-   set hlsearch                                       " highligh search matches
+   "set hlsearch                                       " highligh search matches
    "set list                                           " show line markers
    set linespace=0                                    " more compact text
 
