@@ -138,3 +138,7 @@ trim-enable() {
    sudo kextcache -system-prelinked-kernel
    sudo kextcache -system-caches   
 }
+root-permissions() { 
+   sudo chown -R root:wheel $1
+   sudo chmod -R 755 $1
+}

@@ -1,19 +1,22 @@
 """ settings:
    set smartindent
    set autoindent
-   "set scrolljump=5                                   " faster scrolling
-   set expandtab                                      " tab emulates multiple spaces
+   "set scrolljump=5                                  " faster scrolling
+   set expandtab                                      " tab emulates 3 spaces
    set shiftwidth=3
-   set mouse=a
+   set tabstop=3
+
+   set mouse=a                                        " enable mouse
    set vb                                             " visual bell, disables annoying beep
    set wildmenu                                       " completion menu
    set wildmode=list:longest,full
-   set ruler
-   set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " megaruler
+
+   set ruler                                          " megaruler
+   set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
    set virtualedit=onemore                            " allow cursor beyond last character
    set incsearch                                      " search as we type
-   "set hlsearch                                       " highligh search matches
-   "set list                                           " show line markers
+   "set hlsearch                                      " highligh search matches
+   "set list                                          " show line markers
    set linespace=0                                    " more compact text
 
    syntax on
@@ -37,8 +40,8 @@
    endif
 
 """ (re)map keys:
-   noremap <silent> <F11> :cal VimCommanderToggle()<CR>
-   map <F2> :NERDTreeToggle<CR>
+   nmap <silent> <F11> :cal VimCommanderToggle()<CR>
+   nmap <F2> :NERDTreeToggle<CR>
    set pastetoggle=<F12>
 
    " do not move cursor after repeat"
@@ -46,12 +49,12 @@
 
    let mapleader = ","
    " add ; as command mode key
-   nnoremap ; :
+   nmap ; :
    " Y as C and D
-   nnoremap Y y$
+   nmap Y y$
    " do not exit visual mode after shifting
-   vnoremap < <gv
-   vnoremap > >gv 
+   vmap < <gv
+   vmap > >gv 
 
 """ plugin specific stuff
    " set sqlserver as default sql syntax
