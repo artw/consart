@@ -11,4 +11,4 @@ _arguments -C \
    #'-literal[without interpretation ]' \
    #'-interpret[interpret as in Spotlight]' \
 
-&& return 0
+return 0

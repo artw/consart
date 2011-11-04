@@ -44,9 +44,13 @@
    nmap <F2> :NERDTreeToggle<CR>
    set pastetoggle=<F12>
 
+   " useful shortcuts for save an quit
+   nmap <C-Q> :q!<CR>
+   nmap <C-S> :w!<CR>
+
    " do not move cursor after repeat"
    nmap . .`[
-
+   " set leader key to comma
    let mapleader = ","
    " add ; as command mode key
    nmap ; :
