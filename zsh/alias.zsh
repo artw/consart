@@ -45,7 +45,6 @@ case $OSTYPE in
       ;;
 esac
 
-alias xlock="xscreensaver-command -lock"
 alias rezsh="rehash && source $HOME/.zshrc"
 alias sudo="sudo -E"
 
