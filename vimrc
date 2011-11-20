@@ -40,6 +40,8 @@
    endif
 
 """ (re)map keys:
+   let mapleader = ","  " set leader key to comma
+
    nmap <silent> <F11> :cal VimCommanderToggle()<CR>
    nmap <F2> :NERDTreeToggle<CR>
    set pastetoggle=<F12>
@@ -48,17 +50,18 @@
    nmap <C-Q> :q!<CR>
    nmap <C-S> :w!<CR>
 
-   " do not move cursor after repeat"
-   nmap . .`[
-   " set leader key to comma
-   let mapleader = ","
+   " do not move cursor after repeat
+   nmap . .`[           
    " add ; as command mode key
-   nmap ; :
-   " Y as C and D
-   nmap Y y$
+   nmap ; :             
+   " like C and D
+   nmap Y y$             
    " do not exit visual mode after shifting
    vmap < <gv
-   vmap > >gv 
+   vmap > >gv            
+
+   map ,vv :vsp $MYVIMRC " edit vimrc
+   map ,V :so $MYVIMRC   " reload vimrc
 
 """ plugin specific stuff
    " set sqlserver as default sql syntax

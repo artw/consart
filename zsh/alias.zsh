@@ -2,10 +2,15 @@
 case $OSTYPE in 
    linux*)
       alias ls="ls --color=auto -F"
+      # arch
       alias ya="yaourt"
+      alias yaS="yaourt -Syu"
+      # gentoo
       alias em="sudo emerge"
+      alias emc="sudo emerge"
       alias esync="sudo eix-sync"
       alias udav="sudo emerge -uDavN world"
+      # debian
       alias apti="apt-get install"
       alias aptr="apt-get remove"
       alias aptu="apt-get update"
@@ -20,11 +25,10 @@ case $OSTYPE in
       alias ls="ls -GF"
       alias eject="hdiutil eject"
       alias port="sudo port -v"
-      alias portup="sudo port -v selfupdate"
-      alias portupg="sudo port -v upgrade outdated ; sudo port uninstall inactive"
-      alias no-guid-is-available="sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist"
+      alias portup="sudo port -v selfupdate && sudo port -v upgrade outdated ; sudo port uninstall inactive"
       alias finder="open -a Finder"
       alias refinder="killall Finder && open -a TotalFinder"
+      alias run="open -a"
       ;;
 
    freebsd*)
