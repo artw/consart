@@ -6,10 +6,11 @@ case $OSTYPE in
       alias em="sudo emerge"
       alias esync="sudo eix-sync"
       alias udav="sudo emerge -uDavN world"
-      alias apti="apt-get install"
-      alias aptr="apt-get remove"
-      alias aptu="apt-get update"
-      alias apts="apt-cache search"
+      alias apt="sudo apt-get"
+      alias apti="sudo apt-get install"
+      alias aptr="sudo apt-get remove"
+      alias aptu="sudo apt-get update"
+      alias apts="sudo apt-cache search"
       ;;
 
    cygwin)
