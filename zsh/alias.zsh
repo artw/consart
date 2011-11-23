@@ -4,17 +4,18 @@ case $OSTYPE in
       alias ls="ls --color=auto -F"
       # arch
       alias ya="yaourt"
-      alias yaS="yaourt -Syu"
+      alias yau="yaourt -Syu --devel --aur"
       # gentoo
       alias em="sudo emerge"
       alias emc="sudo emerge"
       alias esync="sudo eix-sync"
       alias udav="sudo emerge -uDavN world"
       # debian
-      alias apti="apt-get install"
-      alias aptr="apt-get remove"
-      alias aptu="apt-get update"
-      alias apts="apt-cache search"
+      alias apt="sudo apt-get"
+      alias apti="sudo apt-get install"
+      alias aptr="sudo apt-get remove"
+      alias aptu="sudo apt-get update"
+      alias apts="sudo apt-cache search"
       ;;
 
    cygwin)
@@ -59,6 +60,8 @@ alias mkdir='nocorrect mkdir'
 alias l='ls -l'
 alias la='ls -la'
 alias lah='ls -lah'
+
+alias dun='du -kx . | sort -n'
 
 alias ...='cd ../..'
 alias ....='cd ../../..'
