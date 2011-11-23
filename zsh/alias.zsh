@@ -3,6 +3,7 @@ case $OSTYPE in
    linux*)
       alias ls="ls --color=auto -F"
       alias ya="yaourt"
+      alias yau="yaourt -Syu --devel --aur"
       alias em="sudo emerge"
       alias esync="sudo eix-sync"
       alias udav="sudo emerge -uDavN world"
