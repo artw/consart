@@ -25,5 +25,5 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors "$LS_COLORS"
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{blue}%d%f%u'
-
+# complete sudo
 zstyle ':completion:*:sudo:*' command-path assign /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin

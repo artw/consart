@@ -27,6 +27,7 @@ case $OSTYPE in
       alias no-guid-is-available="sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist"
       alias finder="open -a Finder"
       alias refinder="killall Finder && open -a TotalFinder"
+      alias run="open -a"
       ;;
 
    freebsd*)
