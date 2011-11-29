@@ -20,7 +20,7 @@ case $OSTYPE in
 
    darwin*) 
       alias ls="ls -GF"
-      alias eject="hdiutil eject"
+      alias eject="diskutil eject"
       alias port="sudo port -v"
       alias portup="sudo port -v selfupdate"
       alias portupg="sudo port -v upgrade outdated ; sudo port uninstall inactive"

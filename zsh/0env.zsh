@@ -21,13 +21,17 @@ if which vim >/dev/null; then
 elif which vi >/dev/null; then
    export EDITOR=vi
 fi
-# add to PATH 
+# PATH 
 foreach dir (
+   /sbin
+   /usr/sbin
    /usr/local/bin
+   /usr/local/sbin
    $HOME/Applications/android-sdk-mac_86/tools
    $HOME/Applications/android-sdk-mac_86/platform-tools
    /usr/local/kde4
    /opt/local/bin
+   /opt/local/sbin
    /Applications/VMware\ Fusion.app/Contents/Library
    /usr/libexec
    $HOME/.consart/bin
