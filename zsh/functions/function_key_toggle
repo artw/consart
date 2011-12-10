@@ -1,4 +1,4 @@
-#!/bin/zsh -f
+#!/usr/bin/env zsh -f
 
 # Activate the function keys.
  
@@ -16,11 +16,9 @@ tell application "Finder"
 		if (system attribute "sysv") is greater than or equal to 4144 then -- Mac OS X 10.3.0  
 			if UI elements enabled then
 				tell application process "System Preferences"
-					-- note there is no space after the "&" and Mouse is on a new line 
 					click button "Keyboard" of scroll area 1 of window "System Preferences"
-					delay 3
 					click radio button $tab_number of tab group 1 of window "Keyboard"
-					click checkbox of tab group 1 of window "Keyboard"  
+					click checkbox 1 of tab group 1 of window "Keyboard"  
 				end tell
 			else
 				beep
