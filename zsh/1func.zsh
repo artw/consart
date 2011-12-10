@@ -104,7 +104,7 @@ mvln() {
 }
 
 figlet-motd() {
-   figlet $1 | ssh root@$2. "rm /etc/motd && tee /etc/motd"
+   figlet $1 | ssh root@$2 "rm /etc/motd && tee /etc/motd"
 }
    
 syng() {
