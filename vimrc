@@ -31,7 +31,7 @@
       color xoria256
    else
       set term=$TERM
-      if &term == "putty-256color" || &term == "xterm-256color" || &term == "screen-256color"
+      if &term == "xterm-256color" || &term == "screen-256color" || &term == "putty-256color" 
          set t_Co=256
          color xoria256
       else 
@@ -39,20 +39,27 @@
       endif
    endif
 
+""" custom commands: 
+   command Xcdc cd %:p:h
+   command Xvimrc edit $MYVIMRC
+   command Xrevim source $MYVIMRC
+   "" sudo write:
+   command Xsuw w !sudo tee % > /dev/null
+
 """ (re)map keys:
+   set pastetoggle=<F12>
    nmap <silent> <F11> :cal VimCommanderToggle()<CR>
    nmap <F2> :NERDTreeToggle<CR>
-   set pastetoggle=<F12>
 
-   " useful shortcuts for save an quit
+   " useful shortcuts for save an quit:
    nmap <C-Q> :q!<CR>
    nmap <C-S> :w!<CR>
 
-   " do not move cursor after repeat"
+   " do not move cursor after repeat:
    nmap . .`[
-   " set leader key to comma
+   " set leader key to comma:
    let mapleader = ","
-   " add ; as command mode key
+   " add ; as command mode key:
    nmap ; :
    " Y as C and D
    nmap Y y$
@@ -60,6 +67,10 @@
    vmap < <gv
    vmap > >gv 
 
+   " complete with ctrl+space
+   imap <C-space> <C-N>
+
 """ plugin specific stuff
    " set sqlserver as default sql syntax
    let g:sql_type_default = "sqlserver" 
+   call pathogen#infect()
