@@ -1,0 +1,2 @@
+cp termcap /usr/share/termcap
+cap_mkdb /usr/share/termcap
