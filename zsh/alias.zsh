@@ -1,6 +1,7 @@
 # system speciefic aliases:
 case $OSTYPE in 
    linux*)
+      alias grep="grep --color=auto"
       alias ls="ls --color=auto -F"
       alias ya="yaourt"
       alias yau="yaourt -Syu --devel --aur"
@@ -19,6 +20,7 @@ case $OSTYPE in
       ;;
 
    darwin*) 
+      alias grep="grep --color=auto"
       alias ls="ls -GF"
       alias eject="diskutil eject"
       alias port="sudo port -v"
