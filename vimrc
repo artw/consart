@@ -7,7 +7,8 @@
    set tabstop=3
 
    set mouse=a                                        " enable mouse
-   set vb                                             " visual bell, disables annoying beep
+   set novisualbell                                   " no flickering
+   set noerrorbells                                   " no beep
    set wildmenu                                       " completion menu
    set wildmode=list:longest,full
 
@@ -51,9 +52,13 @@
    nmap <silent> <F11> :cal VimCommanderToggle()<CR>
    nmap <F2> :NERDTreeToggle<CR>
 
-   " useful shortcuts for save an quit:
+   " save an quit:
    nmap <C-Q> :q!<CR>
    nmap <C-S> :w!<CR>
+
+   " page up/down:
+   nmap <C-J> <C-F>
+   nmap <C-K> <C-B>
 
    " do not move cursor after repeat:
    nmap . .`[
