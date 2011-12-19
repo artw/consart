@@ -52,14 +52,14 @@ case $OSTYPE in
       alias epf="sudo -E $EDITOR /etc/pf.conf"
       ;;
 esac
-
+## universal aliases
 alias rezsh="rehash && source $HOME/.zshrc"
 alias sudo="sudo -E"
 
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
-
 alias mkdir='nocorrect mkdir'
+
 alias l='ls -l'
 alias la='ls -la'
 alias lah='ls -lah'
@@ -82,6 +82,8 @@ alias 'e'='vim'
 
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '
+
+alias drs='dirs -v'
 
 alias rcconf="sudo vim /etc/rc.conf"
 
