@@ -1,6 +1,7 @@
 # system speciefic aliases:
 case $OSTYPE in 
    linux*)
+      alias grep="grep --color=auto"
       alias ls="ls --color=auto -F"
       # arch
       alias ya="yaourt"
@@ -20,11 +21,13 @@ case $OSTYPE in
 
    cygwin)
       alias ls="ls --color=auto -F"
+      alias ping="nocorrect ping"
       ;;
 
    darwin*) 
+      alias grep="grep --color=auto"
       alias ls="ls -GF"
-      alias eject="hdiutil eject"
+      alias eject="diskutil eject"
       alias port="sudo port -v"
       alias portup="sudo port -v selfupdate && sudo port -v upgrade outdated ; sudo port uninstall inactive"
       alias finder="open -a Finder"
