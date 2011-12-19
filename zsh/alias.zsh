@@ -17,6 +17,7 @@ case $OSTYPE in
 
    cygwin)
       alias ls="ls --color=auto -F"
+      alias ping="nocorrect ping"
       ;;
 
    darwin*) 
