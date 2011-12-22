@@ -26,6 +26,11 @@
 """ appearance:
    set bg=dark 
    set gfn=ProFont:h14
+" shift + arrows selects text
+" behave more like textedit than vim
+	"if has("gui_macvim")
+	  "let macvim_hig_shift_movement = 1
+	"endif
 
    if has('gui_running')
       set guioptions-=T " disable the ugly toolbar
@@ -58,9 +63,11 @@
    nmap <C-Q> :q!<CR>
    nmap <C-S> :w!<CR>
 
-   " page up/down:
-   nmap <C-J> <C-F>
-   nmap <C-K> <C-B>
+   " Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+   nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+   nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+   nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+   nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>   " page up/down:
 
    " do not move cursor after repeat:
    nmap . .`[
@@ -76,6 +83,8 @@
    nmap ; :             
    " like C and D
    nmap Y y$             
+   " Space to fold/unfold
+   nmap <Space> za
    " do not exit visual mode after shifting
    vmap < <gv
    vmap > >gv            
