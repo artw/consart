@@ -33,6 +33,7 @@ case $OSTYPE in
       alias finder="open -a Finder"
       alias refinder="killall Finder && open -a TotalFinder"
       alias run="open -a"
+      alias locate="mdfind -name"
       ;;
 
    freebsd*)
