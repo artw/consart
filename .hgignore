@@ -1,2 +1,4 @@
-vim/.netrwhist
 .swp
+.git
+.gitignore
+vim/.netrwhist
