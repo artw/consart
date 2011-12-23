@@ -1,0 +1,16 @@
+syn keyword x000_Black         black         containedin=All
+syn keyword x001_Red           red           containedin=All
+syn keyword x002_Green         green         containedin=All
+syn keyword x003_Yellow        yellow        containedin=All
+syn keyword x004_Blue          blue          containedin=All
+syn keyword x005_Purple        purple        containedin=All
+syn keyword x006_Cyan          cyan          containedin=All
+syn keyword x007_Grey          grey          containedin=All
+syn keyword x008_DarkGrey      darkgrey      containedin=All
+syn keyword x009_LightRed      lightred      containedin=All
+syn keyword x010_LightGreen    lightgreen    containedin=All
+syn keyword x011_LightYellow   lightyellow   containedin=All
+syn keyword x012_LightBlue     lightblue     containedin=All
+syn keyword x013_Pink          pink          containedin=All
+syn keyword x014_LightCyan     lightcyan     containedin=All
+syn keyword x015_White         white         containedin=All
