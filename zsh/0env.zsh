@@ -31,8 +31,6 @@ foreach dir (
    /usr/local/bin
    /opt/local/bin
    /Applications/VMware\ Fusion.app/Contents/Library
-   $HOME/Applications/android-sdk-mac_86/tools
-   $HOME/Applications/android-sdk-mac_86/platform-tools
    /usr/bin
    /bin
    /usr/local/sbin
