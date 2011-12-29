@@ -1,5 +1,5 @@
 .swp
 .git
 .gitignore
-vim/.netrwhist
+.netrwhist
 .hg*
