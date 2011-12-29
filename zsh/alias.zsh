@@ -84,7 +84,7 @@ alias 'e'='vim'
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '
 
-alias drs='dirs -v'
+alias dr='dirs -v'
 
 alias rcconf="sudo vim /etc/rc.conf"
 
