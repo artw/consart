@@ -77,17 +77,11 @@
    nmap ; :
    " Y as C and D
    nmap Y y$
-   " do not move cursor after repeat
-   nmap . .`[           
-   " add ; as command mode key
-   nmap ; :             
-   " like C and D
-   nmap Y y$             
    " Space to fold/unfold
    nmap <Space> za
    " do not exit visual mode after shifting
    vmap < <gv
-   vmap > >gv            
+   vmap > >gv
 
    map ,vv :vsp $MYVIMRC " edit vimrc
    map ,V :so $MYVIMRC   " reload vimrc
