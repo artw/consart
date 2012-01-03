@@ -1,11 +1,11 @@
 bindkey -v
 
-bindkey -M vicmd "/" history-incremental-search-backward
-bindkey -M vicmd "?" history-incremental-search-forward
-bindkey -M vicmd "//" history-beginning-search-backward
-bindkey -M vicmd "??" history-beginning-search-forward
+bindkey -M vicmd "/" history-incremental-pattern-search-backward
+bindkey -M vicmd "?" history-incremental-pattern-search-forward
+bindkey -M vicmd "//" history-beginning-pattern-search-backward
+bindkey -M vicmd "??" history-beginning-pattern-search-forward
 bindkey -M vicmd "q" push-line
-bindkey -M vicmd 'u' undo
+bindkey -M vicmd "u" undo
 
 bindkey '^K' kill-whole-line
 bindkey "\e[H" beginning-of-line        # Home (xorg)

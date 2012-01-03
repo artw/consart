@@ -37,7 +37,7 @@ case $OSTYPE in
       ;;
 
    freebsd*)
-      alias ls="ls -GF"
+      alias ls="ls -FIG"
       alias pkga="sudo -E pkg_add -r" 
       alias portupdate="sudo portsnap fetch update"
       ;;
