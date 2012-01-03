@@ -34,6 +34,7 @@ case $OSTYPE in
       alias refinder="killall Finder && open -a TotalFinder"
       alias run="open -a"
       alias locate="mdfind -name"
+      alias rm_dsstore="find . -name .DS_Store -delete"
       ;;
 
    freebsd*)
