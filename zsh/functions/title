@@ -1,11 +1,2 @@
 #!/usr/bin/env zsh -f
-# set terminal title
-if [[ $TERM == "screen" || $TERM == "screen.linux" || $TERM == "screen-256color" || $TERM == "putty-256color" ]]; then
-# pane title
-   print -nR $'\033k'$1$'\033'
-# window title
-   print -nR $'\033]0;'$2$'\a'
-elif [[ $TERM == "xterm" || $TERM == "xterm-color" || $TERM == "wsvt25" || $TERM == "xterm-256color" ]]; then
-# Use this one instead for XTerms:
    print -nR $'\033]0;'$*$'\a'
-fi
