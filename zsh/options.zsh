@@ -1,3 +1,5 @@
+## for use C-S and C-Q in vim maps
+stty -ixon
 ## disable stty stop (needed for vim surround plugin)
 stty stop ''
 setopt autocd         # cd if "command" is a directory

@@ -14,7 +14,7 @@
 
    set ruler                                          " megaruler
    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-   set virtualedit=onemore                            " allow cursor beyond last character
+   "set virtualedit=onemore                            " allow cursor beyond last character
    set incsearch                                      " search as we type
    "set hlsearch                                      " highligh search matches
    "set list                                          " show line markers
@@ -26,11 +26,6 @@
 """ appearance:
    set bg=dark 
    set gfn=ProFont:h14
-" shift + arrows selects text
-" behave more like textedit than vim
-	"if has("gui_macvim")
-	  "let macvim_hig_shift_movement = 1
-	"endif
 
    if has('gui_running')
       set guioptions-=T " disable the ugly toolbar
@@ -54,7 +49,6 @@
 
 """ (re)map keys:
    set pastetoggle=<F12>
-   let mapleader = ","  " set leader key to comma
 
    nmap <silent> <F11> :cal VimCommanderToggle()<CR>
    nmap <F2> :NERDTreeToggle<CR>
@@ -92,4 +86,7 @@
 """ plugin specific stuff
    " set sqlserver as default sql syntax
    let g:sql_type_default = "sqlserver" 
+   " enable pathogen
    call pathogen#infect()
+   let delimitMate_expand_cr = 1
+   let delimitMate_expand_space = 1
