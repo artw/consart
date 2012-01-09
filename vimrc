@@ -3,8 +3,8 @@
    set autoindent
    "set scrolljump=5                                  " faster scrolling
    set expandtab                                      " tab emulates 3 spaces
-   set shiftwidth=3
-   set tabstop=3
+   set shiftwidth=2
+   set tabstop=2
 
    set mouse=a                                        " enable mouse
    set novisualbell                                   " no flickering
@@ -29,7 +29,7 @@
 
    if has('gui_running')
       set guioptions-=T " disable the ugly toolbar
-      color xoria256
+      color ir_black
    else
       set term=$TERM
       if &term == "xterm-256color" || &term == "screen-256color" || &term == "putty-256color" 

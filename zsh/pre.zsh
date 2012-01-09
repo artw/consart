@@ -1,6 +1,8 @@
 function precmd {
   title "$HOSTNAME:${PWD/$HOME/~}"
   echo -ne '\033[?17;0;127c'
+  # on cd add dir to z 
+  _z --add "$(pwd -P)"
 }
   
 function preexec {
