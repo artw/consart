@@ -16,6 +16,7 @@ case $OSTYPE in
       alias apti="sudo apt-get install"
       alias aptr="sudo apt-get remove"
       alias aptu="sudo apt-get update"
+      alias aptup="sudo apt-get upgrade"
       alias apts="sudo apt-cache search"
       ;;
 
