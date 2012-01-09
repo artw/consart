@@ -82,6 +82,7 @@
 
    " complete with ctrl+space
    imap <C-space> <C-N>
+   imap <C-L> <Space>=><Space>
 
 """ plugin specific stuff
    " set sqlserver as default sql syntax
