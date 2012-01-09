@@ -101,4 +101,4 @@ alias ssh-vnc="ssh -L5901:localhost:5900 "
 alias ssh-transmission="ssh -L9092:localhost:9091 "
 
 alias wget="wget --trust-server-names"
-
+alias pupp1="puppet agent --verbose --no-daemonize --onetime"
