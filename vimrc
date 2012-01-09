@@ -88,5 +88,7 @@
    let g:sql_type_default = "sqlserver" 
    " enable pathogen
    call pathogen#infect()
+   call pathogen#helptags()
+   " delimitmate options
    let delimitMate_expand_cr = 1
    let delimitMate_expand_space = 1
