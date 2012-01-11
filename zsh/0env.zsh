@@ -9,10 +9,10 @@ export CLICOLOR=1
 ###
 
 # set default pager
-if which less >/dev/null; then
+if which vimpager >/dev/null; then
+   export PAGER=vimpager
+elif which less >/dev/null; then
    export PAGER=less
-elif which more >/dev/null; then
-   export PAGER=more
 fi
 ###
 
