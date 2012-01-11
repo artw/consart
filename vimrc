@@ -41,11 +41,11 @@
    endif
 
 """ custom commands: 
-   command Xcdc cd %:p:h
-   command Xvimrc edit $MYVIMRC
-   command Xrevim source $MYVIMRC
+   command! Xcdc cd %:p:h
+   command! Xvimrc edit $MYVIMRC
+   command! Xrevim source $MYVIMRC
    "" sudo write:
-   command Xsuw w !sudo tee % > /dev/null
+   command! Xsuw w !sudo tee % > /dev/null
 
 """ (re)map keys:
    set pastetoggle=<F12>
