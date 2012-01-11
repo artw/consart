@@ -11,7 +11,6 @@
    set noerrorbells                                   " no beep
    set wildmenu                                       " completion menu
    set wildmode=list:longest,full
-
    set ruler                                          " megaruler
    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
    "set virtualedit=onemore                            " allow cursor beyond last character
@@ -19,6 +18,7 @@
    "set hlsearch                                      " highligh search matches
    "set list                                          " show line markers
    set linespace=0                                    " more compact text
+   set backspace=2                                    " needed for delimitMate_expand_cr
 
    syntax on
    filetype plugin indent on
