@@ -96,6 +96,7 @@ alias tmux-b="tmux set-option -g prefix C-b"
 alias tmux-a="tmux set-option -g prefix C-a"
 
 alias hgu="hg pull -u"
+alias cup="cd ~/.consart && hgu && cd -"
 
 alias ssh-vnc="ssh -L5901:localhost:5900 "
 alias ssh-transmission="ssh -L9092:localhost:9091 "
