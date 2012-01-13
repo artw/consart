@@ -27,6 +27,7 @@ fi
 # set path in correct order, ignoring global settings
 unset PATH
 foreach dir (
+   /opt/oracle/otk/current/bin
    /usr/local/Cellar/ruby/1.9.3-p0/bin
    $HOME/.consart/bin
    /usr/local/bin
