@@ -103,3 +103,11 @@ alias ssh-transmission="ssh -L9092:localhost:9091 "
 
 alias wget="wget --trust-server-names"
 alias pupp1="puppet agent --verbose --no-daemonize --onetime"
+
+
+# aliases for rlwrap from OTK
+if which rlwrap &>/dev/null; then
+  CONF="/opt/oracle/otk/current/conf/"
+  alias rman='touch $CONF/rlwrap/rman.key; rlwrap -i -f $CONF/rlwrap/rman.key rman'
+  alias sqlplus='touch $CONF/rlwrap/oracle.key; rlwrap -i -f $CONF/rlwrap/oracle.key sqlplus'
+fi
