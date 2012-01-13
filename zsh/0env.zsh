@@ -9,17 +9,17 @@ export CLICOLOR=1
 ###
 
 # set default pager
-if which vimpager >/dev/null; then
+if which vimpager &>/dev/null; then
    export PAGER=vimpager
-elif which less >/dev/null; then
+elif which less &>/dev/null; then
    export PAGER=less
 fi
 ###
 
 # set default editor
-if which vim >/dev/null; then
+if which vim &>/dev/null; then
 	export EDITOR=vim
-elif which vi >/dev/null; then
+elif which vi &>/dev/null; then
    export EDITOR=vi
 fi
 ###

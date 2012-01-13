@@ -2,7 +2,7 @@
 	linenum=$1
 	filepath="${HOME}/.ssh/known_hosts"
 	if [[ $linenum -ge 1 ]]; then
-		sed -i .bak ${linenum}d ${filepath}
+		sed -i.bak ${linenum}d ${filepath}
 	else
 		echo "Deletes a line from ${filepath}"
 		echo "Usage: $0 <line number>"
