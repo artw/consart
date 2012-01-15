@@ -58,7 +58,9 @@ openbsd*)
   alias out-of-date="sudo /usr/ports/infrastructure/build/out-of-date"
   alias compile-system="sudo rm -rf /usr/obj/* && cd /usr/src && sudo make obj && cd /usr/src/etc && env DESTDIR=/ sudo make distrib-dirs && cd /usr/src && sudo make build && echo completed!"
   alias compile-kernel="cd /usr/src/sys/arch/i386/conf/ && sudo config GENERIC && cd ../compile/GENERIC && sudo make clean && sudo make depend && sudo make && sudo make install && echo completed!"
-  alias ls="colorls -GF"
+  if which colorls &>/dev/null; then 
+    alias ls="colorls -GF"
+  fi
   alias pf="sudo -E pfctl"
   alias rpf="sudo -E pfctl -f /etc/pf.conf"
   alias epf="sudo -E $EDITOR /etc/pf.conf"
@@ -66,6 +68,8 @@ openbsd*)
 esac
 
 ## universal aliases
+alias e=$EDITOR
+alias ge=gvim
 
 if which sudo &>/dev/null; then
   alias sudo="sudo -E"
@@ -100,7 +104,6 @@ if which rsync &>/dev/null; then
   alias _mvr='sudo rsync -avh --remove-source-files --progress'
 fi
 
-alias e='vim'
 
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '
