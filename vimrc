@@ -72,12 +72,12 @@
   vmap > >gv
 
   " complete with ctrl+space
-  imap <C-space> <C-N>
+  "imap <C-space> <C-N>
   imap <C-L> <Space>=><Space>
 
 """ abbreviations
   " autocomplete xml tags
-  :iabbrev <// </<C-X><C-O>
+  nmap <leader>t i</<C-X><C-O><C-R><C-R>x
 
 """ plugin specific stuff
   " set sqlserver as default sql syntax
