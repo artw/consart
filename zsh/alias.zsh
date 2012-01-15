@@ -42,6 +42,9 @@ darwin*)
   alias run="open -a"
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
+  if which mvim &>/dev/null; then
+    alias gvim="mvim"
+  fi
 ;;
 
 freebsd*)
@@ -70,6 +73,7 @@ if which sudo &>/dev/null; then
   alias '£'='sudo'
   alias '_'='sudo'
   alias '_e'='sudo $EDITOR'
+  alias '_ge'='sudo gvim'
   alias rcconf="sudo vim /etc/rc.conf"
   alias svc="sudo service"
 fi
@@ -96,7 +100,7 @@ if which rsync &>/dev/null; then
   alias _mvr='sudo rsync -avh --remove-source-files --progress'
 fi
 
-alias 'e'='vim'
+alias e='vim'
 
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '
@@ -113,8 +117,8 @@ if which hg &>/dev/null; then
   alias cup="cd ~/.consart && hgu && cd -"
 fi
 
-alias ssh-vnc="ssh -L5901:localhost:5900 "
-alias ssh-transmission="ssh -L9092:localhost:9091 "
+alias s-vnc="ssh -L5901:localhost:5900 "
+alias s-transmission="ssh -L9092:localhost:9091 "
 
 if which wget &>/dev/null; then
   alias wget="wget --trust-server-names"
@@ -124,7 +128,7 @@ if which puppet &>/dev/null; then
   alias pupp1="puppet agent --verbose --no-daemonize --onetime"
 fi
 
-# aliases for rlwrap from OTK
+# rlwrap from oracletoolkit
 if which rlwrap &>/dev/null; then
   CONF="/opt/oracle/otk/current/conf/"
   alias rman='touch $CONF/rlwrap/rman.key; rlwrap -i -f $CONF/rlwrap/rman.key rman'

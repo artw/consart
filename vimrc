@@ -6,7 +6,7 @@
   set shiftwidth=2
   set tabstop=2
 
-  set mouse=a                                        " enable mouse
+  "set mouse=a                                        " enable mouse
   set novisualbell                                   " no flickering
   set noerrorbells                                   " no beep
   set wildmenu                                       " completion menu
@@ -28,10 +28,12 @@
   set gfn=ProFont:h14
 
   if has('gui_running')
+    set mouse=a "enable mouse
     set guioptions-=T " disable the ugly toolbar
     color ir_black
   else
     set term=$TERM
+    set mouse=r "disable mouse
     if &term == "xterm-256color" || &term == "screen-256color" || &term == "putty-256color" 
       set t_Co=256
       color ir_black
