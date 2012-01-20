@@ -1,24 +1,23 @@
 """ settings:
   set smartindent
   set autoindent
-  "set scrolljump=5                                  " faster scrolling
-  set expandtab                                      " tab emulates 2 spaces
+  "set scrolljump=5              "  faster scrolling
+  set expandtab                  "  tab emulates 2 spaces
   set shiftwidth=2
   set tabstop=2
-
-  "set mouse=a                                        " enable mouse
-  set novisualbell                                   " no flickering
-  set noerrorbells                                   " no beep
-  set wildmenu                                       " completion menu
+  "set mouse=a                   "  enable mouse
+  set novisualbell               "  no flickering
+  set noerrorbells               "  no beep
+  set wildmenu                   "  completion menu
   set wildmode=list:longest,full
-  set ruler                                          " megaruler
-  set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-  "set virtualedit=onemore                            " allow cursor beyond last character
-  set incsearch                                      " search as we type
-  "set hlsearch                                      " highligh search matches
-  "set list                                          " show line markers
-  set linespace=0                                    " more compact text
-  set backspace=2                                    " needed for delimitMate_expand_cr
+  set ruler                      "  megaruler
+  "set virtualedit=onemore       "  allow cursor beyond last character
+  set incsearch                  "  search as we type
+  "set hlsearch                  "  highligh search matches
+  "set list                      "  show line markers
+  set linespace=0                "  more compact text
+  set backspace=2                "  needed for delimitMate_expand_cr
+  "set autoread                  "  autoreload files after they are changed
 
   syntax on
   filetype plugin indent on
@@ -28,16 +27,16 @@
   set gfn=ProFont:h14
 
   if has('gui_running')
-    set mouse=a "enable mouse
-    set guioptions-=T " disable the ugly toolbar
+    set mouse=a                 "  enable mouse
+    set guioptions-=T           "  disable the ugly toolbar
     color ir_black
   else
     set term=$TERM
-    set mouse=r "disable mouse
-    if &term == "xterm-256color" || &term == "screen-256color" || &term == "putty-256color" 
+    set mouse=r                 "  disable mouse
+    if &term == "xterm-256color "  || &term == "screen-256color "  || &term == "putty-256color "
       set t_Co=256
       color ir_black
-    else 
+    else
       color torte
     endif
   endif
@@ -55,27 +54,33 @@
   nmap <silent> <F11> :cal VimCommanderToggle()<CR>
   nmap <F2> :NERDTreeToggle<CR>
 
-  " save an quit:
+  " file operation shortcuts:
   nmap <C-Q> :q!<CR>
   nmap <C-S> :w!<CR>
+  nmap <C-E> :e!<CR>
 
   " do not move cursor after repeat:
   nmap . .`[
+
   " set leader key to comma:
   let mapleader = ","
+  
   " add ; as command mode key:
   nmap ; :
+
   " Y as C and D
   nmap Y y$
+
   " Space to fold/unfold
   nmap <Space> za
+
   " do not exit visual mode after shifting
   vmap < <gv
   vmap > >gv
 
-  " complete with ctrl+space
-  "imap <C-space> <C-N>
-  imap <C-L> <Space>=><Space>
+  imap <C-L> <Space>-><Space>
+  "imap <C-L> <Space>=><Space>
+  
 
 """ abbreviations
   " autocomplete xml tags
