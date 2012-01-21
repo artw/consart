@@ -35,8 +35,6 @@ darwin*)
   alias grep="grep --color=auto"
   alias ls="ls -GF"
   alias eject="diskutil eject"
-  alias port="sudo port -v"
-  alias portup="sudo port -v selfupdate && sudo port -v upgrade outdated ; sudo port uninstall inactive"
   alias finder="open -a Finder"
   alias refinder="killall Finder && open -a TotalFinder"
   alias run="open -a"
@@ -49,11 +47,14 @@ darwin*)
 
 freebsd*)
   alias ls="ls -FIG"
-  alias pkga="sudo -E pkg_add -r" 
+  alias pkgi="sudo -E pkg_add -r" 
+  alias pkgr="sudo -E pkg_delete" 
   alias portupdate="sudo portsnap fetch update"
 ;;
 
 openbsd*)
+  alias pkgi="sudo -E pkg_add -r" 
+  alias pkgr="sudo -E pkg_delete" 
   alias cvsupd="sudo cvsup -g -L 2 /etc/cvsupfile"
   alias out-of-date="sudo /usr/ports/infrastructure/build/out-of-date"
   alias compile-system="sudo rm -rf /usr/obj/* && cd /usr/src && sudo make obj && cd /usr/src/etc && env DESTDIR=/ sudo make distrib-dirs && cd /usr/src && sudo make build && echo completed!"
