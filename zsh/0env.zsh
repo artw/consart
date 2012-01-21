@@ -40,6 +40,7 @@ foreach dir (
    /usr/sbin
    /sbin
    /usr/libexec
+   /usr/X11R6/bin
    )
    if [[ -d $dir ]]; then
       PATH=${PATH}:${dir}
