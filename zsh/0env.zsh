@@ -53,24 +53,25 @@ export PATH
 
 # os speciefic environment settings
 case $OSTYPE in
-   openbsd*)
-      export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
-      ;;
-   freebsd*)
-      export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-8-stable/Latest/
-      export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
-      ;;
-   cygwin*)
-      export TERM=xterm-256color
-      ;;
+  openbsd*)
+    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
+    export CVSROOT=anoncvs@anoncvs.estpak.ee:/OpenBSD
+  ;;
+  freebsd*)
+    export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-8-stable/Latest/
+    export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
+  ;;
+  cygwin*)
+    export TERM=xterm-256color
+  ;;
 esac
 ## cygwin's differences from *nix
 case $OSTYPE in 
-   cygwin)
-      export HOSTNAME=`hostname`
-      ;;
-   *) 
-      export HOSTNAME=`hostname -s`
-      ;;
+  cygwin)
+    export HOSTNAME=`hostname`
+  ;;
+  *) 
+    export HOSTNAME=`hostname -s`
+  ;;
 esac
 ###
