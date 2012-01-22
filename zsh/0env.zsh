@@ -54,7 +54,9 @@ export PATH
 # os speciefic environment settings
 case $OSTYPE in
   openbsd*)
-    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
+    release=`uname -r`
+    if [ release -eq '5.1' ]; then release = 'snapshots' fi
+    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/$release/packages/`uname -m`
     export CVSROOT=anoncvs@anoncvs.estpak.ee:/OpenBSD
   ;;
   freebsd*)
