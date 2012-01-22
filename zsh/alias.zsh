@@ -54,7 +54,9 @@ freebsd*)
 
 openbsd*)
   alias pkgi="sudo -E pkg_add -r" 
+  alias pkga="sudo -E pkg_add -r" 
   alias pkgr="sudo -E pkg_delete" 
+  alias pkgd="sudo -E pkg_delete" 
   alias cvsupd="sudo cvsup -g -L 2 /etc/cvsupfile"
   alias out-of-date="sudo /usr/ports/infrastructure/build/out-of-date"
   alias compile-system="sudo rm -rf /usr/obj/* && cd /usr/src && sudo make obj && cd /usr/src/etc && env DESTDIR=/ sudo make distrib-dirs && cd /usr/src && sudo make build && echo completed!"
