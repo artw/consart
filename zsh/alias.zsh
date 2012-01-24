@@ -40,6 +40,12 @@ darwin*)
   alias run="open -a"
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
+
+  # override homebrew MacVim as default vim and gvim
+  brewvim="$HOME/Applications/MacVim.app/Contents/MacOS/Vim"
+  if [ -x $brewvim ]; then
+    alias vim=$brewvim
+  fi
   if which mvim &>/dev/null; then
     alias gvim="mvim"
   fi
@@ -47,9 +53,11 @@ darwin*)
 
 freebsd*)
   alias ls="ls -FIG"
-  alias pkgi="sudo -E pkg_add -r" 
-  alias pkgr="sudo -E pkg_delete" 
   alias portupdate="sudo portsnap fetch update"
+  alias pkgi="sudo -E pkg_add -r" 
+  alias pkga="sudo -E pkg_add -r" 
+  alias pkgr="sudo -E pkg_delete" 
+  alias pkgd="sudo -E pkg_delete" 
 ;;
 
 openbsd*)
