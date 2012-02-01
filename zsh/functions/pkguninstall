@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh -f
+if [[ `uname` != "Darwin"]]; then
+  echo "this function is for OSX only"
+  return 1
+fi
+if [[ -z $1 ]];then
+  echo "usage: $0 <package>"
+  return 1
+fi
+sudo pkgutil --files $1 | xargs rm -df && sudo pkgutil --forget $1
+
+
