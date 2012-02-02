@@ -103,7 +103,7 @@ alias l='ls -l'
 alias la='ls -la'
 alias lah='ls -lah'
 
-alias dun='du -akx . | sort -n'
+alias dun='du -amx . | sort -n'
 
 alias ...='cd ../..'
 alias ....='cd ../../..'
