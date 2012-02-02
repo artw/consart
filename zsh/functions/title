@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh -f
+   print -nR $'\033]0;'$*$'\a'
