@@ -1,6 +1,0 @@
-"3.1 (created: 2011/04/21 23:26:46)
-
-set popups=tab,resized
-source! /Users/leet/.vimperatorrc.local
-
-" vim: set ft=vimperator:
