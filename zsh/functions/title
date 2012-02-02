@@ -1,2 +1,4 @@
 #!/usr/bin/env zsh -f
-   print -nR $'\033]0;'$*$'\a'
+if [[ ! $TERM == linux ]]; then
+  print -nR $'\033]0;'$*$'\a'
+fi
