@@ -10,17 +10,18 @@ export CLICOLOR=1
 
 # set default pager
 if which vimpager &>/dev/null; then
-   export PAGER=vimpager
+  export PAGER=vimpager
 elif which less &>/dev/null; then
-   export PAGER=less
+  export PAGER=less
 fi
 ###
 
 # set default editor
 if which vim &>/dev/null; then
-	export EDITOR=vim
+  export EDITOR=vim
+  alias vi=vim
 elif which vi &>/dev/null; then
-   export EDITOR=vi
+  export EDITOR=vi
 fi
 ###
 
@@ -62,7 +63,7 @@ case $OSTYPE in
     export CVSROOT=anoncvs@anoncvs.estpak.ee:/OpenBSD
   ;;
   freebsd*)
-    export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-8-stable/Latest/
+    export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-`uname -r | cut -c1`-stable/Latest/
     export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
   ;;
   cygwin*)
