@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh -f
+case $OSTYPE in
+darwin*)
+  echo "Fixing permissions.."
+  sudo chown -R root:wheel /System/Library/Extensions
+  sudo chmod -R 755 /System/Library/Extensions
+  echo "Clearing kext caches.."
+  sudo kextcache -system-prelinked-kernel
+  sudo kextcache -system-caches   
+  echo "Done."
+*)
+  echo "this function is OSX specific"
+;;
+esac
