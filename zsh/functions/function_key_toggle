@@ -37,6 +37,7 @@ tell application "Finder"
 	end tell
 end tell
 eof
+;;
 *)
   echo "this function is OSX specific"
 ;;
