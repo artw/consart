@@ -1,13 +1,9 @@
 #!/usr/bin/env zsh -f
-
-# Activate the function keys.
- 
- 
-     tab_number=1
-     
-     print "Please wait ...."
-     
-     
+case $OSTYPE in
+darwin*)
+# Activate the function keys using applescript
+tab_number=1
+print "Please wait ...."
 osascript <<-eof
 tell application "Finder"
 	activate
@@ -41,4 +37,8 @@ tell application "Finder"
 	end tell
 end tell
 eof
+*)
+  echo "this function is OSX specific"
+;;
+esac
  

@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh -f
+case $OSTYPE in
+darwin*)
 if [[ `uname` != "Darwin" ]]; then
   echo "this function is for OSX only"
   return 1
@@ -15,5 +17,9 @@ if [ "$answer" = y ]; then
   sudo pkgutil --forget $1
   return 0
 fi
+*)
+  echo "this function is OSX specific"
+;;
+esac
 
 
