@@ -38,6 +38,7 @@ foreach dir (
    /bin
    /usr/local/sbin
    /opt/local/sbin
+   /opt/bin
    /usr/sbin
    /sbin
    /usr/libexec

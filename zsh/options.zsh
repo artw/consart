@@ -1,7 +1,9 @@
 ## for use C-S and C-Q in vim maps
-stty -ixon
-## disable stty stop (needed for vim surround plugin)
-stty stop ''
+if which stty > /dev/null;then
+## tweak tty for vim
+  stty -ixon
+  stty stop ''
+fi
 setopt autocd         # cd if "command" is a directory
 setopt autolist       # automatically list choices on an ambiguous completion
 setopt extendedglob   # globbing extended with # ~ ^
