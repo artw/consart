@@ -1,30 +1,33 @@
 SSH_AGENT_ENV=$HOME/.ssh-agent
 
 function ssh-agent-stop {
-   # check if running, then kill
-   if [[ -f $SSH_AGENT_ENV ]]; then
+  if which ssh-agent &>/dev/null; then
+  # check if running, then kill
+    if [[ -f $SSH_AGENT_ENV ]]; then
       source $SSH_AGENT_ENV
       kill $SSH_AGENT_PID
       rm $SSH_AGENT_ENV
-   else
+    else
       return 1
-   fi
+    fi
+  fi
 }
 
 function ssh-agent-start {
-   # run if not already
-   if [[ -f $SSH_AGENT_ENV ]]; then
-     source $SSH_AGENT_ENV
-     ps -p $SSH_AGENT_PID > /dev/null
-     if [[ $? -eq 0 ]]; then
+  if which ssh-agent &>/dev/null; then
+  # run if not already
+    if [[ -f $SSH_AGENT_ENV ]]; then
+      source $SSH_AGENT_ENV
+      if ps -p $SSH_AGENT_PID > /dev/null; then
         return
-     fi
-   fi
-   ssh-agent -s | grep 'export' > $SSH_AGENT_ENV
-   chmod 600 $SSH_AGENT_ENV
-   source $SSH_AGENT_ENV
+      fi
+    fi
+    ssh-agent -s | grep 'export' > $SSH_AGENT_ENV
+    chmod 600 $SSH_AGENT_ENV
+    source $SSH_AGENT_ENV
+  fi
 }
-# run automatically, comment this if not needed
+# run automatically, comment this if not needed (OSX has agent built in keychain)
 if [[ $(uname) != 'Darwin' ]]; then
    ssh-agent-start;
 fi
