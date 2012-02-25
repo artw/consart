@@ -28,12 +28,20 @@ fi
 # set path in correct order, ignoring global settings
 unset PATH
 foreach dir (
-   /opt/oracle/otk/current/bin
+   # Oracle
+   /opt/oracle/otk/current/bin 
+   #-#
+   # OSX
    /usr/local/Cellar/ruby/1.9.3-p0/bin
+   /Applications/VMware\ Fusion.app/Contents/Library
+   #-#
+   # Cygwin
+   #/c/windows
+   #/c/windows/system32
+   #-# too slow startup :(
    $HOME/.consart/bin
    /usr/local/bin
    /opt/local/bin
-   /Applications/VMware\ Fusion.app/Contents/Library
    /usr/bin
    /bin
    /usr/local/sbin
@@ -67,11 +75,8 @@ case $OSTYPE in
     export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-`uname -r | cut -c1`-stable/Latest/
     export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
   ;;
-  cygwin*)
-    export TERM=xterm-256color
-  ;;
 esac
-## cygwin's differences from *nix
+## 
 case $OSTYPE in 
   cygwin*)
     export HOSTNAME=`hostname`
