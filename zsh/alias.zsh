@@ -76,10 +76,11 @@ openbsd*)
   alias rpf="sudo -E pfctl -f /etc/pf.conf"
   alias epf="sudo -E $EDITOR /etc/pf.conf"
 ;;
-esac
 
 solaris*)
   alias ls="ls --color=auto"
+;;
+esac
 
 ## universal aliases
 alias e=$EDITOR
