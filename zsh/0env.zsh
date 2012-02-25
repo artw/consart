@@ -73,9 +73,14 @@ case $OSTYPE in
 esac
 ## cygwin's differences from *nix
 case $OSTYPE in 
-  cygwin)
+  cygwin*)
     export HOSTNAME=`hostname`
   ;;
+
+  solaris*)
+    export HOSTNAME=`hostname`
+  ;;
+
   *) 
     export HOSTNAME=`hostname -s`
   ;;

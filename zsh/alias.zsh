@@ -78,6 +78,9 @@ openbsd*)
 ;;
 esac
 
+solaris*)
+  alias ls="ls --color=auto"
+
 ## universal aliases
 alias e=$EDITOR
 alias ge=gvim
