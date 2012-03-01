@@ -41,11 +41,6 @@ darwin*)
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
 
-  # override homebrew MacVim as default vim and gvim
-  brewvim="$HOME/Applications/MacVim.app/Contents/MacOS/Vim"
-  if [ -x $brewvim ]; then
-    alias vim=$brewvim
-  fi
   if which mvim &>/dev/null; then
     alias gvim="mvim"
   fi
