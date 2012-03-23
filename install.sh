@@ -9,7 +9,8 @@ configs=(
   Xdefaults
 )
 foreach f in $configs
-  echo `dirname $f`
+  rm -rf ${HOME}/.$f
+  ln -s ./$f(:a) ${HOME}/.$f
 end
 
 
