@@ -17,6 +17,7 @@ if [ "$answer" = y ]; then
   sudo pkgutil --forget $1
   return 0
 fi
+;;
 *)
   echo "this function is OSX specific"
 ;;
