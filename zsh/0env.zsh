@@ -32,7 +32,7 @@ foreach dir (
    /opt/oracle/otk/current/bin 
    #-#
    # OSX
-   /usr/local/Cellar/ruby/1.9.3-p125
+   /usr/local/Cellar/ruby/1.9.3-p125/bin
    /Applications/VMware\ Fusion.app/Contents/Library
    #-#
    # Cygwin
