@@ -110,8 +110,8 @@ alias ....='cd ../../..'
 if which rsync &>/dev/null; then
   alias cpr='rsync -avh --progress'
   alias mvr='rsync -avh --remove-source-files --progress'
-  alias _cpr='sudo rsync -avh --progress'
-  alias _mvr='sudo rsync -avh --remove-source-files --progress'
+  alias "#cpr"='sudo rsync -avh --progress'
+  alias "#mvr"='sudo rsync -avh --remove-source-files --progress'
 fi
 
 
@@ -130,15 +130,14 @@ if which hg &>/dev/null; then
   alias cup="cd ~/.consart && hgu && cd -"
 fi
 
-alias s-vnc="ssh -L5901:localhost:5900 "
-alias s-transmission="ssh -L9092:localhost:9091 "
+if which ssh &>/dev/null; then
+  alias "@"="ssh"
+  alias s-vnc="ssh -L5901:localhost:5900 "
+  alias s-transmission="ssh -L9092:localhost:9091 "
+fi
 
 if which wget &>/dev/null; then
   alias wget="wget --trust-server-names"
-fi
-
-if which puppet &>/dev/null; then
-  alias pupp1="puppet agent --verbose --no-daemonize --onetime"
 fi
 
 # rlwrap from oracletoolkit
