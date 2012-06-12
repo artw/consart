@@ -43,11 +43,11 @@ foreach dir (
    $HOME/.consart/bin
    /usr/local/bin
    /opt/local/bin
+   /opt/bin
    /usr/bin
    /bin
    /usr/local/sbin
    /opt/local/sbin
-   /opt/bin
    /usr/sbin
    /sbin
    /usr/libexec
