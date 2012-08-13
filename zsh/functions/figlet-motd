@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh -f
-   figlet $1 | ssh root@$2 "rm /etc/motd && tee /etc/motd"
+   figlet $1 | ssh root@$1 "rm /etc/motd && tee /etc/motd"
