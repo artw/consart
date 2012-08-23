@@ -77,8 +77,8 @@ solaris*)
 esac
 
 ## universal aliases
-alias e=$EDITOR
-alias ge=gvim
+alias -g e=$EDITOR
+alias -g ge=gvim
 
 if iscmd sudo; then
   alias sudo="sudo -E"
