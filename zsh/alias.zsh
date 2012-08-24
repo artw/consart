@@ -90,9 +90,9 @@ fi
 
 alias rezsh="rehash && source $HOME/.zshrc"
 
-alias -g mv='nocorrect mv -i'
-alias -g cp='nocorrect cp -i'
-alias -g mkdir='nocorrect mkdir'
+alias mv='nocorrect mv -i'
+alias cp='nocorrect cp -i'
+alias mkdir='nocorrect mkdir'
 
 alias -g l='ls -l'
 alias -g la='ls -la'
