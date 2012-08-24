@@ -1,0 +1,8 @@
+#!/usb/bin/env zsh -f
+if [ -z $1 ]; then
+  echo "specify oracle sid to set"
+  return 1
+else
+  export ORACLE_SID=$1
+  return 0
+fi
