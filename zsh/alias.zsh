@@ -137,3 +137,5 @@ if iscmd rlwrap; then
   alias rman='touch $CONF/rlwrap/rman.key; rlwrap -i -f $CONF/rlwrap/rman.key rman'
   alias sqlplus='touch $CONF/rlwrap/oracle.key; rlwrap -i -f $CONF/rlwrap/oracle.key sqlplus'
 fi
+
+alias wake-aquabox="ssh poseidon /opt/local/bin/wake-aquabox"
