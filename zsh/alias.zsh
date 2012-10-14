@@ -27,6 +27,12 @@ linux*)
     alias -g aptup="apt-get upgrade"
     alias -g apts="apt-cache search"
   fi
+  # MIPS device (router) with optware
+  if [[ $(uname -m) -eq 'mips' ]]; then
+    if iscmd hg-py2.7; then
+      alias -g hg="hg-py2.7"
+    fi
+  fi
 ;;
 
 cygwin)
