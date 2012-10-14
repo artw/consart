@@ -27,7 +27,3 @@ function ssh-agent-start {
     source $SSH_AGENT_ENV
   fi
 }
-# run automatically, comment this if not needed (OSX has agent built in keychain)
-if [[ $(uname) != 'Darwin' ]]; then
-   ssh-agent-start;
-fi
