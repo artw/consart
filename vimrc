@@ -51,7 +51,6 @@
 """ (re)map keys:
   set pastetoggle=<F12>
 
-  nmap <silent> <F11> :cal VimCommanderToggle()<CR>
   nmap <F2> :NERDTreeToggle<CR>
 
   " file operation shortcuts:
@@ -71,27 +70,15 @@
   " Y as C and D
   nmap Y y$
 
-  " Space to fold/unfold
-  nmap <Space> za
-
   " do not exit visual mode after shifting
   vmap < <gv
   vmap > >gv
-
-  imap <C-L> <Space>-><Space>
-  "imap <C-L> <Space>=><Space>
-  
 
 """ abbreviations
   " autocomplete xml tags
   nmap <leader>t i</<C-X><C-O><C-R><C-R>x
 
 """ plugin specific stuff
-  " set sqlserver as default sql syntax
-  let g:sql_type_default = "sqlserver" 
   " enable pathogen
   call pathogen#infect()
   call pathogen#helptags()
-  " delimitmate options
-  let delimitMate_expand_cr = 1
-  let delimitMate_expand_space = 1
