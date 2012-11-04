@@ -3,9 +3,7 @@ case $OSTYPE in
 linux*)
   alias -g grep="grep --color=auto"
   alias -g ls="ls --color=auto -F"
-  if iscmd grub-mkconfig; then
-    alias -g grub2-cfg="grub-mkconfig -o /boot/grub/grub.cfg"
-  fi
+  iscmd grub-mkconfig && alias -g grub2-cfg="grub-mkconfig -o /boot/grub/grub.cfg"
   # arch
   if iscmd yaourt; then
     alias ya="yaourt"
@@ -14,7 +12,7 @@ linux*)
   # gentoo
   if iscmd emerge; then
     alias -g em="emerge"
-    alias -g emc="emerge"
+    alias -g emc="emerge -C"
     alias -g esync="eix-sync"
     alias -g udav="emerge -uDavN world"
   fi  
@@ -29,9 +27,7 @@ linux*)
   fi
   # MIPS device (router) with optware
   if [[ $(uname -m) -eq 'mips' ]]; then
-    if iscmd hg-py2.7; then
-      alias -g hg="hg-py2.7"
-    fi
+    iscmd hg-py2.7 && alias -g hg="hg-py2.7"
   fi
 ;;
 
@@ -50,6 +46,7 @@ darwin*)
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
 
+  iscmd htop && alias htop="sudo htop"
   iscmd mvim && alias gvim="mvim"
   iscmd brew && alias brewup="brew update && brew upgrade && brew cleanup"
 ;;
@@ -70,9 +67,7 @@ openbsd*)
   alias -g pkgd="pkg_delete" 
   alias -g cvsupd="cvsup -g -L 2 /etc/cvsupfile"
   alias -g out-of-date="/usr/ports/infrastructure/build/out-of-date"
-  if which colorls &>/dev/null; then 
-    alias ls="colorls -GF"
-  fi
+  iscmd colorls && alias ls="colorls -GF"
   alias pf="pfctl"
   alias rpf="pfctl -f /etc/pf.conf"
   alias epf="$EDITOR /etc/pf.conf"
@@ -91,7 +86,7 @@ alias -g ge=gvim
 if iscmd sudo; then
   alias sudo="sudo -E"
   alias '#'='sudo'
-  alias '£''sudo'
+  alias '£'='sudo'
 fi
 
 alias rezsh="rehash && source $HOME/.zshrc"
@@ -104,16 +99,20 @@ alias -g l='ls -l'
 alias -g la='ls -la'
 alias -g lah='ls -lah'
 
-alias -g dun='du -amx . | sort -n'
+alias -g L='| less'
+alias -g G='| grep'
+alias -g NG='| grep -v'
+alias -g S='| sort -n'
+
+alias -g dun='du -kax'
 
 alias -g ...='cd ../..'
 alias -g ....='cd ../../..'
 
 if iscmd rsync; then
-  alias -g cpr='rsync -avh --progress'
-  alias -g mvr='rsync -avh --remove-source-files --progress'
+  alias -g cpr='rsync -avhP'
+  alias -g mvr='rsync -avhP --remove-source-files'
 fi
-
 
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '
@@ -132,7 +131,7 @@ fi
 
 if iscmd ssh; then
   alias "@"="ssh"
-  alias s-vnc="ssh -L5901:localhost:5900 "
+  alias @vnc="ssh -L5901:localhost:5900 "
 fi
 
 if iscmd wget; then
@@ -141,7 +140,7 @@ fi
 
 # rlwrap from oracletoolkit
 if iscmd rlwrap; then
-  CONF="/opt/oracle/otk/current/conf/"
+  CONF="/opt/oracle/otk/current/conf"
   alias rman='touch $CONF/rlwrap/rman.key; rlwrap -i -f $CONF/rlwrap/rman.key rman'
   alias sqlplus='touch $CONF/rlwrap/oracle.key; rlwrap -i -f $CONF/rlwrap/oracle.key sqlplus'
 fi
