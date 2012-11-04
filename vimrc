@@ -33,7 +33,7 @@
   else
     set term=$TERM
     set mouse=r                 "  disable mouse
-    if &term == "xterm-256color "  || &term == "screen-256color "  || &term == "putty-256color "
+    if &term == "xterm-256color" || &term == "screen-256color" || &term == "putty-256color"
       set t_Co=256
       color ir_black
     else
