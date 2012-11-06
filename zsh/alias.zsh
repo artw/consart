@@ -39,7 +39,7 @@ cygwin)
 darwin*) 
   alias -g grep="grep --color=auto"
   alias -g ls="ls -GF"
-  alias -g eject="diskutil eject"
+  alias eject="diskutil eject"
   alias finder="open -a Finder"
   alias refinder="killall Finder && open -a TotalFinder"
   alias run="open -a"
