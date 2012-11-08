@@ -1,3 +1,6 @@
+# hist ignore some commands:
+  alias -g ls=' ls'
+  alias -g cd=' cd'
 # system speciefic aliases:
 case $OSTYPE in 
 linux*)

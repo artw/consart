@@ -112,6 +112,7 @@ _vboxmanage() {
 		'hostonlyif:change the IP configuration of a host-only network interface'
 		'dhcpserver:control the DHCP server that is built into VirtualBox'
 		'extpack:add or remove VirtualBox extension packs'
+		'internalcommands:additional commands'
 	)
 
 	local context state line expl
@@ -240,6 +241,10 @@ _vboxmanage() {
 				'--transient' \
 				'--readonly' \
 				'--automount'
+		;;
+		internalcommands)
+			_arguments \
+				':command:(createravvmdk)'\
 		;;
 	esac
 	return 1
