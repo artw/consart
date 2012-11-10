@@ -32,9 +32,9 @@ foreach dir (
    /opt/oracle/otk/current/bin 
    #-#
    # OSX
-   /usr/local/Cellar/ruby/1.9.3-p286/bin
+   /usr/local/Cellar/ruby/1.9.3-p327/bin
    /Applications/VMware\ Fusion.app/Contents/Library
-   "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin"
+   /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
    #-#
    # Cygwin
    #/c/windows
