@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh -f
+if [[ -z $1 ]]; then
+	echo "usage: $0 <vmdk> <rawdisk>"
+	return 2
+fi
+
+vmdk=$1
+rawdisk=$2
+
+if [[ -b $rawdisk ]]; then
+	echo "Setting device ownership" &&
+		sudo chown $USERNAME $rawdisk &&
+	echo "Unmounting partitions" &&
+		sudo diskutil eject $rawdisk &&
+	echo "Creating raw vmdk" &&
+		VBoxManage internalcommands createrawvmdk -filename $vmdk -rawdisk $rawdisk &&
+	echo "Holding the device by unmounting disk partitions every 2 seconds"
+	while [[ 1 = 1 ]]; do
+		mount | grep $rawdisk > /dev/null
+		if [[ $? -eq 0 ]]; then
+			diskutil unmountDisk $rawdisk
+		fi
+		sleep 2
+	done
+else 
+	echo "$rawdisk is not a block device"
+	return 1
+fi
