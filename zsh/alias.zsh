@@ -133,7 +133,7 @@ if iscmd hg; then
 fi
 
 if iscmd ssh; then
-  alias "@"="ssh"
+  alias -g "@"="ssh"
   alias @vnc="ssh -L5901:localhost:5900 "
 fi
 
