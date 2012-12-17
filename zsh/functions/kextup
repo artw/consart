@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh -f
+case $OSTYPE in
+darwin*)
+  sudo diskutil repairPermissions /
+  echo "Rebuilding kext caches.."
+  sudo kextcache -system-prelinked-kernel
+  sudo kextcache -system-caches   
+  echo "Done."
+;;
+*)
+  echo "this function is OSX specific"
+;;
+esac
