@@ -104,8 +104,8 @@ alias -g lah='ls -lah'
 
 alias -g L='| less'
 alias -g G='| grep'
-alias -g NG='| grep -v'
-alias -g S='| sort -n'
+alias -g GV='| grep -v'
+alias -g N='| sort -n'
 
 alias -g dun='du -kax'
 
