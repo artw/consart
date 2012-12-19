@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh -f
 case $OSTYPE in
 darwin*)
+  sudo chown -R root:wheel /System/Library/Extensions
   sudo diskutil repairPermissions /
   echo "Rebuilding kext caches.."
   sudo kextcache -system-prelinked-kernel
