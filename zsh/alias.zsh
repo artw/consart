@@ -36,7 +36,7 @@ linux*)
 
 cygwin)
   alias -g ls="ls --color=auto -F"
-  alias ping="nocorrect ping"
+  alias ping="nocorrect /cygdrive/c/windows/system32/ping.exe"
 ;;
 
 darwin*) 
