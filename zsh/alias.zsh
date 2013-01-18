@@ -141,11 +141,8 @@ if iscmd wget; then
   alias -g wget="wget --trust-server-names"
 fi
 
-# rlwrap from oracletoolkit
-if iscmd rlwrap; then
-  CONF="/opt/oracle/otk/current/conf"
-  alias rman='touch $CONF/rlwrap/rman.key; rlwrap -i -f $CONF/rlwrap/rman.key rman'
-  alias sqlplus='touch $CONF/rlwrap/oracle.key; rlwrap -i -f $CONF/rlwrap/oracle.key sqlplus'
+if iscmd rlwrap && iscmd sqlplus; then
+  alias sqlplus="rlwrap sqlplus"
+  alias sql="rlwrap sqlplus / as sysdba"
+  alias rman="rlrwap rman"
 fi
-
-alias wake-aquabox="ssh poseidon /opt/local/bin/wake-aquabox"
