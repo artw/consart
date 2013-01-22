@@ -148,5 +148,5 @@ if iscmd rlwrap && iscmd sqlplus; then
 fi
 
 if iscmd zfs && iamuser; then 
-  alias zfs="sudo zfs"
+  alias -g zfs="sudo zfs"
 fi
