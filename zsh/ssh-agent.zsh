@@ -28,5 +28,5 @@ function ssh-agent-start {
   fi
 }
 if [[ $SSH_AGENT_ENABLE == 1 ]]; then
-  echo privet
+  ssh-agent-start
 fi
