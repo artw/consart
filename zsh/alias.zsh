@@ -83,7 +83,7 @@ esac
 
 ## universal aliases
 alias -g e=$EDITOR
-alias _e='sudo $EDITOR'
+alias _e='sudoedit'
 alias -g ge=gvim
 
 if iscmd sudo; then
@@ -145,4 +145,8 @@ if iscmd rlwrap && iscmd sqlplus; then
   alias sqlplus="rlwrap sqlplus"
   alias sql="rlwrap sqlplus / as sysdba"
   alias rman="rlrwap rman"
+fi
+
+if iscmd zfs && iamuser; then 
+  alias zfs="sudo zfs"
 fi
