@@ -28,12 +28,7 @@ fi
 # set path in correct order, ignoring global settings
 unset PATH
 foreach dir (
-   # Oracle
-   /opt/oracle/otk/current/bin 
-   #-#
    # OSX
-   /usr/local/Cellar/ruby/1.9.3-p327/bin
-   /Applications/VMware\ Fusion.app/Contents/Library
    /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
    #-#
    # Cygwin
