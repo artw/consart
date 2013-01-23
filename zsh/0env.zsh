@@ -35,6 +35,7 @@ foreach dir (
    #/c/windows
    #/c/windows/system32
    #-# too slow startup :(
+   $ORACLE_HOME/bin
    $HOME/.consart/bin
    /usr/local/bin
    /opt/local/bin
