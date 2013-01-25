@@ -144,7 +144,7 @@ fi
 if iscmd rlwrap && iscmd sqlplus; then
   alias sqlplus="rlwrap sqlplus"
   alias sql="rlwrap sqlplus / as sysdba"
-  alias rman="rlrwap rman"
+  alias rman="rlwrap rman"
 fi
 
 if iscmd zfs && iamuser; then 
