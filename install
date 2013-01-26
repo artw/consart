@@ -10,6 +10,7 @@ my @configus = qw(
    tmux.conf
    hgrc
    Xdefaults
+   i3
 );
 #-#
 
