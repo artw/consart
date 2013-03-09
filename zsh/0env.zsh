@@ -29,7 +29,9 @@ fi
 path_dirs=(
    $HOME/.consart/bin
    $ORACLE_HOME/bin
+
    $HOME/.rbenv/bin
+   $HOME/.rbenv/shims
 
    /sbin
    /usr/sbin
