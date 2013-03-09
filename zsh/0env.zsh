@@ -25,56 +25,48 @@ elif which vi &>/dev/null; then
 fi
 ###
 
-# set path in correct order, ignoring global settings
-unset PATH
-foreach dir (
-   # OSX
-   /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
-   #-#
-   # Cygwin
-   #/c/windows
-   #/c/windows/system32
-   #-# too slow startup :(
-   $ORACLE_HOME/bin
+# dirs for PATH
+path_dirs=(
    $HOME/.consart/bin
-   /usr/local/bin
-   /opt/local/bin
-   /opt/bin
-   /usr/bin
-   /bin
+
+   /sbin
+   /usr/sbin
    /usr/local/sbin
    /opt/local/sbin
-   /usr/sbin
-   /sbin
+
+   /bin
+   /usr/bin
+   /usr/local/bin
+   /opt/local/bin
+
    /usr/libexec
+
    /usr/X11R6/bin
-   )
-   if [[ -d $dir ]]; then
-      PATH=${PATH}:${dir}
-   fi
-end
-## remove dups and export
-typeset -U path
-export PATH
+
+   $ORACLE_HOME/bin
+   $HOME/.rbenv/bin
+)
 ###
 
-# os speciefic environment settings
+# os specific environment settings
 case $OSTYPE in
+  darwin*)
+    export HOSTNAME=`hostname`
+  ;;
+  
   openbsd*)
     release=`uname -r`
-    if [ $release = '5.1' ]; then 
-      release='snapshots'
-    fi
     export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/${release}/packages/`uname -m`
     export CVSROOT=anoncvs@anoncvs.estpak.ee:/OpenBSD
+    export HOSTNAME=`hostname`
   ;;
+
   freebsd*)
     export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-`uname -r | cut -c1`-stable/Latest/
     export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
+    export HOSTNAME=`hostname`
   ;;
-esac
-## 
-case $OSTYPE in 
+
   cygwin*)
     export HOSTNAME=`hostname`
   ;;
@@ -83,8 +75,16 @@ case $OSTYPE in
     export HOSTNAME=`hostname`
   ;;
 
-  *) 
-    export HOSTNAME=`hostname -s`
-  ;;
 esac
+###
+
+# set PATH
+unset PATH
+foreach dir in $path_dirs
+  if [[ -d $dir ]]; then
+    PATH=${dir}:${PATH}
+  fi
+end
+typeset -U path
+export PATH
 ###
