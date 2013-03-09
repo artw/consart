@@ -53,6 +53,8 @@ path_dirs=(
 case $OSTYPE in
   darwin*)
     export HOSTNAME=`hostname`
+    # homebrew ruby gem specific binaries
+    path+=/usr/local/opt/ruby/bin
   ;;
   
   openbsd*)
