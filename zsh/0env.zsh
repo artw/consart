@@ -28,6 +28,8 @@ fi
 # dirs for PATH
 path_dirs=(
    $HOME/.consart/bin
+   $ORACLE_HOME/bin
+   $HOME/.rbenv/bin
 
    /sbin
    /usr/sbin
@@ -42,9 +44,6 @@ path_dirs=(
    /usr/libexec
 
    /usr/X11R6/bin
-
-   $ORACLE_HOME/bin
-   $HOME/.rbenv/bin
 )
 ###
 
