@@ -1,12 +1,14 @@
+# use sudo in some commands if i'm not root
+iamuser && sudo="sudo "
 # hist ignore some commands:
-  alias -g ls=' ls'
-  alias -g cd=' cd'
+  alias ls=' ls'
+  alias cd=' cd'
 # system speciefic aliases:
 case $OSTYPE in 
 linux*)
-  alias -g grep="grep --color=auto"
-  alias -g ls="ls --color=auto -F"
-  iscmd grub-mkconfig && alias -g grub2-cfg="grub-mkconfig -o /boot/grub/grub.cfg"
+  alias grep="grep --color=auto"
+  alias ls="ls --color=auto -F"
+  iscmd grub-mkconfig && alias -g grub2-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
   # arch
   if iscmd yaourt; then
     alias ya="yaourt"
@@ -14,34 +16,34 @@ linux*)
   fi
   # gentoo
   if iscmd emerge; then
-    alias -g em="emerge"
-    alias -g emc="emerge -C"
-    alias -g esync="eix-sync"
-    alias -g udav="emerge -uDavN world"
+    alias em="${sudo}emerge"
+    alias udav="${sudo}emerge -uDavN world"
   fi  
   # debian
   if iscmd apt-get; then
-    alias -g apt="apt-get"
-    alias -g apti="apt-get install"
-    alias -g aptr="apt-get remove"
-    alias -g aptu="apt-get update"
-    alias -g aptup="apt-get upgrade"
-    alias -g apts="apt-cache search"
+    alias apt="${sudo}apt-get"
+    alias aptc="${sudo}apt-cache"
   fi
-  # MIPS device (router) with optware
+  # redhat
+  if iscmd yum; then
+    alias yum="${sudo}yum" 
+    alias rpm="${sudo}rpm"
+  fi
+
+  # MIPS device with optware (f.e. router)
   if [[ $(uname -m) -eq 'mips' ]]; then
     iscmd hg-py2.7 && alias -g hg="hg-py2.7"
   fi
 ;;
 
 cygwin)
-  alias -g ls="ls --color=auto -F"
+  alias ls="ls --color=auto -F"
   alias ping="nocorrect /cygdrive/c/windows/system32/ping.exe"
 ;;
 
 darwin*) 
-  alias -g grep="grep --color=auto"
-  alias -g ls="ls -GF"
+  alias grep="grep --color=auto"
+  alias ls="ls -GF"
   alias eject="diskutil eject"
   alias finder="open -a Finder"
   alias refinder="killall Finder && open -a TotalFinder"
@@ -49,31 +51,27 @@ darwin*)
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
 
-  iscmd htop && alias htop="sudo htop"
+  iscmd htop && alias htop="${sudo}sudo htop"
   iscmd mvim && alias gvim="mvim"
   iscmd brew && alias brewup="brew update && brew upgrade && brew cleanup"
 ;;
 
 freebsd*)
-  alias -g ls="ls -FIG"
-  alias -g portupdate="portsnap fetch update"
-  alias -g pkgi="pkg_add -r" 
-  alias -g pkga="pkg_add -r" 
-  alias -g pkgr="pkg_delete" 
-  alias -g pkgd="pkg_delete" 
+  alias ls="ls -FIG"
+  alias portupdate="${sudo}portsnap fetch update"
+  alias pkg="${sudo}pkg_add" 
+  alias pkgd="${sudo}pkg_delete" 
 ;;
 
 openbsd*)
-  alias -g pkgi="pkg_add -r" 
-  alias -g pkga="pkg_add -r" 
-  alias -g pkgr="pkg_delete" 
-  alias -g pkgd="pkg_delete" 
-  alias -g cvsupd="cvsup -g -L 2 /etc/cvsupfile"
-  alias -g out-of-date="/usr/ports/infrastructure/build/out-of-date"
+  alias pkg="${sudo}pkg_add -r" 
+  alias pkgd="${sudo}pkg_delete" 
+  alias cvsupd="cvsup -g -L 2 /etc/cvsupfile"
+  alias out-of-date="${sudo}/usr/ports/infrastructure/build/out-of-date"
   iscmd colorls && alias ls="colorls -GF"
-  alias pf="pfctl"
-  alias rpf="pfctl -f /etc/pf.conf"
-  alias epf="$EDITOR /etc/pf.conf"
+  alias pf="${sudo}pfctl"
+  alias rpf="${sudo}pfctl -f /etc/pf.conf"
+  alias epf="${sudo}$EDITOR /etc/pf.conf"
 ;;
 
 solaris*)
@@ -82,9 +80,9 @@ solaris*)
 esac
 
 ## universal aliases
-alias -g e=$EDITOR
+alias e=$EDITOR
 alias _e='sudoedit'
-alias -g ge=gvim
+alias ge=gvim
 
 if iscmd sudo; then
   alias sudo="sudo -E"
@@ -98,9 +96,9 @@ alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
 alias mkdir='nocorrect mkdir'
 
-alias -g l='ls -l'
-alias -g la='ls -la'
-alias -g lah='ls -lah'
+alias l='ls -l'
+alias la='ls -la'
+alias lah='ls -lah'
 
 alias -g L='| less'
 alias -g G='| grep'
@@ -109,8 +107,9 @@ alias -g N='| sort -n'
 
 alias -g dun='du -kax'
 
-alias -g ...='cd ../..'
-alias -g ....='cd ../../..'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../..'
 
 if iscmd rsync; then
   alias -g cpr='rsync -avhP'
@@ -135,10 +134,6 @@ fi
 if iscmd ssh; then
   alias -g "@"="ssh"
   alias @vnc="ssh -L5901:localhost:5900 "
-fi
-
-if iscmd wget; then
-  alias -g wget="wget --trust-server-names"
 fi
 
 if iscmd rlwrap && iscmd sqlplus; then
