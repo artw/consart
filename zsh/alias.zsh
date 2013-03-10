@@ -1,13 +1,11 @@
-# use sudo in some commands if i'm not root
+# use sudo in some commands unless root
 iamuser && sudo="sudo "
-# hist ignore some commands:
-  alias ls=' ls'
-  alias cd=' cd'
-# system speciefic aliases:
+
+# system speciefic aliases
 case $OSTYPE in 
 linux*)
   alias grep="grep --color=auto"
-  alias ls="ls --color=auto -F"
+  alias ls=" ls --color=auto -F"
   iscmd grub-mkconfig && alias -g grub2-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
   # arch
   if iscmd yaourt; then
@@ -37,13 +35,13 @@ linux*)
 ;;
 
 cygwin)
-  alias ls="ls --color=auto -F"
+  alias ls=" ls --color=auto -F"
   alias ping="nocorrect /cygdrive/c/windows/system32/ping.exe"
 ;;
 
 darwin*) 
   alias grep="grep --color=auto"
-  alias ls="ls -GF"
+  alias ls=" ls -GF"
   alias eject="diskutil eject"
   alias finder="open -a Finder"
   alias refinder="killall Finder && open -a TotalFinder"
@@ -57,7 +55,7 @@ darwin*)
 ;;
 
 freebsd*)
-  alias ls="ls -FIG"
+  alias ls=" ls -FIG"
   alias portupdate="${sudo}portsnap fetch update"
   alias pkg="${sudo}pkg_add" 
   alias pkgd="${sudo}pkg_delete" 
@@ -68,14 +66,14 @@ openbsd*)
   alias pkgd="${sudo}pkg_delete" 
   alias cvsupd="cvsup -g -L 2 /etc/cvsupfile"
   alias out-of-date="${sudo}/usr/ports/infrastructure/build/out-of-date"
-  iscmd colorls && alias ls="colorls -GF"
+  iscmd colorls && alias ls=" colorls -GF"
   alias pf="${sudo}pfctl"
   alias rpf="${sudo}pfctl -f /etc/pf.conf"
   alias epf="${sudo}$EDITOR /etc/pf.conf"
 ;;
 
 solaris*)
-  alias ls="ls --color=auto"
+  alias ls=" ls --color=auto"
 ;;
 esac
 
@@ -96,9 +94,9 @@ alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
 alias mkdir='nocorrect mkdir'
 
-alias l='ls -l'
-alias la='ls -la'
-alias lah='ls -lah'
+alias l=' ls -l'
+alias la=' ls -la'
+alias lah=' ls -lah'
 
 alias -g L='| less'
 alias -g G='| grep'
