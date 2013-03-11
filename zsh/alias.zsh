@@ -20,12 +20,17 @@ linux*)
   # debian
   if iscmd apt-get; then
     alias apt="${sudo}apt-get"
+    alias aptu="${sudo}apt-get update"
+    alias apti="${sudo}apt-get install"
     alias aptc="${sudo}apt-cache"
   fi
   # redhat
   if iscmd yum; then
     alias yum="${sudo}yum" 
+    alias yumu="${sudo}yum update" 
+    alias yumi="${sudo}yum install"
     alias rpm="${sudo}rpm"
+    alias rpmi="${sudo}rpm -Uvh"
   fi
 
   # MIPS device with optware (f.e. router)
@@ -139,3 +144,9 @@ if iscmd rlwrap && iscmd sqlplus; then
   alias sql="rlwrap sqlplus / as sysdba"
   alias rman="rlwrap rman"
 fi
+
+if iscmd zpool && iscmd zfs; then
+  alias zpool="${sudo}zpool"
+  alias zfs="${sudo}zfs"
+fi
+
