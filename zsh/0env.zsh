@@ -30,7 +30,6 @@ path_dirs=(
    $HOME/.consart/bin
    $ORACLE_HOME/bin
 
-   $HOME/.rbenv/bin
    $HOME/.rbenv/shims
 
    /sbin
@@ -79,6 +78,13 @@ case $OSTYPE in
   ;;
 
 esac
+###
+
+# rbenv specific stuff
+if [[ -d $HOME/.rbenv ]];then 
+ path_dirs+=$HOME/.rbenv/bin
+ eval "$($HOME/.rbenv/bin/rbenv init -)"
+fi
 ###
 
 # set PATH
