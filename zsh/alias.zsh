@@ -21,6 +21,7 @@ linux*)
   if iscmd apt-get; then
     alias apt="${sudo}apt-get"
     alias aptu="${sudo}apt-get update"
+    alias aptup="${sudo}apt-get upgrade"
     alias apti="${sudo}apt-get install"
     alias aptc="${sudo}apt-cache"
   fi
@@ -28,6 +29,7 @@ linux*)
   if iscmd yum; then
     alias yum="${sudo}yum" 
     alias yumu="${sudo}yum update" 
+    alias yumup="${sudo}yum upgrade"
     alias yumi="${sudo}yum install"
     alias rpm="${sudo}rpm"
     alias rpmi="${sudo}rpm -Uvh"
