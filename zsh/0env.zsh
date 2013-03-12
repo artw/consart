@@ -25,22 +25,26 @@ elif which vi &>/dev/null; then
 fi
 ###
 
+# hostname (for title)
+  export HOSTNAME=`hostname`
+##
+
+#
 # dirs for PATH
 path_dirs=(
    $HOME/.consart/bin
-   $ORACLE_HOME/bin
 
-   $HOME/.rbenv/shims
-
-   /sbin
-   /usr/sbin
-   /usr/local/sbin
+   /opt/sbin
    /opt/local/sbin
+   /usr/local/sbin
+   /usr/sbin
+   /sbin
 
-   /bin
-   /usr/bin
-   /usr/local/bin
+   /opt/bin
    /opt/local/bin
+   /usr/local/bin
+   /usr/bin
+   /bin
 
    /usr/libexec
 
@@ -60,25 +64,29 @@ case $OSTYPE in
     release=`uname -r`
     export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/${release}/packages/`uname -m`
     export CVSROOT=anoncvs@anoncvs.estpak.ee:/OpenBSD
-    export HOSTNAME=`hostname`
   ;;
 
   freebsd*)
     export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-`uname -r | cut -c1`-stable/Latest/
     export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
-    export HOSTNAME=`hostname`
   ;;
 
-  cygwin*)
-    export HOSTNAME=`hostname`
-  ;;
+  #cygwin*)
+  #;;
 
-  solaris*)
-    export HOSTNAME=`hostname`
-  ;;
+  #solaris*)
+  #;;
+  
+  #linux*)
+  #;;
 
 esac
 ###
+
+# oracle path
+if [[ -n ${ORACLE_HOME} && -d ${ORACLE_HOME} ]];then
+  path_dirs+=$ORACLE_HOME/bin
+fi
 
 # rbenv specific stuff
 if [[ -d $HOME/.rbenv ]];then 
@@ -91,9 +99,10 @@ fi
 unset PATH
 foreach dir in $path_dirs
   if [[ -d $dir ]]; then
-    PATH=${dir}:${PATH}
+    PATH=${PATH}:${dir}
   fi
 end
+PATH=$PATH[2,-1] # remove first ":"
 typeset -U path
 export PATH
 ###
