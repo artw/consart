@@ -1,5 +1,5 @@
 # use sudo in some commands unless root
-iamuser && sudo="sudo "
+iamuser && iscmd sudo && sudo="sudo "
 
 # system speciefic aliases
 case $OSTYPE in 
