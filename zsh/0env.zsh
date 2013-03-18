@@ -91,6 +91,7 @@ fi
 # rbenv specific stuff
 if [[ -d $HOME/.rbenv ]];then 
  path_dirs+=$HOME/.rbenv/bin
+ path_dirs+=$HOME/.rbenv/shims
  eval "$($HOME/.rbenv/bin/rbenv init -)"
 fi
 ###
