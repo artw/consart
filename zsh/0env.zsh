@@ -52,6 +52,9 @@ path_dirs=(
 )
 ###
 
+# set shell for broken terms, like cygwin
+export SHELL=`which zsh`
+
 # os specific environment settings
 case $OSTYPE in
   darwin*)
