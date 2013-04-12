@@ -41,7 +41,7 @@
     endif
   endif
 
-""" custom commands: 
+""" Xtra commands: 
   command! Xcdc cd %:p:h
   command! Xvimrc edit $MYVIMRC
   command! Xrevim source $MYVIMRC
@@ -53,10 +53,11 @@
 
   nmap <F2> :NERDTreeToggle<CR>
 
-  " file operation shortcuts:
+  " file operation bindings:
   nmap <C-Q> :q!<CR>
   nmap <C-S> :w!<CR>
   nmap <C-E> :e!<CR>
+  nmap <F10> :q<CR>
 
   " do not move cursor after repeat:
   nmap . .`[
