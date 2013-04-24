@@ -6,8 +6,8 @@ if [[ -d $RBENV_DIR ]]; then
   echo "$RBENV_DIR already exists, do you want to update it?"
   read answer
   if [[ $answer =~ ^ye?s?$ ]]; then
-    git --git-dir=$RBENV_DIR/.git pull
-    git --git-dir=$RBINST_DIR/.git pull
+    cd $RBENV_DIR && git pull && cd -
+    cd $RBINST_DIR && git pull && cd -
   fi
 else
   git clone git://github.com/sstephenson/rbenv.git $RBENV_DIR &&
