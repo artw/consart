@@ -1,0 +1,3 @@
+#autoload
+
+compadd "$@" - $(sudo zpool list -H -o name)

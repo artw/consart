@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh -f
+   syng-stop $1;
+   ssh $1 synergys -1 -a localhost && 
+   ssh -fN -L24800:localhost:24800 $1 && 
+   synergyc -1 localhost
