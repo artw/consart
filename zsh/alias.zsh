@@ -10,7 +10,7 @@ linux*)
   # arch
   if iscmd yaourt; then
     alias ya="yaourt"
-    alias yau="yaourt -Syu --devel --aur"
+    alias yau="yaourt -Syubb --devel --aur"
   fi
   # gentoo
   if iscmd emerge; then
