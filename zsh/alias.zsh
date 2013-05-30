@@ -152,3 +152,8 @@ if iscmd zpool && iscmd zfs; then
   alias zfs="${sudo}zfs"
 fi
 
+if iscmd mc; then
+  if [[ $TERM == screen* ]]; then
+    alias mc="TERM=xterm COLORTERM=rxvt mc"
+  fi
+fi
