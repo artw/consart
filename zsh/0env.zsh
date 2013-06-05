@@ -59,18 +59,13 @@ export SHELL=`which zsh`
 case $OSTYPE in
   darwin*)
     export HOSTNAME=`hostname`
-    # homebrew ruby gem specific binaries
-    path+=/usr/local/opt/ruby/bin
   ;;
   
   openbsd*)
-    release=`uname -r`
-    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/${release}/packages/`uname -m`
-    export CVSROOT=anoncvs@anoncvs.estpak.ee:/OpenBSD
+    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
   ;;
 
   freebsd*)
-    export PACKAGESITE=ftp://ftp.lv.freebsd.org/pub/FreeBSD/ports/`uname -m`/packages-`uname -r | cut -c1`-stable/Latest/
     export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
   ;;
 
@@ -93,9 +88,9 @@ fi
 
 # rbenv specific stuff
 if [[ -d $HOME/.rbenv ]];then 
- path_dirs+=$HOME/.rbenv/bin
- path_dirs+=$HOME/.rbenv/shims
- eval "$($HOME/.rbenv/bin/rbenv init -)"
+  path_dirs+=$HOME/.rbenv/bin
+  path_dirs+=$HOME/.rbenv/shims
+  eval "$($HOME/.rbenv/bin/rbenv init -)"
 fi
 ###
 
