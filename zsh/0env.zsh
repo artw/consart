@@ -81,11 +81,6 @@ case $OSTYPE in
 esac
 ###
 
-# oracle path
-if [[ -n ${ORACLE_HOME} && -d ${ORACLE_HOME} ]];then
-  path_dirs+=$ORACLE_HOME/bin
-fi
-
 # rbenv specific stuff
 if [[ -d $HOME/.rbenv ]];then 
   path_dirs+=$HOME/.rbenv/bin
