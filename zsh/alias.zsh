@@ -141,14 +141,6 @@ if iscmd ssh; then
   alias @vnc="ssh -L5901:localhost:5900 "
 fi
 
-# for oracle products
-if iscmd rlwrap then
-  alias sqlplus="rlwrap sqlplus"
-  alias sql="rlwrap sqlplus / as sysdba"
-  alias rman="rlwrap rman"
-  alias asmcmd="rlwrap asmcmd"
-fi
-
 if iscmd zpool && iscmd zfs; then
   alias zpool="${sudo}zpool"
   alias zfs="${sudo}zfs"
