@@ -63,16 +63,9 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias portupdate="${sudo}portsnap fetch update"
-  alias pkg="${sudo}pkg_add" 
-  alias pkgd="${sudo}pkg_delete" 
 ;;
 
 openbsd*)
-  alias pkg="${sudo}pkg_add -r" 
-  alias pkgd="${sudo}pkg_delete" 
-  alias cvsupd="cvsup -g -L 2 /etc/cvsupfile"
-  alias out-of-date="${sudo}/usr/ports/infrastructure/build/out-of-date"
   iscmd colorls && alias ls=" colorls -GF"
   alias pf="${sudo}pfctl"
   alias rpf="${sudo}pfctl -f /etc/pf.conf"
