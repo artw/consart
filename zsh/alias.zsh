@@ -63,6 +63,7 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
+  alias portup="portsnap fetch update"
 ;;
 
 openbsd*)
@@ -85,7 +86,7 @@ alias ge=gvim
 if iscmd sudo; then
   alias sudo="sudo -E"
   alias '#'='sudo'
-  alias 'Â£'='sudo'
+  alias '£'='sudo'
 fi
 
 alias rezsh="rehash && source $HOME/.zshrc"

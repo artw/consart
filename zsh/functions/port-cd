@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh -f
+case $OSTYPE in
+freebsd*)
+
+if [[ -z $1 || $1 == '-h' ]]; then
+  echo "usage: $0 <portname>"
+  return 1
+fi
+
+portdir=`whereis -sq $1`
+
+if [[ ! -d $portdir ]]; then
+  echo "no such port: $1"
+  return 1
+elif [[ $portdir =~ ^/usr/ports/.*$ ]]; then
+  cd $portdir
+fi 
+
+;;
+*)
+  echo "this function is FreeBSD specific"
+  return 1
+;;
+esac
