@@ -32,6 +32,7 @@ fi
 #
 # dirs for PATH
 path_dirs=(
+   $HOME/.bin
    $HOME/.consart/bin
 
    /opt/sbin
