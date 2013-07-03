@@ -1,5 +1,5 @@
 # use sudo in some commands unless root
-iamuser && iscmd sudo && sudo="sudo "
+iamuser && iscmd sudo && sudo="nocorrect sudo "
 
 # system speciefic aliases
 case $OSTYPE in 
@@ -63,7 +63,7 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias portup="portsnap fetch update"
+  alias portup="${sudo}portsnap fetch update"
 ;;
 
 openbsd*)
@@ -84,7 +84,7 @@ alias _e='sudoedit'
 alias ge=gvim
 
 if iscmd sudo; then
-  alias sudo="sudo -E"
+  alias sudo="nocorrect sudo -E"
   alias '#'='sudo'
   alias '£'='sudo'
 fi
