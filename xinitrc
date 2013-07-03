@@ -1,12 +1,7 @@
+# for QT GTK+ theme
+export GTK2_RC_FILES=$HOME/.gtkrc-2.0
+
+# for JDK and other
 wmname LG3D
-xscreensaver -no-splash &
-dropbox start
 
-while true; do
-   xsetroot -name "$( date +"%F %R:%S" )"
-   sleep 1
-done &
-
-#dwm
-#awesome
-wmii
+exec i3

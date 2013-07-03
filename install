@@ -1,38 +1,23 @@
-#!/usr/bin/perl -w
-use strict;
+#!/usr/bin/env zsh
+configs=(
+  zsh
+  zshrc
+  vimrc
+  vim
+  tmux.conf
+  hgrc
+  Xdefaults
+  i3
+  xinitrc
+  gtkrc-2.0
+  fonts.conf
+)
 
-# configuration 
-my @configus = qw(
-   zsh
-   zshrc
-   vimrc
-   vim
-   tmux.conf
-   hgrc
-   Xdefaults
-   i3
-);
-#-#
-
-#-#-#-#-#-#-#
-
-# get install script dir, since we are using relative paths
-use FindBin qw($Bin);
-use lib "$Bin/../lib";
-#-#
-
-# prompt before action
-print "warning, this will overwrite all existing console configs without further prompting, continue? ";
-chomp($_ = <STDIN>);
- exit unless /^ye?s?/;
-#-#
-
-foreach my $c (@configus) {
-   my $dest = "$ENV{'HOME'}/.$c";
-   # delete destination if it exists
-   $_ = $dest; `rm -rf $_`;
-   # and make the link
-   symlink "$Bin/$c", $dest;
-}
-symlink "$Bin", "$ENV{'HOME'}/.consart"
-#-#
+foreach f in $configs
+  if [[ $1 == '-f' ]]; then
+    force='f'
+  fi
+  dest=${HOME}/.$f
+  src=$PWD/`dirname $0`/$f
+  ln -sFi${force} $src $dest 
+end
