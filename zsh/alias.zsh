@@ -63,7 +63,7 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias portup="portsnap fetch update"
+  alias portup="${sudo}portsnap fetch update"
 ;;
 
 openbsd*)
