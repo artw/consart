@@ -1,6 +1,5 @@
-## for use C-S and C-Q in vim maps
+## allows using C-S and C-Q in vim maps
 if which stty > /dev/null;then
-## tweak tty for vim
   stty -ixon
   stty stop ''
 fi
@@ -11,6 +10,8 @@ setopt notify         # report the status of background jobs immediately
 setopt correctall     # correct commands and arguments
 setopt nobeep         # disable beep
 setopt autopushd      # pushd on cd
+setopt pushd_minus    # correct stack order with cd -?
+setopt pushd_ignore_dups
 setopt long_list_jobs # list jobs in the long format by default
 ## smart urls
 autoload -U url-quote-magic
