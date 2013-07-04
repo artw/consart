@@ -19,5 +19,5 @@ foreach f in $configs
   fi
   dest=${HOME}/.$f
   src=$PWD/`dirname $0`/$f
-  ln -sFi${force} $src $dest 
+  ln -sFhi${force} $src $dest 
 end
