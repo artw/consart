@@ -79,6 +79,9 @@ solaris*)
 esac
 
 ## universal aliases
+
+alias today='date +%d-%m-%Y'
+
 alias e=$EDITOR
 alias _e='sudoedit'
 alias ge=gvim
@@ -117,7 +120,7 @@ fi
 
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep '
-alias dr='dirs -v'
+alias d='dirs -v'
 
 if iscmd tmux; then
   alias tx="tmux -2 attach || tmux -2 new"
