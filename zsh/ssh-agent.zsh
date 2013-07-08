@@ -27,6 +27,7 @@ function ssh-agent-start {
     source $SSH_AGENT_ENV
   fi
 }
-if [[ $SSH_AGENT_ENABLE == 1 ]]; then
+# set SSH_AGENT_ENABLE in zshrc.local to start agent on boot
+if [[ ! -z $SSH_AGENT_ENABLE  ]]; then
   ssh-agent-start
 fi
