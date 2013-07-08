@@ -7,14 +7,7 @@ if [[ -z $1 || $1 == '-h' ]]; then
   return 1
 fi
 
-portdir=`whereis -sq $1`
-
-if [[ ! -d $portdir ]]; then
-  echo "no such port: $1"
-  return 1
-elif [[ $portdir =~ ^/usr/ports/.*$ ]]; then
-  cd $portdir
-fi 
+whereis -sq $1 | sed -e 's#/usr/ports/##'
 
 ;;
 *)

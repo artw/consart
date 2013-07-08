@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh -f
-
-port-cd $1 &&
-sudo make config-recursive &&
-sudo make install clean &&
-cd - > /dev/null
