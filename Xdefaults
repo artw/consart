@@ -2,13 +2,18 @@
 XTerm*termName:   xterm-256color
 XTerm*Background: black
 XTerm*Foreground: white
-XTerm*faceName: Terminus:pixelsize=14
-XTerm*saveLines: 1000
-XTerm*geometry: +50+100
+XTerm*faceName: Monospace:pixelsize=14
+XTerm*saveLines: 10000
 # same for uxterm
 UXTerm*termName:   xterm-256color
 UXTerm*Background: black
 UXTerm*Foreground: white
-UXTerm*faceName: Terminus:pixelsize=14
-UXTerm*saveLines: 1000
-UXTerm*geometry: +50+100
+UXTerm*faceName: Monospace:pixelsize=14
+UXTerm*saveLines: 10000
+# urxvt
+URxvt*scrollBar: false
+URxvt*termName: xterm-256color
+URxvt*background: Black
+URxvt*foreground: White
+URxvt*font: xft:Monospace:pixelsize=14
+URxvt*saveLines: 10000
