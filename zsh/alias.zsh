@@ -143,9 +143,8 @@ if iscmd zpool && iscmd zfs; then
   alias zfs="${sudo}zfs"
 fi
 
-# mouse in mc running in screen/tmux
-if iscmd mc; then
-  if [[ $TERM == screen* ]]; then
-    alias mc="TERM=xterm COLORTERM=rxvt mc"
-  fi
+# fix mouseable apps in screen/tmux
+if [[ $TERM == screen-256color ]]; then
+  iscmd mc && alias mc="TERM=xterm-256color mc"
+  iscmd htop && alias htop="TERM=xterm-256color htop"
 fi
