@@ -1,23 +1,23 @@
 set $mod Mod4
 
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Terminus 10
+font pango:Terminus
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+grave exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec dmenu_run
+bindsym $mod+p exec dmenu_run
 # There also rs the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+p exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -64,7 +64,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+p focus parent
+bindsym $mod+shift+c focus parent
 
 # focus the child container
 bindsym $mod+c focus child
@@ -103,6 +103,10 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # assign windows to workspaces 
 # use xprop to get class
 #assign [class="Firefox"] 4
+
+# floating layout for wine
+for_window [class="Wine"] floating enable
+
 
 # hold this to move floating window with left click, or resize with right
 floating_modifier Mod1
