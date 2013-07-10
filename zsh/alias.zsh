@@ -146,5 +146,9 @@ fi
 # fix mouseable apps in screen/tmux
 if [[ $TERM == screen-256color ]]; then
   iscmd mc && alias mc="TERM=xterm-256color mc"
-  iscmd htop && alias htop="TERM=xterm-256color htop"
+fi
+
+if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
+  # F keys are broken when 256color, and mouse does not work in screen 
+  iscmd htop && alias htop="TERM=xterm htop"
 fi
