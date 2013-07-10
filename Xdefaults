@@ -26,7 +26,7 @@ URxvt*perl-ext-common: default,matcher
 URxvt*matcher.button: 1
 URxvt*urlLauncher: firefox
 # colors
-URxvt*background: #2B2B2B
+URxvt*background: #191C1E
 URxvt*foreground: #DEDEDE
 URxvt*colorUL: #86A2B0
 
