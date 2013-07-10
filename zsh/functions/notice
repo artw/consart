@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh -f
-   if [ -x `which growlnotify` ]; then
-      growlnotify -t 'zsh notice' -m "$1"
-   fi
-   echo $1
