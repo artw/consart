@@ -21,10 +21,6 @@ URxvt*font: xft:Monospace:pixelsize=14
 URxvt*boldFont: xft:Monospace:bold:pixelsize=14
 URxvt*saveLines: 10000
 URxvt*loginShell: true
-# open urls
-URxvt*perl-ext-common: default,matcher
-URxvt*matcher.button: 1
-URxvt*urlLauncher: firefox
 # colors
 URxvt*background: #191C1E
 URxvt*foreground: #DEDEDE
