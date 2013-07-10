@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+configs=(
+  zsh
+  zshrc
+  vimrc
+  vim
+  tmux.conf
+  hgrc
+  Xdefaults
+  i3
+  xinitrc
+  gtkrc-2.0
+  fonts.conf
+)
+
+foreach f in $configs
+  if [[ $1 == '-f' ]]; then
+    force='f'
+  fi
+  dest=${HOME}/.$f
+  src=$PWD/`dirname $0`/$f
+  ln -sFni${force} $src $dest 
+end

@@ -1,0 +1,13 @@
+#!/usb/bin/env zsh -f
+if iscmd sqlplus; then
+  if [ -z $1 ]; then
+    echo "specify oracle sid to set"
+    return 1
+  else
+    export ORACLE_SID=$1
+    return 0
+  fi
+else 
+  echo "no sqlplus in PATH, was ORACLE_HOME set correctly?"
+  return 1
+fi
