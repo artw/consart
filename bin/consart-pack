@@ -1,2 +1,0 @@
-#!/bin/sh
-tar -czvH --exclude .hg -C $HOME -f consart.tar.gz .consart
