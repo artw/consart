@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh -f
+  sudo mount -t devfs dev $1/dev
+  sudo mount -t fdescfs fdesc $1/dev/fd
+  sudo mount -t linprocfs linproc $1/proc
+  sudo mount -t linsysfs linsys $1/sys
