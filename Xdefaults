@@ -1,5 +1,4 @@
-!!! XTerm settings
-
+!!!( XTerm settings
 ! set TERM
 XTerm.termName: xterm-256color
 
@@ -32,7 +31,7 @@ XTerm.vt100.faceSize: 14
 ! show boxes instead of missing glyphs
 XTerm.vt100.showMissingGlyphs: true
 
-!! colors
+!!( colors
 XTerm.vt100.background: #191C1E
 XTerm.vt100.foreground: #DEDEDE
 ! black
@@ -59,3 +58,6 @@ XTerm.vt100.color14   : #34E2E2
 ! white
 XTerm.vt100.color7    : #D3D7CF
 XTerm.vt100.color15   : #EEEEEC
+!!)
+
+!!!)
