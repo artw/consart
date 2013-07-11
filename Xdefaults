@@ -1,53 +1,61 @@
-# settings for xterm
-XTerm*termName:   xterm-256color
-XTerm*Background: black
-XTerm*Foreground: white
-XTerm*faceName: Monospace:pixelsize=14
-XTerm*saveLines: 10000
-# same for uxterm
-UXTerm*termName:   xterm-256color
-UXTerm*Background: black
-UXTerm*Foreground: white
-UXTerm*faceName: Monospace:pixelsize=14
-UXTerm*saveLines: 10000
+!!! XTerm settings
 
-# urxvt
-URxvt*scrollBar: false
-URxvt*termName: xterm-256color
-URxvt*cursorBlink: true
-URxvt*cursorColor: Green
-URxvt*cursorUnderline: false
-URxvt*font: xft:Monospace:pixelsize=14
-URxvt*boldFont: xft:Monospace:bold:pixelsize=14
-URxvt*saveLines: 10000
-URxvt*loginShell: true
-# colors
-URxvt*background: #191C1E
-URxvt*foreground: #DEDEDE
-URxvt*colorUL: #86A2B0
+! set TERM
+XTerm.termName: xterm-256color
 
-# black
-URxvt*color0  : #2E3436
-URxvt*color8  : #555753
-# red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
-# green
-URxvt*color2  : #4E9A06
-URxvt*color10 : #8AE234
-# yellow
-URxvt*color3  : #C4A000
-URxvt*color11 : #FCE94F
-# blue
-URxvt*color4  : #3465A4
-URxvt*color12 : #729FCF
-# magenta
-URxvt*color5  : #75507B
-URxvt*color13 : #AD7FA8
-# cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #34E2E2
-# white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
-##
+! source .profile on start, etc
+XTerm.vt100.loginShell: true
+
+! enable scrollbar
+XTerm.vt100.scrollBar: true
+
+! scrollbar colors
+XTerm.vt100.scrollbar.background: #729FCF
+XTerm.vt100.scrollbar.foreground: #000000
+
+! scrollbar mouse drag (from man) 
+XTerm.vt100.scrollbar.translations: #override \n\
+  <Btn5Down>: StartScroll(Forward) \n\
+  <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+  <Btn4Down>: StartScroll(Backward) \n\
+  <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+  <BtnUp>: NotifyScroll(Proportional) EndScroll()
+
+! green blinking cursor
+XTerm.vt100.cursorBlink: true
+XTerm.vt100.cursorColor: lime green
+
+! font
+XTerm.vt100.faceName: ProFont
+XTerm.vt100.faceSize: 14
+
+! show boxes instead of missing glyphs
+XTerm.vt100.showMissingGlyphs: true
+
+!! colors
+XTerm.vt100.background: #191C1E
+XTerm.vt100.foreground: #DEDEDE
+! black
+XTerm.vt100.color0    : #2E3436
+XTerm.vt100.color8    : #555753
+! red
+XTerm.vt100.color1    : #CC0000
+XTerm.vt100.color9    : #EF2929
+! green
+XTerm.vt100.color2    : #4E9A06
+XTerm.vt100.color10   : #8AE234
+! yellow
+XTerm.vt100.color3    : #C4A000
+XTerm.vt100.color11   : #FCE94F
+! blue
+XTerm.vt100.color4    : #3465A4
+XTerm.vt100.color12   : #729FCF
+! magenta   
+XTerm.vt100.color5    : #75507B
+XTerm.vt100.color13   : #AD7FA8
+! cyan
+XTerm.vt100.color6    : #06989A
+XTerm.vt100.color14   : #34E2E2
+! white
+XTerm.vt100.color7    : #D3D7CF
+XTerm.vt100.color15   : #EEEEEC
