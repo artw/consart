@@ -20,19 +20,12 @@ linux*)
   # debian
   if iscmd apt-get; then
     alias apt="${sudo}apt-get"
-    alias aptu="${sudo}apt-get update"
-    alias aptup="${sudo}apt-get upgrade"
-    alias apti="${sudo}apt-get install"
-    alias aptc="${sudo}apt-cache"
+    alias apt-get="${sudo}apt-get"
   fi
   # redhat
   if iscmd yum; then
     alias yum="${sudo}yum" 
-    alias yumu="${sudo}yum update" 
-    alias yumup="${sudo}yum upgrade"
-    alias yumi="${sudo}yum install"
     alias rpm="${sudo}rpm"
-    alias rpmi="${sudo}rpm -Uvh"
   fi
 
   # MIPS device with optware (f.e. router)
@@ -49,9 +42,7 @@ cygwin)
 darwin*) 
   alias grep="grep --color=auto"
   alias ls=" ls -GF"
-  alias eject="diskutil eject"
   alias finder="open -a Finder"
-  alias refinder="killall Finder && open -a TotalFinder"
   alias run="open -a"
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
@@ -63,14 +54,14 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias portup="${sudo}portsnap fetch update"
+  alias port-up="gitup /usr/ports"
+  alias src-up="gitup /usr/src"
+  alias src-build="cd /usr/src && ${sudo}make clean && ${sudo} make cleanworld && ${sudo} make buildworld && ${sudo} make buildkernel"
+  
 ;;
 
 openbsd*)
   iscmd colorls && alias ls=" colorls -GF"
-  alias pf="${sudo}pfctl"
-  alias rpf="${sudo}pfctl -f /etc/pf.conf"
-  alias epf="${sudo}$EDITOR /etc/pf.conf"
 ;;
 
 solaris*)
@@ -82,9 +73,12 @@ esac
 
 alias today='date +%d-%m-%Y'
 
-alias e=$EDITOR
-alias _e='sudoedit'
-alias ge=gvim
+if [[ ! -z $EDITOR ]]; then
+  alias e=$EDITOR
+  alias _e=${sudo}$EDITOR
+fi
+
+iscmd gvim && alias ge=gvim
 
 if iscmd sudo; then
   alias sudo="nocorrect sudo -E"
@@ -105,7 +99,7 @@ alias lah=' ls -lah'
 alias -g L='| less'
 alias -g G='| grep'
 alias -g GV='| grep -v'
-alias -g N='| sort -n'
+alias -g S='| sort -n'
 
 alias -g dun='du -kax'
 
@@ -123,14 +117,14 @@ alias hs='fc -l 1 | grep '
 alias d='dirs -v'
 
 if iscmd tmux; then
-  alias tx="tmux -2 attach || tmux -2 new"
+  alias tx="tmux attach || tmux new"
   alias tmux-b="tmux set-option -g prefix C-b"
   alias tmux-a="tmux set-option -g prefix C-a"
 fi
 
 if iscmd hg; then
   alias hgu="hg pull -u"
-  alias cup="cd ~/.consart && hgu && cd -"
+  alias cup="cd ~/.consart && hgu && cd - > /dev/null"
 fi
 
 if iscmd ssh; then
