@@ -31,7 +31,7 @@ XTerm.vt100.cursorColor: lime green
 
 ! font
 XTerm.vt100.faceName: ProFont
-XTerm.vt100.faceSize: 14
+XTerm.vt100.faceSize: 11
 
 ! show boxes instead of missing glyphs
 XTerm.vt100.showMissingGlyphs: true
