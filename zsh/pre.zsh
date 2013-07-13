@@ -1,7 +1,5 @@
 function precmd {
   title "$HOSTNAME:${PWD/$HOME/~}"
-  # on cd add dir to z 
-  _z --add "$(pwd -P)"
 }
   
 function preexec {

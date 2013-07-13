@@ -4,6 +4,6 @@ if [[ -f $HOME/.zshrc.local ]] then
 fi
 
 # load everything else
-for file in $HOME/.zsh/*.zsh; do
+for file in $HOME/.zsh/*sh; do
         source $file
 done;
