@@ -72,12 +72,16 @@ esac
 
 ## universal aliases
 
-alias today='date +%d-%m-%Y'
-
 if [[ ! -z $EDITOR ]]; then
   alias e=$EDITOR
   alias _e=${sudo}$EDITOR
 fi
+
+if [[ -f /etc/rc.conf ]]; then
+  alias rcconf="_e /etc/rc.conf"
+fi
+
+alias today='date +%d-%m-%Y'
 
 iscmd gvim && alias ge=gvim
 

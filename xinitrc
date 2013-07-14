@@ -23,7 +23,7 @@ fi
 
 # start compositor
 if which compton &>/dev/null; then
-  compton -b
+  compton &
 fi
 
 exec i3
