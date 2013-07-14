@@ -125,6 +125,8 @@ fi
 
 if iscmd hg; then
   alias hgu="hg pull -u"
+  alias hgc="hg commit"
+  alias hgp="hg push"
   alias cup="cd ~/.consart && hgu && cd - > /dev/null"
 fi
 
