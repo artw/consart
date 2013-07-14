@@ -24,7 +24,11 @@
 
 """ appearance:
   set bg=dark 
-  set gfn=ProFont:h14
+  if has('gui_mac') || has('gui_win32')
+    set gfn=ProFont:h14
+  elseif has('gui_gtk2') || has('gui_home')
+    set gfn=ProFont\ 11
+  endif
 
   if has('gui_running')
     set mouse=a                 "  enable mouse
