@@ -10,6 +10,8 @@ XTerm.termName: xterm-256color
 ! source .profile on start, etc
 XTerm.vt100.loginShell: true
 
+! large scroll buffer
+XTerm.vt100.scrollLines: 5000
 ! enable scrollbar
 XTerm.vt100.scrollBar: true
 
