@@ -58,7 +58,7 @@ freebsd*)
   alias port-up="gitup /usr/ports"
   alias src-up="gitup /usr/src"
   alias src-build="cd /usr/src && ${sudo}make clean && ${sudo} make cleanworld && ${sudo} make buildworld && ${sudo} make buildkernel"
-  
+  iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
 ;;
 
 openbsd*)
@@ -103,7 +103,7 @@ alias lah=' ls -lah'
 
 alias -g L='| less'
 alias -g G='| grep'
-alias -g GV='| grep -v'
+alias -g Gv='| grep -v'
 alias -g S='| sort -n'
 
 alias -g dun='du -kax'
@@ -143,6 +143,8 @@ if iscmd zpool && iscmd zfs; then
   alias zpool="${sudo}zpool"
   alias zfs="${sudo}zfs"
 fi
+
+iscmd gdisk && alias gdisk="${sudo}gdisk"
 
 # fix mouseable apps in screen/tmux
 if [[ $TERM == screen-256color ]]; then
