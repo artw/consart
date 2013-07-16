@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh -f
+if [[ -d $1/.git ]]; then
+  if [[ $(stat -f %u $1) == 0 ]]; then
+    use_sudo=sudo
+  fi
+  cd $1 && $use_sudo git pull && cd - > /dev/null
+else
+  echo "usage: $0 <git workdir>"
+  echo "Updates git repo. Uses sudo if repo is owned by root"
+fi
+
