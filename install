@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 configs=(
   zsh
+  zshenv
   zshrc
   vimrc
   vim
