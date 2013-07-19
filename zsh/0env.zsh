@@ -66,9 +66,8 @@ case $OSTYPE in
     export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
   ;;
 
-  freebsd*)
-    export TERMPATH=~/.consart/termcap:/usr/local/etc/termcap:/etc/termcap
-  ;;
+  #freebsd*)
+  #;;
 
   #cygwin*)
   #;;
