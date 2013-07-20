@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh -f
+sudo mkdir -p /etc/puppet/modules/$1/{files,templates,manifests}
+sudo touch /etc/puppet/modules/$1/manifests/init.pp

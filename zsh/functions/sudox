@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh -f
+if [[ -z $1 ]]; then
+  echo "usage: sudox <username>"
+else
+  cat ~/.Xauthority | sudo -u $1 xauth merge -
+fi

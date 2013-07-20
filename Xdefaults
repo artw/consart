@@ -1,0 +1,70 @@
+!!!( Xft settings
+! set dpi for fonts
+Xft.dpi: 96
+!!!)
+
+!!!( XTerm settings
+! set TERM
+XTerm.termName: xterm-256color
+
+! source .profile on start, etc
+XTerm.vt100.loginShell: true
+
+! large scroll buffer
+XTerm.vt100.scrollLines: 5000
+! enable scrollbar
+XTerm.vt100.scrollBar: true
+
+! scrollbar colors
+XTerm.vt100.scrollbar.background: #729FCF
+XTerm.vt100.scrollbar.foreground: #000000
+
+! scrollbar mouse drag (from man) 
+XTerm.vt100.scrollbar.translations: #override \n\
+  <Btn5Down>: StartScroll(Forward) \n\
+  <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+  <Btn4Down>: StartScroll(Backward) \n\
+  <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+  <BtnUp>: NotifyScroll(Proportional) EndScroll()
+
+! green blinking cursor
+XTerm.vt100.cursorBlink: true
+XTerm.vt100.cursorColor: lime green
+
+! font
+XTerm.vt100.faceName: ProFont
+XTerm.vt100.faceSize: 11
+
+! show boxes instead of missing glyphs
+XTerm.vt100.showMissingGlyphs: true
+
+!!( colors
+XTerm.vt100.background: #191C1E
+XTerm.vt100.foreground: #DEDEDE
+! black
+XTerm.vt100.color0    : #2E3436
+XTerm.vt100.color8    : #555753
+! red
+XTerm.vt100.color1    : #CC0000
+XTerm.vt100.color9    : #EF2929
+! green
+XTerm.vt100.color2    : #4E9A06
+XTerm.vt100.color10   : #8AE234
+! yellow
+XTerm.vt100.color3    : #C4A000
+XTerm.vt100.color11   : #FCE94F
+! blue
+XTerm.vt100.color4    : #3465A4
+XTerm.vt100.color12   : #729FCF
+! magenta   
+XTerm.vt100.color5    : #75507B
+XTerm.vt100.color13   : #AD7FA8
+! cyan
+XTerm.vt100.color6    : #06989A
+XTerm.vt100.color14   : #34E2E2
+! white
+XTerm.vt100.color7    : #D3D7CF
+XTerm.vt100.color15   : #EEEEEC
+!!)
+
+!!!)

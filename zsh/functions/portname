@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh -f
+case $OSTYPE in
+freebsd*)
+
+if [[ -z $1 || $1 == '-h' ]]; then
+  echo "usage: $0 <portname>"
+  return 1
+fi
+
+whereis -sq $1 | sed -e 's#/usr/ports/##'
+
+;;
+*)
+  echo "this function is FreeBSD specific"
+  return 1
+;;
+esac
