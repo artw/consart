@@ -12,5 +12,5 @@ else
   color=blue
 fi
 
-PROMPT='%F{$color}%(!.#.$)%f '
+PROMPT='%B%F{$color}%(!.#.$)%b%f '
 RPROMPT='$at%~ %F{blue}[%F{white}%*%F{blue}]%f'
