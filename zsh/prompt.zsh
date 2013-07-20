@@ -1,7 +1,16 @@
-autoload colors; colors;
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="white"; fi
-#setopt cdablevarS
+# allow variable substitution inside prompts
 setopt prompt_subst
 
-PROMPT='%{$fg[$NCOLOR]%}%B%m%b%{$reset_color%}:%{$fg[blue]%}%B%c/%b%{$reset_color%} %(!.#.$) '
-RPROMPT='[%*]'
+# draw user@host if ssh
+if [[ -c $SSH_TTY ]]; then
+  at='%n%B%F{yellow}@%f%b%m:'
+fi;
+
+if [[ $UID == 0 ]];then
+  color=red
+else
+  color=green
+fi
+
+PROMPT='%F{$color}%(!.#.$)%f '
+RPROMPT='$at%~ %F{blue}[%F{white}%*%F{blue}]%f'
