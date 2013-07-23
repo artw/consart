@@ -16,14 +16,14 @@ if which xxkb &>/dev/null; then
   xxkb &
 fi
 
-# set ~/.wallpaper as background with feh
-if which feh &>/dev/null && test -f ~/.wallpaper; then
-  feh --bg-scale ~/.wallpaper
-fi
-
 # start compositor
 if which compton &>/dev/null; then
   compton &
+fi
+
+# set ~/.wallpaper as background with feh
+if which feh &>/dev/null && test -f ~/.wallpaper; then
+  feh --bg-scale ~/.wallpaper
 fi
 
 exec i3
