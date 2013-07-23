@@ -71,7 +71,6 @@ solaris*)
 esac
 
 ## universal aliases
-
 if [[ ! -z $EDITOR ]]; then
   alias e=$EDITOR
   alias _e=${sudo}$EDITOR
@@ -91,6 +90,8 @@ if iscmd sudo; then
   alias '£'='sudo'
 fi
 
+iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
+  
 alias rezsh="rehash && source $HOME/.zshrc"
 
 alias mv='nocorrect mv -i'
