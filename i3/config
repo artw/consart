@@ -4,10 +4,10 @@ set $mod Mod1
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:ProFont 9
 
-# start a terminal
+# start terminal
 bindsym $mod+grave exec xterm
 
-# start a browser
+# start browser
 bindsym $mod+F1 exec firefox
 
 # kill focused window
@@ -53,13 +53,13 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+f floating toggle
+bindsym $mod+Return floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+f focus mode_toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Return fullscreen
+bindsym $mod+f fullscreen
 
 # focus the parent container
 bindsym $mod+c focus parent
