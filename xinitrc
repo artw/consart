@@ -12,7 +12,7 @@ if which setxkbmap &>/dev/null; then
 fi
 
 # remap keys
-if which xmodmap %>/dev/null; then
+if which xmodmap &>/dev/null; then
   xmodmap ~/.Xmodmap
 fi
 
