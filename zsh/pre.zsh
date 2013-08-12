@@ -1,3 +1,7 @@
+function chpwd {
+  ls
+}
+
 function precmd {
   title "$HOSTNAME:${PWD/$HOME/~}"
 }

@@ -1,5 +1,5 @@
-set $alt Mod4
-set $mod Mod1
+set $alt Mod1
+set $mod Mod4
 
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:ProFont 9
@@ -53,7 +53,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Return floating toggle
+bindsym $mod+d floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+f focus mode_toggle
@@ -106,7 +106,7 @@ bindsym $mod+Shift+q exec "i3-msg exit"
 for_window [class="Wine"] floating enable
 
 # hold this to move floating window with left click, or resize with right
-floating_modifier $alt
+floating_modifier $mod
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
