@@ -96,11 +96,11 @@ nmap <leader>t i</<C-X><C-O><C-R><C-R>x
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-"" bundles
+" bundles
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'Align'
+"
 ""
-"""
