@@ -47,7 +47,7 @@ darwin*)
   alias locate="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
 
-  iscmd htop && alias htop="${sudo}sudo htop"
+  iscmd htop && alias htop="${sudo}htop"
   iscmd mvim && alias gvim="mvim"
   iscmd brew && alias brewup="brew update && brew upgrade && brew cleanup"
 ;;
@@ -81,6 +81,8 @@ if [[ -f /etc/rc.conf ]]; then
 fi
 
 alias today='date +%d-%m-%Y'
+
+alias cls='clear'
 
 iscmd gvim && alias ge=gvim
 
