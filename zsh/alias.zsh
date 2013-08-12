@@ -1,7 +1,8 @@
-# use sudo in some commands unless root
+## use sudo in some commands unless root
 iamuser && iscmd sudo && sudo="nocorrect sudo "
+##
 
-# system speciefic aliases
+## system specific aliases
 case $OSTYPE in 
 linux*)
   alias grep="grep --color=auto"
@@ -69,60 +70,78 @@ solaris*)
   alias ls=" ls --color=auto"
 ;;
 esac
+##
 
 ## universal aliases
-if [[ ! -z $EDITOR ]]; then
-  alias e=$EDITOR
-  alias _e=${sudo}$EDITOR
-fi
-
-if [[ -f /etc/rc.conf ]]; then
-  alias rcconf="_e /etc/rc.conf"
-fi
-
-alias today='date +%d-%m-%Y'
-
-alias cls='clear'
-
-iscmd gvim && alias ge=gvim
-
-if iscmd sudo; then
-  alias sudo="nocorrect sudo -E"
-  alias '#'='sudo'
-  alias '£'='sudo'
-fi
-
-iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
-  
+# consart
 alias rezsh="rehash && source $HOME/.zshrc"
+alias cup="cd ~/.consart && hg pull -u && cd - > /dev/null"
+#
 
+# do not correct some commands
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
 alias mkdir='nocorrect mkdir'
+#
 
-alias l=' ls -l'
+# "shortcuts" for most used commands
+alias c='cat'
+alias d='dirs -v'
+alias g='grep'
+alias h='fc -l 1'
+alias j='jobs'
+alias l='ls'
+alias t='touch'
+#
+
+# ls, cd, etc...
+alias ll=' ls -l'
 alias la=' ls -la'
 alias lah=' ls -lah'
-
-alias -g L='| less'
-alias -g G='| grep'
-alias -g Gv='| grep -v'
-alias -g S='| sort -n'
-
-alias -g dun='du -kax'
 
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../..'
 
+alias -g dun='du -kax'
+#
+
+# editor
+if [[ ! -z $EDITOR ]]; then
+  alias e=$EDITOR
+  alias _e=${sudo}$EDITOR
+fi
+iscmd gvim && alias ge=gvim
+#
+
+# sudo
+if iscmd sudo; then
+  alias sudo="nocorrect sudo -E"
+  alias '#'='sudo'
+  alias '£'='sudo'
+fi
+#
+
+# plumbing
+alias -g L='| less'
+alias -g G='| grep'
+alias -g Gv='| grep -v'
+alias -g S='| sort -n'
+#
+
+# function like
+alias today='date +%d-%m-%Y'
+#
+
+# X
+iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
+#
+
+# misc software
 if iscmd rsync; then
   alias -g cpr='rsync -avhP'
   alias -g mvr='rsync -avhP --remove-source-files'
 fi
-
-alias h='fc -l 1'
-alias hs='fc -l 1 | grep '
-alias d='dirs -v'
 
 if iscmd tmux; then
   alias tx="tmux attach || tmux new"
@@ -134,7 +153,6 @@ if iscmd hg; then
   alias hgu="hg pull -u"
   alias hgc="hg commit"
   alias hgp="hg push"
-  alias cup="cd ~/.consart && hgu && cd - > /dev/null"
 fi
 
 if iscmd ssh; then
@@ -158,3 +176,4 @@ if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
   # F keys are broken when 256color, and mouse does not work in screen 
   iscmd htop && alias htop="TERM=xterm htop"
 fi
+#
