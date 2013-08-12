@@ -9,7 +9,7 @@ fi;
 if [[ $UID == 0 ]];then
   color=red
 else
-  color=blue
+  color=white
 fi
 
 PROMPT='%B%F{$color}%(!.#.$)%b%f '
