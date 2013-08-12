@@ -1,18 +1,19 @@
 #!/usr/bin/env zsh
 configs=(
+  Xdefaults
+  Xmodmap
+  compton.conf
+  fonts.conf
+  gtkrc-2.0
+  hgrc
+  i3
+  tmux.conf
+  vim
+  vimrc
+  xinitrc
   zsh
   zshenv
   zshrc
-  vimrc
-  vim
-  tmux.conf
-  hgrc
-  Xdefaults
-  i3
-  xinitrc
-  gtkrc-2.0
-  fonts.conf
-  compton.conf
 )
 
 foreach f in $configs

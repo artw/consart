@@ -11,6 +11,11 @@ if which setxkbmap &>/dev/null; then
   setxkbmap -layout "lv, ru" -option "grp:caps_toggle" 
 fi
 
+# remap keys
+if which xmodmap %>/dev/null; then
+  xmodmap ~/.Xmodmap
+fi
+
 # keyboard layout switcher and indicator
 if which xxkb &>/dev/null; then
   xxkb &
