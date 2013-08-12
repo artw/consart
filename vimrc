@@ -11,7 +11,7 @@ set tabstop=2
 set novisualbell               "  no flickering
 set noerrorbells               "  no beep
 set wildmenu                   "  completion menu
-set wildmode=list:longest,full
+set wildmode=list:longest,full "  complete longest first
 set ruler                      "  enable ruler bar
 "set virtualedit=onemore       "  allow cursor beyond last character
 set incsearch                  "  search as we type
@@ -35,7 +35,7 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_mac') || has('gui_win32')
-    set gfn=ProFont:h14
+    set gfn=ProFont:h13
   elseif has('gui_gtk') 
     set gfn=ProFont\ 11
   endif
@@ -43,9 +43,8 @@ if has('gui_running')
   color ir_black              "  256 color scheme
 else
   set term=$TERM
-  if &term == "xterm-256color" || &term == "screen-256color" || &term == "putty-256color"
+  if &term == "xterm-256color" || &term == "screen-256color"
     set t_Co=256
-    color ir_black
   else
     color torte               "  fallback color scheme
   endif
@@ -95,12 +94,13 @@ nmap <leader>t i</<C-X><C-O><C-R><C-R>x
 "" vundle
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-
-" bundles
 Bundle 'gmarik/vundle'
+" plugins
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'Align'
+Bundle 'tpope/vim-surround'
+" colorthemes
+Bundle 'twerth/ir_black'
 "
 ""
