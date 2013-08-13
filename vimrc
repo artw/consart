@@ -58,6 +58,7 @@ else
   set term=$TERM
   if &term == "xterm-256color" || &term == "screen-256color"
     set t_Co=256
+    color ir_black
   else
     color torte               "  fallback color scheme
   endif
