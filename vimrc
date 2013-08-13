@@ -1,3 +1,17 @@
+"" vundle
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+" plugins
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-surround'
+" colorthemes
+Bundle 'twerth/ir_black'
+"
+""
+
 "" settings:
 set smartindent
 set autoindent
@@ -7,7 +21,6 @@ set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
 set tabstop=2
 
-"set mouse=a                   "  enable mouse
 set novisualbell               "  no flickering
 set noerrorbells               "  no beep
 set wildmenu                   "  completion menu
@@ -34,7 +47,7 @@ endif
 
 if has('gui_running')
   " set gui font
-  if has('gui_mac') || has('gui_win32')
+  if has('gui_macvim') || has('gui_win32')
     set gfn=ProFont:h13
   elseif has('gui_gtk') 
     set gfn=ProFont\ 11
@@ -91,16 +104,3 @@ nmap <leader>t i</<C-X><C-O><C-R><C-R>x
 "
 ""
 
-"" vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
-" plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-surround'
-" colorthemes
-Bundle 'twerth/ir_black'
-"
-""
