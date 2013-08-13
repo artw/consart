@@ -26,4 +26,4 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{blue}%d%f%u'
 
 # complete sudo
-zstyle ':completion:*:sudo:*' command-path assign /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin
+zstyle ':completion:*:sudo:*' command-path assign $fpath
