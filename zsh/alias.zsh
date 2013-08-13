@@ -55,7 +55,7 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias port="${sudo}portmaster"
+  alias port="${sudo}portmaster --delete-packages"
   alias port-up="gitup /usr/ports"
   alias src-up="gitup /usr/src"
   alias src-build="cd /usr/src && ${sudo}make clean && ${sudo} make cleanworld && ${sudo} make buildworld && ${sudo} make buildkernel"
