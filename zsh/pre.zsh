@@ -7,7 +7,6 @@ function precmd {
 }
   
 function preexec {
-  emulate -L zsh
   local -a cmd; cmd=(${(z)1})
   if [[ $cmd[1]:t == "ssh" ]]; then
     title $cmd[2] "$cmd[3,-1]"

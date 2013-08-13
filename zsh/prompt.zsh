@@ -6,6 +6,7 @@ if [[ -c $SSH_TTY ]]; then
   at='%n%B%F{yellow}@%f%b%m:'
 fi;
 
+local color
 if [[ $UID == 0 ]];then
   color=red
 else

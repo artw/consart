@@ -73,10 +73,6 @@ esac
 ##
 
 ## universal aliases
-# consart
-alias rezsh="rehash && source $HOME/.zshrc"
-alias cup="cd ~/.consart && hg pull -u && cd - > /dev/null"
-#
 
 # do not correct some commands
 alias mv='nocorrect mv -i'
@@ -176,4 +172,9 @@ if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
   # F keys are broken when 256color, and mouse does not work in screen 
   iscmd htop && alias htop="TERM=xterm htop"
 fi
+#
+
+# consart
+alias rezsh="rehash && source $HOME/.zshrc"
+alias cup="hgu ~/.consart"
 #

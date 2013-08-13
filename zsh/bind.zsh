@@ -1,3 +1,4 @@
+# vi keymap
 bindkey -v
 
 bindkey -M vicmd "/" history-incremental-pattern-search-backward
