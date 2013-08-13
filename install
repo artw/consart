@@ -21,6 +21,6 @@ foreach f in $configs
     force='f'
   fi
   dest=${HOME}/.$f
-  src=$PWD/`dirname $0`/$f
+  src=`dirname $0`/$f
   ln -sFni${force} $src $dest 
 end
