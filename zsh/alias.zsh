@@ -55,10 +55,9 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias port="${sudo}portmaster --delete-packages"
-  alias port-up="gitup /usr/ports"
-  alias src-up="gitup /usr/src"
-  alias src-build="cd /usr/src && ${sudo}make clean && ${sudo} make cleanworld && ${sudo} make buildworld && ${sudo} make buildkernel"
+  alias port="${sudo}portmaster -y --delete-packages"
+  alias port-up="git-up /usr/ports"
+  alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
 ;;
 
@@ -85,6 +84,7 @@ alias c='cat'
 alias d='dirs -v'
 alias g='grep'
 alias h='fc -l 1'
+alias hs='fc -l 1 | grep'
 alias j='jobs'
 alias l='ls'
 alias t='touch'
