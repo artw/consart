@@ -37,7 +37,6 @@ set linespace=0                "  more compact text
 syntax on
 filetype plugin indent on
 
-set bg=dark 
 
 " enable mouse if available
 if has('mouse')
@@ -53,17 +52,17 @@ if has('gui_running')
     set gfn=ProFont\ 11
   endif
   set guioptions-=T           "  disable the ugly toolbar
-  color ir_black              "  256 color scheme
-else
-  set term=$TERM
-  if &term == "xterm-256color" || &term == "screen-256color"
-    set t_Co=256
-    color ir_black
-  else
-    color torte               "  fallback color scheme
-  endif
 endif
 ""
+
+set bg=dark 
+" set 256 color scheme if possible
+if has('gui_running') || &t_Co == 256
+  colorscheme ir_black
+else
+  colorscheme torte
+endif
+
 
 "" Xtra commands: 
 command! Xcdc cd %:p:h
