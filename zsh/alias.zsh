@@ -81,6 +81,7 @@ alias mkdir='nocorrect mkdir'
 
 # "shortcuts" for most used commands
 alias c='cat'
+alias cls='clear'
 alias d='dirs -v'
 alias g='grep'
 alias h='fc -l 1'
@@ -91,9 +92,9 @@ alias t='touch'
 #
 
 # ls, cd, etc...
+alias la=' ls -a'
 alias ll=' ls -l'
-alias la=' ls -la'
-alias lah=' ls -lah'
+alias lla=' ls -la'
 
 alias -g ...='../..'
 alias -g ....='../../..'
