@@ -13,10 +13,10 @@ iscmd less && export PAGER=less
 #
 
 # set default editor
-if iscmd vim; then
+if which vim >/dev/null; then
   export EDITOR=vim
   alias vi=vim
-elif iscmd vi; then
+elif which vi >/dev/null; then
   export EDITOR=vi
 fi
 #
@@ -33,7 +33,7 @@ fi
 #
 
 # dirs for PATH
-local path_dirs
+local -a path_dirs
 path_dirs=(
    $HOME/.bin
    $HOME/.consart/bin
@@ -57,7 +57,7 @@ path_dirs=(
 #
 
 # fix broken terms, like cygwin
-export SHELL=`which zsh`
+export SHELL=$(which zsh)
 #
 
 # os specific environment settings
@@ -66,7 +66,7 @@ case $OSTYPE in
   #;;
   
   openbsd*)
-    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`
+    export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(uname -m)
   ;;
 
   #freebsd*)
