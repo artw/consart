@@ -9,7 +9,7 @@ export CLICOLOR=1
 #
 
 # default pager
-iscmd less && export PAGER=less
+if which less >/dev/null; && export PAGER=less
 #
 
 # set default editor
