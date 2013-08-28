@@ -6,7 +6,7 @@ if [[ -z $ORACLE_HOME_DB || -z $ORACLE_HOME_GRID ]]; then
   return 1
 fi
 
-if [[ -z $1 ]]; then
+if [[ -z $1 ]] || [[ ! $1 == 'db' && ! $1 == 'grid' ]]; then
   echo "usage: $0 <db|grid>"
   return 1
 fi
@@ -14,13 +14,11 @@ fi
 if [[ $1 == 'db' && -d $ORACLE_HOME_DB ]]; then
   export ORACLE_HOME=$ORACLE_HOME_DB
   export PATH=${ORACLE_HOME}/bin:${PATH}
-  echo "OK"
 fi
 
 if [[ $1 == 'grid' && -d $ORACLE_HOME_GRID ]]; then
   export ORACLE_HOME=$ORACLE_HOME_GRID
   export PATH=${ORACLE_HOME}/bin:${PATH}
-  echo "OK"
 fi
 
 if iscmd rlwrap; then
@@ -29,4 +27,6 @@ if iscmd rlwrap; then
   alias rman="rlwrap rman"
   alias asmcmd="rlwrap asmcmd"
 fi
+
+echo "ORACLE_HOME set to $ORACLE_HOME"
 return 0

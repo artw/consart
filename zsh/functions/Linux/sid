@@ -1,7 +1,11 @@
 #!/usb/bin/env zsh -f
 if iscmd sqlplus; then
   if [ -z $1 ]; then
-    echo "specify oracle sid to set"
+    echo "sets ORACLE_SID"
+    echo "usage: $0 <sid>"
+    if [ ! -z $ORACLE_SID ]; then
+      echo "current ORACLE_SID=$ORACLE_SID"
+    fi
     return 1
   else
     export ORACLE_SID=$1
