@@ -1,0 +1,15 @@
+#!/usr/bin/zsh -f
+RBENV_DIR=$HOME/.rbenv
+RBINST_DIR=$RBENV_DIR/plugins/ruby-build
+
+if [[ -d $RBENV_DIR ]]; then
+  echo "$RBENV_DIR already exists, do you want to update it?"
+  read answer
+  if [[ $answer =~ ^ye?s?$ ]]; then
+    git-up $RBENV_DIR
+    git-up $RBINST_DIR
+  fi
+else
+  git clone git://github.com/sstephenson/rbenv.git $RBENV_DIR &&
+  git clone git://github.com/sstephenson/ruby-build.git $RBINST_DIR
+fi

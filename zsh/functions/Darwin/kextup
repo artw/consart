@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh -f
+sudo chown -R root:wheel /System/Library/Extensions &&
+sudo diskutil repairPermissions / && 
+echo "Rebuilding kext caches.." && 
+sudo kextcache -system-prelinked-kernel && 
+sudo kextcache -system-caches && 
+echo "Done."
