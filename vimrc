@@ -33,6 +33,7 @@ set incsearch                  "  search as we type
 "set nu                        "  show line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
+set clipboard=unnamed          "  use system clipboard register by default
 
 syntax on
 filetype plugin indent on
