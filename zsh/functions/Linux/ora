@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh -f
 # prepares the shell for oracle stuff
 
-if [[ -z $ORACLE_HOME_DB || -z $ORACLE_HOME_GRID ]]; then
+if [[ -z $ORACLE_HOME_DB && -z $ORACLE_HOME_GRID ]]; then
   echo "you must set ORACLE_HOME_DB or ORACLE_HOME_GRID in your zshrc.local"
   return 1
 fi
