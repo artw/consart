@@ -1,6 +1,6 @@
 !!!( Xft settings
 ! set dpi for fonts
-!Xft.dpi: 96
+Xft.dpi: 96
 !!!)
 
 !!!( XTerm settings
@@ -33,7 +33,7 @@ XTerm.vt100.cursorColor: lime green
 
 ! font
 XTerm.vt100.faceName: ProFont
-XTerm.vt100.faceSize: 11
+XTerm.vt100.faceSize: 13
 
 ! show boxes instead of missing glyphs
 XTerm.vt100.showMissingGlyphs: true
