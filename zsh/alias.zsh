@@ -55,7 +55,7 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias port="${sudo}portmaster"
+  alias port="${sudo}portmaster -t --clean-distfiles -y --clean-packages"
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
