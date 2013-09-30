@@ -55,7 +55,7 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias port="${sudo}portmaster -t --clean-distfiles -y --clean-packages"
+  alias port="${sudo}portmaster"
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
@@ -88,6 +88,7 @@ alias h='fc -l 1'
 alias hs='fc -l 1 | grep'
 alias j='jobs'
 alias l='ls'
+alias md='mkdir'
 alias t='touch'
 #
 
@@ -115,7 +116,6 @@ iscmd gvim && alias ge=gvim
 if iscmd sudo; then
   alias sudo="nocorrect sudo -E"
   alias '#'='sudo'
-  alias '£'='sudo'
 fi
 #
 
