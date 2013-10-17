@@ -1,0 +1,20 @@
+#!/usr/bin/env/zsh -f
+if [[ -z $1 ]]; then
+	echo "usage: $0 <rawdisk>"
+	return 2
+fi
+rawdisk=$1
+if [[ -b $rawdisk ]]; then
+echo "Setting device ownership"
+sudo chown $USERNAME $rawdisk
+echo "Holding the device by unmounting disk partitions every 2 seconds"
+while [[ 1 = 1 ]]; do
+	mount | grep $rawdisk > /dev/null
+	if [[ $? -eq 0 ]]; then
+		diskutil unmountDisk $rawdisk
+	fi
+	sleep 2
+done
+else 
+echo "$rawdisk is not a block device"
+fi
