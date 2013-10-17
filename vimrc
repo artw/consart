@@ -1,5 +1,15 @@
 "" vundle
-set rtp+=~/.vim/bundle/vundle
+" clone vundle if it does not exist
+let vundle_dir = $HOME . "/.vim/bundle/vundle"
+
+if !isdirectory(vundle_dir)
+  echo "Cloning Vundle..."
+  echo ""
+  silent !mkdir -p vundle_dir
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle/
+endif
+
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 " plugins
@@ -9,7 +19,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 " colorthemes
 Bundle 'twerth/ir_black'
-"
 ""
 
 "" settings:

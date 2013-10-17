@@ -22,7 +22,7 @@ fi
 #
 
 # hostname (for title function)
-  export HOSTNAME=`hostname`
+  export HOSTNAME=`hostname -s`
 #
 
 # allows using C-S and C-Q in vim maps
