@@ -49,7 +49,7 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_macvim') || has('gui_win32')
-    set gfn=ProFont:h13
+    set gfn=ProFont:h14
   elseif has('gui_gtk') 
     set gfn=ProFont\ 11
   endif
