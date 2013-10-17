@@ -17,6 +17,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
+Bundle 'junegunn/vim-easy-align'
 " colorthemes
 Bundle 'twerth/ir_black'
 ""
@@ -30,8 +31,9 @@ set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
 set tabstop=2
 
-set novisualbell               "  no flickering
-set noerrorbells               "  no beep
+set noeb vb t_vb=              " no bells and whistles
+au GUIEnter * set vb t_vb=     
+
 set wildmenu                   "  completion menu
 set wildmode=list:longest,full "  complete longest first
 set ruler                      "  enable ruler bar
@@ -47,7 +49,6 @@ set clipboard=unnamed          "  use system clipboard register by default
 syntax on
 filetype plugin indent on
 
-
 " enable mouse if available
 if has('mouse')
   set mouse=a
@@ -57,7 +58,7 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_macvim') || has('gui_win32')
-    set gfn=ProFont:h13
+    set gfn=ProFont:h14
   elseif has('gui_gtk') 
     set gfn=ProFont\ 11
   endif
