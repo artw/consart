@@ -3,3 +3,4 @@
 .gitignore
 .netrwhist
 vim/bundle
+.DS_Store
