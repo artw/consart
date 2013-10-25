@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh -f
 sudo chown -R root:wheel /System/Library/Extensions &&
+sudo chmod -R 755 /System/Library/Extensions &&
 sudo diskutil repairPermissions / && 
 echo "Rebuilding kext caches.." && 
 sudo kextcache -system-prelinked-kernel && 
