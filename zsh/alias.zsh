@@ -51,6 +51,8 @@ darwin*)
   iscmd htop && alias htop="${sudo}htop"
   iscmd mvim && alias gvim="mvim"
   iscmd brew && alias brewup="brew update && brew upgrade && brew cleanup"
+
+  alias zzz="pmset sleepnow"
 ;;
 
 freebsd*)
