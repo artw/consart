@@ -53,6 +53,7 @@ path_dirs=(
    /usr/libexec
 
    /usr/X11R6/bin
+   /usr/local/kde4/bin
 )
 #
 
