@@ -3,7 +3,7 @@ setopt prompt_subst
 
 # draw user@host if ssh
 if [[ -c $SSH_TTY ]]; then
-  at='%n%B%F{yellow}@%f%b%m:'
+  at='%n%B%F{yellow}@%f%b%m '
 fi;
 
 local -a color
@@ -13,5 +13,5 @@ else
   color=white
 fi
 
-PROMPT='%B%F{$color}%(!.#.$)%b%f '
-RPROMPT='$at%~ %F{blue}[%F{white}%*%F{blue}]%f'
+PROMPT='$at%B%F{$color}%(!.#.$)%b%f '
+RPROMPT='%~ %F{blue}[%F{white}%*%F{blue}]%f'
