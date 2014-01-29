@@ -12,6 +12,10 @@ XTerm.vt100.loginShell: true
 
 ! large scroll buffer
 XTerm.vt100.scrollLines: 5000
+
+! no border
+XTerm.vt100.borderWidth: 0
+
 ! enable scrollbar
 XTerm.vt100.scrollBar: true
 
