@@ -1,8 +1,8 @@
 set $alt Mod1
 set $mod Mod4
 
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font pango:ProFont 9
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:ProFont 9
 
 # start terminal
 bindsym $mod+grave exec xterm
@@ -52,19 +52,19 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+d floating toggle
+bindsym $mod+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+f focus mode_toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+Return fullscreen
 
 # focus the parent container
 bindsym $mod+c focus parent
 
 # focus the child container
-bindsym $mod+shift+c focus child
+bindsym $mod+Shift+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
