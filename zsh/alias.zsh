@@ -61,6 +61,7 @@ freebsd*)
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
+  iscmd poudriere && alias poudriere="${sudo}poudriere"
 ;;
 
 openbsd*)
