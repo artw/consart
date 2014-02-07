@@ -37,10 +37,13 @@ XTerm.vt100.cursorColor: lime green
 
 ! font
 XTerm.vt100.faceName: ProFont
-XTerm.vt100.faceSize: 11
+XTerm.vt100.faceSize: 9
 
 ! show boxes instead of missing glyphs
 XTerm.vt100.showMissingGlyphs: true
+
+! disable fullscreen mode
+XTerm.fullscreen: never
 
 !!( colors - Murena scheme
 XTerm.vt100.background: #191C1E
