@@ -57,7 +57,8 @@ darwin*)
 
 freebsd*)
   alias ls=" ls -FIG"
-  alias port="${sudo}portmaster"
+  iscmd portmaster && alias portmaster="${sudo}portmaster"
+  iscmd poudriere && alias poudriere="${sudo}poudriere"
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
