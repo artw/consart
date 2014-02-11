@@ -5,26 +5,26 @@
 
 !!!( XTerm settings
 ! set TERM
-XTerm.termName: xterm-256color
+!XTerm.termName: xterm-256color
 
 ! source .profile on start, etc
-XTerm.vt100.loginShell: true
+XTerm*loginShell: true
 
 ! large scroll buffer
-XTerm.vt100.scrollLines: 5000
+XTerm*scrollLines: 5000
 
 ! no border
-XTerm.vt100.borderWidth: 0
+XTerm*borderWidth: 0
 
 ! enable scrollbar
-XTerm.vt100.scrollBar: true
+XTerm*scrollBar: true
 
 ! scrollbar colors
-XTerm.vt100.scrollbar.background: #729FCF
-XTerm.vt100.scrollbar.foreground: #000000
+XTerm*scrollbar.background: #729FCF
+XTerm*scrollbar.foreground: #000000
 
 ! scrollbar mouse drag (from man) 
-XTerm.vt100.scrollbar.translations: #override \n\
+XTerm*scrollbar.translations: #override \n\
   <Btn5Down>: StartScroll(Forward) \n\
   <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
   <Btn4Down>: StartScroll(Backward) \n\
@@ -32,46 +32,49 @@ XTerm.vt100.scrollbar.translations: #override \n\
   <BtnUp>: NotifyScroll(Proportional) EndScroll()
 
 ! green blinking cursor
-XTerm.vt100.cursorBlink: true
-XTerm.vt100.cursorColor: lime green
+XTerm*cursorBlink: true
+XTerm*cursorColor: lime green
 
 ! font
-XTerm.vt100.faceName: ProFont
-XTerm.vt100.faceSize: 9
+XTerm*faceName: ProFont
+XTerm*faceSize: 9
 
 ! show boxes instead of missing glyphs
-XTerm.vt100.showMissingGlyphs: true
+XTerm*showMissingGlyphs: true
 
 ! disable fullscreen mode
 XTerm.fullscreen: never
 
+! disable toolbar
+XTerm*toolBar: false
+
 !!( colors - Murena scheme
-XTerm.vt100.background: #191C1E
-XTerm.vt100.foreground: #FFFFFF
+XTerm*background: #191C1E
+XTerm*foreground: #FFFFFF
 ! black
-XTerm.vt100.color0    : #000000
-XTerm.vt100.color8    : #808080
+XTerm*color0    : #000000
+XTerm*color8    : #808080
 ! red
-XTerm.vt100.color1    : #800000
-XTerm.vt100.color9    : #FF4B00
+XTerm*color1    : #800000
+XTerm*color9    : #FF4B00
 ! green
-XTerm.vt100.color2    : #008000
-XTerm.vt100.color10   : #87C576
+XTerm*color2    : #008000
+XTerm*color10   : #87C576
 ! yellow
-XTerm.vt100.color3    : #808000
-XTerm.vt100.color11   : #FFFF00
+XTerm*color3    : #808000
+XTerm*color11   : #FFFF00
 ! blue
-XTerm.vt100.color4    : #004164
-XTerm.vt100.color12   : #0000FF
+XTerm*color4    : #004164
+XTerm*color12   : #0000FF
 ! magenta   
-XTerm.vt100.color5    : #800080
-XTerm.vt100.color13   : #E68CD7
+XTerm*color5    : #800080
+XTerm*color13   : #E68CD7
 ! cyan
-XTerm.vt100.color6    : #008080
-XTerm.vt100.color14   : #00FFFF
+XTerm*color6    : #008080
+XTerm*color14   : #00FFFF
 ! white
-XTerm.vt100.color7    : #C0C0C0
-XTerm.vt100.color15   : #FFFFFF
+XTerm*color7    : #C0C0C0
+XTerm*color15   : #FFFFFF
 !!)
 
 !!!)
