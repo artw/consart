@@ -1,14 +1,4 @@
 "" vundle
-" clone vundle if it does not exist
-let vundle_dir = $HOME . "/.vim/bundle/vundle"
-
-if !isdirectory(vundle_dir)
-  echo "Cloning Vundle..."
-  echo ""
-  silent !mkdir -p vundle_dir
-  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle/
-endif
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -31,7 +21,7 @@ set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
 set tabstop=2
 
-set noeb vb t_vb=              " no bells and whistles
+set noeb vb t_vb=              "  no bells and whistles
 au GUIEnter * set vb t_vb=     
 
 set wildmenu                   "  completion menu
@@ -44,7 +34,7 @@ set incsearch                  "  search as we type
 "set nu                        "  show line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
-set clipboard=unnamed          "  use system clipboard register by default
+"set clipboard=unnamed          "  use system clipboard register by default
 
 syntax on
 filetype plugin indent on
