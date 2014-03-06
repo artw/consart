@@ -17,14 +17,20 @@ function preexec {
   fi
 }
 
-# indicate command mode in $vimode
+# indicate command mode in $vimode for use in prompt
+vicmd_prompt="%B-- COMMAND --%b "
 function zle-keymap-select {
  if [[ -z $KEYMAP || $KEYMAP == vicmd ]]; then
-   vimode="%B-- COMMAND --%b "
+   vimode=$vicmd_prompt
  else 
    vimode=""
  fi
  zle reset-prompt
 }
-# redefine standard zsh widget with this function
 zle -N zle-keymap-select
+
+# reset vimode on zle newline
+function zle-line-finish {
+  vimode=""
+}
+zle -N zle-line-finish
