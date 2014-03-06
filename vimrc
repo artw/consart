@@ -1,16 +1,18 @@
 "" vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-" plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-surround'
-Bundle 'junegunn/vim-easy-align'
-" colorthemes
-Bundle 'twerth/ir_black'
-""
+if filereadable($HOME . "/.vim/bundle/vundle/autoload/vundle.vim")
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+  Bundle 'gmarik/vundle'
+  " plugins
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'tpope/vim-surround'
+  Bundle 'junegunn/vim-easy-align'
+  " colorthemes
+  Bundle 'twerth/ir_black'
+  ""
+endif
 
 "" settings:
 set smartindent
