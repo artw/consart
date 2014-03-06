@@ -16,3 +16,15 @@ function preexec {
     title $HOSTNAME":" $cmd[1]:t "$cmd[2,-1]"
   fi
 }
+
+# indicate command mode in $vimode
+function zle-keymap-select {
+ if [[ -z $KEYMAP || $KEYMAP == vicmd ]]; then
+   vimode="%B-- COMMAND --%b "
+ else 
+   vimode=""
+ fi
+ zle reset-prompt
+}
+# redefine standard zsh widget with this function
+zle -N zle-keymap-select
