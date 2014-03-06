@@ -1,3 +1,5 @@
+# load external plugins if available
+
 local -a zsh_plugins
 zsh_plugins=(
     $HOME/.zsh/external/z/z.sh
