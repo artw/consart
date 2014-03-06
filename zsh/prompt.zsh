@@ -14,5 +14,6 @@ else
   prompt_color=white
 fi
 
+# vimode is set by a zle-keymap-select "hook"
 PROMPT='$at%B%F{$prompt_color}%(!.#.$)%b%f '
-RPROMPT='%~ %F{blue}[%F{white}%*%F{blue}]%f'
+RPROMPT='${vimode}%~ %F{blue}[%f%*%F{blue}]%f'
