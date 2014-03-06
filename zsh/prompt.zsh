@@ -6,12 +6,13 @@ if [[ -c $SSH_TTY ]]; then
   at='%n%B%F{yellow}@%f%b%m '
 fi;
 
-local -a color
+# red prompt if root
+local -a prompt_color
 if [[ $UID == 0 ]];then
-  color=red
+  prompt_color=red
 else
-  color=white
+  prompt_color=white
 fi
 
-PROMPT='$at%B%F{$color}%(!.#.$)%b%f '
+PROMPT='$at%B%F{$prompt_color}%(!.#.$)%b%f '
 RPROMPT='%~ %F{blue}[%F{white}%*%F{blue}]%f'
