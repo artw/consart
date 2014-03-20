@@ -85,14 +85,6 @@ case $OSTYPE in
 esac
 #
 
-# rbenv specific stuff
-if [[ -d $HOME/.rbenv ]];then 
-  path_dirs+=$HOME/.rbenv/bin
-  path_dirs+=$HOME/.rbenv/shims
-  eval "$($HOME/.rbenv/bin/rbenv init -)"
-fi
-#
-
 # set PATH
 unset PATH
 foreach dir in $path_dirs
