@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh -f
 
-# ruby build, cleaner RVM alternative
+# rbenv, cleaner RVM alternative
 git-clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git-clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
-# z, advanced pwd history
+# z, advanced wd history
 git-clone https://github.com/rupa/z.git ~/.zsh/external/z
 
 # fish like zsh syntax highlighter 
