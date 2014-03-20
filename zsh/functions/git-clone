@@ -12,11 +12,8 @@ GIT_REPO=$1
 INSTALL_DIR=$2
 
 if [[ -d $INSTALL_DIR ]]; then
-  echo "$INSTALL_DIR already exists, do you want to update instead?"
-  read answer
-  if [[ $answer =~ ^ye?s?$ ]]; then
-    git-up $INSTALL_DIR
-  fi
+  echo "$INSTALL_DIR already exists, updating instead"
+  git-up $INSTALL_DIR
 else
   mkdir -p $INSTALL_DIR
   git clone $GIT_REPO $INSTALL_DIR
