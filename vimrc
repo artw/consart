@@ -9,16 +9,16 @@ if filereadable($HOME . "/.vim/bundle/vundle/autoload/vundle.vim")
   Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-surround'
   Bundle 'junegunn/vim-easy-align'
+  Bundle 'mileszs/ack.vim'
   " colorthemes
   Bundle 'twerth/ir_black'
-  ""
 endif
 
 "" settings:
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
-"
+
 set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
 set tabstop=2
@@ -45,8 +45,9 @@ filetype plugin indent on
 if has('mouse')
   set mouse=a
 endif
-"
 
+
+" gui settings
 if has('gui_running')
   " set gui font
   if has('gui_macvim') || has('gui_win32')
@@ -56,10 +57,9 @@ if has('gui_running')
   endif
   set guioptions-=T           "  disable the ugly toolbar
 endif
-""
 
-set bg=dark 
 " set 256 color scheme if possible
+set bg=dark 
 if has('gui_running') || &t_Co == 256
   colorscheme ir_black
 else
@@ -68,11 +68,10 @@ endif
 
 
 "" Xtra commands: 
-command! Xcdc cd %:p:h
-command! Xvimrc edit $MYVIMRC
-command! Xrevim source $MYVIMRC
+" chdir to current file
+command! CD cd %:p:h
 " sudo write:
-command! Xsuw w !sudo tee % > /dev/null
+command! Sudo w !sudo tee % 1> /dev/null 2> /dev/null
 
 "" (re)map keys:
 set pastetoggle=<F12>
@@ -101,9 +100,14 @@ nmap Y y$
 vmap < <gv
 vmap > >gv
 
+"" plugins
+" Start interactive EasyAlign in visual mode
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign with a Vim movement
+nmap <Leader>a <Plug>(EasyAlign)
+
+
 "" abbreviations
 " autocomplete xml tags
 nmap <leader>t i</<C-X><C-O><C-R><C-R>x
-"
-""
-
