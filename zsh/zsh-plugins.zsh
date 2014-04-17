@@ -16,9 +16,7 @@ if [[ -d $HOME/.rbenv ]];then
   eval "$(rbenv init -)"
 fi
 
-
-### installers for plugins
-
+## installers for plugins
 # rbenv, cleaner RVM alternative
 function install_rbenv {
   git-clone https://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -37,5 +35,5 @@ function install_zsh-syntax-highlighting {
 
 # perlbrew, perl installation management tool
 function install_perlbrew {
-  curl -L http://install.perlbrew.pl | bash
+  curl -L http://install.perlbrew.pl | zsh
 }
