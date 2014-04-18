@@ -1,10 +1,9 @@
 # load external plugins if available
 local -a zsh_plugins
 zsh_plugins=(
-    $HOME/.zsh/external/z/z.sh
-    $HOME/.zsh/external/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    $HOME/perl5/perlbrew/etc/bashrc 
-  )
+  $HOME/.zsh/external/z/z.sh
+  $HOME/.zsh/external/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+)
 
 foreach script in $zsh_plugins
   test -f $script && source $script
@@ -14,6 +13,12 @@ end
 if [[ -d $HOME/.rbenv ]];then 
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
+fi
+
+# load perlbrew if installed
+if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
+  export PERLBREW_ROOT=$HOME/.perlbrew
+  source $PERLBREW_ROOT/etc/bashrc
 fi
 
 ## installers for plugins
@@ -35,5 +40,6 @@ function install_zsh-syntax-highlighting {
 
 # perlbrew, perl installation management tool
 function install_perlbrew {
-  curl -L http://install.perlbrew.pl | zsh
+  export PERLBREW_ROOT=$HOME/.perlbrew
+  curl -L http://install.perlbrew.pl | sh
 }
