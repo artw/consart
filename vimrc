@@ -10,6 +10,7 @@ if filereadable($HOME . "/.vim/bundle/vundle/autoload/vundle.vim")
   Bundle 'tpope/vim-surround'
   Bundle 'junegunn/vim-easy-align'
   Bundle 'mileszs/ack.vim'
+  Bundle 'wincent/Command-T'
   " colorthemes
   Bundle 'twerth/ir_black'
 endif
@@ -114,8 +115,3 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign with a Vim movement
 nmap <Leader>a <Plug>(EasyAlign)
-
-
-"" abbreviations
-" autocomplete xml tags
-nmap <leader>t i</<C-X><C-O><C-R><C-R>x
