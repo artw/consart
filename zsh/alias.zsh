@@ -50,7 +50,10 @@ darwin*)
 
   iscmd htop && alias htop="${sudo}htop"
   iscmd mvim && alias gvim="mvim"
-  iscmd brew && alias brewup="brew update && brew upgrade && brew cleanup"
+  if iscmd brew; then
+    alias brewup="brew update && brew upgrade && brew cleanup"
+    alias brewc="brew cask"
+  fi
 
   alias zzz="pmset sleepnow"
 ;;

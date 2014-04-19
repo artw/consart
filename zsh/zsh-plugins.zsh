@@ -43,3 +43,11 @@ function install_perlbrew {
   export PERLBREW_ROOT=$HOME/.perlbrew
   curl -L http://install.perlbrew.pl | sh
 }
+
+# osx homebrew
+if [[ $OSTYPE =~ "^darwin" ]]; then
+  function install_homebrew {
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" &&
+    brew install phinze/cask/brew-cask
+  }
+fi
