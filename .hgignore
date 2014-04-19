@@ -3,5 +3,6 @@
 .gitignore
 .netrwhist
 vim/bundle
+vim/tmp
 zsh/external
 .DS_Store

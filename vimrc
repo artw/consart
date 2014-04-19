@@ -46,6 +46,13 @@ if has('mouse')
   set mouse=a
 endif
 
+" split naturally
+set splitright
+set splitbelow
+
+" save all temporary files in one dir
+set directory=~/.vim/tmp/
+set backupdir=~/.vim/tmp/
 
 " gui settings
 if has('gui_running')
@@ -71,12 +78,13 @@ endif
 " chdir to current file
 command! CD cd %:p:h
 " sudo write:
-command! Sudo w !sudo tee % 1> /dev/null 2> /dev/null
+command! W w !sudo tee % > /dev/null
 
 "" (re)map keys:
 set pastetoggle=<F12>
 
 nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeFind<CR>
 
 " file operation bindings:
 nmap <C-Q> :q!<CR>
