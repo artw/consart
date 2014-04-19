@@ -1,6 +1,5 @@
 ## use sudo in some commands unless root
 iamuser && iscmd sudo && sudo="nocorrect sudo "
-##
 
 ## system specific aliases
 case $OSTYPE in 
@@ -49,7 +48,6 @@ darwin*)
   alias rm_dsstore="find . -name .DS_Store -delete"
 
   iscmd htop && alias htop="${sudo}htop"
-  iscmd mvim && alias gvim="mvim"
   if iscmd brew; then
     alias brewup="brew update && brew upgrade && brew cleanup"
     alias brewc="brew cask"
@@ -65,7 +63,6 @@ freebsd*)
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
-  iscmd poudriere && alias poudriere="${sudo}poudriere"
 ;;
 
 openbsd*)
@@ -76,15 +73,12 @@ solaris*)
   alias ls=" ls --color=auto"
 ;;
 esac
-##
 
 ## universal aliases
-
 # do not correct some commands
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
 alias mkdir='nocorrect mkdir'
-#
 
 # "shortcuts" for most used commands
 alias c='cat'
@@ -97,7 +91,6 @@ alias j='jobs'
 alias l='ls'
 alias md='mkdir'
 alias t='touch'
-#
 
 # ls, cd, etc...
 alias la=' ls -a'
@@ -108,8 +101,7 @@ alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../..'
 
-alias -g dun='du -kax'
-#
+alias -g dua='du -kax'
 
 # editor
 if [[ ! -z $EDITOR ]]; then
@@ -117,29 +109,25 @@ if [[ ! -z $EDITOR ]]; then
   alias _e=${sudo}$EDITOR
 fi
 iscmd gvim && alias ge=gvim
-#
+iscmd mvim && alias ge=mvim
 
 # sudo
 if iscmd sudo; then
   alias sudo="nocorrect sudo -E"
   alias '#'='sudo'
 fi
-#
 
 # plumbing
 alias -g L='| less'
 alias -g G='| grep'
 alias -g Gv='| grep -v'
 alias -g S='| sort -n'
-#
 
 # function like
 alias today='date +%d-%m-%Y'
-#
 
 # X
 iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
-#
 
 # misc software
 if iscmd rsync; then
@@ -180,9 +168,7 @@ if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
   # F keys are broken when 256color, and mouse does not work in screen 
   iscmd htop && alias htop="TERM=xterm htop"
 fi
-#
 
 # consart
 alias rezsh="rehash && source $HOME/.zshrc"
-alias cup="hgu ~/.consart"
-#
+alias cup="cd ~/.consart && hgu"
