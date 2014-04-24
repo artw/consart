@@ -3,8 +3,8 @@ if [[ -z $2 || -z $1 ]]; then
   echo "usage: $0 <repo address> <install dir>"
   return 1
 fi
-if ! iscmd git; then
-  echo "git is not installed"
+if ! iscmd hg; then
+  echo "hg is not installed"
   return 1
 fi
 
@@ -13,10 +13,10 @@ WORKDIR=$2
 
 if [[ -d $WORKDIR ]]; then
   echo "$WORKDIR already exists, trying to update instead"
-  git-up $WORKDIR
+  hg-up $WORKDIR
 else
   mkdir -p $WORKDIR
-  git clone $REPO $WORKDIR
+  hg clone $REPO $WORKDIR
 fi
 
 
