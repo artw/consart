@@ -1,8 +1,8 @@
 "" vundle
-if filereadable($HOME . "/.vim/bundle/vundle/autoload/vundle.vim")
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-  Plugin 'gmarik/vundle'
+if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
+  set rtp+=~/.vim/bundle/Vundle.vim/
+  call vundle#begin()
+  Plugin 'gmarik/Vundle.vim'
   " plugins
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/nerdcommenter'
@@ -11,11 +11,18 @@ if filereadable($HOME . "/.vim/bundle/vundle/autoload/vundle.vim")
   Plugin 'junegunn/vim-easy-align'
   Plugin 'mileszs/ack.vim'
   Plugin 'wincent/Command-T'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'Lokaltog/vim-easymotion'
   " colorthemes
   Plugin 'twerth/ir_black'
+  Plugin 'xoria256.vim'
+  call vundle#end()
 endif
 
 "" settings:
+syntax on
+filetype plugin indent on
+
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
@@ -38,9 +45,6 @@ set incsearch                  "  search as we type
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
-
-syntax on
-filetype plugin indent on
 
 " enable mouse if available
 if has('mouse')
