@@ -1,8 +1,10 @@
-.swp
+.DS_Store
 .git
 .gitignore
 .netrwhist
+.swp
 vim/bundle
+vim/dist
+vim/src
 vim/tmp
 zsh/external
-.DS_Store
