@@ -30,7 +30,7 @@ fi
 local -a path_dirs
 path_dirs=(
    $HOME/.bin
-   $HOME/.consart/bin
+   $HOME/.vim/dist/bin
 
    /opt/sbin
    /opt/local/sbin
