@@ -3,12 +3,12 @@
 echo "== Downloading VIM sources..."
 hg-clone https://vim.googlecode.com/hg/ ~/.vim/src >/dev/null &&
 cd ~/.vim/src &&
-echo "== Compiling..."
+echo "== Compiling..." &&
 make distclean >/dev/null && 
 # use rbenv ruby if available
 ./configure --with-features=HUGE --with-ruby-command=$HOME/.rbenv/shims/ruby --enable-rubyinterp=yes --prefix=$HOME/.vim/dist > /dev/null &&
 make >/dev/null &&
-echo "== Installing..."
-make install > dev/null &&
-cd -
+echo "== Installing..." &&
+make install > /dev/null &&
 echo "== Success."
+cd -
