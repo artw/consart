@@ -2,17 +2,17 @@
 if filereadable($HOME . "/.vim/bundle/vundle/autoload/vundle.vim")
   set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
-  Bundle 'gmarik/vundle'
+  Plugin 'gmarik/vundle'
   " plugins
-  Bundle 'scrooloose/nerdtree'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'tpope/vim-surround'
-  Bundle 'junegunn/vim-easy-align'
-  Bundle 'mileszs/ack.vim'
-  Bundle 'wincent/Command-T'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/nerdcommenter'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-surround'
+  Plugin 'junegunn/vim-easy-align'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'wincent/Command-T'
   " colorthemes
-  Bundle 'twerth/ir_black'
+  Plugin 'twerth/ir_black'
 endif
 
 "" settings:
