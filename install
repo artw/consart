@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+zparseopts f=force x=xorg
+
+configs=(
+  hgrc
+  tmux.conf
+  vim
+  vimrc
+  zsh
+  zshenv
+  zshrc
+)
+
+# x11 specific stuff
+if [[ -n $xorg ]]; then
+configs+=(
+  X/compton.conf
+  X/fonts.conf
+  X/gtkrc-2.0
+  X/i3
+  X/Xdefaults
+  X/xinitrc
+  X/Xmodmap
+)
+fi
+
+foreach f in $configs
+  dest=${HOME}/.$f
+  src=`dirname $0`/$f
+  ln -sFni ${force} $src $dest 
+end
