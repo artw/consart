@@ -1,0 +1,9 @@
+#!/bin/sh
+# space switching delay when dragging windows to screen borders
+defaults write com.apple.dock workspaces-edge-delay -float 5
+
+# dock icon size
+defaults write com.apple.dock tilesize -int 40
+
+# dock icon size when magnified
+defaults write com.apple.dock largesize -int 50
