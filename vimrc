@@ -14,8 +14,9 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'Lokaltog/vim-easymotion'
   " colorthemes
-  Plugin 'twerth/ir_black'
   Plugin 'xoria256.vim'
+  Plugin 'quanganhdo/grb256'
+  Plugin 'Lokaltog/vim-distinguished'
   call vundle#end()
 endif
 
@@ -73,7 +74,7 @@ endif
 " set 256 color scheme if possible
 set bg=dark 
 if has('gui_running') || &t_Co == 256
-  colorscheme ir_black
+  colorscheme grb256
 else
   colorscheme torte
 endif
