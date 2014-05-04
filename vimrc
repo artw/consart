@@ -4,15 +4,15 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   " plugins
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'scrooloose/nerdcommenter'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'tpope/vim-surround'
+  Plugin 'Lokaltog/vim-easymotion'
   Plugin 'junegunn/vim-easy-align'
   Plugin 'mileszs/ack.vim'
-  Plugin 'wincent/Command-T'
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'scrooloose/nerdcommenter'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-surround'
+  "Plugin 'Valloric/YouCompleteMe'
+  "Plugin 'wincent/Command-T'
   " colorthemes
   Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
