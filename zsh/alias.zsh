@@ -54,6 +54,7 @@ darwin*)
   fi
 
   alias zzz="pmset sleepnow"
+  alias -g ±=~
 ;;
 
 freebsd*)
