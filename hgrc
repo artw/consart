@@ -4,7 +4,7 @@ merge = vimdiff
 
 [merge-tools]
 vimdiff.executable = vim
-vimdiff.args = -d -c "wincmd J" "$output" "$local" "$other" "$base"
+vimdiff.args = -d $base $local $output $other +close +close
 
 [extensions]
 color =
