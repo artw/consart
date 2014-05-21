@@ -20,13 +20,6 @@ if [[ $1 == 'grid' && -d $ORACLE_HOME_GRID ]]; then
   export ORACLE_HOME=$ORACLE_HOME_GRID
   export PATH=${ORACLE_HOME}/bin:${PATH}
 fi
-
-if iscmd rlwrap; then
-  alias sqlplus="rlwrap sqlplus"
-  alias sql="rlwrap sqlplus / as sysdba"
-  alias rman="rlwrap rman"
-  alias asmcmd="rlwrap asmcmd"
-fi
-
+export NLS_DATE_FORMAT="dd-mm-yy hh24:mi:ss"
 echo "ORACLE_HOME set to $ORACLE_HOME"
 return 0
