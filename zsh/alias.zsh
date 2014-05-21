@@ -160,6 +160,14 @@ fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
 
+# oracle
+if iscmd rlwrap; then
+  iscmd sqlplus && alias sqlplus="rlwrap sqlplus"
+  iscmd sqlplus && alias sql="rlwrap sqlplus / as sysdba"
+  iscmd rman && alias rman="rlwrap rman"
+  iscmd asmcmd && alias asmcmd="rlwrap asmcmd"
+fi
+
 # fix mouseable apps in screen/tmux
 if [[ $TERM == screen-256color ]]; then
   iscmd mc && alias mc="TERM=xterm-256color mc"
