@@ -11,8 +11,8 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
-  "Plugin 'Valloric/YouCompleteMe'
-  "Plugin 'wincent/Command-T'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'wincent/Command-T'
   " colorthemes
   Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
