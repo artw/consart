@@ -10,3 +10,6 @@ defaults write com.apple.dock largesize -int 50
 
 # enable key repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+# faster expose animations
+defaults write com.apple.dock expose-animation-duration -float 0.1337
