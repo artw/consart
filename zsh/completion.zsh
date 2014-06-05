@@ -19,7 +19,8 @@ zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=37=31"
 
 # menu and style
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' regular off # do not expand regular aliases 
+zstyle ':completion:*' completer _expand_alias _expand _complete _ignored _approximate 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors "$LS_COLORS"
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
