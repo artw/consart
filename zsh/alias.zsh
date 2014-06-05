@@ -54,7 +54,8 @@ darwin*)
   fi
 
   alias zzz="pmset sleepnow"
-  alias -g ±=~
+  alias -g "±"=$HOME
+  alias "£"="sudo"
 ;;
 
 freebsd*)
@@ -115,7 +116,8 @@ iscmd mvim && alias ge=mvim
 # sudo
 if iscmd sudo; then
   alias sudo="nocorrect sudo -E"
-  alias '#'='sudo'
+  alias -g '#'='sudo'
+  alias -g '##'='sudo !$'
 fi
 
 # plumbing
