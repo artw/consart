@@ -3,6 +3,7 @@ local -a zsh_plugins
 zsh_plugins=(
   $HOME/.zsh/external/z/z.sh
   $HOME/.zsh/external/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  $HOME/.zsh/external/zsh-history-substring-search/zsh-history-substring-search.zsh
 )
 
 foreach script in $zsh_plugins
@@ -36,6 +37,11 @@ function install_z {
 # fish like zsh syntax highlighter 
 function install_zsh-syntax-highlighting {
   git-clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/external/zsh-syntax-highlighting
+} 
+
+# fish like history substring search
+function  install_zsh-history-substring-search {
+  git-clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/external/zsh-history-substring-search
 }
 
 # perlbrew, perl installation management tool
