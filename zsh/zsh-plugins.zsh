@@ -22,6 +22,14 @@ if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
   source $PERLBREW_ROOT/etc/bashrc
 fi
 
+# bind up/down j/k to substring search if available
+if [[ -f $HOME/.zsh/external/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+  bindkey -M vicmd 'k' history-substring-search-up
+  bindkey -M vicmd 'j' history-substring-search-down
+fi
+
 ## installers for plugins
 # rbenv, cleaner RVM alternative
 function install_rbenv {
