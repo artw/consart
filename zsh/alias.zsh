@@ -31,6 +31,7 @@ linux*)
   # MIPS device with optware (f.e. router)
   if [[ $(uname -m) -eq 'mips' ]]; then
     iscmd hg-py2.7 && alias -g hg="hg-py2.7"
+    unalias grep
   fi
 ;;
 
