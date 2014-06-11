@@ -26,6 +26,17 @@ fi
 
 foreach f in $configs
   dest=${HOME}/.$f
-  src=`dirname $0`/$f
-  ln -sFni ${force} $src $dest 
+  src=$(dirname $0)/$f
+  # delete if exists, ask if not forced
+  if [[ -e $dest ]]; then
+    if [[ -n $force ]]; then
+      rm -rf $dest
+    else
+      rm -ri $dest
+    fi
+  fi
+  # check again before linking
+  if [[ -e $dest ]]; then
+    ln -s $src $dest 
+  fi
 end
