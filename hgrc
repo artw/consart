@@ -9,6 +9,7 @@ vimdiff.args = -d $base $local $output $other +close +close
 [extensions]
 color =
 shelve =
+record =
 
 [color]
 mode = auto
