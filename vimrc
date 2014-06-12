@@ -46,6 +46,7 @@ set incsearch                  "  search as we type
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
+"set ve=all                    "  put cursor anywhere in the file
 
 " enable mouse if available
 if has('mouse')
