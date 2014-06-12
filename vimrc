@@ -13,6 +13,7 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   Plugin 'tpope/vim-surround'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'wincent/Command-T'
+  "Plugin 'talek/vorax4'
   " colorthemes
   Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
