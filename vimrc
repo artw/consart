@@ -39,15 +39,15 @@ au GUIEnter * set vb t_vb=
 set wildmenu                   "  completion menu
 set wildmode=list:longest,full "  complete longest first
 set ruler                      "  enable ruler bar
-"set virtualedit=onemore       "  allow cursor beyond last character
 set incsearch                  "  search as we type
 "set hlsearch                  "  highligh search matches
 "set list                      "  show unpritable chars
-"set nu                        "  show line numbers
+"set number                    "  show line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
-"set ve=all                    "  put cursor anywhere in the file
+"set virtualedit=onemore       "  allow cursor beyond last character
+"set virtualedit=all           "  put cursor anywhere in the file
 
 " enable mouse if available
 if has('mouse')
@@ -81,12 +81,11 @@ else
   colorscheme torte
 endif
 
-
-"" Xtra commands: 
+"" Extra commands: 
 " chdir to current file
 command! CD cd %:p:h
 " sudo write:
-command! W w !sudo tee % > /dev/null
+command! Sudow w !sudo tee % > /dev/null
 
 "" (re)map keys:
 set pastetoggle=<F12>
