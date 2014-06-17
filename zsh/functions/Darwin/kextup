@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh -f
+echo "Fixing Permissions..." &&
+sudo chown -R root:wheel /System/Library/Extensions &&
+sudo chmod -R 755 /System/Library/Extensions &&
+#sudo diskutil repairPermissions / && 
+echo "Rebuilding kext caches..." && 
+sudo kextcache -system-prelinked-kernel && 
+sudo kextcache -system-caches && 
+echo "Done."

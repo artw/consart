@@ -1,0 +1,15 @@
+[ui]
+username = Art Win <art@make.lv>
+merge = vimdiff
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
+
+[extensions]
+color =
+shelve =
+record =
+
+[color]
+mode = auto
