@@ -48,6 +48,8 @@ set linespace=0                "  more compact text
 "set clipboard=unnamed         "  use system clipboard register by default
 "set virtualedit=onemore       "  allow cursor beyond last character
 "set virtualedit=all           "  put cursor anywhere in the file
+set ignorecase                 "
+set smartcase                  "  ignore case when lowercase, don't ignore if not
 
 " enable mouse if available
 if has('mouse')
