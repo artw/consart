@@ -57,6 +57,11 @@ darwin*)
   alias zzz="pmset sleepnow"
   alias -g "±"=$HOME
   alias "£"="sudo"
+  if [[ -x "/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
+    alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+  elif [[ -x "$HOME/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
+    alias vlc="$HOME/Applications/VLC.app/Contents/MacOS/VLC"
+  fi
 ;;
 
 freebsd*)
