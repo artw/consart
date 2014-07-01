@@ -7,9 +7,11 @@ if [[ ! -d $1/.git && ! -d .git ]]; then
 fi
 
 if [[ -d $1/.git ]]; then
-  cd $1
-else
-  cd .
+  repo=$1
+  cd $repo
+elif [[ ! -d $PWD/.git ]]; then
+  echo "Not a git repo"
+  return 1
 fi
 
 if [[ $(stat -f %u .) == 0 ]]; then
