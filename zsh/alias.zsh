@@ -45,7 +45,7 @@ darwin*)
   alias ls=" ls -GF"
   alias finder="open -a Finder"
   alias run="open -a"
-  alias mdlocate="mdfind -name"
+  alias sl="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
 
   iscmd htop && alias htop="${sudo}htop"
