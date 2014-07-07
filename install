@@ -14,12 +14,10 @@ configs=(
 # x11 specific stuff
 if [[ -n $xorg ]]; then
 configs+=(
-  X/compton.conf
   X/fonts.conf
   X/gtkrc-2.0
   X/i3
   X/Xdefaults
-  X/xinitrc
   X/Xmodmap
 )
 fi
