@@ -19,6 +19,7 @@ configs+=(
   X/i3
   X/Xdefaults
   X/Xmodmap
+  X/vimperatorrc
 )
 fi
 
