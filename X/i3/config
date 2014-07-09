@@ -1,8 +1,8 @@
 set $alt Mod1
 set $mod Mod4
 
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font pango:ProFont 9
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:ProFont 8
 
 # start terminal
 bindsym $mod+grave exec xterm
@@ -14,9 +14,9 @@ bindsym $mod+F1 exec firefox
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec "dmenu_run -fn ProFont-8"
 # dmenu with .desktop shortcuts
-bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i"
+bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn ProFont-8" 
 
 # change focus
 bindsym $mod+h focus left
