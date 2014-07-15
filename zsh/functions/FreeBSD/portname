@@ -4,4 +4,7 @@ if [[ -z $1 || $1 == '-h' ]]; then
   return 1
 fi
 
-whereis -sq $1 | sed -e 's#/usr/ports/##'
+for n in $@; do
+  whereis -sq $n | sed -e 's#/usr/ports/##' | grep .
+done;
+
