@@ -18,7 +18,6 @@ configs+=(
   X/gtkrc-2.0
   X/i3
   X/Xdefaults
-  X/Xmodmap
   X/xxkbrc
   X/vimperatorrc
 )
