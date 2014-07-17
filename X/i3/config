@@ -8,7 +8,8 @@ font pango:ProFont 8
 bindsym $mod+grave exec xterm
 
 # start browser
-bindsym $mod+F1 exec firefox
+bindsym $mod+F1 exec pcmanfm
+bindsym $mod+F2 exec opera
 
 # kill focused window
 bindsym $mod+w kill
