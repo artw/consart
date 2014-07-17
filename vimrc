@@ -42,7 +42,8 @@ set ruler                      "  enable ruler bar
 set incsearch                  "  search as we type
 "set hlsearch                  "  highligh search matches
 "set list                      "  show unpritable chars
-"set number                    "  show line numbers
+set number                    "  show line numbers
+set relativenumber             "  show relative line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
