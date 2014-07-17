@@ -68,6 +68,7 @@ freebsd*)
   alias ls=" ls -FIG"
   iscmd portmaster && alias portmaster="${sudo}portmaster"
   iscmd poudriere && alias poudriere="${sudo}poudriere"
+  iscmd pkg && alias pkg="${sudo}pkg"
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
