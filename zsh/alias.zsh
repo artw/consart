@@ -139,6 +139,7 @@ alias today='date +%d-%m-%Y'
 
 # X
 iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
+iscmd startx && alias startx="cd ~ && startx"
 
 # misc software
 if iscmd rsync; then
@@ -147,7 +148,7 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="tmux attach || tmux new"
+  alias tx="cd ~ && tmux attach || tmux new"
   alias tmux-b="tmux set-option -g prefix C-b"
   alias tmux-a="tmux set-option -g prefix C-a"
 fi
