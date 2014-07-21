@@ -4,10 +4,11 @@
 !!!)
 
 !!!( URxvt settings
+URxvt*termName: xterm-256color
 URxvt*saveLines:10000
 URxvt*foreground:White
 URxvt*background:Black
-URxvt*font: xft:ProFont:pixelsize=12
+URxvt*font: xft:ProFont:size=9
 URxvt*color12:RoyalBlue
 URxvt*scrollstyle:plain
 !!( colors - Murena scheme
