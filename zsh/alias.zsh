@@ -182,6 +182,8 @@ fi
 # fix mouseable apps in screen/tmux
 if [[ $TERM == screen-256color ]]; then
   iscmd mc && alias mc="TERM=xterm-256color mc"
+elif [[ $TERM == screen ]]; then
+  iscmd mc && alias mc="TERM=xterm mc"
 fi
 
 if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
