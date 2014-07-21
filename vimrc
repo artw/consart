@@ -28,6 +28,7 @@ filetype plugin indent on
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
+"set scrolloff=5               "  scroll down when on <x> line
 
 set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
