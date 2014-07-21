@@ -3,6 +3,15 @@
 !Xft.dpi: 96
 !!!)
 
+!!!( URxvt settings
+URxvt*saveLines:10000
+URxvt*foreground:White
+URxvt*background:Black
+URxvt*font: xft:ProFont:pixelsize=12
+URxvt*color12:RoyalBlue
+URxvt*scrollstyle:plain
+!!!)
+
 !!!( XTerm settings
 ! set TERM
 !XTerm.termName: xterm-256color
