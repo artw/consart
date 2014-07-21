@@ -5,7 +5,8 @@ set $mod Mod4
 font pango:ProFont 8
 
 # start terminal
-bindsym $mod+grave exec xterm
+#bindsym $mod+grave exec xterm
+bindsym $mod+grave exec urxvtc
 
 # start browser
 bindsym $mod+F1 exec pcmanfm
