@@ -28,3 +28,6 @@ zstyle ':completion:*:descriptions' format '%U%F{blue}%d%f%u'
 
 # complete sudo
 zstyle ':completion:*:sudo:*' command-path assign $fpath
+
+# ignore completion functions for not existent commands
+zstyle ':completion:*:functions' ignored-patterns '_*'
