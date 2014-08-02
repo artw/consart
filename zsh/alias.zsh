@@ -45,7 +45,7 @@ darwin*)
   alias ls=" ls -GF"
   alias finder="open -a Finder"
   alias run="open -a"
-  alias mdlocate="mdfind -name"
+  alias sl="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
 
   iscmd htop && alias htop="${sudo}htop"
@@ -57,15 +57,22 @@ darwin*)
   alias zzz="pmset sleepnow"
   alias -g "±"=$HOME
   alias "£"="sudo"
+  if [[ -x "/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
+    alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+  elif [[ -x "$HOME/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
+    alias vlc="$HOME/Applications/VLC.app/Contents/MacOS/VLC"
+  fi
 ;;
 
 freebsd*)
   alias ls=" ls -FIG"
   iscmd portmaster && alias portmaster="${sudo}portmaster"
   iscmd poudriere && alias poudriere="${sudo}poudriere"
+  iscmd pkg && alias pkg="${sudo}pkg"
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
+  iscmd ezjail-admin && alias ezj="${sudo}ezjail-admin"
 ;;
 
 openbsd*)
@@ -132,6 +139,7 @@ alias today='date +%d-%m-%Y'
 
 # X
 iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
+iscmd startx && alias startx="cd ~ && startx"
 
 # misc software
 if iscmd rsync; then
@@ -140,7 +148,7 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="tmux attach || tmux new"
+  alias tx="cd ~ && tmux attach || tmux new"
   alias tmux-b="tmux set-option -g prefix C-b"
   alias tmux-a="tmux set-option -g prefix C-a"
 fi
@@ -174,6 +182,8 @@ fi
 # fix mouseable apps in screen/tmux
 if [[ $TERM == screen-256color ]]; then
   iscmd mc && alias mc="TERM=xterm-256color mc"
+elif [[ $TERM == screen ]]; then
+  iscmd mc && alias mc="TERM=xterm mc"
 fi
 
 if [[ $TERM == xterm-256color || $TERM == screen* ]]; then

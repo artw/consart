@@ -1,22 +1,24 @@
 set $alt Mod1
 set $mod Mod4
 
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font pango:ProFont 9
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:ProFont 8
 
 # start terminal
-bindsym $mod+grave exec xterm
+#bindsym $mod+grave exec xterm
+bindsym $mod+grave exec urxvtc
 
 # start browser
-bindsym $mod+F1 exec firefox
+bindsym $mod+F1 exec pcmanfm
+bindsym $mod+F2 exec surf duckduckgo.com
 
 # kill focused window
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec "dmenu_run -fn ProFont-8"
 # dmenu with .desktop shortcuts
-bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i"
+bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn ProFont-8" 
 
 # change focus
 bindsym $mod+h focus left
@@ -52,13 +54,13 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+f floating toggle
+bindsym $mod+Return floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+f focus mode_toggle
+bindsym $mod+Shift+Return focus mode_toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Return fullscreen
+bindsym $mod+f fullscreen
 
 # focus the parent container
 bindsym $mod+c focus parent
@@ -89,6 +91,9 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# toggle bar visibility
+bindsym $mod+b bar hidden_state toggle
 
 # reload the configuration file
 bindsym $mod+End reload
@@ -137,7 +142,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   position top
-  mode hide
+#  mode hide
   modifier $mod
   status_command i3status
 }
