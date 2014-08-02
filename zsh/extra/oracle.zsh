@@ -18,11 +18,11 @@ if [[ -d $ORACLE_HOME_DB || -d $ORACLE_HOME_GRID ]]; then
 fi
 
 # aliases 
-if iscmd rlwrap; then
-  iscmd sqlplus && alias sqlplus="rlwrap sqlplus"
-  iscmd sqlplus && alias sql="rlwrap sqlplus / as sysdba"
-  iscmd rman && alias rman="rlwrap rman"
-  iscmd asmcmd && alias asmcmd="rlwrap asmcmd"
+if `which rlwrap 1>/dev/null` ; then
+  alias sqlplus="rlwrap sqlplus"
+  alias sql="rlwrap sqlplus / as sysdba"
+  alias rman="rlwrap rman"
+  alias asmcmd="rlwrap asmcmd"
 fi
 
 # functions
