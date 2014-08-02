@@ -63,12 +63,12 @@ function sid {
       fi
       echo "sets ORACLE_SID"
       echo "usage: $0 <sid>"
-      # for prompt
+      typeset -gA rprompt_extra
       rprompt_extra(oracle_sid '')
       return 1
     else
       export ORACLE_SID=$1
-      # for prompt
+      typeset -gA rprompt_extra
       rprompt_extra=(oracle_sid "%B%F{red}[%f${ORACLE_SID}%F{red}]%f%b ")
       return 0
     fi
