@@ -16,4 +16,4 @@ fi
 
 # vimode is set by a zle-keymap-select "hook"
 PROMPT='$at%B%F{$prompt_color}%(!.#.$)%b%f '
-RPROMPT='${vimode}${oracle_sid}%~ %F{blue}[%f%*%F{blue}]%f'
+RPROMPT='${vimode}${(v)rprompt_extra}%~ %F{blue}[%f%*%F{blue}]%f'
