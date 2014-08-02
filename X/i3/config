@@ -54,13 +54,13 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+f floating toggle
+bindsym $mod+Return floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+f focus mode_toggle
+bindsym $mod+Shift+Return focus mode_toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Return fullscreen
+bindsym $mod+f fullscreen
 
 # focus the parent container
 bindsym $mod+c focus parent
@@ -142,7 +142,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   position top
-  mode hide
+#  mode hide
   modifier $mod
   status_command i3status
 }
