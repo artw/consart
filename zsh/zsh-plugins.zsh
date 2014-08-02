@@ -37,6 +37,19 @@ function install_rbenv {
   git-clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 }
 
+# q, "text as data", work with text using sql (requires python)
+function install_q {
+  if [[ -x ~/.bin/q ]]; then
+    echo "q is already at ~/.bin/q"
+    return 1
+  else
+    mkdir -p ~/.bin &&
+    curl https://cdn.rawgit.com/harelba/q/1.4.0/bin/q\?source=install_page 1> ~/.bin/q 2>/dev/null &&
+    chmod +x ~/.bin/q
+    echo "q installed to ~/.bin/q"
+  fi
+}
+
 # z, advanced wd history
 function install_z {
   git-clone https://github.com/rupa/z.git ~/.zsh/external/z
