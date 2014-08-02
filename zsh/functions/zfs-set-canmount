@@ -10,4 +10,4 @@ if [[ -z $1 || -z $2 || $1 == "-h" || $1 == "--help" ]]; then
   return 1
 fi;
 
-zfs list -Hr $1 | cut -d "	" -f 1  | xargs -L1 sudo zfs set canmount=$2
+${sudo}zfs list -Hr $1 | cut -d "	" -f 1  | xargs -L1 ${sudo}zfs set canmount=$2
