@@ -1,0 +1,118 @@
+!!!( Xft settings
+! set dpi for fonts
+!Xft.dpi: 96
+!!!)
+
+!!!( URxvt settings
+URxvt*termName: xterm-256color
+URxvt*saveLines:10000
+URxvt*foreground:White
+URxvt*background:Black
+URxvt*font: xft:ProFont:size=9
+URxvt*color12:RoyalBlue
+URxvt*scrollstyle:plain
+!!( colors - Murena scheme
+URxvt*background: #191C1E
+URxvt*foreground: #FFFFFF
+! black
+URxvt*color0    : #000000
+URxvt*color8    : #808080
+! red
+URxvt*color1    : #800000
+URxvt*color9    : #FF4B00
+! green
+URxvt*color2    : #008000
+URxvt*color10   : #87C576
+! yellow
+URxvt*color3    : #808000
+URxvt*color11   : #FFFF00
+! blue
+URxvt*color4    : #004164
+URxvt*color12   : #3366FF
+! magenta   
+URxvt*color5    : #800080
+URxvt*color13   : #E68CD7
+! cyan
+URxvt*color6    : #008080
+URxvt*color14   : #00FFFF
+! white
+URxvt*color7    : #C0C0C0
+URxvt*color15   : #FFFFFF
+!!)
+!!!)
+
+!!!( XTerm settings
+! set TERM
+!XTerm.termName: xterm-256color
+
+! source .profile on start, etc
+XTerm*loginShell: true
+
+! large scroll buffer
+XTerm*scrollLines: 5000
+
+! no border
+XTerm*borderWidth: 0
+
+! enable scrollbar
+XTerm*scrollBar: true
+
+! scrollbar colors
+XTerm*scrollbar.background: #729FCF
+XTerm*scrollbar.foreground: #000000
+
+! scrollbar mouse drag (from man) 
+XTerm*scrollbar.translations: #override \n\
+  <Btn5Down>: StartScroll(Forward) \n\
+  <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+  <Btn4Down>: StartScroll(Backward) \n\
+  <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+  <BtnUp>: NotifyScroll(Proportional) EndScroll()
+
+! green blinking cursor
+XTerm*cursorBlink: true
+XTerm*cursorColor: lime green
+
+! font
+XTerm*faceName: ProFont
+XTerm*faceSize: 9
+
+! show boxes instead of missing glyphs
+XTerm*showMissingGlyphs: true
+
+! disable fullscreen mode
+XTerm.fullscreen: never
+
+! disable toolbar
+XTerm*toolBar: false
+
+!!( colors - Murena scheme
+XTerm*background: #191C1E
+XTerm*foreground: #FFFFFF
+! black
+XTerm*color0    : #000000
+XTerm*color8    : #808080
+! red
+XTerm*color1    : #800000
+XTerm*color9    : #FF4B00
+! green
+XTerm*color2    : #008000
+XTerm*color10   : #87C576
+! yellow
+XTerm*color3    : #808000
+XTerm*color11   : #FFFF00
+! blue
+XTerm*color4    : #004164
+XTerm*color12   : #3366FF
+! magenta   
+XTerm*color5    : #800080
+XTerm*color13   : #E68CD7
+! cyan
+XTerm*color6    : #008080
+XTerm*color14   : #00FFFF
+! white
+XTerm*color7    : #C0C0C0
+XTerm*color15   : #FFFFFF
+!!)
+
+!!!)

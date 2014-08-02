@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh -f 
+# installs vim from src
+echo "== Downloading VIM sources..."
+hg-clone https://vim.googlecode.com/hg/ ~/.vim/src >/dev/null &&
+cd ~/.vim/src &&
+echo "== Compiling..." &&
+make distclean >/dev/null && 
+# enable python, rbenv ruby
+./configure --with-features=huge \
+  --enable-pythoninterp \
+  --enable-rubyinterp \
+  --with-ruby-command=$HOME/.rbenv/shims/ruby \
+  --prefix=$HOME/.vim/dist >/dev/null &&
+make >/dev/null &&
+echo "== Installing..." &&
+make install > /dev/null &&
+echo "== Success."
+cd -
