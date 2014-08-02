@@ -8,6 +8,7 @@ setopt autopushd      # pushd on cd
 setopt pushd_minus    # correct stack order with cd -?
 setopt pushd_ignore_dups
 setopt long_list_jobs # list jobs in the long format by default
+setopt no_hup         # do not send HUP to background jobs on exit
 
 # smart urls
 autoload -U url-quote-magic
