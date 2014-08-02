@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh -f
+
+function print_usage {
+  echo "usage: $0 <filesystem> <off|on|noauto>"
+  echo "	sets canmount zfs option for <filesystem> recursively"
+}
+  
+if [[ -z $1 || -z $2 || $1 == "-h" || $1 == "--help" ]]; then
+  print_usage
+  return 1
+fi;
+
+zfs list -Hr $1 | cut -d "	" -f 1  | xargs -L1 sudo zfs set canmount=$2

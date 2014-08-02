@@ -28,6 +28,7 @@ filetype plugin indent on
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
+"set scrolloff=5               "  scroll down when on <x> line
 
 set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
@@ -42,12 +43,15 @@ set ruler                      "  enable ruler bar
 set incsearch                  "  search as we type
 "set hlsearch                  "  highligh search matches
 "set list                      "  show unpritable chars
-"set number                    "  show line numbers
+set number                    "  show line numbers
+set relativenumber             "  show relative line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
 "set virtualedit=onemore       "  allow cursor beyond last character
 "set virtualedit=all           "  put cursor anywhere in the file
+set ignorecase                 "
+set smartcase                  "  ignore case when lowercase, don't ignore if not
 
 " enable mouse if available
 if has('mouse')
@@ -68,7 +72,7 @@ if has('gui_running')
   if has('gui_macvim') || has('gui_win32')
     set gfn=ProFont:h14
   elseif has('gui_gtk') 
-    set gfn=ProFont\ 11
+    set gfn=ProFont\ Bold\ 9
   endif
   set guioptions-=T           "  disable the ugly toolbar
 endif

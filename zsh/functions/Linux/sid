@@ -13,7 +13,7 @@ if iscmd sqlplus; then
   else
     export ORACLE_SID=$1
     # for prompt
-    oracle_sid="%B%F{red}[%f${ORACLE_SID}%F{red}]%f "
+    oracle_sid="%B%F{red}[%f${ORACLE_SID}%F{red}]%f%b "
     return 0
   fi
 else 

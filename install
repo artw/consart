@@ -14,19 +14,20 @@ configs=(
 # x11 specific stuff
 if [[ -n $xorg ]]; then
 configs+=(
-  X/compton.conf
   X/fonts.conf
   X/gtkrc-2.0
   X/i3
   X/Xdefaults
-  X/xinitrc
-  X/Xmodmap
+  X/xxkbrc
+  X/vimperatorrc
 )
 fi
 
 foreach f in $configs
-  dest=${HOME}/.$f
+  dest=$f:s/X\///         # remove X/
+  dest=${HOME}/.$dest
   src=$(dirname $0)/$f
+  src=$src:A               # absolute path
   # delete if exists, ask if not forced
   if [[ -e $dest ]]; then
     if [[ -n $force ]]; then

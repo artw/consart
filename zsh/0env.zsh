@@ -20,7 +20,7 @@ fi
 # hostname (for title function)
   export HOSTNAME=`hostname -s`
 
-# allows using C-S and C-Q in vim maps
+# unbind C-S and C-Q for use in vim maps
 if which stty > /dev/null;then
   stty -ixon
   stty stop ''
@@ -53,10 +53,14 @@ path_dirs=(
 # fix broken terms (like cygwin)
 export SHELL=$(which zsh)
 
+# add home to cdpath
+cdpath+=$HOME
+
 # os specific environment settings
 case $OSTYPE in
-  #darwin*)
-  #;;
+  darwin*)
+    cdpath+=/Volumes
+  ;;
   
   openbsd*)
     export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(uname -m)
@@ -89,13 +93,12 @@ if [[ -d $ORACLE_HOME_DB || -d $ORACLE_HOME_GRID ]]; then
   export NLS_DATE_FORMAT="dd-mm-yy hh24:mi:ss"
 fi
  
-# set PATH
-unset PATH
+# set $path
+unset path
 foreach dir in $path_dirs
   if [[ -d $dir ]]; then
-    PATH=${PATH}:${dir}
+    path+=$dir
   fi
 end
-PATH=$PATH[2,-1] # remove leading ":"
+
 typeset -U path
-export PATH
