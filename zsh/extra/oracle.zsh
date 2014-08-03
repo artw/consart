@@ -64,7 +64,7 @@ function sid {
       echo "sets ORACLE_SID"
       echo "usage: $0 <sid>"
       typeset -gA rprompt_extra
-      rprompt_extra(oracle_sid '')
+      rprompt_extra=(oracle_sid '')
       return 1
     else
       export ORACLE_SID=$1
