@@ -72,7 +72,7 @@ freebsd*)
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
-  iscmd ezjail-admin && alias ezj="${sudo}ezjail-admin"
+  iscmd jail && alias jail="${sudo}jail"
 ;;
 
 openbsd*)
