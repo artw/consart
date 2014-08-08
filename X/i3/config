@@ -7,10 +7,9 @@ font pango:ProFont 8
 # start terminal
 #bindsym $mod+grave exec xterm
 bindsym $mod+grave exec urxvtc
-
-# start browser
 bindsym $mod+F1 exec pcmanfm
-bindsym $mod+F2 exec surf duckduckgo.com
+bindsym $mod+F2 exec firefox
+bindsym $mod+Ctrl+l exec i3lock -t -i ~/.wallpaper
 
 # kill focused window
 bindsym $mod+w kill
@@ -43,10 +42,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+backslash split h
+bindsym $mod+Shift+backslash split h
 
 # split in vertical orientation
-bindsym $mod+minus split v
+bindsym $mod+Shift+minus split v
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+e layout stacking
@@ -146,3 +145,11 @@ bar {
   modifier $mod
   status_command i3status
 }
+
+# color settings
+# class                 border  backgr. text    indicator
+client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000
