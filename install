@@ -24,10 +24,10 @@ configs+=(
 fi
 
 foreach f in $configs
-  dest=$f:s/X\///         # remove X/
+  dest=$f:s#X/#           # remove X/
   dest=${HOME}/.$dest
   src=$(dirname $0)/$f
-  src=$src:A               # absolute path
+  src=$src:a              # absolute path
   # delete if exists, ask if not forced
   if [[ -e $dest ]]; then
     if [[ -n $force ]]; then
