@@ -135,7 +135,7 @@ alias -g Gv='| grep -v'
 alias -g S='| sort -n'
 
 # function like
-alias today='date +%d-%m-%Y'
+alias today='date +%Y-%m-%d'
 
 # X
 iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
