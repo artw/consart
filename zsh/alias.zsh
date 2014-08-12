@@ -149,10 +149,10 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="cd ~ && tmux attach || tmux new"
-  alias txl="cd ~ && tmux list-sessions"
-  alias txa="cd ~ && tmux attach -t"
-  alias txc="cd ~ && tmux new-session -s"
+  alias tx="tmux attach -c ~ || tmux new -c ~"
+  alias txl="tmux list-sessions"
+  alias txa="tmux attach -c ~ -t"
+  alias txc="tmux new-session -c ~ -s"
   alias tmux-b="tmux set-option -g prefix C-b"
   alias tmux-a="tmux set-option -g prefix C-a"
 fi
