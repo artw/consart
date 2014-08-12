@@ -62,6 +62,7 @@ darwin*)
   elif [[ -x "$HOME/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
     alias vlc="$HOME/Applications/VLC.app/Contents/MacOS/VLC"
   fi
+  iscmd mvim && alias ge=mvim
 ;;
 
 freebsd*)
@@ -119,7 +120,6 @@ if [[ ! -z $EDITOR ]]; then
   alias _e=${sudo}$EDITOR
 fi
 iscmd gvim && alias ge=gvim
-iscmd mvim && alias ge=mvim
 
 # sudo
 if iscmd sudo; then
@@ -129,6 +129,7 @@ if iscmd sudo; then
 fi
 
 # plumbing
+alias -g _='| sudo'
 alias -g L='| less'
 alias -g G='| grep'
 alias -g Gv='| grep -v'
@@ -149,9 +150,9 @@ fi
 
 if iscmd tmux; then
   alias tx="cd ~ && tmux attach || tmux new"
-  alias txa="cd ~ && tmux attach -t"
   alias txl="cd ~ && tmux list-sessions"
-  alias txn="cd ~ && tmux new-session"
+  alias txa="cd ~ && tmux attach -t"
+  alias txc="cd ~ && tmux new-session -s"
   alias tmux-b="tmux set-option -g prefix C-b"
   alias tmux-a="tmux set-option -g prefix C-a"
 fi
