@@ -149,6 +149,8 @@ fi
 
 if iscmd tmux; then
   alias tx="cd ~ && tmux attach || tmux new"
+  alias txa="cd ~ && tmux attach"
+  alias txn="cd ~ && tmux new-session"
   alias tmux-b="tmux set-option -g prefix C-b"
   alias tmux-a="tmux set-option -g prefix C-a"
 fi
