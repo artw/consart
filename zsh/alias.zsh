@@ -74,6 +74,10 @@ freebsd*)
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
   iscmd jail && alias jail="${sudo}jail"
+  if iscmd drill && ! iscmd dig; then
+    alias dig=drill
+    alias nslookup=host
+  fi
 ;;
 
 openbsd*)
