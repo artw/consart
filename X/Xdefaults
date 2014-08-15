@@ -11,9 +11,6 @@ URxvt*background:Black
 URxvt*font: xft:ProFont:size=9
 URxvt*color12:RoyalBlue
 URxvt*scrollstyle:plain
-! no border
-URxvt*internalBorder:0
-URxvt*externalBorder:0
 !!( colors - Murena scheme
 URxvt*background: #191C1E
 URxvt*foreground: #FFFFFF

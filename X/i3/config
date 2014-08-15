@@ -108,6 +108,9 @@ bindsym $mod+Shift+q exec "i3-msg exit"
 # always floating layout for wine
 for_window [class="Wine"] floating enable
 
+# 1 px border for terminal
+for_window [class="URxvt"] border 1pixel
+
 # hold this to move floating window with left click, or resize with right
 floating_modifier $mod
 
