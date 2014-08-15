@@ -157,8 +157,6 @@ if iscmd tmux; then
   alias txl="tmux list-sessions"
   alias txa="tmux attach -c ~ -t"
   alias txc="tmux new-session -c ~ -s"
-  alias tmux-b="tmux set-option -g prefix C-b"
-  alias tmux-a="tmux set-option -g prefix C-a"
 fi
 
 if iscmd hg; then
