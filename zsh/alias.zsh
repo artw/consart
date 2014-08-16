@@ -94,6 +94,7 @@ esac
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
 alias mkdir='nocorrect mkdir'
+alias man='nocorrect man'
 
 # "shortcuts" for most used commands
 alias c='cat'
