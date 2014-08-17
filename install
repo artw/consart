@@ -29,7 +29,7 @@ foreach f in $configs
   src=$(dirname $0)/$f
   src=$src:a              # absolute path
   # delete if exists, ask if not forced
-  if [[ -e $dest ]]; then
+  if [[ -e $dest || -L $dest ]]; then
     if [[ -n $force ]]; then
       rm -rf $dest
     else
@@ -37,7 +37,7 @@ foreach f in $configs
     fi
   fi
   # check again before linking
-  if [[ ! -e $dest ]]; then
+  if [[ ! -e $dest && ! -L $dest ]]; then
     ln -s $src $dest 
   fi
 end
