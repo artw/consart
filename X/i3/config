@@ -9,7 +9,7 @@ font pango:ProFont 8
 bindsym $mod+grave exec urxvtc
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec firefox
-bindsym $mod+Ctrl+l exec i3lock -t -i ~/.wallpaper
+bindsym $mod+Ctrl+l exec i3lock -c 000000
 
 # kill focused window
 bindsym $mod+w kill
