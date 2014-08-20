@@ -146,6 +146,10 @@ alias today='date +%Y-%m-%d'
 # X
 iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
 iscmd startx && alias startx="cd ~ && startx"
+if iscmd xclip; then
+  alias xclipc="xclip -selection clipboard"
+  alias xclips="xclip -selection secondary"
+fi
 
 # misc software
 if iscmd rsync; then
