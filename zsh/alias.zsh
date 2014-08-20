@@ -74,6 +74,7 @@ freebsd*)
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
   iscmd jail && alias jail="${sudo}jail"
+  iscmd jexec && alias jexec="${sudo}jexec"
   if iscmd drill && ! iscmd dig; then
     alias dig=drill
     alias nslookup=host
@@ -146,6 +147,10 @@ alias today='date +%Y-%m-%d'
 # X
 iscmd feh && alias feh-bg="feh --bg-scale ~/.wallpaper"
 iscmd startx && alias startx="cd ~ && startx"
+if iscmd xclip; then
+  alias xclipc="xclip -selection clipboard"
+  alias xclips="xclip -selection secondary"
+fi
 
 # misc software
 if iscmd rsync; then
