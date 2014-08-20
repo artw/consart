@@ -8,7 +8,7 @@ font pango:ProFont 8
 #bindsym $mod+grave exec xterm
 bindsym $mod+grave exec urxvtc
 bindsym $mod+F1 exec pcmanfm
-bindsym $mod+F2 exec firefox
+bindsym $mod+F2 exec vimb
 bindsym $mod+Ctrl+l exec i3lock -c 000000
 
 # kill focused window
@@ -42,10 +42,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+backslash split h
+bindsym $mod+backslash split h
 
 # split in vertical orientation
-bindsym $mod+Shift+minus split v
+bindsym $mod+minus split v
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+e layout stacking
