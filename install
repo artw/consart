@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+zparseopts f=force x=xorg
+
+configs=(
+  hgrc
+  tmux.conf
+  vim
+  vimrc
+  zsh
+  zshenv
+  zshrc
+)
+
+# x11 specific stuff
+if [[ -n $xorg ]]; then
+configs+=(
+  X/fonts.conf
+  X/gtkrc-2.0
+  X/i3
+  X/Xdefaults
+  X/xxkbrc
+  X/vimperatorrc
+)
+fi
+
+foreach f in $configs
+  dest=$f:s#X/#           # remove X/
+  dest=${HOME}/.$dest
+  src=$(dirname $0)/$f
+  src=$src:a              # absolute path
+  # delete if exists, ask if not forced
+  if [[ -e $dest || -L $dest ]]; then
+    if [[ -n $force ]]; then
+      rm -rf $dest
+    else
+      rm -ri $dest
+    fi
+  fi
+  # check again before linking
+  if [[ ! -e $dest && ! -L $dest ]]; then
+    ln -s $src $dest 
+  fi
+end

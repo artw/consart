@@ -1,0 +1,9 @@
+! remap Winkey <=> Alt
+keycode 64 = Super_L NoSymbol Super_L
+keycode 115 = Alt_L Meta_L Alt_L Meta_L
+clear Mod1
+clear Mod4
+add Mod1 = Alt_L Alt_R
+add Mod4 = Super_L Super_R
+! "natural" scrolling
+pointer = 1 2 3 5 4 7 6 8 9 10 11 12
