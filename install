@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 zparseopts f=force x=xorg
+script=$0
 
-configs=(
+#from:to  where "to" is "~/.${from}" by default
+dotfiles=(
   hgrc
   tmux.conf
   vim
@@ -9,25 +11,39 @@ configs=(
   zsh
   zshenv
   zshrc
+  w3m-keymap:.w3m/keymap
 )
 
 # x11 specific stuff
 if [[ -n $xorg ]]; then
-configs+=(
-  X/fonts.conf
-  X/gtkrc-2.0
-  X/i3
-  X/Xdefaults
-  X/xxkbrc
-  X/vimperatorrc
+dotfiles+=(
+  X/fonts.conf:   .fonts.conf
+  X/gtkrc-2.0:    .gtkrc-2.0
+  X/i3:           .i3
+  X/Xdefaults:    .Xdefaults
+  X/xxkbrc:       .xxkbrc
+  X/vimperatorrc: .vimperatorrc
 )
 fi
 
-foreach f in $configs
-  dest=$f:s#X/#           # remove X/
-  dest=${HOME}/.$dest
-  src=$(dirname $0)/$f
-  src=$src:a              # absolute path
+link_config() {
+  src=$(dirname $script)/$1
+  src=$src:a # absolute path
+  if [[ ! -e $src ]]; then
+    echo "no such file or directory: $src"
+    return 1
+  fi
+  if [[ ! -z $2 ]]; then
+    dest=$2
+  else 
+    # make dest path if not exists
+    dest=$HOME/.$1
+    echo $dest
+    if [[ ! -d $(dirname $dest) ]]; then
+      mkdir -p $(dirname $dest)
+    fi
+  fi
+
   # delete if exists, ask if not forced
   if [[ -e $dest || -L $dest ]]; then
     if [[ -n $force ]]; then
@@ -40,4 +56,9 @@ foreach f in $configs
   if [[ ! -e $dest && ! -L $dest ]]; then
     ln -s $src $dest 
   fi
+}
+
+foreach f in $dotfiles
+  f=("${(s/:/)f}") # array split by ":"
+  link_config $f[1] $f[2]
 end

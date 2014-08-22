@@ -1,0 +1,16 @@
+keymap L NEXT
+keymap H PREV
+
+keymap gg BEGIN
+keymap G END
+
+keymap space MOVE_DOWN
+
+keymap o GOTO
+keymap t TAB_GOTO
+
+keymap d CLOSE_TAB
+
+keymap O OPTIONS
+
+keymap F HELP
