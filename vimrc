@@ -22,6 +22,18 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   call vundle#end()
 endif
 
+if ! isdirectory($HOME . "/.vim")
+  call mkdir($HOME . "/.vim")
+endif
+
+" save all temporary files in one dir
+if ! isdirectory($HOME . "/.vim/tmp")
+  call mkdir($HOME . "/.vim/tmp")
+endif
+
+set directory=~/.vim/tmp/
+set backupdir=~/.vim/tmp/
+
 "" settings:
 syntax on
 filetype plugin indent on
@@ -44,7 +56,7 @@ set ruler                      "  enable ruler bar
 set incsearch                  "  search as we type
 "set hlsearch                  "  highligh search matches
 "set list                      "  show unpritable chars
-set number                    "  show line numbers
+set number                     "  show line numbers
 set relativenumber             "  show relative line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
@@ -62,10 +74,6 @@ endif
 " split naturally
 set splitright
 set splitbelow
-
-" save all temporary files in one dir
-set directory=~/.vim/tmp/
-set backupdir=~/.vim/tmp/
 
 " gui settings
 if has('gui_running')
