@@ -88,7 +88,7 @@ endif
 
 " set 256 color scheme if possible
 set bg=dark 
-if has('gui_running') || &t_Co == 256
+if ( has('gui_running') || &t_Co == 256 ) && filereadable($HOME . "/.vim/bundle/grb256/colors/grb256.vim")
   colorscheme grb256
 else
   colorscheme torte
