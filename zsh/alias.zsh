@@ -50,7 +50,7 @@ darwin*)
 
   iscmd htop && alias htop="${sudo}htop"
   if iscmd brew; then
-    alias brewup="brew update && brew upgrade && brew cleanup"
+    alias brew-up="brew update && brew upgrade && brew cleanup"
     alias brewc="brew cask"
   fi
 
