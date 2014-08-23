@@ -16,9 +16,9 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   "Plugin 'wincent/Command-T'
   "Plugin 'talek/vorax4'
   " colorthemes
-  Plugin 'xoria256.vim'
+  "Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
-  Plugin 'Lokaltog/vim-distinguished'
+  "Plugin 'Lokaltog/vim-distinguished'
   call vundle#end()
 endif
 
