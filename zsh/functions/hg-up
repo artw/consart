@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 if [[ ! -d $1/.hg && ! -d .hg ]]; then
   echo "usage: $0 [hg workdir]"
   echo "\tUpdates hg repo at [hg workdir] (or pwd if not specified).\n \

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 case $TERM in
   xterm)
     export TERM=xterm-256color

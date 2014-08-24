@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 if [[ ! -d $1/.git && ! -d .git ]]; then
   echo "usage: $0 [git workdir]"
   echo "\tUpdates git repo at [git workdir] (or pwd if not specified).\n \

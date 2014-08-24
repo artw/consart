@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f 
+#!/usr/bin/env zsh 
 
 print_usage() {
   echo "usage: $0 [wine prefix directory]"
