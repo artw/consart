@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 if [[ -z $1 || $1 == '-h' ]]; then
   echo "usage: $0 <portname>"
   return 1

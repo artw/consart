@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 if [[ -z $2 || $1 = '-h' ]]; then
 	echo "usage: $0 <vmdk> <rawdisk>"
 	return 2

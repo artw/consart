@@ -1,2 +1,2 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 man $1 | col -bx

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 if [[ $1 =~ "[0-9]+" ]]; then
   sudo sysctl hw.snd.default_unit=$1
 else 

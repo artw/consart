@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env zsh
 if [[ -z $2 || -z $1 ]]; then
   echo "usage: $0 <repo address> <install dir>"
   return 1
