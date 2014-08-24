@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+if [[ -z $1 ]]; then
+  echo "usage : $0 <wm class name>"
+  echo "	check if current window matches class specified"
+  return 1
+fi
+xprop WM_CLASS -id  `xdotool getmouselocation 2>/dev/null | grep -Eo "window:[0-9]+" | grep -Eo "[0-9]+"` | grep -q $1
