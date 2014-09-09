@@ -22,15 +22,13 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   call vundle#end()
 endif
 
+" save all temporary files in one dir, make it if it does not exist
 if ! isdirectory($HOME . "/.vim")
   call mkdir($HOME . "/.vim")
 endif
-
-" save all temporary files in one dir
 if ! isdirectory($HOME . "/.vim/tmp")
   call mkdir($HOME . "/.vim/tmp")
 endif
-
 set directory=~/.vim/tmp/
 set backupdir=~/.vim/tmp/
 
