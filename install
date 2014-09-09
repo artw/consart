@@ -6,7 +6,6 @@ script=$0
 dotfiles=(
   hgrc
   tmux.conf
-  vim
   vimrc
   zsh
   zshenv
@@ -17,12 +16,11 @@ dotfiles=(
 # x11 specific stuff
 if [[ -n $xorg ]]; then
 dotfiles+=(
-  X/fonts.conf:   .fonts.conf
-  X/gtkrc-2.0:    .gtkrc-2.0
-  X/i3:           .i3
-  X/Xdefaults:    .Xdefaults
-  X/xxkbrc:       .xxkbrc
-  X/vimperatorrc: .vimperatorrc
+  X/fonts.conf:.fonts.conf
+  X/gtkrc-2.0:.gtkrc-2.0
+  X/i3:.i3
+  X/Xdefaults:.Xdefaults
+  X/vimperatorrc:.vimperatorrc
 )
 fi
 
