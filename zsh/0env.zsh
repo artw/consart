@@ -29,25 +29,33 @@ fi
 # dirs for PATH
 local -a path_dirs
 path_dirs=(
-   $HOME/.bin
-   $HOME/.vim/dist/bin
+  $HOME/.bin
+  $HOME/.vim/dist/bin
 
-   /opt/sbin
-   /opt/local/sbin
-   /usr/local/sbin
-   /usr/sbin
-   /sbin
+  /opt/sbin
+  /opt/local/sbin
+  /usr/local/sbin
+  /usr/sbin
+  /sbin
 
-   /opt/bin
-   /opt/local/bin
-   /usr/local/bin
-   /usr/bin
-   /bin
+  /opt/bin
+  /opt/local/bin
+  /usr/local/bin
+  /usr/bin
+  /bin
 
-   /usr/libexec
+  /usr/libexec
 
-   /usr/X11R6/bin
-   /usr/local/kde4/bin
+  /usr/X11R6/bin
+  /usr/local/kde4/bin
+)
+
+# dirs for FPATH
+local -a fpath_dirs
+fpath_dirs=(
+  $HOME/.zsh/functions
+  $HOME/.zsh/functions/Completion
+  $HOME/.zsh/functions/$(uname)
 )
 
 # fix broken terms (like cygwin)
@@ -102,3 +110,16 @@ foreach dir in $path_dirs
 end
 
 typeset -U path
+
+# set $fpath
+foreach dir in $fpath_dirs
+  if [[ -d $dir ]]; then
+    fpath=($dir $fpath)
+  fi
+end
+typeset -U fpath
+ 
+# autoload all functions within custom fpath
+foreach function in $(find $fpath_dirs -maxdepth 1 -type f ); do
+  autoload -Uz $(basename $function)
+done

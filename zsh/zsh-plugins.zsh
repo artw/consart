@@ -22,6 +22,11 @@ if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
   source $PERLBREW_ROOT/etc/bashrc
 fi
 
+# add zsh-users/zsh-comletions before fpath if installed
+if [[ -d $HOME/.zsh/external/zsh-completions/src ]]; then
+  fpath=($HOME/.zsh/external/zsh-completions/src $fpath)
+fi
+
 # bind up/down j/k to substring search if available
 if [[ -f $HOME/.zsh/external/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
   bindkey '^[[A' history-substring-search-up
@@ -63,6 +68,11 @@ function install_zsh-syntax-highlighting {
 # fish like history substring search
 function  install_zsh-history-substring-search {
   git-clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/external/zsh-history-substring-search
+}
+
+# additional zsh completions 
+function install_zsh-completions {
+  git-clone https://github.com/zsh-users/zsh-completions ~/.zsh/external/zsh-completions
 }
 
 # perlbrew, perl installation management tool
