@@ -129,7 +129,7 @@ iscmd gvim && alias ge=gvim
 
 # sudo
 if iscmd sudo; then
-  alias sudo="nocorrect sudo -E"
+  alias sudo="nocorrect sudo"
   alias -g '#'='sudo'
   alias -g '##'='sudo !$'
 fi
