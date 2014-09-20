@@ -123,7 +123,7 @@ alias -g dua='du -kax'
 # editor
 if [[ ! -z $EDITOR ]]; then
   alias e=$EDITOR
-  alias _e=${sudo}$EDITOR
+  alias _e="sudo -E $EDITOR"
 fi
 iscmd gvim && alias ge=gvim
 
