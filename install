@@ -10,7 +10,6 @@ dotfiles=(
   zsh
   zshenv
   zshrc
-  w3m-keymap:.w3m/keymap
 )
 
 # x11 specific stuff
