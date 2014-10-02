@@ -75,7 +75,7 @@ freebsd*)
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
   iscmd jail && alias jail="${sudo}jail"
   iscmd jexec && alias jexec="${sudo}jexec"
-  iscmd gnu-watch && watch="gnu-watch"
+  iscmd gnu-watch && alias watch="gnu-watch"
   if iscmd drill && ! iscmd dig; then
     alias dig=drill
     alias nslookup=host
