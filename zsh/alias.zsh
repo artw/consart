@@ -69,12 +69,14 @@ freebsd*)
   alias ls=" ls -FIG"
   iscmd portmaster && alias portmaster="${sudo}portmaster"
   iscmd poudriere && alias poudriere="${sudo}poudriere"
-  iscmd pkg && alias pkg="${sudo}pkg"
+  alias pkg="${sudo}pkg"
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
-  iscmd jail && alias jail="${sudo}jail"
-  iscmd jexec && alias jexec="${sudo}jexec"
+  alias jail="${sudo}jail"
+  alias jexec="${sudo}jexec"
+  alias jstart="${sudo}jail -c"
+  alias jstop="${sudo}jail -r"
   iscmd gnu-watch && alias watch="gnu-watch"
   if iscmd drill && ! iscmd dig; then
     alias dig=drill
