@@ -1,7 +1,17 @@
 "" vundle
 if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   set rtp+=~/.vim/bundle/Vundle.vim/
-  call vundle#begin()
+  let vundle=1
+  let vundle_dir="$HOME/.vim/bundle"
+" on windows
+elseif filereadable($VIM . "/bundle/Vundle.vim/autoload/vundle.vim") 
+  set rtp+=$VIM/bundle/Vundle.vim/
+  let vundle=1
+  let vundle_dir="$VIM/bundle"
+endif
+
+if vundle == 1
+  call vundle#begin(vundle_dir)
   Plugin 'gmarik/Vundle.vim'
   " plugins
   Plugin 'Lokaltog/vim-easymotion'
@@ -85,10 +95,14 @@ if has('gui_running')
   set guioptions-=T           "  disable the ugly toolbar
 endif
 
-" set 256 color scheme if possible
+" set 256 color scheme if possible (with fallback)
 set bg=dark 
-if ( has('gui_running') || &t_Co == 256 ) && filereadable($HOME . "/.vim/bundle/grb256/colors/grb256.vim")
-  colorscheme grb256
+if has('gui_running') || &t_Co == 256 
+  try
+    colorscheme grb256
+  catch
+    colorscheme torte
+  endtry
 else
   colorscheme torte
 endif
