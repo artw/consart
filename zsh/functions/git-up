@@ -18,4 +18,4 @@ if [[ $(stat -f %u .) == 0 ]]; then
   use_sudo=sudo
 fi
 
-$use_sudo git pull; cd -
+$use_sudo git pull
