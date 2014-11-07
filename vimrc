@@ -4,7 +4,7 @@ if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
   let vundle=1
   let vundle_dir="$HOME/.vim/bundle"
 " on windows
-elseif filereadable($VIM . "/bundle/Vundle.vim/autoload/vundle.vim") 
+elseif filereadable($VIM . "/bundle/Vundle.vim/autoload/vundle.vim")
   set rtp+=$VIM/bundle/Vundle.vim/
   let vundle=1
   let vundle_dir="$VIM/bundle"
@@ -57,7 +57,7 @@ set shiftwidth=2
 set tabstop=2
 
 set noeb vb t_vb=              "  no bells and whistles
-au GUIEnter * set vb t_vb=     
+au GUIEnter * set vb t_vb=
 
 set wildmenu                   "  completion menu
 set wildmode=list:longest,full "  complete longest first
@@ -89,15 +89,15 @@ if has('gui_running')
   " set gui font
   if has('gui_macvim') || has('gui_win32')
     set gfn=ProFont:h14
-  elseif has('gui_gtk') 
+  elseif has('gui_gtk')
     set gfn=ProFont\ Bold\ 9
   endif
   set guioptions-=T           "  disable the ugly toolbar
 endif
 
 " set 256 color scheme if possible (with fallback)
-set bg=dark 
-if has('gui_running') || &t_Co == 256 
+set bg=dark
+if has('gui_running') || &t_Co == 256
   try
     colorscheme grb256
   catch
@@ -107,7 +107,7 @@ else
   colorscheme torte
 endif
 
-"" Extra commands: 
+"" Extra commands:
 " chdir to current file
 command! CD cd %:p:h
 " sudo write:
