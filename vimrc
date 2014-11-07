@@ -15,17 +15,18 @@ if vundle == 1
   Plugin 'gmarik/Vundle.vim'
   " plugins
   Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'bling/vim-airline'
   Plugin 'junegunn/vim-easy-align'
+  Plugin 'mhinz/vim-startify'
   Plugin 'mileszs/ack.vim'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
-  Plugin 'mhinz/vim-startify'
   "Plugin 'Valloric/YouCompleteMe'
+  "Plugin 'talek/vorax4'
   "Plugin 'wincent/Command-T'
   "Plugin 'yuratomo/w3m.vim'
-  "Plugin 'talek/vorax4'
   " colorthemes
   "Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
@@ -61,7 +62,7 @@ au GUIEnter * set vb t_vb=
 
 set wildmenu                   "  completion menu
 set wildmode=list:longest,full "  complete longest first
-set ruler                      "  enable ruler bar
+set laststatus=2               "  always show the status line
 set incsearch                  "  search as we type
 "set hlsearch                  "  highligh search matches
 "set list                      "  show unpritable chars
