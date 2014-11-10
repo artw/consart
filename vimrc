@@ -16,6 +16,7 @@ if vundle == 1
   " plugins
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'bling/vim-airline'
+  Plugin 'ervandew/supertab'
   Plugin 'junegunn/vim-easy-align'
   Plugin 'mhinz/vim-startify'
   Plugin 'mileszs/ack.vim'
@@ -23,9 +24,9 @@ if vundle == 1
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
+  Plugin 'wincent/Command-T'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
-  "Plugin 'wincent/Command-T'
   "Plugin 'yuratomo/w3m.vim'
   " colorthemes
   "Plugin 'xoria256.vim'
