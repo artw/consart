@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+if [[ ! -d $1/.git && ! -d .git ]]; then
+  echo "usage: $0 [git workdir]"
+  echo "\tUpdates git repo at [git workdir] (or pwd if not specified).\n \
+\tUses sudo if repo is owned by root"
+  return 1
+fi
+
+if [[ -d $1/.git ]]; then
+  repo=$1
+  cd $repo
+elif [[ ! -d $PWD/.git ]]; then
+  echo "Not a git repo"
+  return 1
+fi
+
+if [[ $(stat -f %u .) == 0 ]]; then
+  use_sudo=sudo
+fi
+
+$use_sudo git pull

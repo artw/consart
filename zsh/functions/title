@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+if [[ $TERM == xterm* || $TERM == screen* ]]; then
+  print -Pn $'\e]0;'$*$'\a'
+fi
+
