@@ -46,6 +46,7 @@ path_dirs=(
 
   /usr/libexec
 
+  /usr/bin/vendor_perl
   /usr/X11R6/bin
   /usr/local/kde4/bin
 )
