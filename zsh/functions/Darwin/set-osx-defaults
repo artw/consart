@@ -13,3 +13,6 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 # faster expose animations
 defaults write com.apple.dock expose-animation-duration -float 0.1337
+
+# touchpad automatic orientation
+sudo defaults write com.apple.MultitouchSupport ForceAutoOrientation YES
