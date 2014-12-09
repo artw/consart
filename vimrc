@@ -24,7 +24,7 @@ if vundle == 1
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
-  Plugin 'wincent/Command-T'
+  Plugin 'kien/ctrlp.vim'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
   "Plugin 'yuratomo/w3m.vim'
