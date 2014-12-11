@@ -23,10 +23,11 @@ linux*)
     alias apt-get="${sudo}apt-get"
   fi
   # redhat
-  if iscmd yum; then
-    alias yum="${sudo}yum" 
-    alias rpm="${sudo}rpm"
-  fi
+  iscmd yum && alias yum="${sudo}yum" 
+  iscmd rpm && alias rpm="${sudo}rpm"
+
+  # suse
+  iscmd zypper && alias zyp="sudo zypper"
 
   # MIPS device with optware (f.e. router)
   if [[ $(uname -m) -eq 'mips' ]]; then
