@@ -14,8 +14,8 @@ linux*)
   fi
   # gentoo
   if iscmd emerge; then
-    alias em="${sudo}emerge"
-    alias udav="${sudo}emerge -uDavN world"
+    alias em="${sudo}emerge -qav"
+    alias udav="${sudo}emerge -quDavN world"
   fi  
   # debian
   if iscmd apt-get; then
