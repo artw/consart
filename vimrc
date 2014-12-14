@@ -109,6 +109,9 @@ else
   colorscheme torte
 endif
 
+" set leader key to comma:
+let mapleader = ","
+
 "" Extra commands:
 " chdir to current file
 command! CD cd %:p:h
@@ -118,9 +121,6 @@ command! Sudow w !sudo tee % > /dev/null
 "" (re)map keys:
 set pastetoggle=<F12>
 
-nmap <F2> :NERDTreeToggle<CR>
-nmap <F3> :NERDTreeFind<CR>
-
 " file operation bindings:
 nmap <C-Q> :q!<CR>
 nmap <C-S> :w!<CR>
@@ -129,9 +129,6 @@ nmap <F10> :q<CR>
 
 " do not move cursor after repeat:
 nmap . .`[
-
-" set leader key to comma:
-let mapleader = ","
 
 " add ; as command mode key:
 nmap ; :
@@ -144,6 +141,12 @@ vmap < <gv
 vmap > >gv
 
 "" plugins
+" NERD bindings
+nmap <F2>      :NERDTreeToggle<CR>
+nmap <Leader>t :NERDTreeToggle<CR>
+nmap <F3>      :NERDTreeFind<CR>
+nmap <Leader>f :NERDTreeFind<CR>
+
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
 
