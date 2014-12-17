@@ -76,6 +76,7 @@ freebsd*)
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
   alias jail="${sudo}jail"
   alias jexec="${sudo}jexec"
+  alias jlogin="${sudo}jexec"
   alias jstart="${sudo}jail -c"
   alias jstop="${sudo}jail -r"
   iscmd gnu-watch && alias watch="gnu-watch"
