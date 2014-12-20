@@ -7,6 +7,7 @@ linux*)
   alias grep="grep --color=auto"
   alias ls=" ls --color=auto -F"
   iscmd grub-mkconfig && alias -g grub2-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
+  alias dmesg="dmesg -TL"
   # arch
   if iscmd yaourt; then
     alias ya="yaourt"
