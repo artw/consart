@@ -27,7 +27,7 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{blue}%d%f%u'
 
 # complete sudo
-zstyle ':completion:*:sudo:*' command-path assign $fpath
+#zstyle ':completion:*:sudo:*' command-path assign $fpath 
 
 # ignore completion functions for not existent commands
 zstyle ':completion:*:functions' ignored-patterns '_*'

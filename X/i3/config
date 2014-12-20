@@ -8,7 +8,7 @@ font pango:ProFont 8
 #bindsym $mod+grave exec xterm
 bindsym $mod+grave exec urxvtc
 bindsym $mod+F1 exec pcmanfm
-bindsym $mod+F2 exec vimb
+bindsym $mod+F2 exec firefox
 bindsym $mod+Ctrl+l exec i3lock -c 000000
 
 # kill focused window
@@ -147,7 +147,7 @@ bar {
   position top
 #  mode hide
   modifier $mod
-  status_command i3status
+  #status_command i3status
 }
 
 # color settings
