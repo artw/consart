@@ -49,6 +49,8 @@ path_dirs=(
   /usr/bin/vendor_perl
   /usr/X11R6/bin
   /usr/local/kde4/bin
+
+  /usr/games/bin
 )
 
 # dirs for FPATH

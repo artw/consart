@@ -111,6 +111,8 @@ for_window [class="Wine"] floating enable
 # 1 px border for some programs
 for_window [class="URxvt"] border 1pixel
 for_window [class="MPlayer"] border 1pixel
+for_window [class="Google-chrome-stable"] border 1pixel
+for_window [class="Steam"] border 1pixel
 
 # hold this to move floating window with left click, or resize with right
 floating_modifier $mod
@@ -147,7 +149,7 @@ bar {
   position top
 #  mode hide
   modifier $mod
-  #status_command i3status
+  status_command i3status
 }
 
 # color settings
