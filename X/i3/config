@@ -15,9 +15,9 @@ bindsym $mod+Ctrl+l exec i3lock -c 000000
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec "dmenu_run -fn ProFont-8"
+bindsym $mod+space exec "dmenu_run -b -fn ProFont-8"
 # dmenu with .desktop shortcuts
-bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn ProFont-8" 
+bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -i -fn ProFont-8" 
 
 # change focus
 bindsym $mod+h focus left
