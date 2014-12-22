@@ -16,7 +16,7 @@ dotfiles=(
 if [[ -n $xorg ]]; then
 dotfiles+=(
   X/fonts.conf:.fonts.conf
-  X/gtkrc-2.0:.gtkrc-2.0
+  X/gtkrc.mine:.gtkrc.mine
   X/i3:.i3
   X/Xdefaults:.Xdefaults
   X/vimperatorrc:.vimperatorrc
