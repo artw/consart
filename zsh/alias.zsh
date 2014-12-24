@@ -35,6 +35,8 @@ linux*)
     iscmd hg-py2.7 && alias -g hg="hg-py2.7"
     unalias grep
   fi
+
+  iscmd systemctl && alias zzz="${sudo}systemctl suspend"
 ;;
 
 cygwin)
