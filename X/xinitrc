@@ -23,6 +23,9 @@
 # set wallpaper
 #feh --bg-scale ~/.wallpaper &
 
+# desktop
+#pcmanfm --desktop &
+
 # compositor
 #compton &
 
@@ -41,5 +44,10 @@
 # clipboard manager
 #parcellite &
 
+# panel
+#tint2 &
+
 # WM
 #exec i3
+#exec openbox-session
+#exec fluxbox
