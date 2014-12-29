@@ -76,6 +76,7 @@ set linespace=0                "  more compact text
 "set virtualedit=all           "  put cursor anywhere in the file
 set ignorecase                 "
 set smartcase                  "  ignore case when lowercase, don't ignore if not
+"set autochdir                  "  auto cd to current file
 
 " enable mouse if available
 if has('mouse')

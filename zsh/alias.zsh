@@ -9,9 +9,11 @@ linux*)
   iscmd grub-mkconfig && alias -g grub2-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
   alias dmesg="dmesg -TL"
   # arch
-  if iscmd yaourt; then
-    alias ya="yaourt"
-    alias yau="yaourt -Syubb --devel --aur"
+  if iscmd pacman; then
+    alias pm="${sudo}pacman"
+    if iscmd yaourt; then
+      alias ya="yaourt"
+    fi
   fi
   # gentoo
   if iscmd emerge; then
@@ -28,15 +30,18 @@ linux*)
   iscmd rpm && alias rpm="${sudo}rpm"
 
   # suse
-  iscmd zypper && alias zyp="sudo zypper"
+  iscmd zypper && alias zyp="${sudo}zypper"
 
   # MIPS device with optware (f.e. router)
   if [[ $(uname -m) -eq 'mips' ]]; then
     iscmd hg-py2.7 && alias -g hg="hg-py2.7"
-    unalias grep
+    unalias grep # busybox grep is monochrome
   fi
 
-  iscmd systemctl && alias zzz="${sudo}systemctl suspend"
+  if iscmd systemctl; then
+    alias zzz="${sudo}systemctl suspend"
+    alias halt="${sudo}systemctl poweroff"
+  fi
 ;;
 
 cygwin)
@@ -79,7 +84,6 @@ freebsd*)
   iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
   alias jail="${sudo}jail"
   alias jexec="${sudo}jexec"
-  alias jlogin="${sudo}jexec"
   alias jstart="${sudo}jail -c"
   alias jstop="${sudo}jail -r"
   iscmd gnu-watch && alias watch="gnu-watch"

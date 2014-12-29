@@ -7,13 +7,12 @@ if [[ ! -d $1/.hg && ! -d .hg ]]; then
 fi
 
 if [[ -d $1/.hg ]]; then
-  cd $1
-else
-  cd .
+  pushd $1
 fi
 
 if [[ $(stat -f %u .) == 0 ]]; then
   use_sudo=sudo
 fi
 
-$use_sudo hg pull -u; cd -
+$use_sudo hg pull -u
+popd

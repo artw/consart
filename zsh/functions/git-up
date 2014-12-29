@@ -8,7 +8,7 @@ fi
 
 if [[ -d $1/.git ]]; then
   repo=$1
-  cd $repo
+  pushd $repo
 elif [[ ! -d $PWD/.git ]]; then
   echo "Not a git repo"
   return 1
@@ -19,3 +19,4 @@ if [[ $(stat -f %u .) == 0 ]]; then
 fi
 
 $use_sudo git pull
+popd
