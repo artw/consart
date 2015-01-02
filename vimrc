@@ -93,7 +93,7 @@ if has('gui_running')
   if has('gui_macvim') || has('gui_win32')
     set gfn=ProFont:h14
   elseif has('gui_gtk')
-    set gfn=ProFont\ Bold\ 9
+    set gfn=ProFont\ 11
   endif
   set guioptions-=T           "  disable the ugly toolbar
 endif
