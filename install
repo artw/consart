@@ -15,11 +15,7 @@ dotfiles=(
 # x11 specific stuff
 if [[ -n $xorg ]]; then
 dotfiles+=(
-  X/fonts.conf:.fonts.conf
-  X/gtkrc.mine:.gtkrc.mine
-  X/i3:.i3
   X/Xdefaults:.Xdefaults
-  X/vimperatorrc:.vimperatorrc
 )
 fi
 
@@ -32,7 +28,7 @@ link_config() {
   fi
   if [[ ! -z $2 ]]; then
     dest=$2
-  else 
+  else
     # make dest path if not exists
     dest=$HOME/.$1
     echo $dest
@@ -51,7 +47,7 @@ link_config() {
   fi
   # check again before linking
   if [[ ! -e $dest && ! -L $dest ]]; then
-    ln -s $src $dest 
+    ln -s $src $dest
   fi
 }
 
