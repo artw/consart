@@ -31,6 +31,7 @@ if vundle == 1
   " colorthemes
   "Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
+  Plugin 'chriskempson/base16-vim'
   "Plugin 'Lokaltog/vim-distinguished'
   call vundle#end()
 endif
