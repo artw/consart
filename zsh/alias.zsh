@@ -162,6 +162,7 @@ if iscmd xclip; then
   alias xclipc="xclip -selection clipboard"
   alias xclips="xclip -selection secondary"
 fi
+iscmd xdg-open && alias open="xdg-open"
 
 # misc software
 if iscmd rsync; then
