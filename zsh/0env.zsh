@@ -48,7 +48,7 @@ path_dirs=(
 
   /usr/bin/vendor_perl
   /usr/X11R6/bin
-  /usr/local/kde4/bin
+  /usr/local/lib/kde4/libexec
 
   /usr/games/bin
 )
