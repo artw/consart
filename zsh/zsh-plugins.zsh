@@ -1,14 +1,12 @@
-# load external plugins if available
-local -a zsh_plugins
-zsh_plugins=(
-  $HOME/.zsh/external/z/z.sh
-  $HOME/.zsh/external/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  $HOME/.zsh/external/zsh-history-substring-search/zsh-history-substring-search.zsh
-)
-
-foreach script in $zsh_plugins
-  test -f $script && source $script
-end
+# load antigen if available
+if [[ -f ~/.zsh/external/antigen/antigen.zsh ]]; then
+  source ~/.zsh/external/antigen/antigen.zsh
+  # antigen bundles
+  antigen bundle zsh-users/zsh-completions
+  antigen bundle zsh-users/zsh-history-substring-search
+  antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle rupa/z
+fi
 
 # load rbenv if available
 if [[ -d $HOME/.rbenv ]];then 
@@ -20,19 +18,6 @@ fi
 if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
   export PERLBREW_ROOT=$HOME/.perlbrew
   source $PERLBREW_ROOT/etc/bashrc
-fi
-
-# add zsh-users/zsh-comletions before fpath if installed
-if [[ -d $HOME/.zsh/external/zsh-completions/src ]]; then
-  fpath=($HOME/.zsh/external/zsh-completions/src $fpath)
-fi
-
-# bind up/down j/k to substring search if available
-if [[ -f $HOME/.zsh/external/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
 fi
 
 ## installers for plugins
@@ -49,30 +34,10 @@ function install_q {
     return 1
   else
     mkdir -p ~/.bin &&
-    curl https://cdn.rawgit.com/harelba/q/1.4.0/bin/q\?source=install_page 1> ~/.bin/q 2>/dev/null &&
+    curl https://cdn.rawgit.com/harelba/q/1.5.0/bin/q\?source=install_page 1> ~/.bin/q 2>/dev/null &&
     chmod +x ~/.bin/q
     echo "q installed to ~/.bin/q"
   fi
-}
-
-# z, advanced wd history
-function install_z {
-  git-clone https://github.com/rupa/z.git ~/.zsh/external/z
-}
-
-# fish like zsh syntax highlighter 
-function install_zsh-syntax-highlighting {
-  git-clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/external/zsh-syntax-highlighting
-} 
-
-# fish like history substring search
-function  install_zsh-history-substring-search {
-  git-clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/external/zsh-history-substring-search
-}
-
-# additional zsh completions 
-function install_zsh-completions {
-  git-clone https://github.com/zsh-users/zsh-completions ~/.zsh/external/zsh-completions
 }
 
 # perlbrew, perl installation management tool
@@ -83,4 +48,8 @@ function install_perlbrew {
 
 function install_vundle {
   git-clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+}
+
+function install_antigen {
+ git-clone https://github.com/zsh-users/antigen ~/.zsh/external/antigen
 }
