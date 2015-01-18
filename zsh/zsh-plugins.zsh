@@ -8,6 +8,14 @@ if [[ -f ~/.zsh/external/antigen/antigen.zsh ]]; then
   antigen bundle rupa/z
 fi
 
+# bind up/down j/k to substring search if zsh-substring-search is installed
+if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search.git/zsh-history-substring-search.plugin.zsh ]]; then
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+  bindkey -M vicmd 'k' history-substring-search-up
+  bindkey -M vicmd 'j' history-substring-search-down
+fi
+
 # load rbenv if available
 if [[ -d $HOME/.rbenv ]];then 
   export PATH=$HOME/.rbenv/bin:$PATH
