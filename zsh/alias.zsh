@@ -5,7 +5,7 @@ iamuser && iscmd sudo && sudo="sudo "
 case $OSTYPE in 
 linux*)
   alias grep="grep --color=auto"
-  alias ls=" ls --color=auto -F"
+  alias ls="ls --color=auto -F"
   iscmd grub-mkconfig && alias -g grub2-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
   # arch
   if iscmd pacman; then
@@ -50,7 +50,7 @@ cygwin)
 
 darwin*) 
   alias grep="grep --color=auto"
-  alias ls=" ls -GF"
+  alias ls="ls -GF"
   alias finder="open -a Finder"
   alias run="open -a"
   alias sl="mdfind -name"
@@ -74,7 +74,7 @@ darwin*)
 ;;
 
 freebsd*)
-  alias ls=" ls -FIG"
+  alias ls="ls -FIG"
   iscmd portmaster && alias portmaster="${sudo}portmaster"
   iscmd poudriere && alias poudriere="${sudo}poudriere"
   alias pkg="${sudo}pkg"
@@ -93,11 +93,11 @@ freebsd*)
 ;;
 
 openbsd*)
-  iscmd colorls && alias ls=" colorls -GF"
+  iscmd colorls && alias ls="colorls -GF"
 ;;
 
 solaris*)
-  alias ls=" ls --color=auto"
+  alias ls="ls --color=auto"
 ;;
 esac
 
@@ -121,9 +121,9 @@ alias md='mkdir'
 alias t='touch'
 
 # ls, cd, etc...
-alias la=' ls -a'
-alias ll=' ls -l'
-alias lla=' ls -la'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
 
 alias -g ...='../..'
 alias -g ....='../../..'
