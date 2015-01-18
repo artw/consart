@@ -19,6 +19,7 @@ if [[ -d $1 ]]; then
   export WINEPREFIX=$1
   echo "WINEPREFIX set to $WINEPREFIX"
 else
-  echo "WINEPREFIX must be a directory"
-  return 1
+  echo "Creating new WINEPREFIX in $1"
+  mkdir -p $1 && export WINEPREFIX=$1 &&
+  winecfg
 fi
