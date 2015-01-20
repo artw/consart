@@ -1,2 +1,2 @@
-Defaults:leet timestamp_timeout 20
 leet ALL=(ALL) ALL
+Defaults:leet timestamp_timeout=20
