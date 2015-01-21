@@ -12,7 +12,6 @@ which less >/dev/null && export PAGER=less
 # set default editor
 if which vim >/dev/null; then
   export EDITOR=vim
-  alias vi=vim
 elif which vi >/dev/null; then
   export EDITOR=vi
 fi
