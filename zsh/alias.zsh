@@ -38,6 +38,7 @@ linux*)
   fi
 
   if iscmd systemctl; then
+    alias sc="${sudo}systemctl"
     alias zzz="${sudo}systemctl suspend"
     alias halt="${sudo}systemctl poweroff"
   fi
