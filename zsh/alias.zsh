@@ -135,6 +135,7 @@ alias -g dua='du -kax'
 # editor
 if [[ ! -z $EDITOR ]]; then
   alias e="TERM=xterm-256color $EDITOR"
+  alias E="TERM=xterm-256color sudo -E $EDITOR"
   alias _e="TERM=xterm-256color sudo -E $EDITOR"
 fi
 iscmd gvim && alias ge=gvim
