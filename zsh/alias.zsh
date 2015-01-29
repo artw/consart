@@ -2,7 +2,7 @@
 iamuser && iscmd sudo && sudo="sudo "
 
 ## system specific aliases
-case $OSTYPE in 
+case $OSTYPE in
 linux*)
   alias grep="grep --color=auto"
   alias ls="ls --color=auto -F"
@@ -18,14 +18,14 @@ linux*)
   if iscmd emerge; then
     alias em="${sudo}emerge -qav"
     alias udav="${sudo}emerge -quDavN world"
-  fi  
+  fi
   # debian
   if iscmd apt-get; then
     alias apt="${sudo}apt-get"
     alias apt-get="${sudo}apt-get"
   fi
   # redhat
-  iscmd yum && alias yum="${sudo}yum" 
+  iscmd yum && alias yum="${sudo}yum"
   iscmd rpm && alias rpm="${sudo}rpm"
 
   # suse
@@ -49,7 +49,7 @@ cygwin)
   alias ping="nocorrect /cygdrive/c/windows/system32/ping.exe"
 ;;
 
-darwin*) 
+darwin*)
   alias grep="grep --color=auto"
   alias ls="ls -GF"
   alias finder="open -a Finder"
@@ -75,7 +75,6 @@ darwin*)
 ;;
 
 freebsd*)
-  alias ls="ls -FI"
   iscmd portmaster && alias portmaster="${sudo}portmaster"
   iscmd poudriere && alias poudriere="${sudo}poudriere"
   alias pkg="${sudo}pkg"
@@ -213,7 +212,7 @@ elif [[ $TERM == screen ]]; then
 fi
 
 if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
-  # F keys are broken when 256color, and mouse does not work in screen 
+  # F keys are broken when 256color, and mouse does not work in screen
   iscmd htop && alias htop="TERM=xterm htop"
 fi
 
