@@ -75,7 +75,7 @@ darwin*)
 ;;
 
 freebsd*)
-  alias ls="ls -FIG"
+  alias ls="ls -FI"
   iscmd portmaster && alias portmaster="${sudo}portmaster"
   iscmd poudriere && alias poudriere="${sudo}poudriere"
   alias pkg="${sudo}pkg"
