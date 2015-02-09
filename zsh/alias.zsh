@@ -50,28 +50,32 @@ cygwin)
 ;;
 
 darwin*)
-  alias grep="grep --color=auto"
-  alias ls="ls -GF"
-  alias finder="open -a Finder"
-  alias run="open -a"
-  alias sl="mdfind -name"
   alias rm_dsstore="find . -name .DS_Store -delete"
+  if [[ $(uname -p) == arm ]]; then
+    alias ls="ls --color=auto"
+  else
+    alias grep="grep --color=auto"
+    alias ls="ls -GF"
+    alias finder="open -a Finder"
+    alias run="open -a"
+    alias sl="mdfind -name"
 
-  iscmd htop && alias htop="${sudo}htop"
-  if iscmd brew; then
-    alias brew-up="brew update && brew upgrade && brew cleanup"
-    alias brewc="brew cask"
-  fi
+    iscmd htop && alias htop="${sudo}htop"
+    if iscmd brew; then
+      alias brew-up="brew update && brew upgrade && brew cleanup"
+      alias brewc="brew cask"
+    fi
 
-  alias zzz="pmset sleepnow"
-  alias -g "±"=$HOME
-  alias "£"="sudo"
-  if [[ -x "/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
-    alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-  elif [[ -x "$HOME/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
-    alias vlc="$HOME/Applications/VLC.app/Contents/MacOS/VLC"
+    alias zzz="pmset sleepnow"
+    alias -g "±"=$HOME
+    alias "£"="sudo"
+    if [[ -x "/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
+      alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+    elif [[ -x "$HOME/Applications/VLC.app/Contents/MacOS/VLC" ]]; then
+      alias vlc="$HOME/Applications/VLC.app/Contents/MacOS/VLC"
+    fi
+    iscmd mvim && alias ge=mvim
   fi
-  iscmd mvim && alias ge=mvim
 ;;
 
 freebsd*)
