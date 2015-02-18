@@ -6,6 +6,8 @@
 
 # fix java dialogs in tiling wms
 #wmname LG3D &
+# java awt font antiasing
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd
 
 # keymap settings
 #setxkbmap -layout "lv,ru" \
