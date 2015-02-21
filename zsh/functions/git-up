@@ -19,4 +19,3 @@ if [[ $(stat -f %u .) == 0 ]]; then
 fi
 
 $use_sudo git pull
-popd
