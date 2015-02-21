@@ -14,4 +14,4 @@ if [[ $(stat -f %u .) == 0 ]]; then
   use_sudo=sudo
 fi
 
-$use_sudo hg pull -u; popd
+$use_sudo hg pull -u
