@@ -11,13 +11,14 @@ URxvt*font: xft:ProFont:size=9
 URxvt*scrollstyle: plain
 
 !!( extensions
-URxvt.perl-ext-common: default,matcher,tabbed
+!URxvt.perl-ext-common: default,matcher,tabbed
+URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: xdg-open
 URxvt.matcher.button: 1
-URxvt.tabbed.tabbar-fg: 7
-URxvt.tabbed.tabbar-bg: 4
-URxvt.tabbed.tab-fg: 15
-URxvt.tabbed.tab-bg: 4
+!URxvt.tabbed.tabbar-fg: 7
+!URxvt.tabbed.tabbar-bg: 4
+!URxvt.tabbed.tab-fg: 15
+!URxvt.tabbed.tab-bg: 4
 
 !!( colors - Murena scheme
 URxvt*background: #191C1E
