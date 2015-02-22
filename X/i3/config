@@ -5,7 +5,6 @@ set $mod Mod4
 font pango:ProFont 8
 
 # start terminal
-#bindsym $mod+grave exec xterm
 bindsym $mod+grave exec urxvt
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec firefox
@@ -149,7 +148,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   position bottom
-#  mode hide
+  mode hide
   modifier $mod
   status_command i3status
 }
