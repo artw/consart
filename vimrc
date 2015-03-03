@@ -118,7 +118,7 @@ let mapleader = ","
 " chdir to current file
 command! CD cd %:p:h
 " sudo write:
-command! Sudow w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 "" (re)map keys:
 set pastetoggle=<F12>
