@@ -1,0 +1,57 @@
+#!/usr/bin/env zsh
+zparseopts f=force x=xorg
+script=$0
+
+#from:to  where "to" is "~/.${from}" by default
+dotfiles=(
+  hgrc
+  tmux.conf
+  vimrc
+  zsh
+  zshenv
+  zshrc
+)
+
+# x11 specific stuff
+if [[ -n $xorg ]]; then
+dotfiles+=(
+  X/Xdefaults:.Xdefaults
+)
+fi
+
+link_config() {
+  src=$(dirname $script)/$1
+  src=$src:a # absolute path
+  if [[ ! -e $src ]]; then
+    echo "no such file or directory: $src"
+    return 1
+  fi
+  if [[ ! -z $2 ]]; then
+    dest=$2
+  else
+    # make dest path if not exists
+    dest=$HOME/.$1
+    echo $dest
+    if [[ ! -d $(dirname $dest) ]]; then
+      mkdir -p $(dirname $dest)
+    fi
+  fi
+
+  # delete if exists, ask if not forced
+  if [[ -e $dest || -L $dest ]]; then
+    if [[ -n $force ]]; then
+      rm -rf $dest
+    else
+      rm -ri $dest
+    fi
+  fi
+  # check again before linking
+  if [[ ! -e $dest && ! -L $dest ]]; then
+    ln -s $src $dest
+  fi
+}
+
+foreach f in $dotfiles
+  f=("${(s/:/)f}") # array split by ":"
+  link_config $f[1] $f[2]
+end

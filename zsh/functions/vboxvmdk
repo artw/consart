@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+if [[ -z $2 || $1 = '-h' ]]; then
+	echo "usage: $0 <vmdk> <rawdisk>"
+	return 2
+fi
+
+vmdk=$1
+rawdisk=$2
+
+if [[ -b $rawdisk ]]; then
+	echo "Creating raw vmdk" &&
+		VBoxManage internalcommands createrawvmdk -filename $vmdk -rawdisk $rawdisk &&
+else 
+	echo "$rawdisk is not a block device"
+	return 1
+fi

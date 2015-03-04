@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh 
+
+print_usage() {
+  echo "usage: $0 [wine prefix directory]"
+  echo "  shows and sets WINEPREFIX"  
+}
+
+if [[ ( -z $1 && -z $WINEPREFIX ) || $1 == "-h" || $1 == "--help" ]]; then
+  print_usage
+  return 0
+fi
+
+if [[ -z $1 && -d $WINEPREFIX ]]; then
+  echo "WINEPREFIX=$WINEPREFIX"
+  return 0
+fi
+
+if [[ -d $1 ]]; then
+  export WINEPREFIX=$1
+  echo "WINEPREFIX set to $WINEPREFIX"
+else
+  echo "Creating new WINEPREFIX in $1"
+  mkdir -p $1 && export WINEPREFIX=$1 &&
+  winecfg
+fi

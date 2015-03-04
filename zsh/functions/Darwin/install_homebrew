@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# install osx homebrew and brew-cask
+case $OSTYPE in
+darwin*)
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
+  brew install phinze/cask/brew-cask
+;;
+*)
+  echo "this function is OSX specific"
+;;
+esac
