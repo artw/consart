@@ -1,7 +1,11 @@
 #!/bin/sh
 
-urxvtc "$@"
-if [$? -eq 2]; then
-   urxvtd -q -o -f
-   urxvtc "$@"
+URXVTC=`which -a urxvtc | grep /bin`
+if [ ! -x "$URXVTC" ]; then 
+  return 1
+else
+  $URXVTC "$@" 
+  if [ "$?" -eq "2" ]; then 
+    $URXVTC -q -o -f && $URXVTC "$@"
+  fi
 fi
