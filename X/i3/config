@@ -17,7 +17,7 @@ bindsym button3 kill
 # start dmenu (a program launcher)
 bindsym $mod+space exec "dmenu_run -fn ProFont-8"
 # dmenu with .desktop shortcuts
-bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn ProFont-8"
+bindsym $alt+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn ProFont-8"
 
 # change focus
 bindsym $mod+h focus left
