@@ -40,9 +40,6 @@
 # hide mouse cursor when not used
 #unclutter &
 
-# term daemon
-#urxvtd -q -f -o
-
 # clipboard manager
 #parcellite &
 
