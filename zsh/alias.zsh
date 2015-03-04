@@ -190,8 +190,8 @@ fi
 
 if iscmd ssh; then
   alias -g "@"="ssh"
-  alias @vnc="ssh -L5901:localhost:5900 "
   alias @x="ssh -CYf "
+  alias @t="ssh -Nf "
 fi
 
 if iscmd zpool && iscmd zfs; then
