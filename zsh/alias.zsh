@@ -169,6 +169,7 @@ if iscmd xclip; then
   alias xclips="xclip -selection secondary"
 fi
 iscmd xdg-open && alias open="xdg-open"
+iscmd qdbus && alias kde-logout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
 
 # misc software
 if iscmd rsync; then
