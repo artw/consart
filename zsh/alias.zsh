@@ -94,6 +94,7 @@ freebsd*)
     alias dig=drill
     alias nslookup=host
   fi
+  alias sc="${sudo}service"
 ;;
 
 openbsd*)
