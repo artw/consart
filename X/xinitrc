@@ -29,10 +29,10 @@
 #pcmanfm --desktop &
 
 # compositor
-#compton &
+#compton -b
 
 # bind keys
-#xbindkeys &
+#xbindkeys
 
 # remap keys
 #( sleep 1 && xmodmap ~/.Xmodmap ) &
