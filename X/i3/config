@@ -12,7 +12,7 @@ bindsym $mod+Ctrl+l exec i3lock -c 000000
 
 # kill focused window
 bindsym $mod+w kill
-bindsym button3 kill
+bindsym button2 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec "dmenu_run -fn ProFont-8"
