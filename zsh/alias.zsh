@@ -194,6 +194,7 @@ if iscmd ssh; then
   alias -g "@"="ssh"
   alias @x="ssh -CYf "
   alias @t="ssh -Nf "
+  alias @c="ssh -t "
 fi
 
 if iscmd zpool && iscmd zfs; then
