@@ -9,6 +9,7 @@ bindsym $mod+grave exec urxvtc
 bindsym $mod+F1 exec dolphin
 bindsym $mod+F2 exec chrome
 bindsym $mod+Ctrl+l exec i3lock -c 000000
+bindsym $mod+Ctrl+Escape exec xkill
 
 # kill focused window
 bindsym $mod+w kill
