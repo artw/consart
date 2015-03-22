@@ -1,11 +1,11 @@
 #!/bin/sh
 
-URXVTC=`which -a urxvtc | grep /bin`
+URXVTC=`which -a urxvtc | grep /bin | head -n1`
 if [ ! -x "$URXVTC" ]; then 
-  return 1
+  exit 1
 else
   $URXVTC "$@" 
   if [ "$?" -eq "2" ]; then 
-    $URXVTC -q -o -f && $URXVTC "$@"
+    urxvtd -q -o -f && $URXVTC "$@"
   fi
 fi
