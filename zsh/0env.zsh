@@ -60,15 +60,14 @@ typeset -U path
 foreach dir in $fpath_dirs
   if [[ -d $dir ]]; then
     fpath=($dir $fpath)
+    # autoload all functions within custom fpath
+    foreach fn in $(find $dir -maxdepth 1 -type f ); do
+      autoload -Uz $(basename $fn)
+    done
   fi
 end
 typeset -U fpath
  
-# autoload all functions within custom fpath
-foreach function in $(find $fpath_dirs -maxdepth 1 -type f ); do
-  autoload -Uz $(basename $function)
-done
-
 # ls colors 
 #useful tool for lscolors: http://geoff.greer.fm/lscolors 
 export LSCOLORS="ExGxcxdxbxegedabagecad"
