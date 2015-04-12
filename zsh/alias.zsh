@@ -44,9 +44,8 @@ linux*)
   fi
 ;;
 
-cygwin)
+cygwin|msys)
   alias ls=" ls --color=auto -F"
-  alias ping="nocorrect /cygdrive/c/windows/system32/ping.exe"
 ;;
 
 darwin*)
