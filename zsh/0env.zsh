@@ -25,14 +25,6 @@ path_dirs=(
   /usr/games/bin
 )
 
-# dirs for FPATH
-local -a fpath_dirs
-fpath_dirs=(
-  $HOME/.zsh/functions
-  $HOME/.zsh/functions/Completion
-  $HOME/.zsh/functions/$(uname)
-)
-
 # oracle stuff (if set in zshrc.local) 
 if [[ -d $ORACLE_HOME_DB || -d $ORACLE_HOME_GRID ]]; then
   if [[ -d $ORACLE_HOME_GRID ]]; then
@@ -55,6 +47,14 @@ foreach dir in $path_dirs
 end
 
 typeset -U path
+
+# dirs for FPATH
+local -a fpath_dirs
+fpath_dirs=(
+  $HOME/.zsh/functions
+  $HOME/.zsh/functions/Completion
+  $HOME/.zsh/functions/$(uname)
+)
 
 # set $fpath
 foreach dir in $fpath_dirs
