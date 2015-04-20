@@ -86,23 +86,29 @@ cdpath+=$HOME
 case $OSTYPE in
   darwin*)
     cdpath+=/Volumes
+    export HOSTNAME=`hostname -s`
   ;;
   
   openbsd*)
     export PKG_PATH=ftp://ftp.eu.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(uname -m)
+    export HOSTNAME=`hostname -s`
   ;;
 
-  #freebsd*)
-  #;;
+  freebsd*)
+    export HOSTNAME=`hostname -s`
+  ;;
 
-  #cygwin*)
-  #;;
+  cygwin|msys)
+    export HOSTNAME=$HOST
+  ;;
 
-  #solaris*)
-  #;;
+  solaris*)
+    export HOSTNAME=`hostname -s`
+  ;;
   
-  #linux*)
-  #;;
+  linux*)
+    export HOSTNAME=`hostname -s`
+  ;;
 
 esac
 
@@ -115,9 +121,6 @@ if which vim >/dev/null; then
 elif which vi >/dev/null; then
   export EDITOR=vi
 fi
-
-# hostname (for title function)
-  export HOSTNAME=`hostname -s`
 
 # unbind C-S and C-Q for use in vim maps
 if which stty > /dev/null;then
