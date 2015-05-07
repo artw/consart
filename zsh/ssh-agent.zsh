@@ -35,3 +35,10 @@ function ssh-agent-start {
 if [[ ! -z $SSH_AGENT_ENABLE  ]]; then
   ssh-agent-start
 fi
+
+
+# start ssh-pageant if available (win32)
+PAGEANT=`which ssh-pageant`
+if [[ -x $PAGEANT ]]; then
+  eval $($PAGEANT -ra /tmp/.ssh-pageant)
+fi
