@@ -91,8 +91,10 @@ set splitbelow
 " gui settings
 if has('gui_running')
   " set gui font
-  if has('gui_macvim') || has('gui_win32')
+  if has('gui_macvim')
     set gfn=ProFont:h14
+  elseif has('gui_win32')
+    set gfn=ProFont:h12
   elseif has('gui_gtk')
     set gfn=ProFont\ 10
   endif
