@@ -88,6 +88,9 @@ freebsd*)
   alias jexec="${sudo}jexec"
   alias jstart="${sudo}jail -c"
   alias jstop="${sudo}jail -r"
+  alias jpkg="${sudo}pkg -j"
+  alias jpkg-upgrade="xargs -I % ${sudo}pkg -j % upgrade -y"
+  alias jpkg-upgrade-all="jls -N | tail -n +2 | cut -f2 -d' ' | xargs -I % ${sudo}pkg -j % upgrade -y"
   iscmd gnu-watch && alias watch="gnu-watch"
   if iscmd drill && ! iscmd dig; then
     alias dig=drill
