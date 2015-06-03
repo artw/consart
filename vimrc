@@ -78,6 +78,8 @@ set linespace=0                "  more compact text
 set ignorecase                 "
 set smartcase                  "  ignore case when lowercase, don't ignore if not
 "set autochdir                  "  auto cd to current file
+set cursorline                 " highlight the line with cursor
+set cursorcolumn               " highlight the column with cursor
 
 " enable mouse if available
 if has('mouse')
@@ -98,7 +100,11 @@ if has('gui_running')
   elseif has('gui_gtk')
     set gfn=ProFont\ 10
   endif
-  set guioptions-=T           "  disable the ugly toolbar
+  set guioptions-=T           " disable the ugly toolbar
+  set guicursor+=a:blinkon0   " disable cursor blinking
+
+  set list                    " show hidden chars
+  set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
 endif
 
 " set 256 color scheme if possible (with fallback)
