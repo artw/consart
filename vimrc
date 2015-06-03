@@ -13,6 +13,7 @@ endif
 if vundle == 1
   call vundle#begin(vundle_dir)
   Plugin 'gmarik/Vundle.vim'
+
   " plugins
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'bling/vim-airline'
@@ -25,14 +26,17 @@ if vundle == 1
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
   Plugin 'kien/ctrlp.vim'
+  Plugin 'vim-perl/vim-perl'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
   "Plugin 'yuratomo/w3m.vim'
+
   " colorthemes
-  "Plugin 'xoria256.vim'
   Plugin 'quanganhdo/grb256'
-  Plugin 'chriskempson/base16-vim'
+  "Plugin 'xoria256.vim'
+  "Plugin 'chriskempson/base16-vim'
   "Plugin 'Lokaltog/vim-distinguished'
+
   call vundle#end()
 endif
 
@@ -154,6 +158,10 @@ nmap Y y$
 vmap < <gv
 vmap > >gv
 
+" insert lines below and above
+nmap <Leader>o o<ESC>
+nmap <Leader>O O<ESC>
+
 "" plugins
 " NERD bindings
 nmap <F2>      :NERDTreeToggle<CR>
@@ -166,3 +174,7 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign with a Vim movement
 nmap <Leader>a <Plug>(EasyAlign)
+
+" higlight __DATA__ for mojo
+let mojo_highlight_data = 1
+
