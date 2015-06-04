@@ -19,14 +19,15 @@ if vundle == 1
   Plugin 'bling/vim-airline'
   Plugin 'ervandew/supertab'
   Plugin 'junegunn/vim-easy-align'
+  Plugin 'kien/ctrlp.vim'
   Plugin 'mhinz/vim-startify'
   Plugin 'mileszs/ack.vim'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
-  Plugin 'kien/ctrlp.vim'
   Plugin 'vim-perl/vim-perl'
+  Plugin 'yko/mojo.vim'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
   "Plugin 'yuratomo/w3m.vim'
@@ -154,13 +155,18 @@ nmap ; :
 " Y behaves same as C and D
 nmap Y y$
 
+" insert lines below and above
+nmap <Leader>o o<ESC>
+nmap <Leader>O O<ESC>
+
+
+" sort shortcut
+vmap <Leader>s :sort<CR>
+
 " do not exit visual mode after shifting
 vmap < <gv
 vmap > >gv
 
-" insert lines below and above
-nmap <Leader>o o<ESC>
-nmap <Leader>O O<ESC>
 
 "" plugins
 " NERD bindings
