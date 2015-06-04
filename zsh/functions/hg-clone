@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+if [[ -z $2 || -z $1 ]]; then
+  echo "usage: $0 <repo address> <install dir>"
+  return 1
+fi
+if ! iscmd hg; then
+  echo "hg is not installed"
+  return 1
+fi
+
+REPO=$1
+WORKDIR=$2
+
+if [[ -d $WORKDIR ]]; then
+  echo "$WORKDIR already exists, trying to update instead"
+  hg-up $WORKDIR
+else
+  mkdir -p $WORKDIR
+  hg clone $REPO $WORKDIR
+fi
+
+

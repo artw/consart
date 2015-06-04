@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+# logout from graphical session
+osascript -e 'tell application "System Events" to log out'

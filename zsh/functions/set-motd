@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+if [[ -z $1 ]]; then
+echo "Usage: $0 <hostname>"
+echo "\t tee's input to <hostname>'s motd via ssh"
+   ssh $1 "sudo rm /etc/motd && sudo tee /etc/motd"
