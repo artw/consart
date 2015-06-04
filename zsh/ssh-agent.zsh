@@ -38,7 +38,9 @@ fi
 
 
 # start ssh-pageant if available (win32)
-PAGEANT=`which ssh-pageant`
-if [[ -x $PAGEANT ]]; then
-  eval $($PAGEANT -ra /tmp/.ssh-pageant)
+if [[ "msys" -eq $OSTYPE ]]; then
+  PAGEANT=`which ssh-pageant`
+  if [[ -x $PAGEANT ]]; then
+    eval $($PAGEANT -ra /tmp/.ssh-pageant)
+  fi
 fi
