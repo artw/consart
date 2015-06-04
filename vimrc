@@ -34,6 +34,7 @@ if vundle == 1
 
   " colorthemes
   Plugin 'quanganhdo/grb256'
+  Plugin 'nanotech/jellybeans.vim'
   "Plugin 'xoria256.vim'
   "Plugin 'chriskempson/base16-vim'
   "Plugin 'Lokaltog/vim-distinguished'
@@ -58,7 +59,7 @@ filetype plugin indent on
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
-"set scrolloff=5               "  scroll down when on <x> line
+set scrolloff=5               "  scroll down when on <x> line
 
 set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
@@ -131,10 +132,10 @@ if has('gui_running') || &t_Co == 256
   try
     colorscheme grb256
   catch
-    colorscheme torte
+    colorscheme jellybeans
   endtry
 else
-  colorscheme torte
+  colorscheme jellybeans
 endif
 
 " set leader key to comma:
