@@ -101,11 +101,13 @@ if has('gui_running')
   if has('gui_macvim')
     set gfn=ProFont:h14
   elseif has('gui_win32')
-    set gfn=ProFont:h14
+    set guifont=Source_Code_Pro_Semibold:h12
   elseif has('gui_gtk')
-    set gfn=ProFont\ Bold\ 10
+    set guifont=Source\ Code\ Pro\ Semi-Bold\ 12
   endif
   set guioptions-=T           " disable the ugly toolbar
+  set guioptions-=R           " disable right scrollbar if not needed
+  set guioptions-=r           "
   set guicursor+=a:blinkon0   " disable cursor blinking
 
   set list                    " show hidden chars
