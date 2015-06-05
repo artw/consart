@@ -25,19 +25,6 @@ path_dirs=(
   /usr/games/bin
 )
 
-# oracle stuff (if set in zshrc.local) 
-if [[ -d $ORACLE_HOME_DB || -d $ORACLE_HOME_GRID ]]; then
-  if [[ -d $ORACLE_HOME_GRID ]]; then
-    export ORACLE_HOME=$ORACLE_HOME_GRID
-    path_dirs+=${ORACLE_HOME_GRID}/bin
-  fi
-  if [[ -d $ORACLE_HOME_DB ]]; then
-    export ORACLE_HOME=$ORACLE_HOME_DB
-    path_dirs+=${ORACLE_HOME_DB}/bin
-  fi
-  export NLS_DATE_FORMAT="dd-mm-yy hh24:mi:ss"
-fi
- 
 # set $path
 unset path
 foreach dir in $path_dirs
