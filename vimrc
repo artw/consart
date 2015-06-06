@@ -120,6 +120,7 @@ if has('gui_running')
   set guioptions-=T           " disable the ugly toolbar
   set guioptions-=R           " disable right scrollbar if not needed
   set guioptions-=r           "
+  set guioptions=c            " do not use gui popup for simple choices
   set guicursor+=a:blinkon0   " disable cursor blinking
 
   set list                    " show hidden chars
