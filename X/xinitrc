@@ -46,6 +46,9 @@
 # panel
 #tint2 &
 
+# sound applet
+#pasystray &
+
 # WM
 #exec i3
 #exec openbox-session
