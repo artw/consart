@@ -1,8 +1,8 @@
-#!/usr/bin/env zsh 
+#!/usr/bin/env zsh
 
 print_usage() {
   echo "usage: winep [wine prefix directory]"
-  echo "  shows and sets WINEPREFIX"  
+  echo "  shows and sets WINEPREFIX"
 }
 
 if [[ ( -z $1 && -z $WINEPREFIX ) || $1 == "-h" || $1 == "--help" ]]; then
