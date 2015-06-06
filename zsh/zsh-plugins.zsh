@@ -1,13 +1,13 @@
 # load antigen if available
 if [[ -f ~/.zsh/external/antigen/antigen.zsh ]]; then
 antigen_bundles=(
+  Vifon/deer
+  chrissicool/zsh-256color
+  rupa/z
+  sharat87/zsh-vim-mode
   zsh-users/zsh-completions
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-syntax-highlighting
-  rupa/z
-  sharat87/zsh-vim-mode
-  chrissicool/zsh-256color
-  Vifon/deer
 )
   source ~/.zsh/external/antigen/antigen.zsh
   foreach bundle in $antigen_bundles
