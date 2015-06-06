@@ -49,6 +49,9 @@
 # sound applet
 #pasystray &
 
+# dim screen at night
+#redshift & 
+
 # WM
 #exec i3
 #exec openbox-session
