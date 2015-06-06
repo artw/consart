@@ -1,19 +1,53 @@
 # load antigen if available
 if [[ -f ~/.zsh/external/antigen/antigen.zsh ]]; then
+antigen_bundles=(
+  zsh-users/zsh-completions
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-syntax-highlighting
+  rupa/z
+  sharat87/zsh-vim-mode
+  chrissicool/zsh-256color
+  Vifon/deer
+)
   source ~/.zsh/external/antigen/antigen.zsh
-  # antigen bundles
-  antigen bundle zsh-users/zsh-completions
-  antigen bundle zsh-users/zsh-history-substring-search
-  antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen bundle rupa/z
-fi
+  foreach bundle in $antigen_bundles
+    antigen bundle $bundle
+  end
+  antigen apply
+  # bind up/down j/k to substring search if zsh-substring-search is installed
+  if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search.git/zsh-history-substring-search.plugin.zsh ]]; then
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+  fi
 
-# bind up/down j/k to substring search if zsh-substring-search is installed
-if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search.git/zsh-history-substring-search.plugin.zsh ]]; then
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
+  # load deer and bind it to alt+k
+  if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-Vifon-SLASH-deer.git/deer ]]; then
+    source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-Vifon-SLASH-deer.git/deer
+    zle -N deer-launch
+    bindkey '\ek' deer-launch
+    typeset -Ag DEER_KEYS
+    DEER_KEYS[down]=j
+    DEER_KEYS[page_down]=J
+    DEER_KEYS[up]=k
+    DEER_KEYS[page_up]=K
+    DEER_KEYS[enter]=l
+    DEER_KEYS[leave]=h
+    DEER_KEYS[search]=/
+    DEER_KEYS[filter]=f
+    DEER_KEYS[toggle_hidden]=H
+    DEER_KEYS[quit]=q
+    DEER_KEYS[append_path]=a
+    DEER_KEYS[append_abs_path]=A
+    DEER_KEYS[insert_path]=i
+    DEER_KEYS[insert_abs_path]=I
+    DEER_KEYS[multi_insert_dwim]=s
+    DEER_KEYS[chdir]=c
+    DEER_KEYS[chdir_selected]=C
+    DEER_KEYS[rifle]=r
+  fi
+  if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-dbb.git/zsh-stuff ]]; then
+    fpath+=~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-dbb.git/zsh-stuff 
+  fi
 fi
 
 # load rbenv if available
