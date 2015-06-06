@@ -15,11 +15,15 @@ if [[ -z $1 && -d $WINEPREFIX ]]; then
   return 0
 fi
 
-if [[ -d $1 ]]; then
-  export WINEPREFIX=$1
-  echo "WINEPREFIX set to $WINEPREFIX"
-else
-  echo "Creating new WINEPREFIX in $1"
-  mkdir -p $1 && export WINEPREFIX=$1 &&
-  winecfg
+############################################################################
+
+if [[ `uname -m` == "x86_64" ]]; then
+  export WINEARCH="win32"
 fi
+
+if [[ ! -d $1 ]]; then
+  mkdir -p $WINEPREFIX
+fi
+
+export WINEPREFIX=$1
+echo "WINEPREFIX set to $WINEPREFIX"
