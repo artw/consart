@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh 
 
 print_usage() {
-  echo "usage: $0 [wine prefix directory]"
+  echo "usage: winep [wine prefix directory]"
   echo "  shows and sets WINEPREFIX"  
 }
 
