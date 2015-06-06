@@ -6,7 +6,7 @@ case $OSTYPE in
 linux*)
   alias grep="grep --color=auto"
   alias ls="ls --color=auto -F"
-  iscmd grub-mkconfig && alias -g grub2-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
+  iscmd grub-mkconfig && alias grub-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
   # arch
   if iscmd pacman; then
     alias pm="${sudo}pacman"
@@ -31,7 +31,7 @@ linux*)
   # suse
   iscmd zypper && alias zyp="${sudo}zypper"
 
-  # MIPS device with optware (f.e. router)
+  # MIPS device with optware (router)
   if [[ $(uname -m) -eq 'mips' ]]; then
     iscmd hg-py2.7 && alias -g hg="hg-py2.7"
     unalias grep # busybox grep is monochrome
@@ -206,12 +206,8 @@ fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
 
-# oracle
-if iscmd rlwrap; then
-  iscmd sqlplus && alias sqlplus="rlwrap sqlplus"
-  iscmd sqlplus && alias sql="rlwrap sqlplus / as sysdba"
-  iscmd rman && alias rman="rlwrap rman"
-  iscmd asmcmd && alias asmcmd="rlwrap asmcmd"
+if iscmd dropbox-cli; then
+  alias dropbox="dropbox-cli"
 fi
 
 # fix mouseable apps in screen/tmux
