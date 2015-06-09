@@ -18,6 +18,7 @@ if vundle == 1
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'bling/vim-airline'
   Plugin 'ervandew/supertab'
+  Plugin 'gmarik/sudo-gui.vim'
   Plugin 'junegunn/vim-easy-align'
   Plugin 'kien/ctrlp.vim'
   Plugin 'mhinz/vim-startify'
@@ -147,7 +148,7 @@ let mapleader = ","
 command! CD cd %:p:h
 
 " sudo write:
-command! W w !sudo tee % > /dev/null
+command! W w SudoWrite
 
 " copy all to system clipboard
 command! Y %y*
