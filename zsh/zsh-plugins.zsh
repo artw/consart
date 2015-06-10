@@ -45,9 +45,6 @@ antigen_bundles=(
     DEER_KEYS[chdir_selected]=C
     DEER_KEYS[rifle]=r
   fi
-  if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-dbb.git/zsh-stuff ]]; then
-    fpath+=~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-dbb.git/zsh-stuff 
-  fi
 fi
 
 # load rbenv if available
