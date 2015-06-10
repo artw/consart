@@ -76,7 +76,6 @@ set incsearch                  "  search as we type
 "set hlsearch                  "  highligh search matches
 "set list                      "  show unpritable chars
 set number                     "  show line numbers
-set relativenumber             "  show relative line numbers
 set linespace=0                "  more compact text
 "set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
@@ -87,6 +86,10 @@ set smartcase                  "  ignore case when lowercase, don't ignore if no
 "set autochdir                  "  auto cd to current file
 set cursorline                 " highlight the line with cursor
 set cursorcolumn               " highlight the column with cursor
+
+if version >=730
+  set relativenumber             "  show relative line numbers
+endif
 
 " enable mouse if available
 if has('mouse')
