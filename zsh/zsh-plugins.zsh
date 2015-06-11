@@ -95,5 +95,5 @@ function install_vundle {
 }
 
 function install_zgen {
- git-clone https://github.com/zsh-users/antigen ~/.zsh/external/antigen
+ git-clone https://github.com/tarjoilija/zgen ~/.zsh/ext/zgen
 }
