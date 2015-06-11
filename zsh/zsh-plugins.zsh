@@ -9,7 +9,7 @@ if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
     sharat87/zsh-vim-mode
     zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
-    zsh-users/zsh/syntax-highlighting
+    zsh-users/zsh-syntax-highlighting
   )
   source ~/.zsh/ext/zgen/zgen.zsh
   if ! zgen saved; then
