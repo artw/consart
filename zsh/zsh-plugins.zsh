@@ -1,28 +1,33 @@
-# load antigen if available
-if [[ -f ~/.zsh/external/antigen/antigen.zsh ]]; then
-antigen_bundles=(
-  Vifon/deer
-  chrissicool/zsh-256color
-  rupa/z
-  sharat87/zsh-vim-mode
-  zsh-users/zsh-completions
-  zsh-users/zsh-history-substring-search
-  zsh-users/zsh-syntax-highlighting
-)
-  source ~/.zsh/external/antigen/antigen.zsh
-  foreach bundle in $antigen_bundles
-    antigen bundle $bundle
-  end
-  antigen apply
-  # bind up/down j/k to substring search if zsh-substring-search is installed
-  if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search.git/zsh-history-substring-search.plugin.zsh ]]; then
+# load zgen if available
+if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
+  typeset -a zsh_plugins
+  zsh_plugins=(
+    #artw/oracle.zsh
+    Vifon/deer
+    chrissicool/zsh-256color
+    rupa/z
+    sharat87/zsh-vim-mode
+    zsh-users/zsh-completions
+    zsh-users/zsh-history-substring-search
+    zsh-users/zsh/syntax-highlighting
+  )
+  source ~/.zsh/ext/zgen/zgen.zsh
+  if ! zgen saved; then
+    echo "Generating zgen cache..."
+    foreach bundle in $zsh_plugins
+      zgen load $bundle
+    end
+  zgen save
+  fi
+  # bind up/down to substring search if zsh-substring-search is installed
+  if [[ -d ~/.zgen/zsh-users/zsh-history-substring-search-master ]]; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
 
   # load deer and bind it to alt+k
-  if [[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-Vifon-SLASH-deer.git/deer ]]; then
-    source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-Vifon-SLASH-deer.git/deer
+  if [[ -d ~/.zgen/repos/Vifon/deer-master ]]; then
+    source ~/.zgen/repos/Vifon/deer-master/deer
     zle -N deer-launch
     bindkey '\ek' deer-launch
     typeset -Ag DEER_KEYS
@@ -89,6 +94,6 @@ function install_vundle {
   git-clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
 }
 
-function install_antigen {
+function install_zgen {
  git-clone https://github.com/zsh-users/antigen ~/.zsh/external/antigen
 }
