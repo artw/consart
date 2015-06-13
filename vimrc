@@ -151,7 +151,7 @@ let mapleader = ","
 command! CD cd %:p:h
 
 " sudo write:
-command! W w SudoWrite
+command! W SudoWrite
 
 " copy all to system clipboard
 command! Y %y*
@@ -193,6 +193,8 @@ nmap <F2>      :NERDTreeToggle<CR>
 nmap <Leader>t :NERDTreeToggle<CR>
 nmap <F3>      :NERDTreeFind<CR>
 nmap <Leader>f :NERDTreeFind<CR>
+nmap <F4>      :Startify<CR>
+nmap <Leader>s :Startify<CR>
 
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
