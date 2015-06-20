@@ -29,6 +29,7 @@ if vundle == 1
   Plugin 'tpope/vim-surround'
   Plugin 'vim-perl/vim-perl'
   Plugin 'yko/mojo.vim'
+  Plugin 'jiangmiao/auto-pairs'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
   "Plugin 'yuratomo/w3m.vim'
@@ -202,6 +203,8 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign with a Vim movement
 nmap <Leader>a <Plug>(EasyAlign)
 
+imap <C-L> ->
+imap <C-K> <Space>=><Space>
+
 " higlight __DATA__ for mojo
 let mojo_highlight_data = 1
-

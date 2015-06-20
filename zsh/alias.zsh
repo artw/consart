@@ -12,6 +12,11 @@ linux*)
     alias pm="${sudo}pacman"
     if iscmd yaourt; then
       alias ya="yaourt"
+      alias yu="yaourt -Syu"
+      alias ys="yaourt -Ss"
+      alias yi="yaourt -S"
+      alias yr="yaourt -Rusc"
+      alias yq="yaourt -Q"
     fi
   fi
   # gentoo
