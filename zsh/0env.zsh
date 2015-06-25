@@ -100,7 +100,10 @@ case $OSTYPE in
 esac
 
 # default pager
-which less >/dev/null && export PAGER=less
+if which less >/dev/null; then 
+  export LESS=-r
+  export PAGER=less
+fi
 
 # set default editor
 if which vim >/dev/null; then
