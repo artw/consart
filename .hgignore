@@ -7,4 +7,4 @@ vim/bundle
 vim/dist
 vim/src
 vim/tmp
-zsh/external
+zsh/ext
