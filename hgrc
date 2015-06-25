@@ -8,6 +8,8 @@ vimdiff.args = -d $base $local $output $other +close +close
 
 [extensions]
 color =
+progress =
+pager =
 mq =
 record =
 shelve =
