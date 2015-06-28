@@ -164,6 +164,7 @@ alias -g L='| less'
 alias -g G='| grep'
 alias -g Gv='| grep -v'
 alias -g S='| sort -n'
+iscmd peco && alias -g P='| peco'
 
 # function like
 alias today='date +%Y-%m-%d'
