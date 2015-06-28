@@ -16,3 +16,6 @@ defaults write com.apple.dock expose-animation-duration -float 0.1337
 
 # touchpad automatic orientation
 sudo defaults write com.apple.MultitouchSupport ForceAutoOrientation YES
+
+# do not create .DS_Store files on network drives
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
