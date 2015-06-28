@@ -52,8 +52,8 @@ if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
   fi
 fi
 
-# load rbenv if available
-if [[ -d $HOME/.rbenv ]];then 
+# load rbenv if installed
+if [[ -d $HOME/.rbenv ]]; then
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
 fi
@@ -65,7 +65,7 @@ if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
 fi
 
 ## installers for plugins
-# rbenv, cleaner RVM alternative
+# rbenv, ruby installation management tool
 function install_rbenv {
   git-clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git-clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -86,14 +86,21 @@ function install_q {
 
 # perlbrew, perl installation management tool
 function install_perlbrew {
+  if [[ -d $HOME/.perlbrew ]]; then
+    echo "~/.perlbrew already exists, trying to update instead"
+    perlbrew self-upgrade
+    return
+  fi
   export PERLBREW_ROOT=$HOME/.perlbrew
   curl -L http://install.perlbrew.pl | sh
 }
 
+# vundle, plugin manager for vim
 function install_vundle {
   git-clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
 }
 
+# zsh, fast plugin manager for zsh
 function install_zgen {
- git-clone https://github.com/tarjoilija/zgen ~/.zsh/ext/zgen
+  git-clone https://github.com/tarjoilija/zgen ~/.zsh/ext/zgen
 }
