@@ -64,6 +64,12 @@ if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
   source $PERLBREW_ROOT/etc/bashrc
 fi
 
+# load jenv if installed
+if [[ -x $HOME/.jenv/bin/jenv ]]; then
+  export PATH=$HOME/.jenv/bin:$PATH
+  eval "$(jenv init -)"
+fi
+
 ## installers for plugins
 # rbenv, ruby installation management tool
 function install_rbenv {
@@ -103,4 +109,9 @@ function install_vundle {
 # zsh, fast plugin manager for zsh
 function install_zgen {
   git-clone https://github.com/tarjoilija/zgen ~/.zsh/ext/zgen
+}
+
+# jenv, java installation management tool
+function install_jenv {
+  git-clone https://github.com/gcuisinier/jenv.git ~/.jenv
 }
