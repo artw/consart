@@ -51,6 +51,7 @@ linux*)
 
 cygwin|msys)
   alias ls=" ls --color=auto -F"
+  iscmd pacman && alias pm="${sudo}pacman"
 ;;
 
 darwin*)
@@ -145,9 +146,9 @@ alias -g dua='du -kax'
 
 # editor
 if [[ ! -z $EDITOR ]]; then
-  alias e="TERM=xterm-256color $EDITOR"
-  alias E="TERM=xterm-256color sudo -E $EDITOR"
-  alias _e="TERM=xterm-256color sudo -E $EDITOR"
+  alias e="$EDITOR"
+  alias E="sudo -E $EDITOR"
+  alias _e="sudo -E $EDITOR"
 fi
 iscmd gvim && alias ge=gvim
 
@@ -186,10 +187,10 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="tmux attach -c ~ || tmux new -c ~"
+  alias tx="tmux attach || cd ~; tmux new"
   alias txl="tmux list-sessions"
-  alias txa="tmux attach -c ~ -t"
-  alias txc="tmux new-session -c ~ -s"
+  alias txa="tmux attach -t"
+  alias txc="tmux new-session -s"
 fi
 
 if iscmd hg; then
@@ -214,18 +215,6 @@ iscmd gdisk && alias gdisk="${sudo}gdisk"
 
 if iscmd dropbox-cli; then
   alias dropbox="dropbox-cli"
-fi
-
-# fix mouseable apps in screen/tmux
-if [[ $TERM == screen-256color ]]; then
-  iscmd mc && alias mc="TERM=xterm-256color mc"
-elif [[ $TERM == screen ]]; then
-  iscmd mc && alias mc="TERM=xterm mc"
-fi
-
-if [[ $TERM == xterm-256color || $TERM == screen* ]]; then
-  # F keys are broken when 256color, and mouse does not work in screen
-  iscmd htop && alias htop="TERM=xterm htop"
 fi
 
 # consart
