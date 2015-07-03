@@ -1,14 +1,9 @@
-"i3-msg bar hidden_state toggle"
+"i3-msg bar mode toggle"
   b:10
 
-"mixer vol +5"
-  Mod4 + Shift + Page_Up
+#"mixer vol +5"
+#  Mod4 + Shift + Page_Up
 
-"mixer vol -5"
-  Mod4 + Shift + Page_Down
-
-"$HOME/.zsh/functions/match-wm-class Vimb && xdotool key ctrl+o"
-  b:8
-
-"$HOME/.zsh/functions/match-wm-class Vimb && xdotool key ctrl+i"
-  b:9
+#"mixer vol -5"
+#  Mod4 + Shift + Page_Down
+#
