@@ -58,13 +58,14 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Return floating toggle
+bindsym $mod+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+Return focus mode_toggle
+bindsym $mod+Tab focus mode_toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+Return fullscreen
+bindsym $mod+Shift+f fullscreen
 
 # focus the parent container
 bindsym $mod+c focus parent
@@ -73,11 +74,11 @@ bindsym $mod+c focus parent
 bindsym $mod+Shift+c focus child
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+Tab move scratchpad
+bindsym Shift+Menu move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+Tab scratchpad show
+bindsym Menu scratchpad show
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -140,16 +141,16 @@ mode "resize" {
         # Pressing right will grow the window's width.
         # Pressing up will shrink the window's height.
         # Pressing down will grow the window's height.
-        bindsym h resize grow width 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize grow width 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
