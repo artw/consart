@@ -6,4 +6,18 @@
 
 #"mixer vol -5"
 #  Mod4 + Shift + Page_Down
-#
+
+#"pactl set-sink-volume 1 +5%"
+#  XF86AudioRaiseVolume
+
+#"pactl set-sink-volume 1 -5%"
+#  XF86AudioLowerVolume
+
+#"pactl set-sink-mute 1 toggle"
+#  XF86AudioMute
+
+#"dmenu_run -b -i -z -hist ~/.dmenu_history -fn ProFont-8"
+#  Mod4 + space
+
+#"urxvtc"
+#  Mod4 + grave
