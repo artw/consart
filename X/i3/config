@@ -80,6 +80,10 @@ bindsym Shift+Menu move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Menu scratchpad show
 
+# dialog for renaming the current workspace
+
+bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
