@@ -15,6 +15,7 @@ linux*)
       alias yu="yaourt -Syua"
       alias ys="yaourt -Ss"
       alias yi="yaourt -S"
+      alias yii="yaourt -S --noconfirm"
       alias yr="yaourt -Rusc"
       alias yq="yaourt -Q"
     fi
