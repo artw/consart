@@ -70,6 +70,11 @@ if [[ -x $HOME/.jenv/bin/jenv ]]; then
   eval "$(jenv init -)"
 fi
 
+# load qfc if installed
+if [[ -f $HOME/.qfc/bin/qfc.sh ]]; then
+  source $HOME/.qfc/bin/qfc.sh 
+fi
+
 ## installers for plugins
 # rbenv, ruby installation management tool
 function install_rbenv {
@@ -115,3 +120,9 @@ function install_zgen {
 function install_jenv {
   git-clone https://github.com/gcuisinier/jenv.git ~/.jenv
 }
+
+# qfc, file path autocomplete alternative
+function install_qfc {
+  git-clone https://github.com/pindexis/qfc ~/.qfc
+}
+
