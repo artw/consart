@@ -3,7 +3,6 @@ if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
   typeset -a zsh_plugins
   zsh_plugins=(
     #artw/oracle.zsh
-    Vifon/deer
     chrissicool/zsh-256color
     rupa/z
     sharat87/zsh-vim-mode
@@ -23,32 +22,6 @@ if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
   if [[ -d ~/.zgen/zsh-users/zsh-history-substring-search-master ]]; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
-  fi
-
-  # load deer and bind it to alt+k
-  if [[ -d ~/.zgen/repos/Vifon/deer-master ]]; then
-    source ~/.zgen/repos/Vifon/deer-master/deer
-    zle -N deer-launch
-    bindkey '\ek' deer-launch
-    typeset -Ag DEER_KEYS
-    DEER_KEYS[down]=j
-    DEER_KEYS[page_down]=J
-    DEER_KEYS[up]=k
-    DEER_KEYS[page_up]=K
-    DEER_KEYS[enter]=l
-    DEER_KEYS[leave]=h
-    DEER_KEYS[search]=/
-    DEER_KEYS[filter]=f
-    DEER_KEYS[toggle_hidden]=H
-    DEER_KEYS[quit]=q
-    DEER_KEYS[append_path]=a
-    DEER_KEYS[append_abs_path]=A
-    DEER_KEYS[insert_path]=i
-    DEER_KEYS[insert_abs_path]=I
-    DEER_KEYS[multi_insert_dwim]=s
-    DEER_KEYS[chdir]=c
-    DEER_KEYS[chdir_selected]=C
-    DEER_KEYS[rifle]=r
   fi
 fi
 
@@ -70,9 +43,10 @@ if [[ -x $HOME/.jenv/bin/jenv ]]; then
   eval "$(jenv init -)"
 fi
 
-# load qfc if installed
-if [[ -f $HOME/.qfc/bin/qfc.sh ]]; then
-  source $HOME/.qfc/bin/qfc.sh 
+# load fzf if installed
+if [[ -x ~/.fzf/fzf ]]; then
+  source $HOME/.fzf/shell/completion.zsh
+  source $HOME/.fzf/shell/key-bindings.zsh
 fi
 
 ## installers for plugins
@@ -121,8 +95,10 @@ function install_jenv {
   git-clone https://github.com/gcuisinier/jenv.git ~/.jenv
 }
 
-# qfc, file path autocomplete alternative
-function install_qfc {
-  git-clone https://github.com/pindexis/qfc ~/.qfc
+# fzf, fuzzy finder written in go
+function install_fzf {
+  git-clone https://github.com/junegunn/fzf ~/.fzf
+  mkdir -p ~/.bin
+  ln -sf ~/.fzf/fzf ~/.bin/fzf
+  ln -sf ~/.fzf/bin/fzf-tmux ~/.bin/fzf-tmux
 }
-
