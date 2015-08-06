@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+if [[ ! -d $1/.hg && ! -d .hg ]]; then
+  echo "usage: $0 [hg workdir]"
+  echo "\tUpdates hg repo at [hg workdir] (or pwd if not specified).\n \
+\tUses sudo if repo is owned by root"
+  return 1
+fi
+
+if [[ -d $1/.hg ]]; then
+  pushd $1
+fi
+
+if [[ $(stat -f %u .) == 0 ]]; then
+  use_sudo=sudo
+fi
+
+$use_sudo hg pull -u

@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+# get osx release version, strip dots and newline, so it can be interpreted as an integer
+sw_vers -productVersion | sed 's/\.//g' | tr -d '\n'

@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+# space switching delay when dragging windows to screen borders
+defaults write com.apple.dock workspaces-edge-delay -float 5
+
+# dock icon size
+defaults write com.apple.dock tilesize -int 40
+
+# dock icon size when magnified
+defaults write com.apple.dock largesize -int 50
+
+# enable key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# faster expose animations
+defaults write com.apple.dock expose-animation-duration -float 0.1337
+
+# touchpad automatic orientation
+sudo defaults write com.apple.MultitouchSupport ForceAutoOrientation YES
+
+# do not create .DS_Store files on network drives
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true

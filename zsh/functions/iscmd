@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+# test if specified argument is an executable command
+# it can be either a path, a command in $PATH, a builtin or alias
+if [[ ( -f $1 && -x $1 ) ]] || which $1 1>/dev/null; then
+  return 0
+else
+  return 1
+fi
+

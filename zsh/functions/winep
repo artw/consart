@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+print_usage() {
+  echo "usage: winep [wine prefix directory]"
+  echo "  shows and sets WINEPREFIX"
+}
+
+if [[ ( -z $1 && -z $WINEPREFIX ) || $1 == "-h" || $1 == "--help" ]]; then
+  print_usage
+  return 0
+fi
+
+if [[ -z $1 && -d $WINEPREFIX ]]; then
+  echo "WINEPREFIX=$WINEPREFIX"
+  return 0
+fi
+
+############################################################################
+
+if [[ `uname -m` == "x86_64" ]]; then
+  export WINEARCH="win32"
+fi
+
+if [[ ! -d $1 ]]; then
+  mkdir -p $WINEPREFIX
+fi
+
+export WINEPREFIX=$1
+echo "WINEPREFIX set to $WINEPREFIX"

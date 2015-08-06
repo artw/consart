@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+if [[ -z $1 || $1 == '-h' ]]; then
+  echo "usage: $0 <portname>"
+  return 1
+fi
+
+for n in $@; do
+  whereis -sq $n | sed -e 's#/usr/ports/##' | grep .
+done;
+

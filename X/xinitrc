@@ -1,0 +1,65 @@
+# unicode
+#export LANG=en_GB.UTF-8
+
+# for QT GTK+ theme
+#export GTK2_RC_FILES=$HOME/.gtkrc-2.0
+
+# for KDE stuff without KDE
+#export XDG_CURRENT_DESKTOP=KDE
+
+# fix java dialogs in tiling wms
+#wmname LG3D &
+
+# firefox hw accel
+#export MOZ_USE_OMTC=1
+
+# java awt font antiasing
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd
+
+# keymap settings
+#setxkbmap -layout "lv,ru" \
+#          -option "altwin:swap_alt_win" \
+#          -option "caps:escape" \
+#          -option "grp:alt_shift_toggle" \
+#          -option "terminate:ctrl_alt_bksp" &
+
+# disable bell
+#xset b off &
+
+# keymap switcher
+#xxkb &
+
+# set wallpaper
+#feh --bg-scale ~/.wallpaper &
+
+# desktop
+#pcmanfm --desktop &
+
+# compositor
+#compton -b &
+
+# bind keys
+#xbindkeys &
+
+# remap keys
+#( sleep 1 && xmodmap ~/.Xmodmap ) &
+
+# hide mouse cursor when not used
+#unclutter &
+
+# clipboard manager
+#parcellite &
+
+# panel
+#tint2 &
+
+# sound applet
+#pasystray &
+
+# dim screen at night
+#redshift & 
+
+# WM
+#exec i3
+#exec openbox-session
+#exec fluxbox

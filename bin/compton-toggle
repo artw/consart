@@ -1,0 +1,8 @@
+#!/bin/sh
+PID=`pidof compton`
+
+if [[ -z $PID  ]]; then
+  compton -b
+else 
+  kill $PID
+fi
