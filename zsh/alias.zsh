@@ -218,6 +218,8 @@ if iscmd dropbox-cli; then
   alias dropbox="dropbox-cli"
 fi
 
+iscmd curl && alias myip="curl ipecho.net/plain;echo"
+
 # consart
 alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && hgu"
