@@ -3,7 +3,7 @@ if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
   typeset -a zsh_plugins
   zsh_plugins=(
     #artw/oracle.zsh
-    chrissicool/zsh-256color
+    artw/zsh-256color
     rupa/z
     sharat87/zsh-vim-mode
     zsh-users/zsh-completions
