@@ -7,7 +7,7 @@ if [[ ! -d $1/.git && ! -d .git ]]; then
 fi
 
 if [[ -d $1/.git ]]; then
-  repo=$1
+  local repo=$1
   pushd $repo
 elif [[ ! -d $PWD/.git ]]; then
   echo "Not a git repo"
@@ -15,7 +15,7 @@ elif [[ ! -d $PWD/.git ]]; then
 fi
 
 if [[ $(stat -f %u .) == 0 ]]; then
-  use_sudo=sudo
+  local use_sudo=sudo
 fi
 
 $use_sudo git pull
