@@ -30,3 +30,16 @@
 
 #"urxvtc"
 #  Mod4 + grave
+
+"light -A 10"
+  XF86MonBrightnessUp
+
+"light -U 10"
+  XF86MonBrightnessDown
+
+"kbdlight up 10"
+  XF86KbdBrightnessUp
+
+"kbdlight down 10"
+  XF86KbdBrightnessDown
+
