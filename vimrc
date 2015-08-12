@@ -19,6 +19,7 @@ if vundle == 1
   Plugin 'bling/vim-airline'
   Plugin 'ervandew/supertab'
   Plugin 'gmarik/sudo-gui.vim'
+  Plugin 'jiangmiao/auto-pairs'
   Plugin 'junegunn/vim-easy-align'
   Plugin 'kien/ctrlp.vim'
   Plugin 'mhinz/vim-startify'
@@ -27,19 +28,18 @@ if vundle == 1
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-surround'
-  Plugin 'vim-perl/vim-perl'
-  Plugin 'yko/mojo.vim'
-  Plugin 'jiangmiao/auto-pairs'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
+  "Plugin 'vim-perl/vim-perl'
+  "Plugin 'yko/mojo.vim'
   "Plugin 'yuratomo/w3m.vim'
 
   " colorthemes
-  Plugin 'quanganhdo/grb256'
   Plugin 'nanotech/jellybeans.vim'
-  "Plugin 'xoria256.vim'
-  "Plugin 'chriskempson/base16-vim'
   "Plugin 'Lokaltog/vim-distinguished'
+  "Plugin 'chriskempson/base16-vim'
+  "Plugin 'quanganhdo/grb256'
+  "Plugin 'xoria256.vim'
 
   call vundle#end()
 endif
@@ -132,17 +132,8 @@ if has('gui_running')
   set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
 endif
 
-" set 256 color scheme if possible (with fallback)
 set bg=dark
-if has('gui_running') || &t_Co == 256
-  try
-    colorscheme grb256
-  catch
-    colorscheme jellybeans
-  endtry
-else
-  colorscheme jellybeans
-endif
+colorscheme jellybeans
 
 " set leader key to comma:
 let mapleader = ","
