@@ -32,7 +32,7 @@ function ssh-agent-start {
   fi
 }
 
-if [[ ! -z $SSH_AGENT_ENABLE  ]]; then
+if [[ -f ~/.ssh/id_rsa ]]; then
   ssh-agent-start
 fi
 
