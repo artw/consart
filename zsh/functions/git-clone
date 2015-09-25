@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-if [[ -z $2 || -z $1 ]]; then
+if [[ -z $1 ]]; then
   echo "usage: $0 <repo address> <local dir>"
   return 1
 fi
@@ -9,7 +9,13 @@ if ! iscmd git; then
 fi
 
 local repo=$1
-local workdir=$2
+local workdir
+
+if [[ -z $2 ]]; then
+  workdir=$1:t:r # tail w/o ext
+else
+  workdir=$2
+fi
 
 if [[ -d $workdir/.git ]]; then
   echo "$workdir already exists, trying to update instead"
