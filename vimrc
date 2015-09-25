@@ -27,6 +27,7 @@ if vundle == 1
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
