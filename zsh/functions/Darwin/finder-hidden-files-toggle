@@ -1,0 +1,13 @@
+#!/usr/bin/zsh
+
+local DOMAIN="com.apple.finder" 
+local PARAM="AppleShowAllFiles"
+local VALUE=$(defaults read $DOMAIN $PARAM)
+
+if [[ "$VALUE" == "TRUE" ]]; then
+  defaults write $DOMAIN $PARAM FALSE
+else
+  defaults write $DOMAIN $PARAM TRUE
+fi
+
+killall Finder
