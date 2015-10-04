@@ -203,11 +203,6 @@ if iscmd ssh; then
   alias @c="ssh -t "
 fi
 
-if iscmd zpool && iscmd zfs; then
-  alias zpool="${sudo}zpool"
-  alias zfs="${sudo}zfs"
-fi
-
 iscmd gdisk && alias gdisk="${sudo}gdisk"
 
 if iscmd dropbox-cli; then
