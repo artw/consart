@@ -117,7 +117,7 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_macvim')
-    set gfn=ProFont:h14
+    set guifont=Source\ Code\ Pro:h14
   elseif has('gui_win32')
     set guifont=Source_Code_Pro_Semibold:h12
   elseif has('gui_gtk')
@@ -200,3 +200,7 @@ imap <C-K> <Space>=><Space>
 
 " higlight __DATA__ for mojo
 let mojo_highlight_data = 1
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
