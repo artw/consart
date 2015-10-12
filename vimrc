@@ -189,6 +189,7 @@ nmap <F3>      :NERDTreeFind<CR>
 nmap <Leader>f :NERDTreeFind<CR>
 nmap <F4>      :Startify<CR>
 nmap <Leader>s :Startify<CR>
+nmap <Leader>p :CtrlP<CR>
 
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
