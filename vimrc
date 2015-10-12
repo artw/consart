@@ -30,6 +30,8 @@ if vundle == 1
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
+  Plugin 'xolox/vim-misc'
+  Plugin 'xolox/vim-session'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
   "Plugin 'vim-perl/vim-perl'
@@ -206,3 +208,7 @@ let mojo_highlight_data = 1
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" vim-session
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
