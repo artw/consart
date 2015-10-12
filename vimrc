@@ -18,6 +18,7 @@ if vundle == 1
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Rename'
   Plugin 'bling/vim-airline'
+  Plugin 'dbext.vim'
   Plugin 'ervandew/supertab'
   Plugin 'gmarik/sudo-gui.vim'
   Plugin 'jiangmiao/auto-pairs'
@@ -134,6 +135,11 @@ if has('gui_running')
 
   set list                    " show hidden chars
   set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
+
+  " load perlbrew path if installed
+  if filereadable($HOME . ".perlbrew/etc/bashrc")
+    let $PATH=system("source " . $HOME . "/perl5/perlbrew/etc/bashrc; echo -n $PATH")
+  endif
 endif
 
 set bg=dark
@@ -212,3 +218,11 @@ let g:airline#extensions#tabline#enabled = 1
 " vim-session
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
+
+" dbext
+let g:dbext_default_history_file = $HOME . "/.vim/dbext_history"
+
+"" load vimrc.local if available
+if filereadable($HOME . "/.vimrc.local")
+  so $HOME/.vimrc.local
+endif
