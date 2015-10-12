@@ -16,6 +16,7 @@ if vundle == 1
 
   " plugins
   Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'Rename'
   Plugin 'bling/vim-airline'
   Plugin 'ervandew/supertab'
   Plugin 'gmarik/sudo-gui.vim'
