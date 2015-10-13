@@ -137,8 +137,8 @@ if has('gui_running')
   set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
 
   " load perlbrew path if installed
-  if filereadable($HOME . ".perlbrew/etc/bashrc")
-    let $PATH=system("source " . $HOME . "/perl5/perlbrew/etc/bashrc; echo -n $PATH")
+  if filereadable($HOME . "/.perlbrew/etc/bashrc")
+    let $PATH=system("source " . $HOME . "/.perlbrew/etc/bashrc; echo -n $PATH")
   endif
 endif
 
