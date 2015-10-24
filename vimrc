@@ -138,7 +138,6 @@ if has('gui_running')
     let $PATH = system("source " . $HOME . "/.consart/zsh/0env.zsh; echo -n $PATH")
   endif
 endif
-
 set bg=dark
 colorscheme jellybeans
 
@@ -223,3 +222,4 @@ let g:dbext_default_history_file = $HOME . "/.vim/dbext_history"
 if filereadable($HOME . "/.vimrc.local")
   so $HOME/.vimrc.local
 endif
+
