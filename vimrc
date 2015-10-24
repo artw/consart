@@ -120,6 +120,7 @@ if has('gui_running')
   " set gui font
   if has('gui_macvim')
     set guifont=Source\ Code\ Pro:h14
+    let $LANG = "en_GB.UTF-8"
   elseif has('gui_win32')
     set guifont=Source_Code_Pro_Semibold:h12
   elseif has('gui_gtk')
