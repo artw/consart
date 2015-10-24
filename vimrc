@@ -31,8 +31,6 @@ if vundle == 1
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
-  Plugin 'xolox/vim-misc'
-  Plugin 'xolox/vim-session'
   "Plugin 'Valloric/YouCompleteMe'
   "Plugin 'talek/vorax4'
   "Plugin 'vim-perl/vim-perl'
