@@ -218,6 +218,9 @@ let g:session_autoload = 'no'
 " dbext
 let g:dbext_default_history_file = $HOME . "/.vim/dbext_history"
 
+" startify
+let g:startify_bookmarks = [ '~/.vimrc' ]
+
 "" load vimrc.local if available
 if filereadable($HOME . "/.vimrc.local")
   so $HOME/.vimrc.local
