@@ -29,6 +29,7 @@ if vundle == 1
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
+  Plugin 'sjl/gundo.vim'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
   "Plugin 'Valloric/YouCompleteMe'
@@ -193,6 +194,9 @@ nmap <F3>      :NERDTreeFind<CR>
 nmap <Leader>f :NERDTreeFind<CR>
 nmap <F4>      :Startify<CR>
 nmap <Leader>s :Startify<CR>
+nmap <F5>      :GundoToggle<CR>
+nmap <Leader>u :GundoToggle<CR>
+nmap <F7>      :CtrlP<CR>
 nmap <Leader>p :CtrlP<CR>
 
 " Start interactive EasyAlign in visual mode
