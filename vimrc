@@ -215,10 +215,6 @@ let mojo_highlight_data = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" vim-session
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
-
 " dbext
 let g:dbext_default_history_file = $HOME . "/.vim/dbext_history"
 
@@ -229,4 +225,3 @@ let g:startify_bookmarks = [ '~/.vimrc' ]
 if filereadable($HOME . "/.vimrc.local")
   so $HOME/.vimrc.local
 endif
-
