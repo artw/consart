@@ -75,8 +75,12 @@ darwin*)
     alias zzz="pmset sleepnow"
     alias -g "±"=$HOME
     alias "£"="sudo"
-    iscmd mvim && alias ge=mvim
     alias sc="${sudo}launchctl"
+
+    if [[ -a "/Applications/MacVim.app" ]]; then
+      alias ge=mvim
+      alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    fi
   fi
 ;;
 
