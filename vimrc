@@ -236,6 +236,14 @@ let g:dbext_default_use_sep_result_buffer = 1 " result buffer for each window
 " startify
 let g:startify_bookmarks = [ '~/.vimrc' ]
 
+" syntastic
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = [ "perl", "perlcritic", "podchecker" ]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "" load vimrc.local if available
 if filereadable($HOME . "/.vimrc.local")
   so $HOME/.vimrc.local
