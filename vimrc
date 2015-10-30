@@ -26,6 +26,7 @@ if vundle == 1
   Plugin 'kien/ctrlp.vim'
   Plugin 'mhinz/vim-startify'
   Plugin 'mileszs/ack.vim'
+  Plugin 'osyo-manga/vim-over'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
