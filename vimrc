@@ -230,6 +230,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " dbext
 let g:dbext_default_history_file = $HOME . "/.vim/dbext_history"
+let g:dbext_default_buffer_lines = 7 " default rowcount
+let g:dbext_default_use_sep_result_buffer = 1 " result buffer for each window
 
 " startify
 let g:startify_bookmarks = [ '~/.vimrc' ]
