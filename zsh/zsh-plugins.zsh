@@ -33,8 +33,7 @@ fi
 
 # load perlbrew if installed
 if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
-  export PERLBREW_ROOT=$HOME/.perlbrew
-  source $PERLBREW_ROOT/etc/bashrc
+  source $HOME/.perlbrew/etc/bashrc
 fi
 
 # load jenv if installed
