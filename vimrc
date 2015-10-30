@@ -122,6 +122,17 @@ if has('gui_running')
   if has('gui_macvim')
     set guifont=Source\ Code\ Pro:h14
     let $LANG = "en_GB.UTF-8"
+    " cmd + <n> binds for tab switching
+    noremap <D-1> :tabn 1<CR>
+    noremap <D-2> :tabn 2<CR>
+    noremap <D-3> :tabn 3<CR>
+    noremap <D-4> :tabn 4<CR>
+    noremap <D-5> :tabn 5<CR>
+    noremap <D-6> :tabn 6<CR>
+    noremap <D-7> :tabn 7<CR>
+    noremap <D-8> :tabn 8<CR>
+    noremap <D-9> :tabn 9<CR>
+    noremap <D-0> :tablast<CR>
   elseif has('gui_win32')
     set guifont=Source_Code_Pro_Semibold:h12
   elseif has('gui_gtk')
