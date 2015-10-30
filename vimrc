@@ -147,8 +147,9 @@ if has('gui_running')
 
   set list                    " show hidden chars
   set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
-  if filereadable($HOME . "/.consart/zsh/0env.zsh")
-    let $PATH = system("source " . $HOME . "/.consart/zsh/0env.zsh; echo -n $PATH")
+  " load consart
+  if filereadable($HOME . "/.zshrc")
+    let PATH = system("source " . $HOME . "/.zshrc")
   endif
 endif
 set bg=dark
