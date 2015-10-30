@@ -80,6 +80,7 @@ darwin*)
     if [[ -a "/Applications/MacVim.app" ]]; then
       alias ge=mvim
       alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+      alias vi=vim
     fi
   fi
 ;;
