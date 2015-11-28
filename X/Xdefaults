@@ -6,7 +6,7 @@
 !!!( URxvt settings
 URxvt*termName: xterm-256color
 URxvt*saveLines: 10000
-URxvt*font: xft:Source Code Pro Semibold:pixelsize=16
+URxvt*font: xft:Source Code Pro Semibold:pixelsize=15
 
 URxvt*scrollstyle: plain
 
