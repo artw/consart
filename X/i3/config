@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:ProFont 8
 
 # app binds
-bindsym $mod+grave exec urxvtc
+bindsym $mod+grave exec ~/.consart/bin/urxvtc
 #bindsym $mod+F1 exec dolphin
 #bindsym $mod+F2 exec chromium
 #bindsym $mod+F3 exec gvim
