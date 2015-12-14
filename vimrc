@@ -236,6 +236,7 @@ let g:dbext_default_use_sep_result_buffer = 1 " result buffer for each window
 
 " startify
 let g:startify_bookmarks = [ '~/.vimrc' ]
+let g:startify_session_persistence = 1
 
 " syntastic
 let g:syntastic_enable_perl_checker = 1
