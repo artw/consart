@@ -207,6 +207,7 @@ if iscmd ssh; then
   alias @x="ssh -CYf "
   alias @t="ssh -Nf "
   alias @c="ssh -t "
+  alias @cc="ssh -t -AK "
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
