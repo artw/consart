@@ -51,8 +51,8 @@ fi
 ## installers for plugins
 # rbenv, ruby installation management tool
 function install_rbenv {
-  git-clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-  git-clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git-clone sstephenson/rbenv.git ~/.rbenv
+  git-clone sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 }
 
 # q, "text as data", work with text using sql (requires python)
@@ -81,22 +81,22 @@ function install_perlbrew {
 
 # vundle, plugin manager for vim
 function install_vundle {
-  git-clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+  git-clone gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
 }
 
 # zsh, fast plugin manager for zsh
 function install_zgen {
-  git-clone https://github.com/tarjoilija/zgen ~/.zsh/ext/zgen
+  git-clone tarjoilija/zgen ~/.zsh/ext/zgen
 }
 
 # jenv, java installation management tool
 function install_jenv {
-  git-clone https://github.com/gcuisinier/jenv.git ~/.jenv
+  git-clone gcuisinier/jenv.git ~/.jenv
 }
 
 # fzf, fuzzy finder written in go
 function install_fzf {
-  git-clone https://github.com/junegunn/fzf ~/.fzf
+  git-clone junegunn/fzf ~/.fzf
   mkdir -p ~/.bin
   ln -sf ~/.fzf/fzf ~/.bin/fzf
   ln -sf ~/.fzf/bin/fzf-tmux ~/.bin/fzf-tmux
