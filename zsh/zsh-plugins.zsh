@@ -101,3 +101,11 @@ function install_fzf {
   ln -sf ~/.fzf/fzf ~/.bin/fzf
   ln -sf ~/.fzf/bin/fzf-tmux ~/.bin/fzf-tmux
 }
+
+# tmux plugin manager
+function install_tpm {
+  git-clone tmux-plugins/tpm ~/.tmux/plugins/tpm 
+  local runline="run '~/.tmux/plugins/tpm/tpm'"
+  local conf="$HOME/.tmux.conf"
+  grep $runline $conf &> /dev/null || echo $runline >> $conf
+}
