@@ -3,17 +3,26 @@
 cd $HOME
 echo "Cloning consart repo..."
 hg clone https://bitbucket.org/artwin/consart .consart &&
+
 echo "Linking dotfiles..."
 zsh .consart/link &&
 source .zshrc &&
+
 echo "Installing zgen..."
 install_zgen &&
+
 echo "Installing vundle..."
 install_vundle &&
+
 echo "Installing vim plugins..."
 vim -c PluginInstall! -c qa! &&
+
+echo "Installing tmux plugin manager..."
+install_tpm &&
+
 echo "Installing zgen plugins..."
 source .zshrc &&
+
 echo "Reloading..."
 source .zshrc &&
 echo "Done."
