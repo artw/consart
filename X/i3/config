@@ -2,17 +2,17 @@ set $alt Mod1
 set $mod Mod4
 
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:ProFont 8
+font pango:Source Code Pro Semibold 9 
 
 # app binds
 bindsym $mod+grave exec ~/.consart/bin/urxvtc
-#bindsym $mod+F1 exec dolphin
-#bindsym $mod+F2 exec chromium
-#bindsym $mod+F3 exec gvim
+bindsym $mod+F1 exec dolphin
+bindsym $mod+F2 exec firefox
+bindsym $mod+F3 exec gvim
 #bindsym $mod+F9 exec clementine
 bindsym $mod+Ctrl+l exec i3lock -c 000000
 bindsym $mod+Ctrl+Escape exec xkill
-#bindsym $mod+Shift+b exec ~/.consart/bin/compton-toggle
+bindsym $mod+Shift+b exec ~/.consart/bin/compton-toggle
 
 # kill focused window
 bindsym $mod+w kill

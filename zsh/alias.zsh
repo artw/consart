@@ -167,6 +167,8 @@ alias -g L='| less'
 alias -g G='| grep'
 alias -g Gv='| grep -v'
 alias -g S='| sort -n'
+alias -g BG='&>'
+alias -g NUL='/dev/null'
 iscmd peco && alias -g P='| peco'
 
 # function like
