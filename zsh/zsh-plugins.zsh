@@ -57,15 +57,18 @@ function install_rbenv {
 
 # q, "text as data", work with text using sql (requires python)
 function install_q {
-  if [[ -x ~/.bin/q ]]; then
-    echo "q is already at ~/.bin/q"
+  local name="q"
+  local version=1.5.0
+  local url="https://cdn.rawgit.com/harelba/q/${version}/bin/q\?source=install_page"
+  local dest=~/.bin/q
+  if [[ -x $dest ]]; then
+    echo "$name is already at $dest"
     return 1
-  else
-    mkdir -p ~/.bin &&
-    curl https://cdn.rawgit.com/harelba/q/1.5.0/bin/q\?source=install_page 1> ~/.bin/q 2>/dev/null &&
-    chmod +x ~/.bin/q
-    echo "q installed to ~/.bin/q"
   fi
+  mkdir -p $(dirname $dest) &&
+  curl $url 1> $dest &&
+  chmod +x $dest
+  echo "$name installed to $dest"
 }
 
 # perlbrew, perl installation management tool
@@ -108,4 +111,19 @@ function install_tpm {
   local runline="run '~/.tmux/plugins/tpm/tpm'"
   local conf="$HOME/.tmux.conf"
   grep $runline $conf &> /dev/null || echo $runline >> $conf
+}
+
+function install_peco {
+  local name="peco"
+  local version=0.3.5
+  local url="https://github.com/peco/peco/releases/download/v${version}/peco_linux_amd64.tar.gz" 
+  local dest=~/.bin/peco
+  if [[ -x $dest ]]; then
+    echo "$name is already at $dest"
+    return 1
+  fi
+  mkdir -p $(dirname $dest) &&
+  curl -L $url | tar -zx peco_linux_amd64/peco -O > $dest &&
+  chmod +x $dest
+  echo "$name installed to $dest"
 }
