@@ -164,11 +164,14 @@ fi
 # plumbing
 alias -g _='| sudo'
 alias -g L='| less'
+alias -g H="| head"
+alias -g Hl="| head -n20"
 alias -g G='| grep'
 alias -g Gv='| grep -v'
 alias -g S='| sort -n'
-alias -g BGN='&>/dev/null &'
-alias -g NUL='/dev/null'
+alias -g T="| tail"
+alias -g Tl="| tail -n20"
+alias -g NUL='&>/dev/null'
 
 iscmd peco && alias -g P='| peco'
 
@@ -192,7 +195,7 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="tmux attach"
+  alias tx="tmux attach || tmux new-session"
   alias txl="tmux list-sessions"
   alias txa="tmux attach -t"
   alias txc="tmux new-session -s"
