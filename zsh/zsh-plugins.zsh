@@ -48,6 +48,9 @@ if [[ -x ~/.fzf/fzf ]]; then
   source $HOME/.fzf/shell/key-bindings.zsh
 fi
 
+# load thefuck if installed
+iscmd thefuck && eval "$(thefuck --alias)"
+
 ## installers for plugins
 # rbenv, ruby installation management tool
 function install_rbenv {
