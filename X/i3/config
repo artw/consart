@@ -2,7 +2,7 @@ set $alt Mod1
 set $mod Mod4
 
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Source Code Pro Semibold 9 
+font pango:ProFont 8
 
 # app binds
 bindsym $mod+grave exec ~/.consart/bin/urxvtc
@@ -19,7 +19,7 @@ bindsym $mod+w kill
 bindsym button2 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec "dmenu_run -i"
+bindsym $mod+space exec "dmenu_run -i -fn ProFont-8"
 #bindsym $mod+space exec "dmenu_run -i -z -hist ~/.dmenu_history -fn ProFont-8"
 # dmenu with .desktop shortcuts
 bindsym $alt+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i"
@@ -136,11 +136,13 @@ for_window [class="Wine"] floating enable
 
 # 1 px border for some programs
 for_window [class="URxvt"] border 1pixel
+for_window [class="XTerm"] border 1pixel
 for_window [class="MPlayer"] border 1pixel
 for_window [class="mpv"] border 1pixel
 for_window [class="chromium"] border 1pixel
 for_window [class="Firefox"] border 1pixel
 for_window [class="Steam"] border 1pixel
+for_window [class="^.*"] border 1pixel
 
 # hold this to move floating window with left click, or resize with right
 floating_modifier $mod
