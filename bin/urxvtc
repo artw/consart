@@ -1,11 +1,18 @@
 #!/bin/sh
+# try -256color (openSUSE)
+if [ -f /etc/SuSE-release ];then
+  URXVTC=`which -a urxvtc-256color | grep /bin | head -n1`
+  URXVTD=`which -a urxvtd-256color | grep /bin | head -n1`
+else
+  URXVTC=`which -a urxvtc | grep /bin | head -n1`
+  URXVTD=`which -a urxvtd | grep /bin | head -n1`
+fi
 
-URXVTC=`which -a urxvtc | grep /bin | head -n1`
 if [ ! -x "$URXVTC" ]; then 
   exit 1
 else
   $URXVTC "$@" 
   if [ "$?" -eq "2" ]; then 
-    urxvtd -q -o -f && $URXVTC "$@"
+    $URXVTD -q -o -f && $URXVTC "$@"
   fi
 fi
