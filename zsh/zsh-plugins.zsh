@@ -51,6 +51,12 @@ fi
 # load thefuck if installed
 iscmd thefuck && eval "$(thefuck --alias)"
 
+# load  pkgfile command-not-find addon if installed
+local addon="/usr/share/doc/pkgfile/command-not-found.zsh"
+if [[ -f $addon ]]; then
+  source $addon
+fi
+
 ## installers for plugins
 # rbenv, ruby installation management tool
 function install_rbenv {
