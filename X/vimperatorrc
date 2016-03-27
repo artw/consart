@@ -1,4 +1,4 @@
-set defsearch=duck
+set defsearch=duckduckgo
 set hintchars=abcdefghijklmnopqrstuvwxyz
 
 map <silent> <F2> :js toggle_navbar()<CR>
