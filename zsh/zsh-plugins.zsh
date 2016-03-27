@@ -32,9 +32,7 @@ if [[ -d $HOME/.rbenv ]]; then
 fi
 
 # load perlbrew if installed
-if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
-  source $HOME/.perlbrew/etc/bashrc
-fi
+sourceiff $HOME/.perlbrew/etc/bashrc
 
 # load jenv if installed
 if [[ -x $HOME/.jenv/bin/jenv ]]; then
@@ -52,10 +50,7 @@ fi
 iscmd thefuck && eval "$(thefuck --alias)"
 
 # load  pkgfile command-not-find addon if installed
-local addon="/usr/share/doc/pkgfile/command-not-found.zsh"
-if [[ -f $addon ]]; then
-  source $addon
-fi
+sourceiff /usr/share/doc/pkgfile/command-not-found.zsh
 
 ## installers for plugins
 # rbenv, ruby installation management tool
