@@ -18,7 +18,9 @@ path_dirs=(
 
   /usr/libexec
 
+  /usr/bin/core_perl
   /usr/bin/vendor_perl
+
   /usr/X11R6/bin
   /usr/local/lib/kde4/libexec
 
