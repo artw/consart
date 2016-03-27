@@ -13,6 +13,7 @@ linux*)
     if iscmd yaourt; then
       alias ya="yaourt"
       alias yu="yaourt -Syua"
+      alias yup="yaourt -Syua --noconfirm"
       alias ys="yaourt -Ss"
       alias yi="yaourt -S"
       alias yii="yaourt -S --noconfirm"
