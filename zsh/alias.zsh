@@ -210,11 +210,11 @@ if iscmd hg; then
 fi
 
 if iscmd ssh; then
-  alias -g "@"="ssh"
-  alias @x="ssh -CYf "
-  alias @t="ssh -Nf "
-  alias @c="ssh -t "
-  alias @cc="ssh -t -AK "
+  alias -g "@"="TERM=xterm ssh"
+  alias @x="TERM=xterm ssh -CYf "
+  alias @t="TERM=xterm ssh -Nf "
+  alias @c="TERM=xterm ssh -t "
+  alias @cc="TERM=xterm ssh -t -AK "
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
