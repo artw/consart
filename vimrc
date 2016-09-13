@@ -17,6 +17,7 @@ if vundle == 1
   " plugins
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Rename'
+  Plugin 'airblade/vim-gitgutter'
   Plugin 'dbext.vim'
   Plugin 'edkolev/tmuxline.vim'
   Plugin 'ervandew/supertab'
@@ -139,7 +140,7 @@ if has('gui_running')
   elseif has('gui_win32')
     set guifont=Source_Code_Pro_Semibold:h12
   elseif has('gui_gtk')
-    set guifont=Source\ Code\ Pro\ Semi-Bold\ 12
+    set guifont=Source\ Code\ Pro\ Semi-Bold\ 10
   endif
   set guioptions-=T           " disable the ugly toolbar
   set guioptions-=R           " disable right scrollbar if not needed
@@ -237,12 +238,13 @@ let g:dbext_default_buffer_lines = 7 " default rowcount
 let g:dbext_default_use_sep_result_buffer = 1 " result buffer for each window
 
 " startify
-let g:startify_bookmarks = [ '~/.vimrc' ]
+let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.ssh/config' ]
 let g:startify_session_persistence = 1
 
 " syntastic
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = [ "perl", "perlcritic", "podchecker" ]
+let g:syntastic_perl_lib_path = ['./lib', './extlib', './extlib/lib/perl5']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
