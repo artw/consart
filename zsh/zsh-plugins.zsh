@@ -20,6 +20,8 @@ if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
   fi
   # bind up/down to substring search if zsh-substring-search is installed
   if [[ -d ~/.zgen/zsh-users/zsh-history-substring-search-master ]]; then
+    zle -N history-substring-search-up
+    zle -N history-substring-search-down
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
