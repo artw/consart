@@ -88,9 +88,10 @@ function install_perlbrew {
   curl -L http://install.perlbrew.pl | sh
 }
 
-# vundle, plugin manager for vim
-function install_vundle {
-  git-clone gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+# vim-plug, plugin manager for vim
+function install_vimplug {
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 # zsh, fast plugin manager for zsh
