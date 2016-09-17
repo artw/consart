@@ -3,6 +3,8 @@ bindkey -v
 
 bindkey -M vicmd "/" history-incremental-pattern-search-backward
 bindkey -M vicmd "?" history-incremental-pattern-search-forward
+zle -N history-beginning-pattern-search-backward
+zle -N history-beginning-pattern-search-forward
 bindkey -M vicmd "//" history-beginning-pattern-search-backward
 bindkey -M vicmd "??" history-beginning-pattern-search-forward
 bindkey -M vicmd "u" undo               # vi undo is crap
