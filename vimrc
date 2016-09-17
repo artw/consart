@@ -1,56 +1,40 @@
-"" vundle
-if filereadable($HOME . "/.vim/bundle/Vundle.vim/autoload/vundle.vim")
-  set rtp+=~/.vim/bundle/Vundle.vim/
-  let vundle=1
-  let vundle_dir="$HOME/.vim/bundle"
-" on windows
-elseif filereadable($VIM . "/bundle/Vundle.vim/autoload/vundle.vim")
-  set rtp+=$VIM/bundle/Vundle.vim/
-  let vundle=1
-  let vundle_dir="$VIM/bundle"
-endif
+call plug#begin('~/.vim/plugged')
+" plugins
+Plug 'airblade/vim-gitgutter'
+Plug 'dbext.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'ervandew/supertab'
+Plug 'gmarik/sudo-gui.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'kien/ctrlp.vim', { 'on':  'CtrlP' }
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mhinz/vim-startify'
+Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'osyo-manga/vim-over'
+Plug 'Rename'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree' , { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-perl/vim-perl', { 'for': 'perl' }
+Plug 'yko/mojo.vim'
+"Plug 'talek/vorax4'
+"Plug 'yuratomo/w3m.vim'
 
-if vundle == 1
-  call vundle#begin(vundle_dir)
-  Plugin 'gmarik/Vundle.vim'
+" colorthemes
+Plug 'nanotech/jellybeans.vim'
+"Plug 'Lokaltog/vim-distinguished'
+"Plug 'chriskempson/base16-vim'
+"Plug 'quanganhdo/grb256'
+"Plug 'xoria256.vim'
 
-  " plugins
-  Plugin 'Lokaltog/vim-easymotion'
-  Plugin 'Rename'
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'dbext.vim'
-  Plugin 'edkolev/tmuxline.vim'
-  Plugin 'ervandew/supertab'
-  Plugin 'gmarik/sudo-gui.vim'
-  Plugin 'jiangmiao/auto-pairs'
-  Plugin 'junegunn/vim-easy-align'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'mhinz/vim-startify'
-  Plugin 'mileszs/ack.vim'
-  Plugin 'osyo-manga/vim-over'
-  Plugin 'scrooloose/nerdcommenter'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'sjl/gundo.vim'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-surround'
-  Plugin 'vim-airline/vim-airline'
-  Plugin 'vim-airline/vim-airline-themes'
-  "Plugin 'Valloric/YouCompleteMe'
-  "Plugin 'talek/vorax4'
-  "Plugin 'vim-perl/vim-perl'
-  "Plugin 'yko/mojo.vim'
-  "Plugin 'yuratomo/w3m.vim'
-
-  " colorthemes
-  Plugin 'nanotech/jellybeans.vim'
-  "Plugin 'Lokaltog/vim-distinguished'
-  "Plugin 'chriskempson/base16-vim'
-  "Plugin 'quanganhdo/grb256'
-  "Plugin 'xoria256.vim'
-
-  call vundle#end()
-endif
+call plug#end()
 
 " save all temporary files in one dir, make it if it does not exist
 if ! isdirectory($HOME . "/.vim")
