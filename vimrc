@@ -1,29 +1,31 @@
 call plug#begin('~/.vim/plugged')
 " plugins
 Plug 'airblade/vim-gitgutter'
-Plug 'dbext.vim'
+Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
+Plug 'dbext.vim',           { 'on': 'DBPromptForBufferParameters' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'gmarik/sudo-gui.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim', { 'on':  'CtrlP' }
+Plug 'kien/ctrlp.vim',      { 'on':  'CtrlP' }
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 Plug 'osyo-manga/vim-over'
 Plug 'Rename'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree' , { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle','NERDTreeFind'] }
 Plug 'scrooloose/syntastic'
-Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
+Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-perl/vim-perl', { 'for': 'perl' }
-Plug 'yko/mojo.vim'
+Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
+Plug 'yko/mojo.vim',        { 'for': 'perl' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
 
@@ -198,6 +200,7 @@ nmap <F5>      :GundoToggle<CR>
 nmap <Leader>u :GundoToggle<CR>
 nmap <F7>      :CtrlP<CR>
 nmap <Leader>p :CtrlP<CR>
+nmap <Leader>o :OverCommandLine
 
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
