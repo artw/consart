@@ -14,6 +14,7 @@ if [[ -f $zgen ]]; then
     sudo
     command-not-found
     perl
+    docker
   )
 
   typeset -a zsh_plugins
@@ -45,6 +46,8 @@ if [[ -f $zgen ]]; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
+  #load zgen completions
+  compinit
 fi
 
 # load rbenv if installed
