@@ -202,13 +202,6 @@ if iscmd tmux; then
   alias txc="tmux new-session -s"
 fi
 
-if iscmd git; then
-  alias gu="git pull"
-  alias gc="git commit"
-  alias gco="git checkout"
-  alias gp="git push"
-fi
-
 if iscmd hg; then
   alias hgu="hg pull -u"
   alias hgc="hg commit"
