@@ -1,18 +1,38 @@
+# load antigen if available
+local antigen=~/.antigen/antigen.zsh
+if [[ -f $antigen ]]; then
+  source $antigen
+fi
+
 # load zgen if available
-if [[ -f ~/.zsh/ext/zgen/zgen.zsh ]]; then
+local zgen=~/.zgen/zgen.zsh
+if [[ -f $zgen ]]; then
+
+  typeset -a oh_my_zsh_plugins
+  oh_my_zsh_plugins=(
+    git
+    sudo
+    command-not-found
+    perl
+  )
+
   typeset -a zsh_plugins
   zsh_plugins=(
     #artw/oracle.zsh
     artw/zsh-256color
     rupa/z
     sharat87/zsh-vim-mode
+    zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
     zsh-users/zsh-syntax-highlighting
   )
-  source ~/.zsh/ext/zgen/zgen.zsh
+  source $zgen
   if ! zgen saved; then
     echo "Generating zgen cache..."
+    foreach plugin in $oh_my_zsh_plugins
+      zgen oh-my-zsh plugins/$plugin
+    end
     foreach bundle in $zsh_plugins
       zgen load $bundle
     end
@@ -94,9 +114,13 @@ function install_vimplug {
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
+function install_antigen {
+  git-clone zsh-users/antigen ~/.antigen
+}
+
 # zsh, fast plugin manager for zsh
 function install_zgen {
-  git-clone tarjoilija/zgen ~/.zsh/ext/zgen
+  git-clone tarjoilija/zgen ~/.zgen
 }
 
 # jenv, java installation management tool
