@@ -202,6 +202,13 @@ if iscmd tmux; then
   alias txc="tmux new-session -s"
 fi
 
+if iscmd git; then
+  alias gu="git pull"
+  alias gc="git commit"
+  alias gco="git checkout"
+  alias gp="git push"
+fi
+
 if iscmd hg; then
   alias hgu="hg pull -u"
   alias hgc="hg commit"
@@ -227,4 +234,4 @@ iscmd curl && alias myip="curl ipecho.net/plain;echo"
 
 # consart
 alias rezsh="rehash && source $HOME/.zshrc"
-alias cup="cd ~/.consart && hgu"
+alias cup="cd ~/.consart && git pull"
