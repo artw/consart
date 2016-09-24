@@ -7,4 +7,4 @@ case $TERM in
     export TERM=screen-256color
   ;;
 esac
-
+iscmd perl && perl $HOME/.consart/bin/256colors2.pl
