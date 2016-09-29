@@ -20,7 +20,7 @@ if [[ -f $zgen ]]; then
   typeset -a zsh_plugins
   zsh_plugins=(
     #artw/oracle.zsh
-    artw/zsh-256color
+    chrissicool/zsh-256color
     rupa/z
     sharat87/zsh-vim-mode
     zsh-users/zsh-autosuggestions
