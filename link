@@ -19,18 +19,28 @@ dotfiles=(
   zshrc
 )
 
-# x11 specific stuff
+# append x11 specific stuff to dotfiles if xorg flag specified
 if [[ -n $xorg ]]; then
-dotfiles+=(
-  X/Xdefaults:.Xdefaults
-  X/i3:.i3
-  X/config_mpv_mpv.conf:.config/mpv/mpv.conf
-  X/fonts.conf:.fonts.conf
-  X/xinitrc:.xinitrc
-  X/config_tint2_tint2rc:.config/tint2/tint2rc
-  X/xbindkeysrc:.xbindkeysrc
-  X/50-mouse-xorg.conf
-)
+  Xdotfiles=(
+    X/Xdefaults
+    X/i3
+    X/fonts.conf
+    X/xinitrc
+    X/xbindkeysrc
+    X/config/mpv
+    X/config/tint2
+    X/config/gtk-3.0
+  )
+  foreach f in $Xdotfiles
+    f=(${(s/:/)f}) # split by ":"
+    local src=$f[1]
+    local dest=$f[2]
+    # remove X/ and use $HOME/.$src as dest if no dest specified
+    if [[ -z $dest ]]; then
+      dest=$HOME/$f[1]:s/X\//./
+    fi
+    dotfiles+=$src:$dest
+  end
 fi
 
 link_config() {
@@ -43,12 +53,12 @@ link_config() {
   if [[ ! -z $2 ]]; then
     dest=$2
   else
-    # make dest path if not exists
+    # $HOME/.$source if dest not defined
     dest=$HOME/.$1
-    echo $dest
-    if [[ ! -d $(dirname $dest) ]]; then
-      mkdir -p $(dirname $dest)
-    fi
+  fi
+  # make dest path if not exists
+  if [[ ! -d $(dirname $dest) ]]; then
+    mkdir -p $(dirname $dest)
   fi
 
   # delete if exists, ask if not forced
@@ -61,6 +71,7 @@ link_config() {
   fi
   # check again before linking
   if [[ ! -e $dest && ! -L $dest ]]; then
+    echo linking $src to $dest
     ln -s $src $dest
   fi
 }
