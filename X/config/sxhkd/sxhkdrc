@@ -8,8 +8,9 @@ super + grave
 
 # program launcher
 super + space
-	dmenu_run -i -z -hist ~/.dmenu_history -fn ProFont-8
+#	dmenu_run -i -z -hist ~/.dmenu_history -fn ProFont-8
 #	dmenu_run
+	krunner
 
 # make sxhkd reload its configuration files:
 super + Escape
