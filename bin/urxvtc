@@ -1,8 +1,8 @@
 #!/bin/sh
 # try -256color (openSUSE)
-if [ -f /etc/SuSE-release ];then
-  URXVTC=`which -a urxvtc-256color | grep /bin | head -n1`
-  URXVTD=`which -a urxvtd-256color | grep /bin | head -n1`
+if [ -x /usr/bin/urxvtc-256color ];then
+  URXVTC=/usr/bin/urxvtc-256color
+  URXVTD=/usr/bin/urxvtd-256color
 else
   URXVTC=`which -a urxvtc | grep /bin | head -n1`
   URXVTD=`which -a urxvtd | grep /bin | head -n1`
