@@ -108,11 +108,19 @@ if which less >/dev/null; then
 fi
 
 # set default editor
-if which vim >/dev/null; then
-  export EDITOR=vim
-elif which vi >/dev/null; then
-  export EDITOR=vi
-fi
+local -a editors
+editors=(
+  nvim
+  vim
+  vi
+)
+
+foreach editor in $editors
+  if which $editor >/dev/null; then
+    export EDITOR=$editor
+    break
+  fi
+end
 
 # unbind C-S and C-Q for use in vim maps
 if which stty > /dev/null;then

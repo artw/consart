@@ -50,6 +50,7 @@ set directory=~/.vim/tmp/
 set backupdir=~/.vim/tmp/
 
 "" settings:
+language C
 syntax on
 filetype plugin indent on
 
