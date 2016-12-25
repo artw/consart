@@ -106,7 +106,7 @@ freebsd*)
     alias nslookup=host
   fi
   alias sc="${sudo}service"
-  iscmd cbsd && alias cbsd="${sudo}cbsd"
+  alias cbsd="${sudo}cbsd"
 ;;
 
 openbsd*)
