@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+if [[ -z $1 || $1 == '-h' ]]; then
+  echo "usage: $0 <jail name>"
+  return 1
+fi
+local jname=$1
+local jpath=`grep path /etc/jail.conf | grep '$name' | cut -f2 -d= | sed "s/\\$name\;/$jname/"`
+
+for m in `mount | grep $jpath/ | awk '{print $3}' | tail -r`; do
+  ${sudo}umount $m
+done
