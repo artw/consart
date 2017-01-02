@@ -6,7 +6,7 @@ Plug 'dbext.vim',           { 'on': 'DBPromptForBufferParameters' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'gmarik/sudo-gui.vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'auto-pairs-gentle'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim',      { 'on':  'CtrlP' }
 Plug 'Lokaltog/vim-easymotion'
@@ -26,6 +26,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
 Plug 'yko/mojo.vim',        { 'for': 'perl' }
+Plug 'fatih/vim-go',        { 'for': 'go' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
@@ -217,8 +218,8 @@ imap <C-K> <Space>=><Space>
 let mojo_highlight_data = 1
 
 " airline
-"let g:airline_powerline_fonts = 1
-let g:tmuxline_powerline_separators = 0
+let g:airline_powerline_fonts = 1
+let g:tmuxline_powerline_separators = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "jellybeans"
 
@@ -239,6 +240,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" supertab: use context completion by default
+let g:SuperTabDefaultCompletionType = "context"
+
+" gentle pairs
+let g:AutoPairsUseInsertedCount = 1
 
 "" load vimrc.local if available
 if filereadable($HOME . "/.vimrc.local")
