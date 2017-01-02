@@ -46,8 +46,6 @@ if [[ -f $zgen ]]; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
-  #load zgen completions
-  compinit
 fi
 
 # load rbenv if installed
