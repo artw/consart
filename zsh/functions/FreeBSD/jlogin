@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+if [[ -z $1 || $1 == '-h' ]]; then
+  echo "usage: $0 <jail name>"
+  echo "\nconfigured jails:"
+  grep " {" /etc/jail.conf | grep -v -e "^#" | cut -f 1 -d" "| sed 's/^/	/'
+  return 1
+fi
+for j in $*; do
+  /usr/local/bin/sudo /usr/sbin/jexec $j csh
+done;
