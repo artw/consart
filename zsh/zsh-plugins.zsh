@@ -82,6 +82,9 @@ function install_rbenv {
   git-clone sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 }
 
+# go
+iscmd go && export GOPATH=~/.go; export PATH=$PATH:$GOPATH/bin
+
 # q, "text as data", work with text using sql (requires python)
 function install_q {
   local name="q"
