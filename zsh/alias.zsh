@@ -195,7 +195,7 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="tmux attach || tmux new-session"
+  alias tx="cd ~; tmux attach || tmux new-session"
   alias txl="tmux list-sessions"
   alias txa="tmux attach -t"
   alias txc="tmux new-session -s"
