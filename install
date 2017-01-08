@@ -2,27 +2,33 @@
 
 cd $HOME
 echo "Cloning consart repo..."
-git clone https://github.com/artw/consart .consart &&
+test -d .consart || git clone https://github.com/artw/consart .consart
 
 echo "Linking dotfiles..."
-zsh .consart/link &&
-source .zshrc &&
+zsh .consart/link
+source .zshrc
 
 echo "Installing zgen..."
-install_zgen &&
+install_zgen
 
 echo "Installing vundle..."
-install_vimplug &&
+install_vimplug
+
+if [[ `which nvim &>/dev/null` ]]; then
+  ln -s ~/.vim ~/.config/nvim
+  ln -s ~/.vimrc ~/.config/nvim/init.vim
+fi
 
 echo "Installing vim plugins..."
-vim -c PlugInstall! -c qa! &&
+if which vim &>/dev/null; then
+  VIM=vim
+elif which nvim &>/dev/null; then
+  VIM=nvim
+fi
+
+$VIM -c PlugInstall! -c qa!
 
 echo "Installing tmux plugin manager..."
-install_tpm &&
+install_tpm
 
-echo "Installing zgen plugins..."
-source .zshrc &&
-
-echo "Reloading..."
-source .zshrc && source .zshrc
 echo "Done."
