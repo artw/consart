@@ -14,7 +14,7 @@ install_zgen
 echo "Installing vundle..."
 install_vimplug
 
-if [[ `which nvim &>/dev/null` ]]; then
+if which nvim &>/dev/null; then
   ln -s ~/.vim ~/.config/nvim
   ln -s ~/.vimrc ~/.config/nvim/init.vim
 fi
