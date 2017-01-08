@@ -6,12 +6,12 @@
 !!!( URxvt settings
 URxvt*termName: rxvt-unicode-256color
 URxvt*saveLines: 10000
-#URxvt*font: xft:Source Code Pro Semibold:pixelsize=15
-URxvt*font: xft:ProFont:pixelsize=12
+URxvt*font: xft:Source Code Pro Semibold:pixelsize=15
+#URxvt*font: xft:ProFont:pixelsize=12
 
 URxvt*scrollstyle: plain
 
-URxvt*transparent: true
+URxvt*transparent: false
 URxvt*shading:10
 
 !!( extensions
