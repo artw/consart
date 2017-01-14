@@ -22,7 +22,9 @@ if [[ `uname -m` == "x86_64" ]]; then
 fi
 
 if [[ ! -d $1 ]]; then
-  mkdir -p $WINEPREFIX
+  echo "$1 does not exist, create it?"
+  read answer
+  [[ "$answer" == "y" ]] && mkdir -p $1
 fi
 
 export WINEPREFIX=$1
