@@ -11,6 +11,7 @@ script=$0
 
 #from:to  where "to" is "~/.${from}" by default
 dotfiles=(
+  gitconfig
   hgrc
   tmux.conf
   vimrc

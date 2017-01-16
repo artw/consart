@@ -1,0 +1,13 @@
+[alias]
+  oldest-ancestor = !bash -c 'diff -u <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+  rebase-onto     = !bash -c 'git rebase --onto $1 `git oldest-ancestor $2 $3` $3' -
+
+[diff]
+  tool = vimdiff
+
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+
+[mergetool]
+	prompt = false
