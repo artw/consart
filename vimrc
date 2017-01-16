@@ -154,9 +154,6 @@ let mapleader = ","
 " chdir to current file
 command! CD cd %:p:h
 
-" sudo write:
-command! W SudoWrite
-
 " copy all to system clipboard
 command! Y %y*
 
