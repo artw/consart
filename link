@@ -29,6 +29,7 @@ if [[ -n $xorg ]]; then
     X/fonts.conf
     X/xinitrc
     X/xbindkeysrc
+    X/mplayer
     X/config/mpv
     X/config/tint2
     X/config/gtk-3.0
