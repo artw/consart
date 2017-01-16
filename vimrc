@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 " plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
-Plug 'dbext.vim',           { 'on': 'DBPromptForBufferParameters' }
+Plug 'dbext.vim',           { 'for': 'sql' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'gmarik/sudo-gui.vim'
@@ -51,7 +51,7 @@ set directory=~/.vim/tmp/
 set backupdir=~/.vim/tmp/
 
 "" settings:
-language C
+"language C
 syntax on
 filetype plugin indent on
 
@@ -129,7 +129,7 @@ if has('gui_running')
   elseif has('gui_win32')
     set guifont=Source_Code_Pro_Semibold:h12
   elseif has('gui_gtk')
-    set guifont=Source\ Code\ Pro\ Semi-Bold\ 10
+    set guifont=Source\ Code\ Pro\ Semi-Bold\ 12
   endif
   set guioptions-=T           " disable the ugly toolbar
   set guioptions-=R           " disable right scrollbar if not needed
@@ -195,7 +195,7 @@ nmap <Leader>t :NERDTreeToggle<CR>
 nmap <F3>      :NERDTreeFind<CR>
 nmap <Leader>f :NERDTreeFind<CR>
 nmap <F4>      :Startify<CR>
-nmap <Leader>s :Startify<CR>
+"nmap <Leader>s :Startify<CR>
 nmap <F5>      :GundoToggle<CR>
 nmap <Leader>u :GundoToggle<CR>
 nmap <F7>      :CtrlP<CR>
@@ -221,8 +221,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "jellybeans"
 
 " dbext
-let g:dbext_default_history_file = $HOME . "/.vim/dbext_history"
-let g:dbext_default_buffer_lines = 7 " default rowcount
+let g:dbext_default_history_file = "~/.vim/dbext_history"
+"let g:dbext_default_buffer_lines = 7 " default rowcount
 let g:dbext_default_use_sep_result_buffer = 1 " result buffer for each window
 
 " startify
