@@ -6,10 +6,10 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # app binds
 bindsym $mod+grave exec ~/.consart/bin/urxvtc
-bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec dolphin
-bindsym $mod+F3 exec gvim
-bindsym $mod+F9 exec audacious
+bindsym $mod+F1 exec surf google.com
+bindsym $mod+F2 exec ~/.consart/bin/urxvtc -e vifm
+bindsym $mod+F3 exec ~/.consart/bin/urxvtc -e $EDITOR
+#bindsym $mod+F9 exec audacious
 bindsym $mod+Ctrl+l exec i3lock -c 000000
 bindsym $mod+Ctrl+Escape exec xkill
 bindsym $mod+Shift+b exec ~/.consart/bin/compton-toggle
