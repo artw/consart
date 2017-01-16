@@ -6,6 +6,7 @@
 
 # for KDE stuff without KDE
 #export XDG_CURRENT_DESKTOP=KDE
+#kuiserver &
 
 # fix java dialogs in tiling wms
 #wmname LG3D &
@@ -18,9 +19,10 @@
 
 # keymap settings
 #setxkbmap -layout "lv,ru" \
+#          -variant "apostrophe, winkeys" \
 #          -option "altwin:swap_alt_win" \
 #          -option "caps:escape" \
-#          -option "grp:alt_shift_toggle" \
+#          -option "grp:rctrl_rshift_toggle" \
 #          -option "terminate:ctrl_alt_bksp" &
 
 # disable bell
