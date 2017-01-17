@@ -15,19 +15,20 @@ if [[ -f $zgen ]]; then
     command-not-found
     perl
     docker
+    fasd
   )
 
   typeset -a zsh_plugins
   zsh_plugins=(
     #artw/oracle.zsh
     chrissicool/zsh-256color
-    rupa/z
     sharat87/zsh-vim-mode
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
     zsh-users/zsh-syntax-highlighting
   )
+  ZSH_CACHE_DIR=~/.zgen/robbyrussell/oh-my-zsh-master/cache
   source $zgen
   if ! zgen saved; then
     echo "Generating zgen cache..."
