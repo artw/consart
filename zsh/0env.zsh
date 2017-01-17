@@ -56,6 +56,22 @@ foreach dir in $fpath_dirs
   fi
 end
 typeset -U fpath
+
+# dirs for MANPATH
+local -a manpath_dirs
+manpath_dirs=(
+  /opt/share/man
+)
+
+foreach dir in $manpath_dirs
+  if [[ -d $dir ]]; then
+    MANPATH+=":"$dir
+  fi
+end
+
+if [[ ! -z $MANPATH ]]; then
+  export MANPATH
+fi
  
 # ls colors 
 #useful tool for lscolors: http://geoff.greer.fm/lscolors 
