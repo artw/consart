@@ -70,6 +70,7 @@ foreach dir in $manpath_dirs
 end
 
 if [[ ! -z $MANPATH ]]; then
+  MANPATH=`manpath -q`${MANPATH}
   export MANPATH
 fi
  
