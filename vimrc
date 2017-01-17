@@ -8,7 +8,7 @@ Plug 'ervandew/supertab'
 Plug 'gmarik/sudo-gui.vim'
 Plug 'auto-pairs-gentle'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim',      { 'on':  'CtrlP' }
+Plug 'kien/ctrlp.vim',
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
@@ -215,8 +215,8 @@ imap <C-K> <Space>=><Space>
 let mojo_highlight_data = 1
 
 " airline
-let g:airline_powerline_fonts = 1
-let g:tmuxline_powerline_separators = 1
+let g:airline_powerline_fonts = 0
+let g:tmuxline_powerline_separators = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "jellybeans"
 
