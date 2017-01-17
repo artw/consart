@@ -209,11 +209,10 @@ if iscmd hg; then
 fi
 
 if iscmd ssh; then
-  alias -g "@"="TERM=xterm ssh"
-  alias @x="TERM=xterm ssh -CYf "
-  alias @t="TERM=xterm ssh -Nf "
-  alias @c="TERM=xterm ssh -t "
-  alias @cc="TERM=xterm ssh -t -AK "
+  alias -g "@"="TERM=xterm nocorrect ssh"
+  alias @x="@ -CYf"
+  alias @t="@ -Nf"
+  alias @c="@ -t"
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
