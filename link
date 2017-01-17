@@ -19,6 +19,7 @@ dotfiles=(
   zshenv
   zshrc
   misc/w3m:$HOME/.w3m
+  misc/vifmrc:$HOME/.config/vifm/vifmrc
 )
 
 # append x11 specific stuff to dotfiles if xorg flag specified
