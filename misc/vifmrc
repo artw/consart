@@ -187,6 +187,8 @@ filextype *.djvu
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+       \ {Play using MPV}
+       \ mpv %f,
        \ {Play using MPlayer}
        \ mplayer %f,
 fileviewer *.mp3 mp3info
@@ -196,17 +198,21 @@ fileviewer *.flac soxi
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
          \*.as[fx]
-        \ {View using mplayer}
-        \ mplayer %f,
+         \ {Play with MPV}
+         \ mpv %f,
+         \ {Play with mplayer}
+         \ mplayer %f,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-          \*.as[fx]
+         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+         \*.as[fx]
          \ ffprobe -pretty %c 2>&1
 
 " Playlists
 filextype *.m3u,*.pls,*.cue
-        \ {Play with mplayer }
-        \ mplayer -playlist %c,
+         \ {Play with MPV }
+         \ mplayer --playlist %c,
+         \ {Play with mplayer }
+         \ mplayer -playlist %c,
 
 " Web
 filextype *.html,*.htm
