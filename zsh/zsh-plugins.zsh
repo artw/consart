@@ -1,24 +1,14 @@
-# load antigen if available
-local antigen=~/.antigen/antigen.zsh
-if [[ -f $antigen ]]; then
-  source $antigen
-fi
-
-# load zgen if available
-local zgen=~/.zgen/zgen.zsh
-if [[ -f $zgen ]]; then
-
-  typeset -a oh_my_zsh_plugins
+# load zplug if available
+local zplug=~/.zplug/init.zsh
+if [[ -f $zplug ]]; then
   oh_my_zsh_plugins=(
     git
     sudo
     command-not-found
     perl
     docker
-    fasd
   )
 
-  typeset -a zsh_plugins
   zsh_plugins=(
     #artw/oracle.zsh
     chrissicool/zsh-256color
@@ -28,25 +18,31 @@ if [[ -f $zgen ]]; then
     zsh-users/zsh-history-substring-search
     zsh-users/zsh-syntax-highlighting
   )
-  ZSH_CACHE_DIR=~/.zgen/robbyrussell/oh-my-zsh-master/cache
-  source $zgen
-  if ! zgen saved; then
-    echo "Generating zgen cache..."
-    foreach plugin in $oh_my_zsh_plugins
-      zgen oh-my-zsh plugins/$plugin
-    end
-    foreach bundle in $zsh_plugins
-      zgen load $bundle
-    end
-  zgen save
-  fi
+
+  source $zplug
+  foreach plugin in $oh_my_zsh_plugins
+    zplug "plugins/$plugin", from:oh-my-zsh
+  end
+  foreach bundle in $zsh_plugins
+    zplug "$bundle"
+  end
+  zplug "clvv/fasd", use:fasd
+  # Install plugins if there are plugins that have not been installed
+    if ! zplug check --verbose; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
   # bind up/down to substring search if zsh-substring-search is installed
-  if [[ -d ~/.zgen/zsh-users/zsh-history-substring-search-master ]]; then
+  if [[ -d ~/.zgen/zsh-users/zsh-history-substring-search ]]; then
     zle -N history-substring-search-up
     zle -N history-substring-search-down
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
+  zplug load
+  iscmd fasd && eval "$(fasd --init auto)"
 fi
 
 # load rbenv if installed
@@ -119,13 +115,9 @@ function install_vimplug {
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-function install_antigen {
-  git-clone zsh-users/antigen ~/.antigen
-}
-
-# zsh, fast plugin manager for zsh
-function install_zgen {
-  git-clone tarjoilija/zgen ~/.zgen
+# zplug, plugin manager for zsh
+function install_zplug {
+  curl -sL zplug.sh/installer | zsh
 }
 
 # jenv, java installation management tool
