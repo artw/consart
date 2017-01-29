@@ -26,7 +26,14 @@ if [[ -f $zplug ]]; then
   foreach bundle in $zsh_plugins
     zplug "$bundle"
   end
+
+  # Plugins with custom settings
   zplug "clvv/fasd", use:fasd
+  #zplug "gcuisinier/jenv", as:command, use:"bin/jenv"
+  #zplug "harelba/q", as:command, use:"bin/q"
+  #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
+  #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
+
   # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -34,69 +41,34 @@ if [[ -f $zplug ]]; then
             echo; zplug install
         fi
     fi
+  # load zplug
+  zplug load
+
   # bind up/down to substring search if zsh-substring-search is installed
-  if [[ -d ~/.zgen/zsh-users/zsh-history-substring-search ]]; then
+  if [[ -d $ZPLUG_REPOS/zsh-users/zsh-history-substring-search ]]; then
     zle -N history-substring-search-up
     zle -N history-substring-search-down
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
-  zplug load
   iscmd fasd && eval "$(fasd --init auto)"
-fi
-
-# load rbenv if installed
-if [[ -d $HOME/.rbenv ]]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
+  #iscmd rbenv && eval "$(rbenv init -)"
+  #iscmd fzf && source $ZPLUG_REPOS/junegunn/fzf/shell/*.zsh
 fi
 
 # load perlbrew if installed
 sourceiff $HOME/.perlbrew/etc/bashrc
 
-# load jenv if installed
-if [[ -x $HOME/.jenv/bin/jenv ]]; then
-  export PATH=$HOME/.jenv/bin:$PATH
-  eval "$(jenv init -)"
-fi
-
-# load fzf if installed
-if [[ -x ~/.fzf/fzf ]]; then
-  source $HOME/.fzf/shell/completion.zsh
-  source $HOME/.fzf/shell/key-bindings.zsh
-fi
-
-# load thefuck if installed
+iscmd jenv && eval "$(jenv init -)"
 iscmd thefuck && eval "$(thefuck --alias)"
 
 # load  pkgfile command-not-find addon if installed
 sourceiff /usr/share/doc/pkgfile/command-not-found.zsh
 
-## installers for plugins
-# rbenv, ruby installation management tool
-function install_rbenv {
-  git-clone sstephenson/rbenv.git ~/.rbenv
-  git-clone sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-}
-
-# go
+# Go language
 iscmd go && export GOPATH=~/.go; export PATH=$PATH:$GOPATH/bin
 
-# q, "text as data", work with text using sql (requires python)
-function install_q {
-  local name="q"
-  local version=1.5.0
-  local url="https://cdn.rawgit.com/harelba/q/${version}/bin/q\?source=install_page"
-  local dest=~/.bin/q
-  if [[ -x $dest ]]; then
-    echo "$name is already at $dest"
-    return 1
-  fi
-  mkdir -p $(dirname $dest) &&
-  curl $url 1> $dest &&
-  chmod +x $dest
-  echo "$name installed to $dest"
-}
+## installers for plugins
 
 # perlbrew, perl installation management tool
 function install_perlbrew {
@@ -120,38 +92,10 @@ function install_zplug {
   curl -sL zplug.sh/installer | zsh
 }
 
-# jenv, java installation management tool
-function install_jenv {
-  git-clone gcuisinier/jenv.git ~/.jenv
-}
-
-# fzf, fuzzy finder written in go
-function install_fzf {
-  git-clone junegunn/fzf ~/.fzf
-  mkdir -p ~/.bin
-  ln -sf ~/.fzf/fzf ~/.bin/fzf
-  ln -sf ~/.fzf/bin/fzf-tmux ~/.bin/fzf-tmux
-}
-
 # tmux plugin manager
 function install_tpm {
   git-clone tmux-plugins/tpm ~/.tmux/plugins/tpm 
   local runline="run '~/.tmux/plugins/tpm/tpm'"
   local conf="$HOME/.tmux.conf"
   grep $runline $conf &> /dev/null || echo $runline >> $conf
-}
-
-function install_peco {
-  local name="peco"
-  local version=0.3.5
-  local url="https://github.com/peco/peco/releases/download/v${version}/peco_linux_amd64.tar.gz" 
-  local dest=~/.bin/peco
-  if [[ -x $dest ]]; then
-    echo "$name is already at $dest"
-    return 1
-  fi
-  mkdir -p $(dirname $dest) &&
-  curl -L $url | tar -zx peco_linux_amd64/peco -O > $dest &&
-  chmod +x $dest
-  echo "$name installed to $dest"
 }
