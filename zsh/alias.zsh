@@ -49,6 +49,12 @@ linux*)
     alias zzz="${sudo}systemctl suspend"
     alias halt="${sudo}systemctl poweroff"
   fi
+
+  # zfs requires root on ZoL
+  if iscmd zfs; then
+    alias zfs="${sudo}zfs"
+    alias zpool="${sudo}zpool"
+  fi
 ;;
 
 cygwin|msys)
