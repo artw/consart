@@ -83,7 +83,7 @@ bindsym Menu scratchpad show
 
 # dialog for renaming the current workspace
 
-bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+bindsym $mod+comma exec i3-input -F 'rename workspace to "%s"' -P 'New workspace name: '
 
 # switch to workspace
 bindsym $mod+1 workspace 1
