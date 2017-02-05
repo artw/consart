@@ -15,7 +15,7 @@
 #export MOZ_USE_OMTC=1
 
 # java awt font antiasing
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 
 # keymap settings
 #setxkbmap -layout "lv,ru" \
@@ -47,7 +47,7 @@
 #( sleep 1 && xmodmap ~/.Xmodmap ) &
 
 # hide mouse cursor when not used
-#unclutter &
+#unclutter -idle 3 &
 
 # clipboard manager
 #parcellite &
@@ -60,6 +60,15 @@
 
 # dim screen at night
 #redshift & 
+
+# network manager applet
+#nm-applet &
+
+# touchpad settings
+#synclient PalmDetect=1
+#synclient HorizTwoFingerScroll=1
+#synclient VertScrollDelta=-111
+#synclient HorizScrollDelta=-111
 
 # WM
 #exec i3
