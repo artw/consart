@@ -232,3 +232,6 @@ iscmd curl && alias myip="curl ipecho.net/plain;echo"
 # consart
 alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
+
+alias mo="${sudo} mount"
+alias umo="${sudo} umount"
