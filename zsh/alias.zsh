@@ -155,8 +155,8 @@ alias -g dua='du -kax'
 # editor
 if [[ ! -z $EDITOR ]]; then
   alias e="$EDITOR"
-  alias E="sudo -E $EDITOR"
-  alias _e="sudo -E $EDITOR"
+  alias E="sudoedit -E"
+  alias _e="E"
 fi
 iscmd gvim && alias ge=gvim
 
@@ -212,6 +212,12 @@ if iscmd hg; then
   alias hgc="hg commit"
   alias hgp="hg push"
   alias hgr="hg record"
+fi
+
+if iscmd git; then
+  alias gitu="git pull"
+  alias gitc="git commit --interactive"
+  alias gitp="git push"
 fi
 
 if iscmd ssh; then
