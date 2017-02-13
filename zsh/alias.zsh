@@ -215,9 +215,10 @@ if iscmd hg; then
 fi
 
 if iscmd git; then
-  alias gitu="git pull"
   alias gitc="git commit --interactive"
   alias gitp="git push"
+  alias gits="git status -s"
+  alias gitu="git pull"
 fi
 
 if iscmd ssh; then
