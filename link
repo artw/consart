@@ -25,7 +25,7 @@ dotfiles=(
 # append x11 specific stuff to dotfiles if xorg flag specified
 if [[ -n $xorg ]]; then
   Xdotfiles=(
-    X/Xdefaults
+    X/Xresources
     X/i3
     X/fonts.conf
     X/xinitrc
