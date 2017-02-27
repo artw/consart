@@ -14,6 +14,9 @@ else
     -*|+*) light_set=$((${light_cur}${1}));;
     *)     light_set=${1};;
   esac
-  [ $light_set -le $light_max ] && [ $light_set -ge 0 ] && [ $light_set -ne $light_cur ] &&
+  if [ $light_set -ne $light_cur ]; then
+    [ $light_set -ge $light_max ] || light_set=$light_max
+    [ $light_set -le 0 ]          || light_set=0
     echo $light_set | sudo tee $light_file
+  fi
 fi
