@@ -210,7 +210,7 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 " Playlists
 filextype *.m3u,*.pls,*.cue
          \ {Play with MPV }
-         \ mplayer --playlist %c,
+         \ mpv --playlist %c,
          \ {Play with mplayer }
          \ mplayer -playlist %c,
 
