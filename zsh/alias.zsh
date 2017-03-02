@@ -235,9 +235,10 @@ if iscmd dropbox-cli; then
 fi
 
 iscmd curl && alias myip="curl ipecho.net/plain;echo"
+iscmd curl && alias weather="curl wttr.in/riga"
 
 # consart
-alias rezsh="rehash && source $HOME/.zshrc"
+#alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
 
 alias mo="${sudo} mount"
