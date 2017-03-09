@@ -11,7 +11,7 @@ if [[ -f $zplug ]]; then
 
   zsh_plugins=(
     #artw/oracle.zsh
-    chrissicool/zsh-256color
+    #chrissicool/zsh-256color
     sharat87/zsh-vim-mode
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
