@@ -205,6 +205,7 @@ if iscmd tmux; then
   alias txl="tmux list-sessions"
   alias txa="tmux attach -t"
   alias txc="tmux new-session -s"
+  alias iterm="tmux -CC"
 fi
 
 if iscmd hg; then
