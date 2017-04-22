@@ -155,8 +155,6 @@ alias -g dua='du -kax'
 # editor
 if [[ ! -z $EDITOR ]]; then
   alias e="$EDITOR"
-  alias E="sudoedit -E"
-  alias _e="E"
 fi
 iscmd gvim && alias ge=gvim
 
@@ -165,6 +163,7 @@ if iscmd sudo; then
   alias sudo="nocorrect sudo"
   alias -g '#'='sudo'
   alias -g '##'='sudo !$'
+  alias E="sudo -E $EDITOR"
 fi
 
 # plumbing
