@@ -28,8 +28,10 @@ linux*)
   fi
   # debian
   if iscmd apt-get; then
-    alias apt="${sudo}apt-get"
     alias apt-get="${sudo}apt-get"
+  fi
+  if iscmd apt; then
+    alias apt="${sudo}apt"
   fi
   # redhat
   iscmd yum && alias yum="${sudo}yum"
