@@ -34,6 +34,9 @@ if [[ -f $zplug ]]; then
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
 
+  # zplug self manage
+  zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
   # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -57,7 +60,12 @@ if [[ -f $zplug ]]; then
 fi
 
 # load perlbrew if installed
-sourceiff $HOME/.perlbrew/etc/bashrc
+if [ -f $HOME/.perlbrew/etc/bashrc ]; then
+  function perlbrew() { 
+    sourceiff $HOME/.perlbrew/etc/bashrc
+    perlbrew "$@"
+  }
+fi
 
 iscmd jenv && eval "$(jenv init -)"
 iscmd thefuck && eval "$(thefuck --alias)"
@@ -89,7 +97,7 @@ function install_vimplug {
 
 # zplug, plugin manager for zsh
 function install_zplug {
-  curl -sL zplug.sh/installer | zsh
+  git-clone zplug/zplug ~/.zplug
 }
 
 # tmux plugin manager
