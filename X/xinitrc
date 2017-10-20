@@ -56,7 +56,7 @@ unclutter -idle 3 &
 parcellite &
 
 # panel
-#tint2 &
+tint2 &
 
 # sound applet
 pasystray &
@@ -77,6 +77,6 @@ pasystray &
 #synclient HorizScrollDelta=-111
 
 # WM
-exec i3
-#exec openbox-session
+#exec i3
+exec openbox-session
 #exec fluxbox
