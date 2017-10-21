@@ -8,7 +8,7 @@
 URxvt*saveLines: 20000
 !URxvt*font: xft:Source Code Pro Semibold:pixelsize=15
 !URxvt*font: xft:ProFont:pixelsize=12
-URxvt*font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+!URxvt*font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 URxvt*scrollstyle: plain
 
@@ -109,29 +109,29 @@ XTerm*toolBar: false
 XTerm*background: #191C1E
 XTerm*foreground: #FFFFFF
 ! black
-XTerm*color0    : #000000
-XTerm*color8    : #808080
+!XTerm*color0    : #000000
+!XTerm*color8    : #808080
 ! red
-XTerm*color1    : #800000
-XTerm*color9    : #FF4B00
+!XTerm*color1    : #800000
+!XTerm*color9    : #FF4B00
 ! green
 XTerm*color2    : #008000
 XTerm*color10   : #87C576
 ! yellow
-XTerm*color3    : #808000
-XTerm*color11   : #FFFF00
+!XTerm*color3    : #808000
+!XTerm*color11   : #FFFF00
 ! blue
-XTerm*color4    : #004164
-XTerm*color12   : #3366FF
+XTerm*color4     : #3366FF
+XTerm*color12    : #547FFF
 ! magenta   
-XTerm*color5    : #800080
-XTerm*color13   : #E68CD7
+!XTerm*color5    : #800080
+!XTerm*color13   : #E68CD7
 ! cyan
-XTerm*color6    : #008080
-XTerm*color14   : #00FFFF
+!XTerm*color6    : #008080
+!XTerm*color14   : #00FFFF
 ! white
-XTerm*color7    : #C0C0C0
-XTerm*color15   : #FFFFFF
+!XTerm*color7    : #C0C0C0
+!XTerm*color15   : #FFFFFF
 !!)
 
 !!!)
