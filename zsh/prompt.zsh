@@ -3,7 +3,7 @@ setopt prompt_subst
 
 # draw user@host if ssh
 if [[ -c $SSH_TTY ]]; then
-  at='%n%B%F{yellow}@%f%b%m '
+  at='%n%F{yellow}@%f%m '
 fi;
 
 # red prompt if root
@@ -15,5 +15,5 @@ else
 fi
 
 # vimode is set by a zle-keymap-select "hook"
-PROMPT='$at%B%F{$prompt_color}%(!.#.$)%b%f '
+PROMPT='$at%F{$prompt_color}%(!.#.$)%f '
 RPROMPT='${vimode}${(v)rprompt_extra}%~ (${?}) %F{blue}[%f%*%F{blue}]%f'
