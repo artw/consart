@@ -179,6 +179,7 @@ alias -g S='| sort -n'
 alias -g T="| tail"
 alias -g Tl="| tail -n20"
 alias -g NUL='&>/dev/null'
+iscmd sed && alias -g Q='| sed "s/^.*$/\"&\"/g"' # quote string
 
 iscmd peco && alias -g P='| peco'
 
