@@ -2,18 +2,18 @@ call plug#begin('~/.vim/plugged')
 " plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
-Plug 'dbext.vim',           { 'for': 'sql' }
+"Plug 'dbext.vim',           { 'for': 'sql' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'gmarik/sudo-gui.vim'
-Plug 'auto-pairs-gentle'
+"Plug 'auto-pairs-gentle'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim',
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 Plug 'osyo-manga/vim-over'
-Plug 'Rename'
+"Plug 'Rename'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle','NERDTreeFind'] }
 Plug 'scrooloose/syntastic'
