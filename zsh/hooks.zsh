@@ -1,9 +1,13 @@
+if [[ ! $SSH_TTY == "" ]]; then
+  $TITLE_PREFIX=$HOSTNAME:
+fi
+
 function chpwd {
   ls
 }
 
 function precmd {
-  title "$HOSTNAME:${PWD/$HOME/~}"
+  title "${TITLE_PREFIX}${PWD/$HOME/~}"
 }
   
 function preexec {
@@ -11,9 +15,9 @@ function preexec {
   if [[ $cmd[1]:t == "ssh" ]]; then
     title $cmd[2] "$cmd[3,-1]"
   elif [[ $cmd[1]:t == "sudo" ]]; then
-    title $HOSTNAME":" "#" $cmd[2]:t "$cmd[3,-1]"
+    title ${TITLE_PREFIX} "#" $cmd[2]:t "$cmd[3,-1]"
   else
-    title $HOSTNAME":" $cmd[1]:t "$cmd[2,-1]"
+    title ${TITLE_PREFIX} $cmd[1]:t "$cmd[2,-1]"
   fi
 }
 
