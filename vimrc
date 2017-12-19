@@ -27,6 +27,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
 Plug 'yko/mojo.vim',        { 'for': 'perl' }
 Plug 'fatih/vim-go',        { 'for': 'go' }
+Plug 'hashivim/vim-vagrant',
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
