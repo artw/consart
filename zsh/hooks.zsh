@@ -1,5 +1,5 @@
 if [[ ! $SSH_TTY == "" ]]; then
-  $TITLE_PREFIX=$HOSTNAME:
+  TITLE_PREFIX=$HOSTNAME:
 fi
 
 function chpwd {
