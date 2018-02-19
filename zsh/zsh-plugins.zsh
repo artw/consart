@@ -4,7 +4,7 @@ if [[ -f $zplug ]]; then
   oh_my_zsh_plugins=(
     git
     sudo
-    command-not-found
+#    command-not-found
     perl
     docker
   )
