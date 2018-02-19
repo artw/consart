@@ -114,7 +114,8 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_macvim')
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+    "set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+    set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h13
     let $LANG = "en_GB.UTF-8"
     " cmd + <n> binds for tab switching
     noremap <D-1> :tabn 1<CR>
