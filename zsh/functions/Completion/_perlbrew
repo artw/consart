@@ -34,8 +34,7 @@ _perlbrew () {
 
             install)
                 # This list generation is a little slow.
-                _perlbrew_all_avail=( ${(f)"$( perlbrew available | perl -lpe \
-                    's/^i?\s+//' )"} )
+                _perlbrew_all_avail=( ${(f)"$( perlbrew available | perl -lane 'print $F[0] unless /^$/' )"} )
                 compadd "$@" $_perlbrew_all_avail
 
                 # Uncomment for a message telling you what's installed
@@ -64,8 +63,7 @@ _perlbrew () {
 
             (switch|use)
                 # Not too slow either
-                _perlbrew_list=( ${(f)"$( perlbrew list | perl -lpe \
-                    's/^(\*)?\s+//;s/\s*\([\d\.]+\)$//' )"} )
+                _perlbrew_list=( ${(f)"$( perlbrew list | perl -lnpe 's/\s?\*?\s?//;'  )"} )
                 compadd "$@" $_perlbrew_list
             ;;
 
