@@ -34,7 +34,7 @@ _perlbrew () {
 
             install)
                 # This list generation is a little slow.
-                _perlbrew_all_avail=( ${(f)"$( perlbrew available | perl -lane 'print $F[0] unless /^$/' )"} )
+                _perlbrew_all_avail=( ${(f)"$( perlbrew available | perl -lane 'print $F[0] unless (/^$/ || /^i/) ' )"} )
                 compadd "$@" $_perlbrew_all_avail
 
                 # Uncomment for a message telling you what's installed
