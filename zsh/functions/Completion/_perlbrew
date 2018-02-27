@@ -63,7 +63,7 @@ _perlbrew () {
 
             (switch|use)
                 # Not too slow either
-                _perlbrew_list=( ${(f)"$( perlbrew list | perl -lnpe 's/\s?\*?\s?//;'  )"} )
+                _perlbrew_list=( ${(f)"$( perlbrew list | perl -lane 'print $F[0]'  )"} )
                 compadd "$@" $_perlbrew_list
             ;;
 
