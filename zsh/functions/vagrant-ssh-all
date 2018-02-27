@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+if [[ -z $1 ]]; then
+  echo "usage: vagrant-ssh-all <command>"
+  return 1
+fi
+
+local -a vms
+vms=("${(@f)$(vagrant status | grep running | cut -f 1 -d ' ')}")
+
+if [[ -z $vms ]]; then
+  echo "no vagrant vms found in the current directory"
+fi
+
+echo "run the specified command on these servers?"
+for vm in $vms; do
+  echo "\t" $vm
+done
+echo "[y/n]"
+if read -q ; then
+else
+  echo "\nbailing out"
+  return 1
+fi
+
+for vm in $vms; do
+  vagrant ssh $vm -c "$*"
+done
