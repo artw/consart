@@ -31,7 +31,7 @@ if [[ -f $zplug ]]; then
   zplug "clvv/fasd", use:fasd
   #zplug "gcuisinier/jenv", as:command, use:"bin/jenv"
   #zplug "harelba/q", as:command, use:"bin/q"
-  #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
+  zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
 
   # zplug self manage
