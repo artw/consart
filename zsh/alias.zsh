@@ -246,3 +246,8 @@ alias cup="cd ~/.consart && git pull"
 
 alias mo="${sudo} mount"
 alias umo="${sudo} umount"
+
+if iscmd vagrant; then
+  alias v="vagrant"
+  alias vs="vagrant ssh"
+fi
