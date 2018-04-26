@@ -225,10 +225,11 @@ if iscmd git; then
 fi
 
 if iscmd ssh; then
-  alias -g "@"="TERM=xterm nocorrect ssh"
+  alias -g "@"="nocorrect ssh"
   alias @x="@ -CYf"
   alias @t="@ -Nf"
   alias @c="@ -t"
+  alias @p="@ -oPubkeyAuthentication=no"
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
