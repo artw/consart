@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+# for old OpenSSH (like the one in macOS 10.11)
+
+scp -o ProxyCommand="ssh $1 -W %h:%p" ${@:2}
