@@ -79,6 +79,7 @@ darwin*)
     if iscmd brew; then
       alias brew-up="brew update && brew upgrade && brew cleanup"
       alias brewc="brew cask"
+      alias brewcup='brew cask reinstall `brew cask outdated | awk "{print $1}"| paste -s -d " " -`'
     fi
 
     alias zzz="pmset sleepnow"

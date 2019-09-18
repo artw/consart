@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh -f
+for c in `docker ps -q --format "table {{.Names}}" | grep -v NAMES`; do echo --- ${c}; docker top $c; done
