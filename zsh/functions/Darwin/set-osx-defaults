@@ -19,3 +19,6 @@ sudo defaults write com.apple.MultitouchSupport ForceAutoOrientation YES
 
 # do not create .DS_Store files on network drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# enable recent used apps dock tile
+defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock

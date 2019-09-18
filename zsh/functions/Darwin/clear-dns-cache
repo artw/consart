@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh -f
+dscacheutil -flushcache; sudo killall -HUP mDNSResponder
