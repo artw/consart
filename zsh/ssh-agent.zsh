@@ -32,15 +32,6 @@ function ssh-agent-start {
   fi
 }
 
-if [[ -f ~/.ssh/id_rsa ]]; then
+if [[ "$SSH_AGENT_ENABLE" == "yes" ]]; then
   ssh-agent-start
-fi
-
-
-# start ssh-pageant if available (win32)
-if [[ "msys" == "$OSTYPE" ]]; then
-  PAGEANT=`which ssh-pageant`
-  if [[ -x $PAGEANT ]]; then
-    eval $($PAGEANT -ra /tmp/.ssh-pageant)
-  fi
 fi
