@@ -1,33 +1,35 @@
 call plug#begin('~/.vim/plugged')
 " plugins
 Plug 'airblade/vim-gitgutter'
-Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
+"Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
 "Plug 'dbext.vim',           { 'for': 'sql' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
-Plug 'gmarik/sudo-gui.vim'
+"Plug 'gmarik/sudo-gui.vim'
 "Plug 'auto-pairs-gentle'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim',
-Plug 'Lokaltog/vim-easymotion'
+"Plug 'kien/ctrlp.vim',
+"Plug 'Lokaltog/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
-Plug 'osyo-manga/vim-over'
+"Plug 'osyo-manga/vim-over'
 "Plug 'Rename'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle','NERDTreeFind'] }
 Plug 'scrooloose/syntastic'
-Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
+"Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Syntax support
 Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
 Plug 'yko/mojo.vim',        { 'for': 'perl' }
 Plug 'fatih/vim-go',        { 'for': 'go' }
 Plug 'hashivim/vim-vagrant',
+Plug 'pprovost/vim-ps1',
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
@@ -115,7 +117,9 @@ if has('gui_running')
   " set gui font
   if has('gui_macvim')
     "set guifont=Source\ Code\ Pro\ for\ Powerline:h13
-    set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h13
+    "set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+    "set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h13
+    set guifont=Source\ Code\ Pro:h13
     let $LANG = "en_GB.UTF-8"
     " cmd + <n> binds for tab switching
     noremap <D-1> :tabn 1<CR>
