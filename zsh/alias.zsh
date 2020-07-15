@@ -209,6 +209,7 @@ if iscmd tmux; then
   alias txa="tmux attach -t"
   alias txc="tmux new-session -s"
   alias iterm="tmux -CC"
+  iscmd tmuxinator && alias mux="tmuxinator"
 fi
 
 if iscmd hg; then
@@ -231,6 +232,7 @@ if iscmd ssh; then
   alias @t="@ -Nf"
   alias @c="@ -t"
   alias @p="@ -oPubkeyAuthentication=no"
+  alias @d="@ -nNT -L $HOME/.ssh/tmp/docker.sock:/var/run/docker.sock"
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
