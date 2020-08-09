@@ -7,6 +7,8 @@ if [[ -f $zplug ]]; then
 #    command-not-found
     perl
     docker
+    docker-compose
+    tmuxinator
   )
 
   zsh_plugins=(
@@ -30,9 +32,10 @@ if [[ -f $zplug ]]; then
   # Plugins with custom settings
   zplug "clvv/fasd", use:fasd
   #zplug "gcuisinier/jenv", as:command, use:"bin/jenv"
-  #zplug "harelba/q", as:command, use:"bin/q"
-  zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
+  zplug "harelba/q", as:command, use:"bin/q"
+  #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
+  zplug "yudai/sshh", as:command, use:"sshh"
 
   # zplug self manage
   zplug 'zplug/zplug', hook-build:'zplug --self-manage'
