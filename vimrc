@@ -116,10 +116,7 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_macvim')
-    "set guifont=Source\ Code\ Pro\ for\ Powerline:h13
-    "set guifont=Source\ Code\ Pro\ for\ Powerline:h13
-    "set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h13
-    set guifont=Source\ Code\ Pro:h13
+    set guifont=JetBrainsMono-Medium:h13
     let $LANG = "en_GB.UTF-8"
     " cmd + <n> binds for tab switching
     noremap <D-1> :tabn 1<CR>
@@ -133,7 +130,7 @@ if has('gui_running')
     noremap <D-9> :tabn 9<CR>
     noremap <D-0> :tablast<CR>
   elseif has('gui_win32')
-    set guifont=Source_Code_Pro_Semibold:h12
+    set guifont=JetBrainsMono-Medium:h13
   elseif has('gui_gtk')
     set guifont=Source\ Code\ Pro\ Semi-Bold\ 12
   endif
