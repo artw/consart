@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 "Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
 "Plug 'dbext.vim',           { 'for': 'sql' }
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 "Plug 'gmarik/sudo-gui.vim'
 "Plug 'auto-pairs-gentle'
@@ -224,8 +224,8 @@ let mojo_highlight_data = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "jellybeans"
-let g:tmuxline_powerline_separators = 1
-let g:tmuxline_preset = "tmux"
+"let g:tmuxline_powerline_separators = 1
+"let g:tmuxline_preset = "tmux"
 
 " dbext
 let g:dbext_default_history_file = "~/.vim/dbext_history"
