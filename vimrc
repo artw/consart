@@ -138,7 +138,7 @@ if has('gui_running')
   set guioptions-=R           " disable right scrollbar if not needed
   set guioptions-=r           "
   set guioptions=c            " do not use gui popup for simple choices
-  set guicursor+=a:blinkon0   " disable cursor blinking
+  "set guicursor+=a:blinkon0   " disable cursor blinking
 
   set list                    " show hidden chars
   set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
