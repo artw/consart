@@ -93,6 +93,10 @@ darwin*)
       alias vi=vim
     fi
   fi
+  if iscmd zerotier-cli; then
+    alias zerotier-restart="sudo launchctl unload /Library/LaunchDaemons/com.zerotier.one.plist &&\
+                            sudo launchctl load /Library/LaunchDaemons/com.zerotier.one.plist"
+  fi
 ;;
 
 freebsd*)
