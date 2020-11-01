@@ -26,6 +26,8 @@ path_dirs=(
   /usr/local/lib/kde4/libexec
 
   /usr/games/bin
+
+  /snap/bin
 )
 
 # set $path
