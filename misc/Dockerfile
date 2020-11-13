@@ -16,6 +16,7 @@ RUN pacman -Sy && \
       inetutils      \
       iperf          \
       iperf3         \
+      iproute2       \
       iputils        \
       jq             \
       k9s            \
@@ -35,10 +36,10 @@ RUN pacman -Sy && \
       tig            \
       tmux           \
       tree           \
-      vim            \
       vifm           \
-      wget           \
+      vim            \
       w3m            \
+      wget           \
       zsh            &&\
     git clone https://github.com/artw/consart .consart && \
     chsh -s /bin/zsh && \
