@@ -4,9 +4,7 @@ RUN pacman -Sy && \
     pacman -S --noconfirm \
       ack            \
       atop           \
-      autossh        \
       bind           \
-      cpanminus      \
       curl           \
       figlet         \
       fio            \
@@ -21,8 +19,7 @@ RUN pacman -Sy && \
       jq             \
       k9s            \
       kubectl        \
-      mc             \
-      nmap           \
+      man-pages      \
       nnn            \
       openbsd-netcat \
       openssh        \
@@ -31,12 +28,10 @@ RUN pacman -Sy && \
       pwgen          \
       rclone         \
       rsync          \
-      s3cmd          \
       tcpdump        \
       tig            \
       tmux           \
       tree           \
-      vifm           \
       vim            \
       w3m            \
       wget           \
