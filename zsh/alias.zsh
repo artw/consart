@@ -242,6 +242,7 @@ fi
 
 if iscmd docker; then
   alias d="docker"
+  alias ds="docker service"
 fi
 
 if iscmd kubectl; then
