@@ -35,16 +35,11 @@ linux*)
   fi
   # redhat
   iscmd yum && alias yum="${sudo}yum"
+  iscmd dnf && alias dnf="${sudo}dnf"
   iscmd rpm && alias rpm="${sudo}rpm"
 
   # suse
   iscmd zypper && alias zyp="${sudo}zypper"
-
-  # MIPS device with optware (router)
-  if [[ $(uname -m) -eq 'mips' ]]; then
-    iscmd hg-py2.7 && alias -g hg="hg-py2.7"
-    unalias grep # busybox grep is monochrome
-  fi
 
   if iscmd systemctl; then
     alias sc="${sudo}systemctl"
@@ -59,39 +54,30 @@ linux*)
   fi
 ;;
 
-cygwin|msys)
-  alias ls=" ls --color=auto -F"
-  iscmd pacman && alias pm="${sudo}pacman"
-;;
-
 darwin*)
   alias rm_dsstore="find . -name .DS_Store -delete"
-  if [[ $(uname -p) == arm ]]; then
-    alias ls="ls --color=auto"
-  else
-    alias grep="grep --color=auto"
-    alias ls="ls -GF"
-    alias finder="open -a Finder"
-    alias run="open -a"
-    alias sl="mdfind -name"
+  alias rm_forks="find . -name ._* -delete"
+  alias grep="grep --color=auto"
+  alias ls="ls -GF"
+  alias finder="open -a Finder"
+  alias run="open -a"
+  alias sl="mdfind -name"
 
-    iscmd htop && alias htop="${sudo}htop"
-    if iscmd brew; then
-      alias brew-up="brew update && brew upgrade && brew cleanup"
-      alias brewc="brew cask"
-      alias brewcup='brew cask reinstall `brew cask outdated | awk "{print $1}"| paste -s -d " " -`'
-    fi
+  iscmd htop && alias htop="${sudo}htop"
+  if iscmd brew; then
+    alias brew-up="brew update && brew upgrade && brew cleanup"
+    alias brewc="brew cask"
+  fi
 
-    alias zzz="pmset sleepnow"
-    alias -g "±"=$HOME
-    alias "£"="sudo"
-    alias sc="${sudo}launchctl"
+  alias zzz="pmset sleepnow"
+  alias -g "±"=$HOME
+  alias "£"="sudo"
+  alias sc="${sudo}launchctl"
 
-    if [[ -a "/Applications/MacVim.app" ]]; then
-      alias ge=mvim
-      alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-      alias vi=vim
-    fi
+  if [[ -a "/Applications/MacVim.app" ]]; then
+    alias ge=mvim
+    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias vi=vim
   fi
   if iscmd zerotier-cli; then
     alias zerotier-restart="sudo launchctl unload /Library/LaunchDaemons/com.zerotier.one.plist &&\
@@ -117,7 +103,6 @@ freebsd*)
     alias nslookup=host
   fi
   alias sc="${sudo}service"
-  alias cbsd="${sudo}cbsd"
 ;;
 
 openbsd*)
@@ -139,7 +124,7 @@ alias man='nocorrect man'
 # "shortcuts" for most used commands
 alias c='cat'
 alias cls='clear'
-alias d='dirs -v'
+alias dr='dirs -v'
 alias g='grep'
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep'
@@ -236,14 +221,9 @@ if iscmd ssh; then
   alias @t="@ -Nf"
   alias @c="@ -t"
   alias @p="@ -oPubkeyAuthentication=no"
-  alias @d="@ -nNT -L $HOME/.ssh/tmp/docker.sock:/var/run/docker.sock"
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
-
-if iscmd dropbox-cli; then
-  alias dropbox="dropbox-cli"
-fi
 
 iscmd curl && alias myip="curl ipecho.net/plain;echo"
 iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
@@ -258,4 +238,12 @@ alias umo="${sudo} umount"
 if iscmd vagrant; then
   alias v="vagrant"
   alias vs="vagrant ssh"
+fi
+
+if iscmd docker; then
+  alias d="docker"
+fi
+
+if iscmd kubectl; then
+  alias k="kubectl"
 fi
