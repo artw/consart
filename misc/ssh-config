@@ -1,0 +1,8 @@
+# Master process
+ControlPersist  1
+ControlMaster   auto
+ControlPath     ~/.ssh/tmp/%h_%p_%r
+
+# macOS keychain integration for keys
+#UseKeychain yes
+#AddKeysToAgent yes
