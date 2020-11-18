@@ -28,10 +28,10 @@ linux*)
   fi
   # debian
   if iscmd apt-get; then
-    alias apt-get="${sudo}apt-get"
+    alias apt-get="${sudo}apt-get --no-install-recommends"
   fi
   if iscmd apt; then
-    alias apt="${sudo}apt"
+    alias apt="${sudo}apt --no-install-recommends"
   fi
   # redhat
   iscmd yum && alias yum="${sudo}yum"
