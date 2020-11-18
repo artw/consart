@@ -30,9 +30,10 @@ if [[ -f $zplug ]]; then
   end
 
   # Plugins with custom settings
-  zplug "clvv/fasd", use:fasd
+  #zplug "clvv/fasd", use:fasd
+  zplug "agkozak/zsh-z"
   #zplug "gcuisinier/jenv", as:command, use:"bin/jenv"
-  zplug "harelba/q", as:command, use:"bin/q"
+  #zplug "harelba/q", as:command, use:"bin/q"
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
   zplug "yudai/sshh", as:command, use:"sshh"
@@ -57,7 +58,7 @@ if [[ -f $zplug ]]; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   fi
-  iscmd fasd && eval "$(fasd --init auto)"
+  #iscmd fasd && eval "$(fasd --init auto)"
   #iscmd rbenv && eval "$(rbenv init -)"
   #iscmd fzf && source $ZPLUG_REPOS/junegunn/fzf/shell/*.zsh
 fi
