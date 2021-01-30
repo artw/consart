@@ -12,14 +12,14 @@ linux*)
   if iscmd pacman; then
     alias pm="${sudo}pacman"
     if iscmd yay; then
-      alias ya="yaourt"
-      alias yu="yaourt -Syua"
-      alias yup="yaourt -Syua --noconfirm"
-      alias ys="yaourt -Ss"
-      alias yi="yaourt -S"
-      alias yii="yaourt -S --noconfirm"
-      alias yr="yaourt -Rusc"
-      alias yq="yaourt -Q"
+      alias ya="yay"
+      alias yu="yay -Syua"
+      alias yup="yay -Syua --noconfirm"
+      alias ys="yay -Ss"
+      alias yi="yay -S"
+      alias yii="yay -S --noconfirm"
+      alias yr="yay -Rusc"
+      alias yq="yay -Q"
     fi
   fi
   # gentoo
