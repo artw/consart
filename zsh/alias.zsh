@@ -7,10 +7,11 @@ linux*)
   alias grep="grep --color=auto"
   alias ls="ls --color=auto -F"
   iscmd grub-mkconfig && alias grub-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
+  iscmd iptables && alias iptables="${sudo}iptables"
   # arch
   if iscmd pacman; then
     alias pm="${sudo}pacman"
-    if iscmd yaourt; then
+    if iscmd yay; then
       alias ya="yaourt"
       alias yu="yaourt -Syua"
       alias yup="yaourt -Syua --noconfirm"
@@ -33,6 +34,9 @@ linux*)
   if iscmd apt; then
     alias apt="${sudo}apt --no-install-recommends"
   fi
+
+  iscmd ufw && alias ufw"${sudo}ufw"
+
   # redhat
   iscmd yum && alias yum="${sudo}yum"
   iscmd dnf && alias dnf="${sudo}dnf"
