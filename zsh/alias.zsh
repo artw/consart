@@ -35,7 +35,7 @@ linux*)
     alias apt="${sudo}apt --no-install-recommends"
   fi
 
-  iscmd ufw && alias ufw"${sudo}ufw"
+  iscmd ufw && alias ufw="${sudo}ufw"
 
   # redhat
   iscmd yum && alias yum="${sudo}yum"
