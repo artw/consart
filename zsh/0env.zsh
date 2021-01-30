@@ -4,6 +4,7 @@ path_dirs=(
   $HOME/.bin
   $HOME/.vim/dist/bin
   $HOME/.zplug/bin
+  $HOME/.krew/bin
 
   /opt/sbin
   /opt/local/sbin
