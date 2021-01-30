@@ -9,6 +9,7 @@ bindkey -M vicmd "//" history-beginning-pattern-search-backward
 bindkey -M vicmd "??" history-beginning-pattern-search-forward
 bindkey -M vicmd "u" undo               # vi undo is crap
 bindkey -M vicmd "q" push-input         # clear and add this line to history, execute other command before it comes back
+bindkey -M vicmd "v" edit-command-line  # edit line in vim
 
 bindkey "\eOH" beginning-of-line        # Home
 bindkey "\e[H" beginning-of-line        # Home (xorg)

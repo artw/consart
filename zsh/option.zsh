@@ -13,3 +13,7 @@ setopt no_hup         # do not send HUP to background jobs on exit
 # smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
+
+# edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
