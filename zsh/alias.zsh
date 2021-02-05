@@ -252,3 +252,5 @@ fi
 if iscmd kubectl; then
   alias k="kubectl"
 fi
+
+iscmd terraform && alias tf="terraform"
