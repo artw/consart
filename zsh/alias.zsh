@@ -143,6 +143,7 @@ alias ll='ls -l'
 alias lla='ls -la'
 
 alias -g ...='../..'
+alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../..'
 
@@ -236,9 +237,6 @@ iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
 #alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
 
-alias mo="${sudo} mount"
-alias umo="${sudo} umount"
-
 if iscmd vagrant; then
   alias v="vagrant"
   alias vs="vagrant ssh"
@@ -251,6 +249,10 @@ fi
 
 if iscmd kubectl; then
   alias k="kubectl"
+  alias ka="kubectl apply -f"
+  alias kc="kubectl config use-context"
 fi
 
 iscmd terraform && alias tf="terraform"
+
+iscmd mcli && ! iscmd mc && alias mc=mcli
