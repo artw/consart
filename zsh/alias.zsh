@@ -13,8 +13,7 @@ linux*)
     alias pm="${sudo}pacman"
     if iscmd yay; then
       alias ya="yay"
-      alias yu="yay -Syua"
-      alias yup="yay -Syua --noconfirm"
+      alias yu="yay -Syyua"
       alias ys="yay -Ss"
       alias yi="yay -S"
       alias yii="yay -S --noconfirm"
@@ -102,10 +101,6 @@ freebsd*)
   alias jpkg-upgrade="xargs -I % ${sudo}pkg -j % upgrade -y"
   alias jpkg-upgrade-all="jls -N | tail -n +2 | cut -f2 -d' ' | xargs -I % ${sudo}pkg -j % upgrade -y"
   iscmd gnu-watch && alias watch="gnu-watch"
-  if iscmd drill && ! iscmd dig; then
-    alias dig=drill
-    alias nslookup=host
-  fi
   alias sc="${sudo}service"
 ;;
 
@@ -245,14 +240,27 @@ fi
 if iscmd docker; then
   alias d="docker"
   alias ds="docker service"
+  alias dt="docker stack"
+fi
+
+if iscmd docker-compose; then
+  alias dc="docker-compose"
 fi
 
 if iscmd kubectl; then
   alias k="kubectl"
   alias ka="kubectl apply -f"
+  alias kd="kubectl delete -f"
+  alias kl="kubectl get"
   alias kc="kubectl config use-context"
+  alias kcl="kubectl config get-contexts"
 fi
 
 iscmd terraform && alias tf="terraform"
 
 iscmd mcli && ! iscmd mc && alias mc=mcli
+
+if iscmd drill && ! iscmd dig; then
+  alias dig=drill
+  alias nslookup=host
+fi
