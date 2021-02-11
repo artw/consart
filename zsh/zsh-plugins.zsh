@@ -2,13 +2,13 @@
 local zplug=~/.zplug/init.zsh
 if [[ -f $zplug ]]; then
   oh_my_zsh_plugins=(
-    git
+#   git
     sudo
-#    command-not-found
-    perl
-    docker
-    docker-compose
-    tmuxinator
+    command-not-found
+#   perl
+#   docker
+#   docker-compose
+#   tmuxinator
   )
 
   zsh_plugins=(
