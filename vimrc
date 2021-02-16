@@ -66,6 +66,8 @@ set scrolloff=5               "  scroll down when on <x> line
 set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
 set tabstop=2
+" except in Makefiles
+autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 set noeb vb t_vb=              "  no bells and whistles
 au GUIEnter * set vb t_vb=
