@@ -8,7 +8,7 @@ Plug 'ervandew/supertab'
 "Plug 'gmarik/sudo-gui.vim'
 "Plug 'auto-pairs-gentle'
 Plug 'junegunn/vim-easy-align'
-"Plug 'kien/ctrlp.vim',
+Plug 'ctrlpvim/ctrlp.vim',
 "Plug 'Lokaltog/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
@@ -30,6 +30,7 @@ Plug 'yko/mojo.vim',        { 'for': 'perl' }
 Plug 'fatih/vim-go',        { 'for': 'go' }
 Plug 'hashivim/vim-vagrant',
 Plug 'pprovost/vim-ps1',
+Plug 'fcpg/vim-osc52'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
@@ -203,8 +204,8 @@ nmap <F4>      :Startify<CR>
 "nmap <Leader>s :Startify<CR>
 nmap <F5>      :GundoToggle<CR>
 nmap <Leader>u :GundoToggle<CR>
-nmap <F7>      :CtrlP<CR>
-nmap <Leader>p :CtrlP<CR>
+"nmap <F7>      :CtrlP<CR>
+"nmap <Leader>p :CtrlP<CR>
 nmap <Leader>o :OverCommandLine
 
 " Start interactive EasyAlign in visual mode
@@ -249,6 +250,10 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " gentle pairs
 let g:AutoPairsUseInsertedCount = 1
+
+" vim-osc52
+vmap <C-c> y:Oscyank<cr>
+xmap <F7> y:Oscyank<cr>
 
 "" load vimrc.local if available
 if filereadable($HOME . "/.vimrc.local")
