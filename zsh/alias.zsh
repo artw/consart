@@ -165,6 +165,7 @@ alias -g H="| head"
 alias -g Hl="| head -n20"
 alias -g G='| grep'
 alias -g Gv='| grep -v'
+alias -g Gc='| grep -e "^$" -e "^#" -v'
 alias -g S='| sort -n'
 alias -g T="| tail"
 alias -g Tl="| tail -n20"
@@ -257,6 +258,9 @@ if iscmd kubectl; then
 fi
 
 iscmd terraform && alias tf="terraform"
+
+iscmd ansible && alias a="ansible"
+iscmd ansible-playbook && alias a="ansible-playbook"
 
 iscmd mcli && ! iscmd mc && alias mc=mcli
 
