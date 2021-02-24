@@ -260,7 +260,7 @@ fi
 iscmd terraform && alias tf="terraform"
 
 iscmd ansible && alias a="ansible"
-iscmd ansible-playbook && alias a="ansible-playbook"
+iscmd ansible-playbook && alias ap="ansible-playbook"
 
 iscmd mcli && ! iscmd mc && alias mc=mcli
 
