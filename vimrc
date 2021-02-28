@@ -19,7 +19,7 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle','NERDTreeFind'] }
 Plug 'scrooloose/syntastic'
 "Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'tmux-plugins/vim-tmux'
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -31,6 +31,7 @@ Plug 'fatih/vim-go',        { 'for': 'go' }
 Plug 'hashivim/vim-vagrant',
 Plug 'pprovost/vim-ps1',
 Plug 'fcpg/vim-osc52'
+Plug 'pearofducks/ansible-vim'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
@@ -254,6 +255,9 @@ let g:AutoPairsUseInsertedCount = 1
 " vim-osc52
 vmap <C-c> y:Oscyank<cr>
 xmap <F7> y:Oscyank<cr>
+
+" vim-ansible hook
+au BufRead,BufNewFile */ansible/*.yml set filetype=yaml.ansible
 
 "" load vimrc.local if available
 if filereadable($HOME . "/.vimrc.local")
