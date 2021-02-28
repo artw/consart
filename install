@@ -1,34 +1,15 @@
 #!/usr/bin/env zsh
 
 cd $HOME
-echo "Cloning consart repo..."
-test -d .consart || git clone https://github.com/artw/consart .consart
 
-echo "Linking dotfiles..."
 zsh .consart/link
 source .zshrc
 
-echo "Installing zgen..."
-install_zgen
+echo "Installing zplug..."
+install_zplug
 
-echo "Installing vundle..."
+echo "Installing vimplug..."
 install_vimplug
 
-if which nvim &>/dev/null; then
-  ln -s ~/.vim ~/.config/nvim
-  ln -s ~/.vimrc ~/.config/nvim/init.vim
-fi
-
 echo "Installing vim plugins..."
-if which vim &>/dev/null; then
-  VIM=vim
-elif which nvim &>/dev/null; then
-  VIM=nvim
-fi
-
-$VIM -c PlugInstall! -c qa!
-
-echo "Installing tmux plugin manager..."
-install_tpm
-
-echo "Done."
+vim -c PlugInstall! -c qa!
