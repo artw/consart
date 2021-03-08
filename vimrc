@@ -120,7 +120,7 @@ endif
 if has('gui_running')
   " set gui font
   if has('gui_macvim')
-    set guifont=JetBrainsMono-Medium:h13
+    set guifont=JetBrainsMono-Medium:h11
     let $LANG = "en_GB.UTF-8"
     " cmd + <n> binds for tab switching
     noremap <D-1> :tabn 1<CR>
@@ -136,7 +136,8 @@ if has('gui_running')
   elseif has('gui_win32')
     set guifont=JetBrainsMono-Medium:h13
   elseif has('gui_gtk')
-    set guifont=Source\ Code\ Pro\ Semi-Bold\ 12
+    set guifont=Source\ Code\ Pro\ Semi-Bold\ 10
+    set guifont=JetBrains\ Mono\ NL\ Medium\ 10
   endif
   set guioptions-=T           " disable the ugly toolbar
   set guioptions-=R           " disable right scrollbar if not needed
