@@ -1,5 +1,5 @@
 #!/bin/sh
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+#xrdb -merge ~/.consart/X/Xresources
 
 # unicode
 #export LANG=en_GB.UTF-8
@@ -21,12 +21,12 @@
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 
 # keymap settings
-setxkbmap -layout "lv,ru" \
-          -variant "apostrophe, winkeys" \
-          -option "altwin:swap_alt_win" \
-          -option "caps:escape" \
-          -option "grp:rctrl_rshift_toggle" \
-          -option "terminate:ctrl_alt_bksp" &
+#setxkbmap -layout "lv,ru" \
+#          -variant "apostrophe, winkeys" \
+#          -option "altwin:swap_alt_win" \
+#          -option "caps:escape" \
+#          -option "grp:rctrl_rshift_toggle" \
+#          -option "terminate:ctrl_alt_bksp" &
 
 # disable bell
 #xset b off &
@@ -35,37 +35,37 @@ setxkbmap -layout "lv,ru" \
 #xxkb &
 
 # set wallpaper
-feh --bg-scale ~/.wallpaper &
+#feh --bg-scale ~/.wallpaper &
 
 # desktop
 #pcmanfm --desktop &
 
 # compositor
-compton -b &
+#compton -b &
 
 # bind keys
-xbindkeys &
+#xbindkeys &
 
 # remap keys
 #( sleep 1 && xmodmap ~/.Xmodmap ) &
 
 # hide mouse cursor when not used
-unclutter -idle 3 &
+#unclutter -idle 3 &
 
 # clipboard manager
-parcellite &
+#parcellite &
 
 # panel
-tint2 &
+#tint2 &
 
 # sound applet
-pasystray &
+#pasystray &
 
 # dim screen at night
 #redshift & 
 
 # dropbox
-(sleep 5; dropbox start)&
+#(sleep 5; dropbox start)&
 
 # network manager applet
 #nm-applet &
@@ -78,5 +78,5 @@ pasystray &
 
 # WM
 #exec i3
-exec openbox-session
+#exec openbox-session
 #exec fluxbox
