@@ -35,7 +35,6 @@ function ssh-agent-start {
 # create a symlink in case agent var already set by something else (like ssh ForwardAgent)
 # this symlink is used by tmux
 if [[ -S "$SSH_AUTH_SOCK" ]]; then
-  echo $SSH_AUTH_SOCK
   test -d $HOME/.ssh || mkdir -p $HOME/.ssh
   ln -sf $SSH_AUTH_SOCK $HOME/.ssh/ssh-agent
 # or run local agent if enabled
