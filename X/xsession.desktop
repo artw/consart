@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=xsession
+Comment=Execute user xsession
+Exec=default
+Icon=openbox
+Type=Application
