@@ -159,17 +159,18 @@ if iscmd sudo; then
 fi
 
 # plumbing
-alias -g _='| sudo'
 alias -g L='| less'
 alias -g H="| head"
 alias -g Hl="| head -n20"
 alias -g G='| grep'
+alias -g Gi='| grep -i'
 alias -g Gv='| grep -v'
 alias -g Gc='| grep -e "^$" -e "^\s*#.*$" -v' 
 alias -g S='| sort -n'
 alias -g T="| tail"
 alias -g Tl="| tail -n20"
 alias -g NUL='&>/dev/null'
+iscmd ack && alias -g A="ack"
 iscmd sed && alias -g Q='| sed "s/^.*$/\"&\"/g"' # quote string
 
 iscmd peco && alias -g P='| peco'
@@ -199,17 +200,10 @@ if iscmd tmux; then
   alias txa="tmux attach -t"
   alias txc="tmux new-session -s"
   alias iterm="tmux -CC"
-  iscmd tmuxinator && alias mux="tmuxinator"
-fi
-
-if iscmd hg; then
-  alias hgu="hg pull -u"
-  alias hgc="hg commit"
-  alias hgp="hg push"
-  alias hgr="hg record"
 fi
 
 if iscmd git; then
+  alias g="git"
   alias gitc="git commit --interactive"
   alias gitp="git push"
   alias gits="git status -s"
