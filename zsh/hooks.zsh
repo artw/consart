@@ -19,6 +19,7 @@ function preexec {
   else
     title ${TITLE_PREFIX} $cmd[1]:t "$cmd[2,-1]"
   fi
+  tmux-env-refresh
 }
 
 # indicate command mode in $vimode for use in prompt
@@ -38,3 +39,13 @@ function zle-line-finish {
   vimode=""
 }
 zle -N zle-line-finish
+
+# set env variables from tmux update-environment
+function tmux-env-refresh {
+  if [[ -n "$TMUX" ]]; then
+    for e in $(tmux show-options -gv update-environment); do
+      var=$(tmux show-environment | grep "^${e}=") 
+      test -n "${var}" && export $var
+    done;
+  fi
+}
