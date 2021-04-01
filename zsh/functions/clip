@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+# copy stream to clipboard using OSC 52 sequence
+
+# clear clipboard first (some terminals append to it)
+printf "\033]52;c;!\a"
+
+buf=$(cat "$@")
+len=$(printf %s "$buf" | wc -c)
+max=74994
+if (( len > max )); then 
+  echo "$0: input is $(( len - max )) bytes too long" >&2
+fi
+printf "\033]52;c;$(printf %s "$buf" | head -c $max | base64 | tr -d '\r\n')\a"
