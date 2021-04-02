@@ -1,0 +1,32 @@
+#!/bin/sh
+# rerun the ssh in the current window
+
+tmux_cur_pane=$(tmux display-message -p "#{pane_index}") 
+
+command_list=$(tmux list-panes -F "#{pane_index},#{pane_pid}" |\
+  grep -v "${tmux_cur_pane}," |\
+  cut -f 2 -d, |\
+  paste -s -d, |\
+  xargs pgrep -P |\
+  paste -s -d, |\
+  xargs ps h -o cmd -p |\
+  grep -e "^ssh" |\
+  sort | uniq -c | sort -rn | cut -f 8-100 -d" " )
+
+if [[ -z $command_list ]]; then
+  tmux send-keys -R ssh
+else
+  command_count=`echo "$command_list" | wc -l`
+  if [[ $command_count -eq 1 ]]; then
+    eval `echo tmux send-keys -R \'$command_list\' Enter`
+  else
+
+    IFS=$'\n'
+    n=1
+    for c in $command_list; do
+      MENU="${MENU} \"$c\" $n \"send-keys -R '$c' Enter\""
+      let n+=1
+    done
+    eval `echo tmux display-menu -x W -y S ${MENU}`
+  fi
+fi
