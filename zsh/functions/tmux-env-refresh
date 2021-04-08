@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+# update shell environment from tmux
+if [[ -n "$TMUX" ]]; then
+  for e in $(tmux show-options -gv update-environment); do
+    var=$(tmux show-environment | grep "^${e}=") 
+    test -n "${var}" && echo export $var
+  done;
+fi
