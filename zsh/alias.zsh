@@ -86,6 +86,7 @@ darwin*)
     alias zerotier-restart="sudo launchctl unload /Library/LaunchDaemons/com.zerotier.one.plist &&\
                             sudo launchctl load /Library/LaunchDaemons/com.zerotier.one.plist"
   fi
+  alias reset-audio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 ;;
 
 freebsd*)
