@@ -15,6 +15,7 @@ path_dirs=(
   /opt/bin
   /opt/local/bin
   /usr/local/bin
+  /opt/homebrew/bin
   /usr/bin
   /bin
 
