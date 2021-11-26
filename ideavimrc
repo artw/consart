@@ -1,0 +1,34 @@
+let mapleader = ","
+
+set ideaput
+set ideajoin
+set surround
+set sneak
+set multiple-cursors
+set ideastatusicon=gray
+set idearefactormode=keep
+
+set ignorecase
+set smartcase
+
+"map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+"map <leader>c <Action>(Stop)
+
+map <leader>q <Action>(QuickJavaDoc)
+"map <leader>q <Action>(QuickImplementations)
+
+map <leader>s <Action>(SelectInProjectView)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
+
+"nmap ; :
+vmap < <gv
+vmap > >gv
+
+imap <C-L> ->
+imap <C-K> <Space>=><Space>
