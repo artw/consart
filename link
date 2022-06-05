@@ -29,11 +29,10 @@ foreach f in $dotfiles; do
   link_src=${HOME}/.consart/${f}
   link_dest=${HOME}/.${f}
   echo "$link_dest \t -> $link_src"
-  if [ -e $link_dest ]; then
-    if [ $FORCE_FLAG -ne 1 ]; then
-      rm -ir $link_dest && ln -s $link_src $link_dest
-    else
-      ln -sf $link_src $link_dest
-    fi
+  if [ $FORCE_FLAG -ne 1 ]; then
+    test -e $link_dest && rm -ir $link_dest 
+    ln -s $link_src $link_dest
+  else
+    ln -sf $link_src $link_dest
   fi
 done;
