@@ -7,8 +7,33 @@ dotfiles=(
   zshrc
 )
 
-echo "Linking dotfiles, will prompt to rm if exist"
+if [[ "$1" == "-h" ]]; then
+  echo "link dotfiles from consart\n\n" 
+  echo "usage: $0 [-f # force overwrite ]"
+fi
+
+if [[ "$1" == "-f" ]]; then
+  FORCE_FLAG=1
+else
+  FORCE_FLAG=0
+fi
+
+if [[ ! -f ${HOME}/.consart/link ]]; then
+  echo "please install (or link) consart to ~/.consart" 
+  return 1
+fi
+
+echo "Linking dotfiles"
+
 foreach f in $dotfiles; do
-  test -e ${HOME}/.${f} && rm -ir ${HOME}/.${f} &&
-  ln -sf ${HOME}/.consart/${f} ${HOME}/.${f}
+  link_src=${HOME}/.consart/${f}
+  link_dest=${HOME}/.${f}
+  echo "$link_dest \t -> $link_src"
+  if [ -e $link_dest ]; then
+    if [ $FORCE_FLAG -ne 1 ]; then
+      rm -ir $link_dest && ln -s $link_src $link_dest
+    else
+      ln -sf ${HOME}/.consart/${f} ${HOME}/.${f}
+    fi
+  fi
 done;
