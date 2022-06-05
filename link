@@ -33,7 +33,7 @@ foreach f in $dotfiles; do
     if [ $FORCE_FLAG -ne 1 ]; then
       rm -ir $link_dest && ln -s $link_src $link_dest
     else
-      ln -sf ${HOME}/.consart/${f} ${HOME}/.${f}
+      ln -sf $link_src $link_dest
     fi
   fi
 done;
