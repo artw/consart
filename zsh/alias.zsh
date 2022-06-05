@@ -237,6 +237,7 @@ if iscmd docker; then
   alias d="docker"
   alias ds="docker service"
   alias dt="docker stack"
+  alias dr="docker run -ti --rm"
 fi
 
 if iscmd docker-compose; then
