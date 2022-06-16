@@ -15,7 +15,7 @@ Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 "Plug 'osyo-manga/vim-over'
 "Plug 'Rename'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle','NERDTreeFind'] }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 "Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'tmux-plugins/vim-tmux'
@@ -29,6 +29,7 @@ Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
 Plug 'yko/mojo.vim',        { 'for': 'perl' }
 Plug 'fatih/vim-go',        { 'for': 'go' }
 Plug 'hashivim/vim-vagrant',
+Plug 'hashivim/vim-terraform',
 Plug 'pprovost/vim-ps1',
 Plug 'fcpg/vim-osc52'
 Plug 'pearofducks/ansible-vim'
@@ -209,6 +210,19 @@ nmap <Leader>u :GundoToggle<CR>
 "nmap <F7>      :CtrlP<CR>
 "nmap <Leader>p :CtrlP<CR>
 nmap <Leader>o :OverCommandLine
+
+"" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+"" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+"" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+"autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    "\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+"" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror
 
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
