@@ -252,6 +252,7 @@ if iscmd kubectl; then
   alias kc="kubectl config use-context"
   alias kcl="kubectl config get-contexts"
 fi
+iscmd k9s && alias k9s="k9s --logoless"
 
 iscmd terraform && alias tf="terraform"
 
