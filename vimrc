@@ -1,23 +1,23 @@
 call plug#begin('~/.vim/plugged')
 " plugins
-Plug 'airblade/vim-gitgutter'
+"Plug 'Lokaltog/vim-easymotion'
+"Plug 'Rename'
+"Plug 'auto-pairs-gentle'
 "Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
 "Plug 'dbext.vim',           { 'for': 'sql' }
 "Plug 'edkolev/tmuxline.vim'
-Plug 'ervandew/supertab'
 "Plug 'gmarik/sudo-gui.vim'
-"Plug 'auto-pairs-gentle'
-Plug 'junegunn/vim-easy-align'
+"Plug 'osyo-manga/vim-over'
+"Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
+Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim',
-"Plug 'Lokaltog/vim-easymotion'
+Plug 'ervandew/supertab'
+Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
-"Plug 'osyo-manga/vim-over'
-"Plug 'Rename'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-"Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -25,14 +25,15 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax support
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'fatih/vim-go',        { 'for': 'go' }
+Plug 'fcpg/vim-osc52'
+Plug 'hashivim/vim-terraform',
+Plug 'hashivim/vim-vagrant',
+Plug 'pearofducks/ansible-vim'
+Plug 'pprovost/vim-ps1',
 Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
 Plug 'yko/mojo.vim',        { 'for': 'perl' }
-Plug 'fatih/vim-go',        { 'for': 'go' }
-Plug 'hashivim/vim-vagrant',
-Plug 'hashivim/vim-terraform',
-Plug 'pprovost/vim-ps1',
-Plug 'fcpg/vim-osc52'
-Plug 'pearofducks/ansible-vim'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'talek/vorax4'
 "Plug 'yuratomo/w3m.vim'
@@ -230,8 +231,8 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign with a Vim movement
 nmap <Leader>a <Plug>(EasyAlign)
 
-imap <C-L> ->
-imap <C-K> <Space>=><Space>
+"imap <C-L> ->
+"imap <C-K> <Space>=><Space>
 
 " higlight __DATA__ for mojo
 let mojo_highlight_data = 1
