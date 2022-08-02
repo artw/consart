@@ -10,8 +10,10 @@ call plug#begin('~/.vim/plugged')
 "Plug 'osyo-manga/vim-over'
 "Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'airblade/vim-gitgutter'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim',
 Plug 'ervandew/supertab'
+Plug 'fcpg/vim-osc52'
 Plug 'junegunn/vim-easy-align'
 Plug 'mcchrish/nnn.vim'
 Plug 'mhinz/vim-startify'
@@ -26,18 +28,13 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax support
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'fatih/vim-go',        { 'for': 'go' }
-Plug 'fcpg/vim-osc52'
-Plug 'hashivim/vim-terraform',
-Plug 'hashivim/vim-vagrant',
+Plug 'fatih/vim-go',           { 'for': 'go' }
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'hashivim/vim-vagrant',   { 'for': 'ruby' }
 Plug 'pearofducks/ansible-vim'
-Plug 'pprovost/vim-ps1',
-Plug 'vim-perl/vim-perl',   { 'for': 'perl' }
-Plug 'yko/mojo.vim',        { 'for': 'perl' }
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-"Plug 'talek/vorax4'
-"Plug 'yuratomo/w3m.vim'
+Plug 'pprovost/vim-ps1',       { 'for': 'ps1' }
+Plug 'vim-perl/vim-perl',      { 'for': 'perl' }
+Plug 'yko/mojo.vim',           { 'for': 'perl' }
 
 " colorthemes
 Plug 'nanotech/jellybeans.vim'
