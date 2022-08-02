@@ -13,6 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim',
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
+Plug 'mcchrish/nnn.vim'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 Plug 'scrooloose/nerdcommenter'
@@ -65,7 +66,7 @@ filetype plugin indent on
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
-set scrolloff=5               "  scroll down when on <x> line
+set scrolloff=5                "  scroll down when on <x> line
 
 set expandtab                  "  tab emulates 2 spaces
 set shiftwidth=2
@@ -80,22 +81,22 @@ set wildmenu                   "  completion menu
 set wildmode=list:longest,full "  complete longest first
 set laststatus=2               "  always show the status line
 set incsearch                  "  search as we type
-"set hlsearch                  "  highligh search matches
-"set list                      "  show unpritable chars
+"set hlsearch                  "  highlight search matches
+"set list                      "  show unprintable chars
 set number                     "  show line numbers
 set linespace=0                "  more compact text
-"set autoread                  "  autoreload files after they are changed
+set autoread                  "  autoreload files after they are changed
 "set clipboard=unnamed         "  use system clipboard register by default
 "set virtualedit=onemore       "  allow cursor beyond last character
 "set virtualedit=all           "  put cursor anywhere in the file
 set ignorecase                 "
 set smartcase                  "  ignore case when lowercase, don't ignore if not
-"set autochdir                  "  auto cd to current file
-set cursorline                 " highlight the line with cursor
-set cursorcolumn               " highlight the column with cursor
+"set autochdir                 "  auto cd to current file
+set cursorline                 "  highlight the line with cursor
+set cursorcolumn               "  highlight the column with cursor
 
 if version >=730
-  set relativenumber             "  show relative line numbers
+  set relativenumber           "  show relative line numbers
 endif
 
 " enable mouse if available
