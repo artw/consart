@@ -11,7 +11,8 @@ URxvt*saveLines: 20000
 !URxvt*font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 URxvt*font: xft:JetBrains Mono:style=Medium:pixelsize=12
 
-URxvt*scrollstyle: plain
+!URxvt*scrollstyle: plain
+URxvt*scrollBar: no
 
 ! scrolling behaviour
 URxvt*scrollTtyOutput: false
