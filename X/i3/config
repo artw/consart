@@ -1,11 +1,13 @@
 set $alt Mod1
 set $mod Mod4
 
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font pango:ProFont 8
+font pango:Source Code Pro Semibold 12
 
 # app binds
 bindsym $mod+grave exec ~/.consart/bin/urxvtc
+bindsym $mod+Escape exec ~/.consart/bin/urxvtc
 bindsym $mod+F1 exec surf google.com
 bindsym $mod+F2 exec ~/.consart/bin/urxvtc -e vifm
 bindsym $mod+F3 exec ~/.consart/bin/urxvtc -e $EDITOR
@@ -193,8 +195,8 @@ client.urgent           #2f343a #900000 #ffffff #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # i3-gaps
-gaps inner 10
-gaps outer 5
+gaps inner 30
+gaps outer 15
 smart_gaps on
 smart_borders on
 
