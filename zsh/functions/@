@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+host=$1; shift
+ssh -t $host /usr/bin/env zsh -i -c \"$*\"
