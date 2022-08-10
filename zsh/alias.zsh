@@ -211,14 +211,6 @@ if iscmd git; then
   alias gitu="git pull"
 fi
 
-if iscmd ssh; then
-  alias -g "@"="nocorrect ssh"
-  alias @x="@ -CYf"
-  alias @t="@ -Nf"
-  alias @c="@ -t"
-  alias @p="@ -oPubkeyAuthentication=no"
-fi
-
 iscmd gdisk && alias gdisk="${sudo}gdisk"
 
 iscmd curl && alias myip="curl ipecho.net/plain;echo"
@@ -253,6 +245,8 @@ if iscmd kubectl; then
   alias kcl="kubectl config get-contexts"
 fi
 iscmd k9s && alias k9s="k9s --logoless"
+
+iscmd lazygit && alias lg=lazygit
 
 iscmd terraform && alias tf="terraform"
 
