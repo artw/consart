@@ -266,6 +266,9 @@ let g:SuperTabDefaultCompletionType = "context"
 " gentle pairs
 let g:AutoPairsUseInsertedCount = 1
 
+" nerdcommenter: leave a space after comment
+let g:NERDSpaceDelims = 1
+
 " vim-osc52
 vmap <C-c> y:Oscyank<cr>
 xmap <F7> y:Oscyank<cr>
