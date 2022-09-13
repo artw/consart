@@ -1,0 +1,87 @@
+#!/usr/bin/env sh
+space="yabai -m space"
+rule="yabai -m rule"
+config="yabai -m config"
+
+# app rules
+$rule --add app="^System Preferences$"  manage=off
+$rule --add app="^BetterTouchTool$" layer=above manage=off
+$rule --add app="^mpv$" layer=above manage=off
+$rule --add app="^Logi Options\+$" layer=above manage=off
+$rule --add app="^Logitech G HUB$" layer=above manage=off
+$rule --add app="^Books$" layer=above manage=off
+
+## global settings
+#$config focus_follows_mouse autoraise
+#$config focus_follows_mouse on
+# natural spawns
+$config window_placement second_child
+$config window_topmost off
+#$config window_shadow float
+$config window_opacity off
+$config window_opacity_duration 0.00
+$config active_window_opacity 1.0
+#$config normal_window_opacity        0.97
+#$config window_border                on | off
+
+## WITH SIP ENABLED (Installed Limelight seperately, Don't need this)
+$config window_border off
+
+## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
+#$config window_border on
+#$config window_border_width 3
+#$config active_window_border_color 0xFF40FF00
+#$config normal_window_border_color 0x00FFFFFF
+#$config insert_feedback_color        0xffd75f5f
+
+## some other settings
+$config auto_balance off
+$config split_ratio 0.50
+# # set mouse interaction modifier key (default: fn)
+$config mouse_modifier ctrl
+# set modifier + right-click drag to resize window (default: resize)
+$config mouse_action2 resize
+# set modifier + left-click drag to resize window (default: move)
+$config mouse_action1 move
+
+# general space settings
+#$config focused_border_skip_floating  1
+#$config --space 3 layout             float
+
+## Change how yabai looks
+$config layout bsp
+$config top_padding 10
+$config bottom_padding 10
+$config left_padding 10
+$config right_padding 10
+$config window_gap 15
+
+#Limelight addon (Kill it and start it each time Yabai starts)
+killall limelight &>/dev/null
+limelight &>/dev/null &
+
+# #Ubersicht widget bar stuff
+#yabai -m signal --add event=space_changed \
+#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+#yabai -m signal --add event=display_changed \
+#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+
+#yabai -m signal --add event=space_changed \
+#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+#yabai -m signal --add event=display_changed \
+#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+
+# signals
+# yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+#yabai -m signal --add event=space_changed action="yabai -m window --focus $(yabai -m query --windows --window | jq ".id")"
+# yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+#testing signals
+# yabai -m signal --add event=window_destroyed action="terminal-notifier -message 'window_destroyed'"
+# yabai -m signal --add event=application_terminated action="terminal-notifier -message 'application_terminated'"
+
+## If I close the active window, focus on any other visible window.
+#yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
+# yabai -m signal --add event=space_changed action="export CUR_ACTIVE_APP=\"iTerm2\""
+
+#echo "yabai configuration loaded.."
