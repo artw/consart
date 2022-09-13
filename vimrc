@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'Rename'
 "Plug 'auto-pairs-gentle'
 "Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
+"Plug 'ctrlpvim/ctrlp.vim',
 "Plug 'dbext.vim',           { 'for': 'sql' }
 "Plug 'edkolev/tmuxline.vim'
 "Plug 'gmarik/sudo-gui.vim'
@@ -11,7 +12,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim',
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'fcpg/vim-osc52'
 Plug 'junegunn/vim-easy-align'
@@ -196,19 +198,33 @@ vmap < <gv
 vmap > >gv
 
 
-"" plugins
-" NERD bindings
+"" plugin bindings
+" NERDTree
 nmap <F2>      :NERDTreeToggle<CR>
 nmap <Leader>t :NERDTreeToggle<CR>
 nmap <F3>      :NERDTreeFind<CR>
 nmap <Leader>f :NERDTreeFind<CR>
+
+" Startify
 nmap <F4>      :Startify<CR>
 "nmap <Leader>s :Startify<CR>
-nmap <F5>      :GundoToggle<CR>
-nmap <Leader>u :GundoToggle<CR>
-"nmap <F7>      :CtrlP<CR>
-"nmap <Leader>p :CtrlP<CR>
-nmap <Leader>o :OverCommandLine
+" Gundo
+"nmap <F5>      :GundoToggle<CR>
+"nmap <Leader>u :GundoToggle<CR>
+
+" fzf
+nmap <C-p> :Files<CR>
+
+" EasyAlign
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
+
+" vim-osc52
+vmap <C-c> y:Oscyank<CR>
+xmap <F7> y:Oscyank<CR>
+
+
+"" plugin settings
 
 "" Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -223,14 +239,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 "" Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror
 
-" Start interactive EasyAlign in visual mode
-vmap <Enter> <Plug>(EasyAlign)
-
-" Start interactive EasyAlign with a Vim movement
-nmap <Leader>a <Plug>(EasyAlign)
-
-"imap <C-L> ->
-"imap <C-K> <Space>=><Space>
 
 " higlight __DATA__ for mojo
 let mojo_highlight_data = 1
@@ -269,9 +277,6 @@ let g:AutoPairsUseInsertedCount = 1
 " nerdcommenter: leave a space after comment
 let g:NERDSpaceDelims = 1
 
-" vim-osc52
-vmap <C-c> y:Oscyank<cr>
-xmap <F7> y:Oscyank<cr>
 
 " vim-ansible hook
 au BufRead,BufNewFile */ansible/*.yml set filetype=yaml.ansible
