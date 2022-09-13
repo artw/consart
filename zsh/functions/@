@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
-
-host=$1; shift
-ssh -t $host /usr/bin/env $(echo $SHELL | rev | cut -d/ -f 1 | rev) -i -c \"$*\"
+if [[ -z "$2" ]]; then
+  ssh $1
+else
+  host=$1; shift
+  ssh -t $host '$SHELL' -i -c \"$*\"
+fi
