@@ -11,6 +11,8 @@ function precmd {
 }
   
 function preexec {
+(
+  setopt nopromptsubst
   local -a cmd; cmd=(${(z)1})
   if [[ $cmd[1]:t == "ssh" ]]; then
     title $cmd[2] "$cmd[3,-1]"
@@ -20,6 +22,7 @@ function preexec {
     title ${TITLE_PREFIX} $cmd[1]:t "$cmd[2,-1]"
   fi
   tmux-env-refresh
+)
 }
 
 # indicate command mode in $vimode for use in prompt
