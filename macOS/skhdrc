@@ -1,0 +1,55 @@
+# shkd --observe
+
+## restart yabai
+ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+## toggle gaps
+ctrl + alt + cmd - g : yabai -m space --toggle padding; \
+                       yabai -m space --toggle gap
+
+
+## open terminal
+cmd - 0x0A : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
+cmd - 0x32 : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
+
+## rotate tree 90
+cmd + shift - r : yabai -m space --rotate 90
+
+## flip the tree vertically
+#hyper - 4 : yabai -m space --mirror y-axis
+# mirror tree y-axis
+alt - y : yabai -m space --mirror y-axis
+## mirror tree x-axis
+alt - x : yabai -m space --mirror x-axis
+
+## toggle window fullscreen zoom
+cmd + shift - z : yabai -m window --toggle zoom-fullscreen
+
+## float / unfloat window and center on screen
+cmd + shift - f : yabai -m window --toggle float;\
+yabai -m window --grid 4:4:1:1:2:2
+
+## toggle sticky
+#alt - s : yabai -m window --toggle sticky
+### toggle sticky, float and resize to picture-in-picture size
+#alt - p : yabai -m window --toggle sticky;\
+#yabai -m window --grid 5:5:4:0:1:1
+#
+### change layout of desktop
+#ctrl + alt - a : yabai -m space --layout bsp
+#ctrl + alt - d : yabai -m space --layout float
+
+## toggle window split type
+shift + cmd - e : yabai -m window --toggle split
+
+## swap window
+shift + cmd - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+shift + cmd - j : yabai -m window --swap south
+shift + cmd - k : yabai -m window --swap north 
+shift + cmd - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+
+## Focus window
+cmd - h : yabai -m window --focus west  || yabai -m display --focus west
+cmd - j : yabai -m window --focus south || yabai -m display --focus south
+cmd - k : yabai -m window --focus north || yabai -m display --focus north
+cmd - l : yabai -m window --focus east  || yabai -m display --focus east
