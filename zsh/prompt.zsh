@@ -1,9 +1,9 @@
 # allow variable substitution inside prompts
 setopt prompt_subst
 
-# draw user@host if ssh
+# show host if ssh
 if [[ -c $SSH_TTY ]]; then
-  at='%n%F{yellow}@%f%m '
+  at='%m'
 fi;
 
 # red prompt if root
@@ -11,9 +11,9 @@ local -a prompt_color
 if [[ $UID == 0 ]];then
   prompt_color=red
 else
-  prompt_color=white
+  prompt_color=yellow
 fi
 
 # vimode is set by a zle-keymap-select "hook"
-PROMPT='%F{$prompt_color}%(!.#.$)%f '
-RPROMPT='${vimode}${(v)rprompt_extra}% $at(${?}) %F{blue}[%f%*%F{blue}]%f'
+PROMPT='$at%B%F{$prompt_color}%(!.#.>)%f%b '
+RPROMPT='${vimode} %F{orange}%f ${vcs_info_msg_0_} $ZSH_KUBECTL_PROMPT (${?}) %F{blue}[%f%*%F{blue}]%f'
