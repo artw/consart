@@ -37,6 +37,10 @@ if [[ -f $zplug ]]; then
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
   zplug "yudai/sshh", as:command, use:"sshh"
+  zplug "superbrothers/zsh-kubectl-prompt"
+  zstyle ':zsh-kubectl-prompt:' preprompt '['
+  zstyle ':zsh-kubectl-prompt:' postprompt ']'
+  zstyle ':zsh-kubectl-prompt:' namespace false
 
   # zplug self manage
   zplug 'zplug/zplug', hook-build:'zplug --self-manage'
