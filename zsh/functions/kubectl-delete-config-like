@@ -1,0 +1,6 @@
+filter=$1
+for resource in user cluster context; do
+  for x in `kubectl config get-${resource}s| grep ${filter}`; do
+    kubectl config delete-${resource} $x
+  done
+done
