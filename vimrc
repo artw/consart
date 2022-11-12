@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'dbext.vim',           { 'for': 'sql' }
 "Plug 'edkolev/tmuxline.vim'
 "Plug 'gmarik/sudo-gui.vim'
+"Plug 'mcchrish/nnn.vim'
+"Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 "Plug 'osyo-manga/vim-over'
 "Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
 Plug 'airblade/vim-gitgutter'
@@ -17,9 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'fcpg/vim-osc52'
 Plug 'junegunn/vim-easy-align'
-Plug 'mcchrish/nnn.vim'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -29,6 +29,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dhruvasagar/vim-table-mode'
 " Syntax support
 Plug 'fatih/vim-go',           { 'for': 'go' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
@@ -197,6 +198,17 @@ vmap <Leader>s :sort<CR>
 vmap < <gv
 vmap > >gv
 
+" switch tabs
+noremap <Leader>1 :tabn 1<CR>
+noremap <Leader>2 :tabn 2<CR>
+noremap <Leader>3 :tabn 3<CR>
+noremap <Leader>4 :tabn 4<CR>
+noremap <Leader>5 :tabn 5<CR>
+noremap <Leader>6 :tabn 6<CR>
+noremap <Leader>7 :tabn 7<CR>
+noremap <Leader>8 :tabn 8<CR>
+noremap <Leader>9 :tabn 9<CR>
+noremap <Leader>` :tablast<CR>
 
 "" plugin bindings
 " NERDTree
@@ -214,6 +226,7 @@ nmap <F4>      :Startify<CR>
 
 " fzf
 nmap <C-p> :Files<CR>
+nmap <C-f> :Rg<CR>
 
 " EasyAlign
 vmap <Enter> <Plug>(EasyAlign)
@@ -246,6 +259,7 @@ let mojo_highlight_data = 1
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = "unique_tail_improved"
 let g:airline_theme = "jellybeans"
 "let g:tmuxline_powerline_separators = 1
 "let g:tmuxline_preset = "tmux"
