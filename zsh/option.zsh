@@ -17,3 +17,8 @@ zle -N self-insert url-quote-magic
 # edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
+
+# vcs info
+autoload -U vcs_info
+zstyle ':vcs_info:git:*' formats '{%b}'
+zstyle ':vcs_info:*' enable git
