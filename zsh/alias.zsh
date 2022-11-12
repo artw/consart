@@ -115,6 +115,7 @@ solaris*)
 esac
 
 ## universal aliases
+alias rezsh="source ~/.zshrc"
 # do not correct some commands
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
@@ -139,9 +140,8 @@ alias ll='ls -l'
 alias lla='ls -la'
 
 alias -g ...='../..'
-alias -g ...='../..'
 alias -g ....='../../..'
-alias -g .....='../../..'
+alias -g .....='../../../..'
 
 alias -g dua='du -kax'
 
@@ -171,6 +171,8 @@ alias -g S='| sort -n'
 alias -g T="| tail"
 alias -g Tl="| tail -n20"
 alias -g NUL='&>/dev/null'
+alias -g F='`fzf`'
+alias -g FF='`fzf -m`'
 iscmd ack && alias -g A="ack"
 iscmd sed && alias -g Q='| sed "s/^.*$/\"&\"/g"' # quote string
 
@@ -243,6 +245,7 @@ if iscmd kubectl; then
   alias kl="kubectl get"
   alias kc="kubectl config use-context"
   alias kcl="kubectl config get-contexts"
+  alias kr="kubectl run -ti --rm"
 fi
 iscmd k9s && alias k9s="k9s --logoless"
 
