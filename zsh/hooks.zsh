@@ -7,23 +7,24 @@ function chpwd {
 }
 
 function precmd {
+  vcs_info
   title "${TITLE_PREFIX}${PWD/$HOME/~}"
 }
   
-function preexec {
-(
-  setopt nopromptsubst
-  local -a cmd; cmd=(${(z)1})
-  if [[ $cmd[1]:t == "ssh" ]]; then
-    title $cmd[2] "$cmd[3,-1]"
-  elif [[ $cmd[1]:t == "sudo" ]]; then
-    title ${TITLE_PREFIX} "#" $cmd[2]:t "$cmd[3,-1]"
-  else
-    title ${TITLE_PREFIX} $cmd[1]:t "$cmd[2,-1]"
-  fi
-  tmux-env-refresh
-)
-}
+#function preexec {
+#(
+#  setopt nopromptsubst
+#  local -a cmd; cmd=(${(z)1})
+#  if [[ $cmd[1]:t == "ssh" ]]; then
+#    title $cmd[2] "$cmd[3,-1]"
+#  elif [[ $cmd[1]:t == "sudo" ]]; then
+#    title ${TITLE_PREFIX} "#" $cmd[2]:t "$cmd[3,-1]"
+#  else
+#    title ${TITLE_PREFIX} $cmd[1]:t "$cmd[2,-1]"
+#  fi
+#  tmux-env-refresh
+#)
+#}
 
 # indicate command mode in $vimode for use in prompt
 vicmd_prompt="%B-- COMMAND --%b "
