@@ -31,3 +31,12 @@ zstyle ':completion:*:descriptions' format '%U%F{blue}%d%f%u'
 
 # ignore completion functions for not existent commands
 zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# load custom compdefs
+for f in ~/.zsh/functions/Completion/**; do
+  # compdef _mycmd mycmd
+  compdef $f:t ${${f:t}:1:$}
+done
+
+iscmd kubectl && source <(kubectl completion zsh)
+
