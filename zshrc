@@ -12,6 +12,7 @@ source $HOME/.zsh/alias.zsh
 source $HOME/.zsh/bind.zsh
 source $HOME/.zsh/ssh-agent.zsh
 source $HOME/.zsh/completion.zsh
+source $HOME/.zsh/plugins.zsh
 source $HOME/.zsh/hooks.zsh
 
 # load zshrc.local2
