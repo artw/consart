@@ -1,20 +1,11 @@
 # load zplug if available
 local zplug=~/.zplug/init.zsh
 if [[ -f $zplug ]]; then
-  oh_my_zsh_plugins=(
-#   git
-    sudo
-    command-not-found
-#   perl
-#   docker
-#   docker-compose
-#   tmuxinator
-  )
 
   zsh_plugins=(
     #artw/oracle.zsh
-    chrissicool/zsh-256color
-    sharat87/zsh-vim-mode
+    # chrissicool/zsh-256color
+    # sharat87/zsh-vim-mode
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
@@ -36,7 +27,6 @@ if [[ -f $zplug ]]; then
   #zplug "harelba/q", as:command, use:"bin/q"
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
-  zplug "yudai/sshh", as:command, use:"sshh"
   zplug "superbrothers/zsh-kubectl-prompt"
   zstyle ':zsh-kubectl-prompt:' preprompt '['
   zstyle ':zsh-kubectl-prompt:' postprompt ']'
