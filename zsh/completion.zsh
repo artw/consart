@@ -39,4 +39,5 @@ for f in ~/.zsh/functions/Completion/**; do
 done
 
 iscmd kubectl && source <(kubectl completion zsh)
+compdef _ssh '@'
 
