@@ -16,4 +16,4 @@ fi
 
 # vimode is set by a zle-keymap-select "hook"
 PROMPT='$at%B%F{$prompt_color}%(!.#.>)%f%b '
-RPROMPT='${vimode} %F{orange}%f ${vcs_info_msg_0_} $ZSH_KUBECTL_PROMPT (${?}) %F{blue}[%f%*%F{blue}]%f'
+RPROMPT='${vimode} %F{orange}%f ${vcs_info_msg_0_} (${?}) %F{blue}[%f%*%F{blue}]%f'
