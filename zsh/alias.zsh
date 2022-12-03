@@ -11,15 +11,6 @@ linux*)
   # arch
   if iscmd pacman; then
     alias pm="${sudo}pacman"
-    if iscmd yay; then
-      alias ya="yay"
-      alias yu="yay -Syyua"
-      alias ys="yay -Ss"
-      alias yi="yay -S"
-      alias yii="yay -S --noconfirm"
-      alias yr="yay -Rusc"
-      alias yq="yay -Q"
-    fi
   fi
   # gentoo
   if iscmd emerge; then
@@ -207,10 +198,10 @@ fi
 
 if iscmd git; then
   alias g="git"
-  alias gitc="git commit --interactive"
-  alias gitp="git push"
-  alias gits="git status -s"
-  alias gitu="git pull"
+  alias gc="git commit --interactive"
+  alias gp="git push"
+  alias gs="git status -s"
+  alias gu="git pull"
 fi
 
 iscmd gdisk && alias gdisk="${sudo}gdisk"
@@ -246,6 +237,9 @@ if iscmd kubectl; then
   alias kc="kubectl config use-context"
   alias kcl="kubectl config get-contexts"
   alias kr="kubectl run -ti --rm"
+  alias ku="kubectl kustomize --load-restrictor=LoadRestrictionsNone --enable-helm"
+  alias kua="ku | ka -"
+  alias kud="ku | kd -"
 fi
 iscmd k9s && alias k9s="k9s --logoless"
 
