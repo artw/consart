@@ -10,6 +10,7 @@ $rule --add app="^mpv$" layer=above manage=off
 $rule --add app="^Logi Options\+$" layer=above manage=off
 $rule --add app="^Logitech G HUB$" layer=above manage=off
 $rule --add app="^Books$" layer=above manage=off
+$rule --add app="^Notes$" layer=above manage=off
 
 ## global settings
 #$config focus_follows_mouse autoraise

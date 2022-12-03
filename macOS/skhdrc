@@ -43,13 +43,13 @@ yabai -m window --grid 4:4:1:1:2:2
 shift + cmd - e : yabai -m window --toggle split
 
 ## swap window
-shift + cmd - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-shift + cmd - j : yabai -m window --swap south
-shift + cmd - k : yabai -m window --swap north 
-shift + cmd - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+ctrl + shift + cmd - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+ctrl + shift + cmd - j : yabai -m window --swap south
+ctrl + shift + cmd - k : yabai -m window --swap north 
+ctrl + shift + cmd - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
 ## Focus window
-cmd - h : yabai -m window --focus west  || yabai -m display --focus west
-cmd - j : yabai -m window --focus south || yabai -m display --focus south
-cmd - k : yabai -m window --focus north || yabai -m display --focus north
-cmd - l : yabai -m window --focus east  || yabai -m display --focus east
+shift + cmd - h : yabai -m window --focus west  || yabai -m display --focus west
+shift + cmd - j : yabai -m window --focus south || yabai -m display --focus south
+shift + cmd - k : yabai -m window --focus north || yabai -m display --focus north
+shift + cmd - l : yabai -m window --focus east  || yabai -m display --focus east
