@@ -145,7 +145,7 @@ foreach editor in $editors
 end
 
 # unbind C-S and C-Q for use in vim maps
-if which stty > /dev/null;then
-  stty -ixon
-  stty stop ''
-fi
+# if which stty > /dev/null;then
+#   stty -ixon
+#   stty stop ''
+# fi
