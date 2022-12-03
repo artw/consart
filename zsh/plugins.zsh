@@ -27,11 +27,7 @@ if [[ -f $zplug ]]; then
   #zplug "harelba/q", as:command, use:"bin/q"
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
-  zplug "superbrothers/zsh-kubectl-prompt"
-  zstyle ':zsh-kubectl-prompt:' preprompt '['
-  zstyle ':zsh-kubectl-prompt:' postprompt ']'
-  zstyle ':zsh-kubectl-prompt:' namespace false
-
+  zplug romkatv/powerlevel10k, as:theme, depth:1
   # zplug self manage
   zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
@@ -73,6 +69,9 @@ sourceiff /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Go language
 iscmd go && export GOPATH=~/.go; export PATH=$PATH:$GOPATH/bin
+
+# p10k theme
+iscmd p10k && source ~/.zsh/p10k.zsh
 
 ## installers for plugins
 
