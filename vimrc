@@ -236,6 +236,11 @@ nmap <Leader>a <Plug>(EasyAlign)
 vmap <C-c> y:Oscyank<CR>
 xmap <F7> y:Oscyank<CR>
 
+" gitgutter
+nmap <Leader>n <Plug>(GitGutterNextHunk)
+nmap <Leader>u <Plug>(GitGutterUndoHunk)
+nmap <Leader>N <Plug>(GitGutterPrevHunk)
+nmap <Leader>d <Plug>(GitGutterPreviewHunk)
 
 "" plugin settings
 
