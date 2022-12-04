@@ -231,11 +231,11 @@ fi
 
 if iscmd kubectl; then
   alias k="kubectl"
-  alias ka="kubectl apply -f"
-  alias kd="kubectl delete -f"
-  alias kl="kubectl get"
-  alias kc="kubectl config use-context"
-  alias kcl="kubectl config get-contexts"
+  alias ka="kubectl apply"
+  alias kaf="kubectl apply -f"
+  alias kd="kubectl delete"
+  alias kdf="kubectl delete -f"
+  alias kg="kubectl get"
   alias kr="kubectl run -ti --rm"
   alias ku="kubectl kustomize --load-restrictor=LoadRestrictionsNone --enable-helm"
   alias kua="ku | ka -"
