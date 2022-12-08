@@ -12,6 +12,10 @@ linux*)
   if iscmd pacman; then
     alias pm="${sudo}pacman"
   fi
+  if iscmd yay; then
+    alias ys="yay -Ss"
+    alias yi="yay -S"
+  fi
   # gentoo
   if iscmd emerge; then
     alias em="${sudo}emerge -qav"
@@ -235,11 +239,12 @@ if iscmd kubectl; then
   alias kaf="kubectl apply -f"
   alias kd="kubectl delete"
   alias kdf="kubectl delete -f"
+  alias ke="kubectl exec -ti"
   alias kg="kubectl get"
   alias kr="kubectl run -ti --rm"
   alias ku="kubectl kustomize --load-restrictor=LoadRestrictionsNone --enable-helm"
-  alias kua="ku | ka -"
-  alias kud="ku | kd -"
+  alias kua="ku | kaf -"
+  alias kud="ku | kdf -"
 fi
 iscmd k9s && alias k9s="k9s --logoless"
 
