@@ -38,6 +38,12 @@ for f in ~/.zsh/functions/Completion/**; do
   compdef $f:t ${${f:t}:1:$}
 done
 
-iscmd kubectl && source <(kubectl completion zsh)
 compdef _ssh '@'
+
+iscmd kubectl && source <(kubectl completion zsh)
+
+if iscmd terraform; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C /opt/homebrew/bin/terraform terraform
+fi
 
