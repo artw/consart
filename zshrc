@@ -11,9 +11,9 @@ source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/alias.zsh
 source $HOME/.zsh/bind.zsh
 source $HOME/.zsh/ssh-agent.zsh
-source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/plugins.zsh
 source $HOME/.zsh/hooks.zsh
+source $HOME/.zsh/completion.zsh
 
 # load zshrc.local2
 if [[ -f $HOME/.zshrc.local2 ]] then
