@@ -41,6 +41,9 @@ done
 compdef _ssh '@'
 
 iscmd kubectl && source <(kubectl completion zsh)
+if iscmd k9s; then
+  source <(k9s completion zsh) && compdef _k9s k9s
+fi
 
 if iscmd terraform; then
   autoload -U +X bashcompinit && bashcompinit
