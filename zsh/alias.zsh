@@ -166,8 +166,9 @@ alias -g S='| sort -n'
 alias -g T="| tail"
 alias -g Tl="| tail -n20"
 alias -g NUL='&>/dev/null'
-alias -g F='`fzf`'
-alias -g FF='`fzf -m`'
+if iscmd fzf; then
+  alias -g F='"$(fzf)"'
+fi
 iscmd ack && alias -g A="ack"
 iscmd sed && alias -g Q='| sed "s/^.*$/\"&\"/g"' # quote string
 
