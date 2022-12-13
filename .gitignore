@@ -3,6 +3,7 @@
 .netrwhist
 .swp
 zsh/ext
+zsh/octopus.zsh
 misc/w3m/bufinfo
 misc/w3m/history
 misc/w3m/cookie
