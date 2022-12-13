@@ -10,6 +10,11 @@ if [[ -f $zplug ]]; then
     zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
     zsh-users/zsh-syntax-highlighting
+
+  )
+  oh_my_zsh_plugins=(
+    1password
+    sudo
   )
 
   source $zplug
