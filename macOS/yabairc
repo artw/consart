@@ -5,6 +5,7 @@ config="yabai -m config"
 
 # app rules
 $rule --add app="^System Preferences$"  manage=off
+$rule --add app="^System Settings$"  manage=off
 $rule --add app="^BetterTouchTool$" layer=above manage=off
 $rule --add app="^mpv$" layer=above manage=off
 $rule --add app="^Logi Options\+$" layer=above manage=off
