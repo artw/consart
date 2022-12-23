@@ -21,6 +21,3 @@ bindkey "\e[4~" end-of-line             # End (console)
 bindkey "\e[8~" end-of-line             # End (bsd?)
 bindkey "\e[2~" overwrite-mode          # Ins
 bindkey "\e[3~" delete-char             # Delete
-
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search

@@ -8,9 +8,8 @@ if [[ -f $zplug ]]; then
     # sharat87/zsh-vim-mode
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
-    zsh-users/zsh-history-substring-search
     zsh-users/zsh-syntax-highlighting
-
+    zsh-users/zsh-history-substring-search
   )
   oh_my_zsh_plugins=(
     1password
@@ -48,10 +47,15 @@ if [[ -f $zplug ]]; then
 
   # bind up/down to substring search if zsh-substring-search is installed
   if [[ -d $ZPLUG_REPOS/zsh-users/zsh-history-substring-search ]]; then
+    export HISTORY_SUBSTRING_SEARCH_FUZZY=1
     zle -N history-substring-search-up
     zle -N history-substring-search-down
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
+    bindkey "^P" history-substring-search-up
+    bindkey "^N" history-substring-search-down
+    bindkey -M vicmd "k" history-substring-search-up
+    bindkey -M vicmd "j" history-substring-search-down
   fi
   #iscmd fasd && eval "$(fasd --init auto)"
   #iscmd rbenv && eval "$(rbenv init -)"
