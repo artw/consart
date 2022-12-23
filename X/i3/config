@@ -8,13 +8,14 @@ font pango:Source Code Pro Semibold 12
 # app binds
 bindsym $mod+grave exec ~/.consart/bin/urxvtc
 bindsym $mod+Escape exec ~/.consart/bin/urxvtc
-bindsym $mod+F1 exec surf google.com
-bindsym $mod+F2 exec ~/.consart/bin/urxvtc -e vifm
-bindsym $mod+F3 exec ~/.consart/bin/urxvtc -e $EDITOR
+bindsym $mod+F1 exec chrome
+bindsym $mod+F2 exec pcmanfm
+# bindsym $mod+F2 exec ~/.consart/bin/urxvtc -e vifm
+# bindsym $mod+F3 exec ~/.consart/bin/urxvtc -e $EDITOR
 #bindsym $mod+F9 exec audacious
 bindsym $mod+Ctrl+l exec i3lock -c 000000
 bindsym $mod+Ctrl+Escape exec xkill
-bindsym $mod+Shift+b exec ~/.consart/bin/compton-toggle
+bindsym $mod+Shift+b exec ~/.consart/bin/picom-toggle
 
 # kill focused window
 bindsym $mod+w kill
@@ -67,8 +68,8 @@ bindsym $mod+f floating toggle
 bindsym $mod+Shift+Tab focus mode_toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Return fullscreen
-bindsym $mod+Shift+f fullscreen
+# bindsym $mod+Return fullscreen
+bindsym $mod+z fullscreen
 
 # focus the parent container
 bindsym $mod+c focus parent
@@ -124,8 +125,9 @@ bindsym $mod+Shift+p move container to workspace prev
 # toggle bar visibility
 bindsym $mod+b bar mode toggle
 
-# reload the configuration file
-bindsym $mod+End reload
+# Reload the configuration file
+# bindsym $mod+End reload
+bindsym $mod+shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+End restart
 # exit i3 (logs you out of your X session)
@@ -195,7 +197,7 @@ client.urgent           #2f343a #900000 #ffffff #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # i3-gaps
-gaps inner 30
+gaps inner 20
 gaps outer 15
 smart_gaps on
 smart_borders on
