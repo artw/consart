@@ -1,8 +1,8 @@
 #!/bin/sh
-PID=`pidof compton`
+PID=`pidof picom`
 
 if [ -z $PID  ]; then
-  compton -b
+  picom -b
 else 
   kill $PID
 fi
