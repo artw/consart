@@ -3,6 +3,12 @@ if [[ -f $HOME/.zshrc.local ]] then
    source $HOME/.zshrc.local
 fi
 
+if [[ "$P10K_ENABLE" == "yes" ]]; then
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+fi
+
 source $HOME/.zsh/env.zsh
 source $HOME/.zsh/option.zsh
 source $HOME/.zsh/history.zsh
