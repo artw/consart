@@ -12,7 +12,7 @@ if [[ -f $zplug ]]; then
     zsh-users/zsh-history-substring-search
   )
   oh_my_zsh_plugins=(
-    1password
+    # 1password
     sudo
   )
 
@@ -31,7 +31,10 @@ if [[ -f $zplug ]]; then
   #zplug "harelba/q", as:command, use:"bin/q"
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
-  zplug romkatv/powerlevel10k, as:theme, depth:1
+
+  if [[ "$P10K_ENABLE" == "yes" ]]; then
+    zplug romkatv/powerlevel10k, as:theme, depth:1
+  fi
   # zplug self manage
   zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 

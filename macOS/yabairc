@@ -4,14 +4,15 @@ rule="yabai -m rule"
 config="yabai -m config"
 
 # app rules
-$rule --add app="^System Preferences$"  manage=off
-$rule --add app="^System Settings$"  manage=off
+$rule --add app="^System Preferences$" layer=above manage=off
+$rule --add app="^System Settings$" layer=above manage=off
 $rule --add app="^BetterTouchTool$" layer=above manage=off
 $rule --add app="^mpv$" layer=above manage=off
 $rule --add app="^Logi Options\+$" layer=above manage=off
 $rule --add app="^Logitech G HUB$" layer=above manage=off
 $rule --add app="^Books$" layer=above manage=off
 $rule --add app="^Notes$" layer=above manage=off
+# $rule --add app="^IINA$" layer=above manage=off
 
 ## global settings
 #$config focus_follows_mouse autoraise
@@ -59,8 +60,8 @@ $config right_padding 10
 $config window_gap 15
 
 #Limelight addon (Kill it and start it each time Yabai starts)
-killall limelight &>/dev/null
-limelight &>/dev/null &
+# killall limelight &>/dev/null
+# limelight &>/dev/null &
 
 # #Ubersicht widget bar stuff
 #yabai -m signal --add event=space_changed \
