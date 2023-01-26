@@ -50,3 +50,5 @@ if iscmd terraform; then
   complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
 
+iscmd rclone && source <(rclone completion zsh)
+
