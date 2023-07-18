@@ -13,7 +13,6 @@ source $HOME/.zsh/env.zsh
 source $HOME/.zsh/option.zsh
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/prompt.zsh
-source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/bind.zsh
 source $HOME/.zsh/ssh-agent.zsh
 source $HOME/.zsh/plugins.zsh
