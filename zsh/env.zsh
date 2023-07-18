@@ -9,6 +9,7 @@ path_dirs=(
   /opt/sbin
   /opt/local/sbin
   /usr/local/sbin
+  /opt/homebrew/sbin
   /usr/sbin
   /sbin
 
