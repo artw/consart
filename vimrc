@@ -279,7 +279,7 @@ let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.ssh/config' ]
 let g:startify_session_persistence = 1
 
 " syntastic
-let g:syntastic_enable_perl_checker = 1
+let g:syntastic_enable_perl_checker = 0
 let g:syntastic_perl_checkers = [ "perl", "perlcritic", "podchecker" ]
 let g:syntastic_perl_lib_path = ['./lib', './extlib', './extlib/lib/perl5']
 let g:syntastic_always_populate_loc_list = 1
