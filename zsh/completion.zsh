@@ -40,9 +40,9 @@ done
 
 compdef _ssh '@'
 
-iscmd kubectl && source <(kubectl completion zsh)
+iscmd kubectl && $(source <(kubectl completion zsh&))
 if iscmd k9s; then
-  source <(k9s completion zsh) && compdef _k9s k9s
+  $(source <(k9s completion zsh&) && compdef _k9s k9s)
 fi
 
 if iscmd terraform; then
@@ -50,5 +50,5 @@ if iscmd terraform; then
   complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
 
-iscmd rclone && source <(rclone completion zsh)
+#iscmd rclone && source <(rclone completion zsh)
 
