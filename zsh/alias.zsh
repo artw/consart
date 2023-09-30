@@ -197,7 +197,7 @@ if iscmd tmux; then
   alias tx="cd ~; tmux attach || tmux new-session"
   alias txl="tmux list-sessions"
   alias txa="tmux attach -t"
-  alias txc="tmux new-session -s"
+  alias txc="cd ~; tmux new-session -s"
   alias iterm="tmux -CC"
 fi
 
@@ -225,9 +225,9 @@ fi
 
 if iscmd docker; then
   alias d="docker"
-  alias ds="docker service"
-  alias dt="docker stack"
+  alias di="docker image"
   alias dr="docker run -ti --rm"
+  alias de="docker exec -ti"
 fi
 
 if iscmd docker-compose; then
@@ -240,12 +240,16 @@ if iscmd kubectl; then
   alias kaf="kubectl apply -f"
   alias kd="kubectl delete"
   alias kdf="kubectl delete -f"
+  alias kr="kubectl replace"
+  alias krf="kubectl replace -f"
   alias ke="kubectl exec -ti"
   alias kg="kubectl get"
-  alias kr="kubectl run -ti --rm"
+  alias krun="kubectl run -ti --rm"
   alias ku="kubectl kustomize --load-restrictor=LoadRestrictionsNone --enable-helm"
-  alias kua="ku | kaf -"
+  alias kua="ku | kaf - | grep -v 'unchanged'"
   alias kud="ku | kdf -"
+  alias ctx="kubectl ctx"
+  alias ns="kubectl ns"
 fi
 iscmd k9s && alias k9s="k9s --logoless"
 
@@ -265,3 +269,8 @@ if iscmd drill && ! iscmd dig; then
   alias dig=drill
   alias nslookup=host
 fi
+
+iscmd python3 && alias py=python3
+
+iscmd cilium && alias cilium="cilium -n cilium"
+iscmd cilium-cli && alias cilium="cilium-cli -n cilium"
