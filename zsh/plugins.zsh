@@ -73,8 +73,8 @@ if [ -f $HOME/.perlbrew/etc/bashrc ]; then
   }
 fi
 
-iscmd jenv && eval "$(jenv init -)"
-iscmd thefuck && eval "$(thefuck --alias)"
+iscmd jenv && eval "$(jenv init -)"&
+iscmd thefuck && eval "$(thefuck --alias)"&
 
 # load  pkgfile command-not-find addon if installed
 sourceiff /usr/share/doc/pkgfile/command-not-found.zsh
