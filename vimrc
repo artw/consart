@@ -38,8 +38,10 @@ Plug 'pearofducks/ansible-vim'
 Plug 'pprovost/vim-ps1',       { 'for': 'ps1' }
 Plug 'vim-perl/vim-perl',      { 'for': 'perl' }
 Plug 'yko/mojo.vim',           { 'for': 'perl' }
+Plug 'github/copilot.vim'
 
 " colorthemes
+" Plug 'romgrk/doom-one.vim'
 Plug 'nanotech/jellybeans.vim'
 "Plug 'Lokaltog/vim-distinguished'
 "Plug 'chriskempson/base16-vim'
@@ -242,7 +244,15 @@ nmap <Leader>u <Plug>(GitGutterUndoHunk)
 nmap <Leader>N <Plug>(GitGutterPrevHunk)
 nmap <Leader>d <Plug>(GitGutterPreviewHunk)
 
+" commenter  ( _ is / )
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle
+
 "" plugin settings
+
+""" NERDTree
+let NERDTreeMinimalUI=1
+let NERDTreeQuitOnOpen=1
 
 "" Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -263,8 +273,15 @@ let mojo_highlight_data = 1
 
 " airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = "unique_tail_improved"
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+" let g:airline#extensions#tabline#close_symbol = 'X'
+let g:airline#extensions#tabline#show_close_button = 0
 let g:airline_theme = "jellybeans"
 "let g:tmuxline_powerline_separators = 1
 "let g:tmuxline_preset = "tmux"
