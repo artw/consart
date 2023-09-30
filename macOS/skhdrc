@@ -1,7 +1,7 @@
 # shkd --observe
 
 ## restart yabai
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+ctrl + alt + cmd - y : pgrep -q yabai && yabai --stop-service || yabai --start-service
 
 ## toggle gaps
 ctrl + alt + cmd - g : yabai -m space --toggle padding; \
@@ -11,6 +11,8 @@ ctrl + alt + cmd - g : yabai -m space --toggle padding; \
 ## open terminal
 cmd - 0x0A : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 cmd - 0x32 : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
+
+cmd + shift - tab : open -a Mission\ Control
 
 ## rotate tree 90
 cmd + shift - r : yabai -m space --rotate 90
