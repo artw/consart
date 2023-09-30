@@ -30,9 +30,21 @@ foreach f in $dotfiles; do
   link_dest=${HOME}/.${f}
   echo "$link_dest \t -> $link_src"
   if [ $FORCE_FLAG -ne 1 ]; then
-    test -e $link_dest && rm -ir $link_dest 
+    test -e $link_dest && rm -ir $link_dest
     ln -s $link_src $link_dest
   else
     ln -sf $link_src $link_dest
   fi
 done;
+
+# neovim to use vimrc
+mkdir -p ${HOME}/.config/nvim
+link_src=${HOME}/.consart/misc/config-nvim-init.vim
+link_dest=${HOME}/.config/nvim/init.vim
+echo "$link_dest \t -> $link_src"
+if [ $FORCE_FLAG -ne 1 ]; then
+  test -e $link_dest && rm -ir $link_dest
+  ln -s $link_src $link_dest
+else
+  ln -sf $link_src $link_dest
+fi
