@@ -1,6 +1,6 @@
 # shkd --observe
 
-## restart yabai
+## toggle yabai
 ctrl + alt + cmd - y : pgrep -q yabai && yabai --stop-service || yabai --start-service
 
 ## toggle gaps
@@ -12,6 +12,7 @@ ctrl + alt + cmd - g : yabai -m space --toggle padding; \
 cmd - 0x0A : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 cmd - 0x32 : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 
+## mission control
 cmd + shift - tab : open -a Mission\ Control
 
 ## rotate tree 90
