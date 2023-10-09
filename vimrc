@@ -244,9 +244,12 @@ nmap <Leader>u <Plug>(GitGutterUndoHunk)
 nmap <Leader>N <Plug>(GitGutterPrevHunk)
 nmap <Leader>d <Plug>(GitGutterPreviewHunk)
 
-" commenter  ( _ is / )
+" commenter  ( _ is / on vim)
 nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle
+
+nmap <C-/>   <Plug>NERDCommenterToggle
+vmap <C-/>   <Plug>NERDCommenterToggle
 
 "" plugin settings
 
