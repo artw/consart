@@ -13,6 +13,7 @@ $rule --add app="^Logitech G HUB$" layer=above manage=off
 $rule --add app="^Books$" layer=above manage=off
 $rule --add app="^Notes$" layer=above manage=off
 $rule --add app="^1Password$" layer=above manage=off
+$rule --add app="^Installer$" layer=above manage=off
 # $rule --add app="^IINA$" layer=above manage=off
 
 ## global settings
