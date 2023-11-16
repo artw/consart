@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+if [[ -z $1 ]]; then
+  if iscmd fzf; then
+    export AWS_PROFILE=$(egrep "^\[profile" ~/.aws/config | sed -e "s/^\[\profile //" -e "s/\]//" | fzf)
+  else
+    echo "usage: $0 [aws-profile]"
+    echo "\tinstall fzf for list menu"
+  fi
+  return 1
+else
+  export AWS_PROFILE=$1
+fi
