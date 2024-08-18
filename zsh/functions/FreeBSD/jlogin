@@ -6,5 +6,5 @@ if [[ -z $1 || $1 == '-h' ]]; then
   return 1
 fi
 for j in $*; do
-  /usr/local/bin/sudo /usr/sbin/jexec $j csh
+  /usr/local/bin/sudo /usr/sbin/jexec $j csh -l
 done;
