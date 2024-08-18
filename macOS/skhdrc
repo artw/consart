@@ -11,25 +11,26 @@ ctrl + alt + cmd - g : yabai -m space --toggle padding; \
 ## open terminal
 cmd - 0x0A : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 cmd - 0x32 : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
+alt - escape : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 
 ## mission control
-cmd + shift - tab : open -a Mission\ Control
+alt - tab : open -a Mission\ Control
 
 ## rotate tree 90
-cmd + shift - r : yabai -m space --rotate 90
+alt - r : yabai -m space --rotate 90
 
 ## flip the tree vertically
 #hyper - 4 : yabai -m space --mirror y-axis
 # mirror tree y-axis
-alt - y : yabai -m space --mirror y-axis
+alt - 0x2A : yabai -m space --mirror y-axis  # backslash key (\)
 ## mirror tree x-axis
-alt - x : yabai -m space --mirror x-axis
+alt - 0x1B : yabai -m space --mirror x-axis  # minus key (-)
 
 ## toggle window fullscreen zoom
-cmd + shift - z : yabai -m window --toggle zoom-fullscreen
+alt - z : yabai -m window --toggle zoom-fullscreen
 
 ## float / unfloat window and center on screen
-cmd + shift - f : yabai -m window --toggle float;\
+alt - f : yabai -m window --toggle float;\
 yabai -m window --grid 4:4:1:1:2:2
 
 ## toggle sticky
@@ -43,16 +44,16 @@ yabai -m window --grid 4:4:1:1:2:2
 #ctrl + alt - d : yabai -m space --layout float
 
 ## toggle window split type
-shift + cmd - e : yabai -m window --toggle split
+alt - s : yabai -m window --toggle split
 
 ## swap window
-ctrl + shift + cmd - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-ctrl + shift + cmd - j : yabai -m window --swap south
-ctrl + shift + cmd - k : yabai -m window --swap north 
-ctrl + shift + cmd - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+alt + shift - j : yabai -m window --swap south
+alt + shift - k : yabai -m window --swap north 
+alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
 ## Focus window
-shift + cmd - h : yabai -m window --focus west  || yabai -m display --focus west
-shift + cmd - j : yabai -m window --focus south || yabai -m display --focus south
-shift + cmd - k : yabai -m window --focus north || yabai -m display --focus north
-shift + cmd - l : yabai -m window --focus east  || yabai -m display --focus east
+alt - h : yabai -m window --focus west  || yabai -m display --focus west
+alt - j : yabai -m window --focus south || yabai -m display --focus south
+alt - k : yabai -m window --focus north || yabai -m display --focus north
+alt - l : yabai -m window --focus east  || yabai -m display --focus east
