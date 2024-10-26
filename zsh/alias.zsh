@@ -144,7 +144,9 @@ alias -g dua='du -kax'
 if [[ ! -z $EDITOR ]]; then
   alias e="$EDITOR"
 fi
-iscmd gvim && alias ge=gvim
+iscmd nvim && ! iscmd vim && alias vim=nvim
+iscmd nvim && ! iscmd vi && alias vi=nvim
+iscmd vim && ! iscmd vi && ! iscmd nvim && alias vi=vim
 
 # sudo
 if iscmd sudo; then
