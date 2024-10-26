@@ -4,17 +4,17 @@ rule="yabai -m rule"
 config="yabai -m config"
 
 # app rules
-$rule --add app="^System Preferences$" layer=above manage=off
-$rule --add app="^System Settings$" layer=above manage=off
-$rule --add app="^BetterTouchTool$" layer=above manage=off
-$rule --add app="^mpv$" layer=above manage=off
-$rule --add app="^Logi Options\+$" layer=above manage=off
-$rule --add app="^Logitech G HUB$" layer=above manage=off
-$rule --add app="^Books$" layer=above manage=off
-$rule --add app="^Notes$" layer=above manage=off
-$rule --add app="^1Password$" layer=above manage=off
-$rule --add app="^Installer$" layer=above manage=off
-# $rule --add app="^IINA$" layer=above manage=off
+$rule --add app="^System Preferences$" manage=off
+$rule --add app="^System Settings$" manage=off
+$rule --add app="^BetterTouchTool$" manage=off
+$rule --add app="^mpv$" manage=off
+$rule --add app="^Logi Options\+$" manage=off
+$rule --add app="^Logitech G HUB$" manage=off
+$rule --add app="^Books$" manage=off
+$rule --add app="^Notes$" manage=off
+$rule --add app="^1Password$" manage=off
+$rule --add app="^Installer$" manage=off
+# $rule --add app="^IINA$" manage=off
 
 ## global settings
 #$config focus_follows_mouse autoraise
