@@ -6,39 +6,39 @@ call plug#begin('~/.vim/plugged')
 "Plug 'c9s/perlomni.vim',    { 'for': 'perl' }
 "Plug 'ctrlpvim/ctrlp.vim',
 "Plug 'dbext.vim',           { 'for': 'sql' }
+"Plug 'dhruvasagar/vim-table-mode'
 "Plug 'edkolev/tmuxline.vim'
+Plug 'fcpg/vim-osc52'
 "Plug 'gmarik/sudo-gui.vim'
 "Plug 'mcchrish/nnn.vim'
 "Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
 "Plug 'osyo-manga/vim-over'
 "Plug 'sjl/gundo.vim',       { 'on':  'GundoToggle' }
+"Plug 'tpope/vim-fugitive'
+"Plug 'roxma/vim-tmux-clipboard'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
-Plug 'fcpg/vim-osc52'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dhruvasagar/vim-table-mode'
 " Syntax support
 Plug 'fatih/vim-go',           { 'for': 'go' }
+Plug 'github/copilot.vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'hashivim/vim-vagrant',   { 'for': 'ruby' }
 Plug 'pearofducks/ansible-vim'
 Plug 'pprovost/vim-ps1',       { 'for': 'ps1' }
+Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-perl/vim-perl',      { 'for': 'perl' }
 Plug 'yko/mojo.vim',           { 'for': 'perl' }
-Plug 'github/copilot.vim'
 
 " colorthemes
 " Plug 'romgrk/doom-one.vim'
@@ -192,6 +192,8 @@ nmap Y y$
 nmap <Leader>o o<ESC>
 nmap <Leader>O O<ESC>
 
+" dont save content overwritten by visual paste
+vnoremap p "_dP 
 
 " sort shortcut
 vmap <Leader>s :sort<CR>
