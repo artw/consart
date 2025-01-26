@@ -41,8 +41,13 @@ linux*)
 
   if iscmd systemctl; then
     alias sc="${sudo}systemctl"
+    alias scu="systemctl --user"
     alias zzz="${sudo}systemctl suspend"
     alias halt="${sudo}systemctl poweroff"
+  fi
+
+  if iscmd journalctl; then
+    alias j="${sudo}journalctl"
   fi
 
   # zfs requires root on ZoL
@@ -124,7 +129,6 @@ alias dr='dirs -v'
 alias g='grep'
 alias h='fc -l 1'
 alias hs='fc -l 1 | grep'
-alias j='jobs'
 alias l='ls'
 alias md='mkdir'
 alias t='touch'
@@ -225,9 +229,14 @@ if iscmd vagrant; then
   alias vs="vagrant ssh"
 fi
 
-if iscmd docker; then
+if iscmd podman && ! iscmd docker; then
+  alias d="podman"
+  alias dr="podman run -ti --rm"
+  alias de="podman exec -ti"
+fi
+
+if iscmd docker && ! iscmd podman; then
   alias d="docker"
-  alias di="docker image"
   alias dr="docker run -ti --rm"
   alias de="docker exec -ti"
 fi
