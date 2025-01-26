@@ -234,9 +234,7 @@ if iscmd podman && ! iscmd docker; then
   alias d="podman"
   alias dr="podman run -ti --rm"
   alias de="podman exec -ti"
-fi
-
-if iscmd docker && ! iscmd podman; then
+elif iscmd docker; then
   alias d="docker"
   alias dr="docker run -ti --rm"
   alias de="docker exec -ti"
