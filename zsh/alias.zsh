@@ -48,6 +48,7 @@ linux*)
 
   if iscmd journalctl; then
     alias j="${sudo}journalctl"
+    alias ju="journalctl --user"
   fi
 
   # zfs requires root on ZoL
