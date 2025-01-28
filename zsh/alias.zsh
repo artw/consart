@@ -12,10 +12,6 @@ linux*)
   if iscmd pacman; then
     alias pm="${sudo}pacman"
   fi
-  if iscmd yay; then
-    alias ys="yay -Ss"
-    alias yi="yay -S"
-  fi
   # gentoo
   if iscmd emerge; then
     alias em="${sudo}emerge -qav"
@@ -47,8 +43,8 @@ linux*)
   fi
 
   if iscmd journalctl; then
-    alias j="${sudo}journalctl"
-    alias ju="journalctl --user"
+    alias j="${sudo}journalctl -xe"
+    alias ju="journalctl -xe --user"
   fi
 
   # zfs requires root on ZoL
@@ -230,18 +226,19 @@ if iscmd vagrant; then
   alias vs="vagrant ssh"
 fi
 
-if iscmd podman && ! iscmd docker; then
-  alias d="podman"
-  alias dr="podman run -ti --rm"
-  alias de="podman exec -ti"
-elif iscmd docker; then
+if iscmd podman; then
+  alias p="podman"
+  alias pe="podman exec -ti"
+  alias pr="podman run -ti --rm"
+  alias sp="${sudo}podman"
+  alias spe="${sudo}podman"
+  alias spr="${sudo}podman run -ti --rm"
+fi
+
+if iscmd docker; then
   alias d="docker"
   alias dr="docker run -ti --rm"
   alias de="docker exec -ti"
-fi
-
-if iscmd docker-compose; then
-  alias dc="docker-compose"
 fi
 
 if iscmd kubectl; then
@@ -281,6 +278,3 @@ if iscmd drill && ! iscmd dig; then
 fi
 
 iscmd python3 && alias py=python3
-
-iscmd cilium && alias cilium="cilium -n cilium"
-iscmd cilium-cli && alias cilium="cilium-cli -n cilium"
