@@ -32,7 +32,11 @@ if [[ -f $zplug ]]; then
   #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
   #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
 
-  if [[ "$P10K_ENABLE" == "yes" ]]; then
+  if [[ "$P10K_ENABLE" == "yes" && (
+      $TERM == screen* ||
+      $TERM == xterm* ||
+      $TERM == *256-color
+   ) ]]; then
     zplug romkatv/powerlevel10k, as:theme, depth:1
   fi
   # zplug self manage
