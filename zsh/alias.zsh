@@ -11,6 +11,7 @@ linux*)
   # arch
   if iscmd pacman; then
     alias pm="${sudo}pacman"
+    alias pms="${sudo}pacman -S --noconfirm"
   fi
   # gentoo
   if iscmd emerge; then
