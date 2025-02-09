@@ -231,9 +231,11 @@ if iscmd podman; then
   alias p="podman"
   alias pe="podman exec -ti"
   alias pr="podman run -ti --rm"
+  alias prs="podman run -ti --rm --entrypoint sh"
   alias sp="${sudo}podman"
   alias spe="${sudo}podman"
   alias spr="${sudo}podman run -ti --rm"
+  alias sprs="${sudo}podman run -ti --rm --entrypoint sh"
 fi
 
 if iscmd docker; then
