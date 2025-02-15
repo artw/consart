@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+# set -x
+if [[ $(id -u) -ge 0 ]]; then
+  iscmd sudo && iscmd $1 && eval alias $1=\"sudo $*\"
+fi
