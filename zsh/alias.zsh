@@ -7,51 +7,58 @@ linux*)
   alias grep="grep --color=auto"
   alias ls="ls --color=auto -F"
   iscmd grub-mkconfig && alias grub-cfg="${sudo}grub-mkconfig -o /boot/grub/grub.cfg"
-  iscmd iptables && alias iptables="${sudo}iptables"
+  sudalias iptables
   # arch
   if iscmd pacman; then
-    alias pm="${sudo}pacman"
-    alias pms="${sudo}pacman -S --noconfirm"
+    sudalias pacman
+    alias pm="pacman"
+    alias pms="pacman -S --noconfirm"
   fi
   # gentoo
   if iscmd emerge; then
-    alias em="${sudo}emerge -qav"
-    alias udav="${sudo}emerge -quDavN world"
+    sudalias emerge
+    alias em="emerge -qav"
+    alias udav="emerge -quDavN world"
   fi
   # debian
   if iscmd apt-get; then
-    alias apt-get="${sudo}apt-get --no-install-recommends"
+    sudalias apt-get
+    alias apt-get="apt-get --no-install-recommends"
   fi
   if iscmd apt; then
-    alias apt="${sudo}apt --no-install-recommends"
+    sudalias apt
+    apt="apt --no-install-recommends"
   fi
 
-  iscmd ufw && alias ufw="${sudo}ufw"
+  sudalias ufw
 
   # redhat
-  iscmd yum && alias yum="${sudo}yum"
-  iscmd dnf && alias dnf="${sudo}dnf"
-  iscmd rpm && alias rpm="${sudo}rpm"
+  sudalias yum
+  sudalias dnf
+  sudalias rpm
 
   # suse
-  iscmd zypper && alias zyp="${sudo}zypper"
+  sudalias zypper
+  alias zyp="zypper"
 
   if iscmd systemctl; then
-    alias sc="${sudo}systemctl"
-    alias scu="systemctl --user"
-    alias zzz="${sudo}systemctl suspend"
-    alias halt="${sudo}systemctl poweroff"
+    sudalias systemctl
+    alias sc="systemctl"
+    alias scu="/usr/bin/systemctl --user"
+    alias zzz="systemctl suspend"
+    alias halt="systemctl poweroff"
   fi
 
   if iscmd journalctl; then
-    alias j="${sudo}journalctl -xe"
-    alias ju="journalctl -xe --user"
+    sudalias journalctl
+    alias j="journalctl -xe"
+    alias ju="/usr/bin/journalctl -xe --user"
   fi
 
   # zfs requires root on ZoL
   if iscmd zfs; then
-    alias zfs="${sudo}zfs"
-    alias zpool="${sudo}zpool"
+    sudalias zfs
+    sudalias zpool
   fi
 ;;
 
@@ -73,6 +80,7 @@ darwin*)
   alias zzz="pmset sleepnow"
   alias -g "±"=$HOME
   alias "£"="sudo"
+  sudalias launchctl
   alias sc="${sudo}launchctl"
 
   if [[ -a "/Applications/MacVim.app" ]]; then
@@ -88,19 +96,17 @@ darwin*)
 ;;
 
 freebsd*)
-  iscmd portmaster && alias portmaster="${sudo}portmaster"
-  iscmd poudriere && alias poudriere="${sudo}poudriere"
-  alias pkg="${sudo}pkg"
+  sudalias pkg
   alias port-up="git-up /usr/ports"
   alias src-up="git-up /usr/src"
-  iscmd fdisk-linux && alias fdisk="${sudo}fdisk-linux"
-  alias jail="${sudo}jail"
-  alias jexec="${sudo}jexec"
-  alias jpkg="${sudo}pkg -j"
+  sudalias jail
+  sudalias jexec
+  alias jpkg="pkg -j"
   alias jpkg-upgrade="xargs -I % ${sudo}pkg -j % upgrade -y"
   alias jpkg-upgrade-all="jls -N | tail -n +2 | cut -f2 -d' ' | xargs -I % ${sudo}pkg -j % upgrade -y"
   iscmd gnu-watch && alias watch="gnu-watch"
-  alias sc="${sudo}service"
+  sudalias service
+  alias sc="service"
 ;;
 
 openbsd*)
@@ -229,7 +235,8 @@ fi
 
 if iscmd podman; then
   alias p="podman"
-  alias pe="podman exec -ti"
+  alias pe="podman exec"
+  alias pes="podman exec -ti sh -c"
   alias pr="podman run -ti --rm"
   alias prs="podman run -ti --rm --entrypoint sh"
   alias sp="${sudo}podman"
