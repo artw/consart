@@ -33,13 +33,18 @@ linux*)
   sudalias ufw
 
   # redhat
-  sudalias yum
-  sudalias dnf
-  sudalias rpm
+  for cmd in yum dnf rpm nmcli; do
+    sudalias $cmd
+  done
 
   # suse
   sudalias zypper
   alias zyp="zypper"
+
+  # proxmox
+  for cmd in pveam pvecm pvesh pvesm qm; do
+    sudalias $cmd
+  done
 
   if iscmd systemctl; then
     sudalias systemctl
