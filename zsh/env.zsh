@@ -12,25 +12,14 @@ path_dirs=(
   /opt/homebrew/sbin
   /usr/sbin
   /sbin
-
   /opt/bin
   /opt/local/bin
   /usr/local/bin
   /opt/homebrew/bin
   /usr/bin
   /bin
-
   /usr/libexec
-
-  /usr/bin/core_perl
-  /usr/bin/vendor_perl
-
-  /usr/X11R6/bin
-  /usr/local/lib/kde4/libexec
-
-  /usr/games/bin
-
-  /snap/bin
+  /var/lib/flatpak/exports/bin
 )
 
 # set $path
