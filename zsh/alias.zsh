@@ -253,6 +253,7 @@ fi
 if iscmd docker; then
   alias d="docker"
   alias dr="docker run -ti --rm"
+  alias drs="docker run -ti --rm --entrypoint sh"
   alias de="docker exec -ti"
 fi
 
