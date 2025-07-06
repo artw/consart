@@ -114,7 +114,7 @@ case $OSTYPE in
 esac
 
 # default pager
-if which less >/dev/null; then 
+if which less >/dev/null 2>&1; then 
   export LESS=-r
   export PAGER=less
 fi
@@ -128,7 +128,7 @@ editors=(
 )
 
 foreach editor in $editors
-  if which $editor >/dev/null; then
+  if which $editor >/dev/null 2>&1; then
     export EDITOR=$editor
     break
   fi
