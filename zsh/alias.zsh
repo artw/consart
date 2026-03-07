@@ -294,3 +294,5 @@ if iscmd drill && ! iscmd dig; then
 fi
 
 iscmd python3 && alias py=python3
+
+iscmd openclaw && alias claw="openclaw"
