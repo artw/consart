@@ -5,6 +5,7 @@ path_dirs=(
   $HOME/.vim/dist/bin
   $HOME/.zplug/bin
   $HOME/.krew/bin
+  $HOME/.npm-global/bin
 
   /opt/sbin
   /opt/local/sbin
@@ -20,6 +21,7 @@ path_dirs=(
   /bin
   /usr/libexec
   /var/lib/flatpak/exports/bin
+  /home/linuxbrew/.linuxbrew/bin
 )
 
 # set $path
