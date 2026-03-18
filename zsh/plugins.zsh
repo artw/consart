@@ -17,12 +17,12 @@ if [[ -f $zplug ]]; then
   )
 
   source $zplug
-  foreach plugin in $oh_my_zsh_plugins
+  for plugin in $oh_my_zsh_plugins; do
     zplug "plugins/$plugin", from:oh-my-zsh
-  end
-  foreach bundle in $zsh_plugins
+  done
+  for bundle in $zsh_plugins; do
     zplug "$bundle"
-  end
+  done
 
   # Plugins with custom settings
   #zplug "clvv/fasd", use:fasd

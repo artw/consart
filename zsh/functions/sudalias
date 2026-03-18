@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 # set -x
-if [[ $(id -u) -ge 0 ]]; then
-  iscmd sudo && iscmd $1 && eval alias $1=\"sudo $*\"
+# Cache sudo availability (checked once via zsh builtin)
+if (( $+commands[sudo] )) && (( $+commands[$1] )); then
+  eval alias $1=\"sudo $*\"
 fi
