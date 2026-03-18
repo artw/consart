@@ -4,9 +4,7 @@ if [[ -f $HOME/.zshrc.local ]] then
 fi
 
 if [[ "$P10K_ENABLE" == "yes" ]]; then
-  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-  fi
+  source $HOME/.zsh/p10k.zsh
 fi
 
 source $HOME/.zsh/env.zsh
@@ -24,5 +22,3 @@ source $HOME/.zsh/alias.zsh
 if [[ -f $HOME/.zshrc.local2 ]] then
    source $HOME/.zshrc.local2
 fi
-
-f=$HOME/.zsh/octopus.zsh ; test -f $f && source $f
