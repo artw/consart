@@ -112,7 +112,7 @@ set splitbelow
 
 " enable unicode if available
 if has("multi_byte")
-  if &termencoding == ""
+  if !has('nvim') && &termencoding == ""
     let &termencoding = &encoding
   endif
   set encoding=utf-8
@@ -171,7 +171,9 @@ command! CD cd %:p:h
 command! Y %y*
 
 "" (re)map keys:
-set pastetoggle=<F12>
+if !has('nvim')
+  set pastetoggle=<F12>
+endif
 
 " file operation bindings:
 nmap <C-Q> :q!<CR>
