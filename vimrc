@@ -88,6 +88,8 @@ set incsearch                  "  search as we type
 set number                     "  show line numbers
 set linespace=0                "  more compact text
 set autoread                  "  autoreload files after they are changed
+set updatetime=1000            "  check every 1s
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
 "set clipboard=unnamed         "  use system clipboard register by default
 "set virtualedit=onemore       "  allow cursor beyond last character
 "set virtualedit=all           "  put cursor anywhere in the file
