@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+
+local configs=( ~/.kube/*.yaml ~/.kube/*.yml(N) )
+[[ -f ~/.kube/config ]] && configs=( ~/.kube/config $configs )
+
+if [[ ${#configs} -eq 0 ]]; then
+  echo "no kubeconfig files found in ~/.kube/"
+  return 1
+fi
+
+if [[ -z $1 ]]; then
+  if iscmd fzf; then
+    local choice=$(printf '%s\n' ${configs[@]:t:r} | fzf)
+    [[ -z $choice ]] && return 1
+    # find the full path matching the choice
+    for f in $configs; do
+      if [[ ${f:t:r} == $choice ]]; then
+        export KUBECONFIG=$f
+        echo "KUBECONFIG=$f"
+        return 0
+      fi
+    done
+  else
+    echo "usage: $0 [config-name]"
+    echo "\tinstall fzf for list menu"
+    echo "\navailable:"
+    printf '  %s\n' ${configs[@]:t:r}
+  fi
+  return 1
+else
+  # find matching file
+  for f in $configs; do
+    if [[ ${f:t:r} == $1 ]]; then
+      export KUBECONFIG=$f
+      echo "KUBECONFIG=$f"
+      return 0
+    fi
+  done
+  echo "not found: $1"
+  echo "available:"
+  printf '  %s\n' ${configs[@]:t:r}
+  return 1
+fi
