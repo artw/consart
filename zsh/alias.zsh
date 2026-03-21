@@ -260,7 +260,7 @@ fi
 if iscmd kubectl; then
   alias k="kubectl"
   alias ka="kubectl apply"
-  alias kaf="kubectl apply -f"
+  alias kaf="kubectl apply --server-side --force-conflicts -f"
   alias kd="kubectl delete"
   alias kdf="kubectl delete -f"
   alias kr="kubectl replace"
@@ -268,7 +268,7 @@ if iscmd kubectl; then
   alias ke="kubectl exec -ti"
   alias kg="kubectl get"
   alias krun="kubectl run -ti --rm"
-  alias ku="kubectl kustomize --load-restrictor=LoadRestrictionsNone --enable-helm"
+  alias ku="kustomize build --load-restrictor=LoadRestrictionsNone --enable-helm"
   alias kua="ku | kaf - | grep -v 'unchanged'"
   alias kud="ku | kdf -"
   alias ctx="kubectl ctx"
