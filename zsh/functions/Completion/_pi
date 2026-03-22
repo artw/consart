@@ -1,0 +1,61 @@
+#compdef pi
+
+local -a commands
+commands=(
+  'install:Install extension source'
+  'remove:Remove extension source'
+  'uninstall:Alias for remove'
+  'update:Update installed extensions'
+  'list:List installed extensions'
+  'config:Open TUI to enable/disable package resources'
+)
+
+local -a providers
+providers=(anthropic openai azure-openai google groq cerebras xai openrouter mistral minimax bedrock github-copilot openai-codex)
+
+local -a tools
+tools=(read bash edit write grep find ls)
+
+local -a thinking_levels
+thinking_levels=(off minimal low medium high xhigh)
+
+_pi_models() {
+  local -a models
+  models=(${(f)"$(pi --list-models 2>/dev/null | tail -n +2 | awk '{print $1"/"$2}')"})
+  _describe 'model' models
+}
+
+_arguments -s \
+  '1::command:(install remove uninstall update list config)' \
+  '--provider[Provider name]:provider:($providers)' \
+  '--model[Model pattern or ID]:model:_pi_models' \
+  '--api-key[API key]:key:' \
+  '--system-prompt[System prompt]:text:' \
+  '--append-system-prompt[Append to system prompt]:text:' \
+  '--mode[Output mode]:mode:(text json rpc)' \
+  '(-p --print)'{-p,--print}'[Non-interactive mode]' \
+  '(-c --continue)'{-c,--continue}'[Continue previous session]' \
+  '(-r --resume)'{-r,--resume}'[Select a session to resume]' \
+  '--session[Use specific session file]:file:_files' \
+  '--fork[Fork session file]:file:_files' \
+  '--session-dir[Session storage directory]:dir:_directories' \
+  '--no-session[Ephemeral session]' \
+  '--models[Model patterns for cycling]:patterns:' \
+  '--no-tools[Disable all tools]' \
+  '--tools[Tools to enable]:tools:_values -s , tool $tools' \
+  '--thinking[Thinking level]:level:($thinking_levels)' \
+  '*'{-e,--extension}'[Load extension file]:file:_files' \
+  '(-ne --no-extensions)'{-ne,--no-extensions}'[Disable extension discovery]' \
+  '*--skill[Load skill file]:file:_files -/' \
+  '(-ns --no-skills)'{-ns,--no-skills}'[Disable skills]' \
+  '*--prompt-template[Load prompt template]:file:_files' \
+  '(-np --no-prompt-templates)'{-np,--no-prompt-templates}'[Disable prompt templates]' \
+  '*--theme[Load theme]:file:_files' \
+  '--no-themes[Disable themes]' \
+  '--export[Export session to HTML]:file:_files' \
+  '--list-models[List available models]' \
+  '--verbose[Verbose startup]' \
+  '--offline[Disable network on startup]' \
+  '(-h --help)'{-h,--help}'[Show help]' \
+  '(-v --version)'{-v,--version}'[Show version]' \
+  '*:file:_files'
