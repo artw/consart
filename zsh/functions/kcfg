@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-local configs=( ~/.kube/*.yaml ~/.kube/*.yml(N) )
+local configs=( ~/.kube/*.yaml(N) ~/.kube/*.yml(N) )
 [[ -f ~/.kube/config ]] && configs=( ~/.kube/config $configs )
 
 if [[ ${#configs} -eq 0 ]]; then
