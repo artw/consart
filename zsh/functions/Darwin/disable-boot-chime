@@ -1,2 +1,0 @@
-#!/usr/bin/env zsh
-sudo nvram SystemAudioVolume=%80
