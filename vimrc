@@ -99,9 +99,7 @@ set smartcase                  "  ignore case when lowercase, don't ignore if no
 set cursorline                 "  highlight the line with cursor
 set cursorcolumn               "  highlight the column with cursor
 
-if version >=730
-  set relativenumber           "  show relative line numbers
-endif
+" set relativenumber           "  show relative line numbers
 
 " enable mouse if available
 if has('mouse')
