@@ -52,6 +52,19 @@ if [[ -f $zplug ]]; then
   # load zplug
   zplug load
 
+  # z + fzf integration
+  if iscmd fzf; then
+    unalias z 2>/dev/null
+    z() {
+      if [[ $# -eq 0 ]]; then
+        local dir=$(awk -F'|' '{print $1}' ${_Z_DATA:-$HOME/.z} | fzf --tac)
+        [[ -n $dir ]] && cd "$dir"
+      else
+        zshz "$@"
+      fi
+    }
+  fi
+
   # atuin - frecency-powered shell history
   # iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
   iscmd atuin && eval "$(atuin init zsh)"
