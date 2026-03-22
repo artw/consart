@@ -233,11 +233,6 @@ iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
 #alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
 
-if iscmd vagrant; then
-  alias v="vagrant"
-  alias vs="vagrant ssh"
-fi
-
 if iscmd podman; then
   alias p="podman"
   alias pe="podman exec"
