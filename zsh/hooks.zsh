@@ -3,7 +3,7 @@ if [[ ! $SSH_TTY == "" ]]; then
 fi
 
 function chpwd {
-  ls
+  # ls
 }
 
 function precmd {
