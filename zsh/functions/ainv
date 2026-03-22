@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+local inv_dir="$HOME/sync/code/ansible/inv"
+local -a invs
+invs=( $inv_dir/*(/:t) )
+
+if [[ ${#invs} -eq 0 ]]; then
+  echo "no inventories found in $inv_dir"
+  return 1
+fi
+
+if [[ -z $1 ]]; then
+  if iscmd fzf; then
+    local choice=$(printf '%s\n' $invs | fzf)
+    [[ -z $choice ]] && return 1
+    export ANSIBLE_INVENTORY="$inv_dir/$choice"
+    echo "ANSIBLE_INVENTORY=$inv_dir/$choice"
+    return 0
+  else
+    echo "usage: $0 [inventory]"
+    echo "\tinstall fzf for list menu"
+    echo "\navailable:"
+    printf '  %s\n' $invs
+  fi
+  return 1
+else
+  if (( $invs[(Ie)$1] )); then
+    export ANSIBLE_INVENTORY="$inv_dir/$1"
+    echo "ANSIBLE_INVENTORY=$inv_dir/$1"
+    return 0
+  fi
+  echo "not found: $1"
+  echo "available:"
+  printf '  %s\n' $invs
+  return 1
+fi
