@@ -9,7 +9,7 @@ if [[ -f $zplug ]]; then
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     zsh-users/zsh-syntax-highlighting
-    zsh-users/zsh-history-substring-search
+    #zsh-users/zsh-history-substring-search
   )
   oh_my_zsh_plugins=(
     # 1password
@@ -52,18 +52,9 @@ if [[ -f $zplug ]]; then
   # load zplug
   zplug load
 
-  # bind up/down to substring search if zsh-substring-search is installed
-  if [[ -d $ZPLUG_REPOS/zsh-users/zsh-history-substring-search ]]; then
-    export HISTORY_SUBSTRING_SEARCH_FUZZY=1
-    zle -N history-substring-search-up
-    zle -N history-substring-search-down
-    bindkey '^[[A' history-substring-search-up
-    bindkey '^[[B' history-substring-search-down
-    bindkey "^P" history-substring-search-up
-    bindkey "^N" history-substring-search-down
-    bindkey -M vicmd "k" history-substring-search-up
-    bindkey -M vicmd "j" history-substring-search-down
-  fi
+  # atuin - frecency-powered shell history
+  # iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
+  iscmd atuin && eval "$(atuin init zsh)"
   #iscmd fasd && eval "$(fasd --init auto)"
   #iscmd rbenv && eval "$(rbenv init -)"
   #iscmd fzf && source $ZPLUG_REPOS/junegunn/fzf/shell/*.zsh
