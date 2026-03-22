@@ -13,3 +13,55 @@ install_vimplug
 
 echo "Installing vim plugins..."
 vim -c PlugInstall! -c qa!
+
+# recommended tools used in aliases and plugins
+local -a tools
+tools=(
+  atuin     # frecency shell history (plugins.zsh)
+  fzf       # fuzzy finder (alias.zsh)
+  tmux      # terminal multiplexer (alias.zsh, hooks.zsh)
+  git       # version control (alias.zsh)
+  nvim      # editor (alias.zsh, env.zsh)
+  lazygit   # git TUI (alias.zsh)
+  rsync     # file sync (alias.zsh)
+  curl      # HTTP client (alias.zsh)
+)
+
+echo "\nChecking recommended tools..."
+local -a missing
+for t in $tools; do
+  if ! command -v $t &>/dev/null; then
+    missing+=($t)
+  fi
+done
+
+if (( ${#missing} )); then
+  echo "Missing: ${missing[*]}"
+  printf "Install missing tools? [y/N]: "
+  if read -q; then
+    echo
+    case $OSTYPE in
+      darwin*)
+        brew install ${missing[*]}
+        ;;
+      linux*)
+        if command -v pacman &>/dev/null; then
+          sudo pacman -S --noconfirm ${missing[*]}
+        elif command -v dnf &>/dev/null; then
+          sudo dnf install -y ${missing[*]}
+        elif command -v apt &>/dev/null; then
+          sudo apt install -y ${missing[*]}
+        else
+          echo "No supported package manager found, install manually: ${missing[*]}"
+        fi
+        ;;
+      *)
+        echo "Install manually: ${missing[*]}"
+        ;;
+    esac
+  else
+    echo "\nSkipped. Install later: ${missing[*]}"
+  fi
+else
+  echo "All recommended tools installed."
+fi
