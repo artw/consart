@@ -18,7 +18,7 @@ Plug 'fcpg/vim-osc52'
 "Plug 'roxma/vim-tmux-clipboard'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
@@ -31,7 +31,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax support
 Plug 'fatih/vim-go',           { 'for': 'go' }
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'hashivim/vim-vagrant',   { 'for': 'ruby' }
 Plug 'pearofducks/ansible-vim'
