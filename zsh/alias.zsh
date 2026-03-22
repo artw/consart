@@ -257,6 +257,10 @@ if iscmd docker; then
   alias de="docker exec -ti"
 fi
 
+if iscmd distrobox; then
+  alias d="distrobox"
+fi
+
 if iscmd kubectl; then
   alias k="kubectl"
   alias ka="kubectl apply"
