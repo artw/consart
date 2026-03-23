@@ -61,10 +61,9 @@ set directory=~/.vim/tmp/
 set backupdir=~/.vim/tmp/
 
 "" settings:
-"language C
+set nowrap
 syntax on
 filetype plugin indent on
-
 set smartindent
 set autoindent
 "set scrolljump=5              "  faster scrolling
