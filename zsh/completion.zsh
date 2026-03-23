@@ -42,14 +42,6 @@ done
 
 compdef _ssh '@'
 
-iscmd kubectl && $(source <(kubectl completion zsh&))
-if iscmd k9s; then
-  $(source <(k9s completion zsh&) && compdef _k9s k9s)
-fi
-
-if iscmd terraform; then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C /opt/homebrew/bin/terraform terraform
-fi
-
-#iscmd rclone && source <(rclone completion zsh)
+iscmd kubectl && $(source <(command kubectl completion zsh&))
+iscmd k9s && $(source <(command k9s completion zsh&) && compdef _k9s k9s)
+iscmd rclone && source <(command rclone completion zsh)
