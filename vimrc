@@ -331,5 +331,5 @@ endif
 " cyrillic normal mode navigation via langmap
 " maps russian keyboard layout to latin equivalents in normal/visual mode
 " insert mode is not affected - cyrillic input works normally
-" hjkl(ролд) w/b/e(ц/и/у) d/y/p(в/н/г) u(г) o/O(щ/Щ) etc
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+" hjkl(ролд) w/b/e(ц/и/у) d/y/p(в/н/г) u(г) o/O(щ/Щ) <>(БЮ) etc
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz,Б<,Ю>,б\\,,ю.
