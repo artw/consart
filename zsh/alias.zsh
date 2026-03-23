@@ -273,7 +273,7 @@ if iscmd kubectl; then
   alias ctx="kubectl ctx"
   alias ns="kubectl ns"
 fi
-iscmd k9s && alias k9s="k9s --logoless"
+iscmd k9s && alias k9s="command k9s --logoless"
 
 iscmd lazygit && alias lg=lazygit
 
