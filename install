@@ -13,7 +13,6 @@ install_vimplug
 
 echo "Installing vim plugins..."
 vim -c PlugInstall! -c qa!
-
 # recommended tools used in aliases and plugins
 local -a tools
 tools=(
