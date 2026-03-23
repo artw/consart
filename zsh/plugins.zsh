@@ -9,7 +9,7 @@ if [[ -f $zplug ]]; then
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     zsh-users/zsh-syntax-highlighting
-    zsh-users/zsh-history-substring-search
+    #zsh-users/zsh-history-substring-search
   )
   oh_my_zsh_plugins=(
     # 1password
@@ -17,12 +17,12 @@ if [[ -f $zplug ]]; then
   )
 
   source $zplug
-  foreach plugin in $oh_my_zsh_plugins
+  for plugin in $oh_my_zsh_plugins; do
     zplug "plugins/$plugin", from:oh-my-zsh
-  end
-  foreach bundle in $zsh_plugins
+  done
+  for bundle in $zsh_plugins; do
     zplug "$bundle"
-  end
+  done
 
   # Plugins with custom settings
   #zplug "clvv/fasd", use:fasd
@@ -52,18 +52,18 @@ if [[ -f $zplug ]]; then
   # load zplug
   zplug load
 
-  # bind up/down to substring search if zsh-substring-search is installed
-  if [[ -d $ZPLUG_REPOS/zsh-users/zsh-history-substring-search ]]; then
-    export HISTORY_SUBSTRING_SEARCH_FUZZY=1
-    zle -N history-substring-search-up
-    zle -N history-substring-search-down
-    bindkey '^[[A' history-substring-search-up
-    bindkey '^[[B' history-substring-search-down
-    bindkey "^P" history-substring-search-up
-    bindkey "^N" history-substring-search-down
-    bindkey -M vicmd "k" history-substring-search-up
-    bindkey -M vicmd "j" history-substring-search-down
+  # z + fzf integration
+  if iscmd fzf; then
+    unalias z 2>/dev/null
+    z() {
+      local dir=$(awk -F'|' '{print $1}' ${_Z_DATA:-$HOME/.z} | fzf --tac -q "$*")
+      [[ -n $dir ]] && cd "$dir"
+    }
   fi
+
+  # atuin - frecency-powered shell history
+  # iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
+  iscmd atuin && eval "$(atuin init zsh)"
   #iscmd fasd && eval "$(fasd --init auto)"
   #iscmd rbenv && eval "$(rbenv init -)"
   #iscmd fzf && source $ZPLUG_REPOS/junegunn/fzf/shell/*.zsh

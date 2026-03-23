@@ -18,7 +18,7 @@ Plug 'fcpg/vim-osc52'
 "Plug 'roxma/vim-tmux-clipboard'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
@@ -31,7 +31,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax support
 Plug 'fatih/vim-go',           { 'for': 'go' }
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'hashivim/vim-vagrant',   { 'for': 'ruby' }
 Plug 'pearofducks/ansible-vim'
@@ -88,6 +88,8 @@ set incsearch                  "  search as we type
 set number                     "  show line numbers
 set linespace=0                "  more compact text
 set autoread                  "  autoreload files after they are changed
+set updatetime=1000            "  check every 1s
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
 "set clipboard=unnamed         "  use system clipboard register by default
 "set virtualedit=onemore       "  allow cursor beyond last character
 "set virtualedit=all           "  put cursor anywhere in the file
@@ -97,9 +99,7 @@ set smartcase                  "  ignore case when lowercase, don't ignore if no
 set cursorline                 "  highlight the line with cursor
 set cursorcolumn               "  highlight the column with cursor
 
-if version >=730
-  set relativenumber           "  show relative line numbers
-endif
+" set relativenumber           "  show relative line numbers
 
 " enable mouse if available
 if has('mouse')

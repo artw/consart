@@ -209,7 +209,7 @@ if iscmd rsync; then
 fi
 
 if iscmd tmux; then
-  alias tx="cd ~; tmux attach || tmux new-session"
+  alias tx="cd ~; tmux attach || tmux new-session -s \${HOSTNAME:-\$(hostname -s)}"
   alias txl="tmux list-sessions"
   alias txa="tmux attach -t"
   alias txc="cd ~; tmux new-session -s"
@@ -233,11 +233,6 @@ iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
 #alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
 
-if iscmd vagrant; then
-  alias v="vagrant"
-  alias vs="vagrant ssh"
-fi
-
 if iscmd podman; then
   alias p="podman"
   alias pe="podman exec"
@@ -257,10 +252,14 @@ if iscmd docker; then
   alias de="docker exec -ti"
 fi
 
+if iscmd distrobox; then
+  alias d="distrobox"
+fi
+
 if iscmd kubectl; then
   alias k="kubectl"
   alias ka="kubectl apply"
-  alias kaf="kubectl apply -f"
+  alias kaf="kubectl apply --server-side --force-conflicts -f"
   alias kd="kubectl delete"
   alias kdf="kubectl delete -f"
   alias kr="kubectl replace"
@@ -268,7 +267,7 @@ if iscmd kubectl; then
   alias ke="kubectl exec -ti"
   alias kg="kubectl get"
   alias krun="kubectl run -ti --rm"
-  alias ku="kubectl kustomize --load-restrictor=LoadRestrictionsNone --enable-helm"
+  alias ku="kustomize build --load-restrictor=LoadRestrictionsNone --enable-helm"
   alias kua="ku | kaf - | grep -v 'unchanged'"
   alias kud="ku | kdf -"
   alias ctx="kubectl ctx"

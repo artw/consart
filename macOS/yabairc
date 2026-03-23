@@ -4,33 +4,30 @@ rule="yabai -m rule"
 config="yabai -m config"
 
 # app rules
-$rule --add app="^System Preferences$" layer=above manage=off
-$rule --add app="^System Settings$" layer=above manage=off
-$rule --add app="^BetterTouchTool$" layer=above manage=off
-$rule --add app="^mpv$" layer=above manage=off
-$rule --add app="^Logi Options\+$" layer=above manage=off
-$rule --add app="^Logitech G HUB$" layer=above manage=off
-$rule --add app="^Books$" layer=above manage=off
-$rule --add app="^Notes$" layer=above manage=off
-$rule --add app="^1Password$" layer=above manage=off
-$rule --add app="^Installer$" layer=above manage=off
-# $rule --add app="^IINA$" layer=above manage=off
+$rule --add app="^System Preferences$" manage=off
+$rule --add app="^System Settings$" manage=off
+$rule --add app="^BetterTouchTool$" manage=off
+$rule --add app="^mpv$" manage=off
+$rule --add app="^Logi Options\+$" manage=off
+$rule --add app="^Logitech G HUB$" manage=off
+$rule --add app="^Books$" manage=off
+$rule --add app="^Notes$" manage=off
+$rule --add app="^1Password$" manage=off
+$rule --add app="^Installer$" manage=off
+# $rule --add app="^IINA$" manage=off
 
 ## global settings
 #$config focus_follows_mouse autoraise
 #$config focus_follows_mouse on
 # natural spawns
 $config window_placement second_child
-$config window_topmost off
+#$config window_topmost off
 #$config window_shadow float
 $config window_opacity off
 $config window_opacity_duration 0.00
 $config active_window_opacity 1.0
 #$config normal_window_opacity        0.97
-$config window_border on
-$config window_border_width 2
-$config active_window_border_color 0xFF40FF00
-$config normal_window_border_color 0x00FFFFFF
+# window border settings removed in yabai v7
 $config insert_feedback_color  0xffd75f5f
 
 ## some other settings
