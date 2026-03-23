@@ -43,6 +43,6 @@ done
 compdef _ssh '@'
 
 iscmd kubectl && $(source <(command kubectl completion zsh&))
-iscmd k9s && $(source <(command k9s completion zsh&) && compdef _k9s k9s)
+iscmd k9s && $(source <(command k9s completion zsh&) && compdef _k9s k9s&)
 # iscmd rclone && source <(command rclone completion zsh)
-iscmd gog && source <(command gog completion zsh)
+iscmd gog && source <(command gog completion zsh&)
