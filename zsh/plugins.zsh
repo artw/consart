@@ -34,8 +34,9 @@ if [[ -f $zplug ]]; then
 
   if [[ "$P10K_ENABLE" == "yes" && (
       $TERM == screen* ||
+      $TERM == tmux* ||
       $TERM == xterm* ||
-      $TERM == *256-color
+      $TERM == *256color
    ) ]]; then
     zplug romkatv/powerlevel10k, as:theme, depth:1
   fi
