@@ -1,4 +1,4 @@
-if [[ ! $SSH_TTY == "" ]]; then
+if [[ -n $SSH_CONNECTION ]]; then
   TITLE_PREFIX=$HOSTNAME:
 fi
 
