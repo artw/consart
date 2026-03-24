@@ -63,8 +63,7 @@ if [[ -f $zplug ]]; then
   fi
 
   # atuin - frecency-powered shell history
-  # iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
-  iscmd atuin && eval "$(atuin init zsh)"
+  iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
   #iscmd fasd && eval "$(fasd --init auto)"
   #iscmd rbenv && eval "$(rbenv init -)"
   #iscmd fzf && source $ZPLUG_REPOS/junegunn/fzf/shell/*.zsh
