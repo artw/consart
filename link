@@ -60,6 +60,22 @@ else
   ln -sf $link_src $link_dest
 fi
 
+# waybar
+if command -v waybar &>/dev/null; then
+  mkdir -p ${HOME}/.config/waybar
+  for f in config.jsonc style.css; do
+    link_src=${HOME}/.consart/X/waybar/${f}
+    link_dest=${HOME}/.config/waybar/${f}
+    echo "$link_dest \t -> $link_src"
+    if [ $FORCE_FLAG -ne 1 ]; then
+      test -e $link_dest && rm -ir $link_dest
+      ln -s $link_src $link_dest
+    else
+      ln -sf $link_src $link_dest
+    fi
+  done
+fi
+
 # sway
 if command -v sway &>/dev/null; then
   mkdir -p ${HOME}/.config/sway
