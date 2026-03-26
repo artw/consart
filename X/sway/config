@@ -2,7 +2,7 @@ set $alt Mod1
 set $mod Mod4
 
 font pango:Source Code Pro Semibold 6
-titlebar_padding 1 0
+default_border pixel 1
 
 # app binds
 bindsym $mod+grave exec foot
