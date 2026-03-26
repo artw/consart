@@ -1,7 +1,7 @@
 set $alt Mod1
 set $mod Mod4
 
-font pango:Source Code Pro Semibold 6
+font pango:Source Code Pro Semibold 12
 default_border pixel 1
 
 # app binds
@@ -118,8 +118,8 @@ bindsym $mod+Shift+q exec swaymsg exit
 for_window [class="Wine"] floating enable
 
 # 1px border for all windows
-for_window [app_id="^.*"] border 1pixel
-for_window [class="^.*"] border 1pixel
+for_window [app_id="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # hold this to move floating window with left click, or resize with right
 floating_modifier $mod normal
@@ -157,8 +157,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # gaps
 gaps inner 20
 gaps outer 15
-smart_gaps on
-smart_borders on
 
 # XWayland support
 xwayland enable
