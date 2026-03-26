@@ -1,0 +1,163 @@
+set $alt Mod1
+set $mod Mod4
+
+font pango:Source Code Pro Semibold 12
+
+# app binds
+bindsym $mod+grave exec foot
+bindsym $mod+Escape exec foot
+bindsym $mod+F1 exec chromium
+bindsym $mod+F2 exec thunar
+bindsym $mod+Ctrl+l exec swaylock -c 000000
+bindsym $mod+Ctrl+Escape exec xkill
+bindsym $mod+Shift+b exec pkill -USR1 waybar
+
+# kill focused window
+bindsym $mod+w kill
+bindsym button2 kill
+
+# app launcher
+bindsym $mod+space exec wofi --show run
+bindsym $alt+space exec wofi --show drun
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+backslash split h
+
+# split in vertical orientation
+bindsym $mod+minus split v
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+e layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+s layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+f floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+Tab focus mode_toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+z fullscreen
+
+# focus the parent container
+bindsym $mod+c focus parent
+
+# focus the child container
+bindsym $mod+Shift+c focus child
+
+# move the currently focused window to the scratchpad
+bindsym Shift+Menu move scratchpad
+bindsym $mod+Shift+m move scratchpad
+
+# show the next scratchpad window or hide the focused scratchpad window
+bindsym Menu scratchpad show
+bindsym $mod+m scratchpad show
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
+
+bindsym $mod+Tab workspace back_and_forth
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+n move container to workspace next
+bindsym $mod+Shift+p move container to workspace prev
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+# exit sway
+bindsym $mod+Shift+q exec swaymsg exit
+
+# always floating layout for wine/xwayland apps
+for_window [class="Wine"] floating enable
+
+# 1px border for all windows
+for_window [app_id="^.*"] border 1pixel
+for_window [class="^.*"] border 1pixel
+
+# hold this to move floating window with left click, or resize with right
+floating_modifier $mod normal
+
+# resize window
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# bar
+bar {
+  swaybar_command waybar
+}
+
+# color settings
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+
+# gaps
+gaps inner 20
+gaps outer 15
+smart_gaps on
+smart_borders on
+
+# XWayland support
+xwayland enable

@@ -59,3 +59,17 @@ if [ $FORCE_FLAG -ne 1 ]; then
 else
   ln -sf $link_src $link_dest
 fi
+
+# sway
+if iscmd sway; then
+  mkdir -p ${HOME}/.config/sway
+  link_src=${HOME}/.consart/X/sway/config
+  link_dest=${HOME}/.config/sway/config
+  echo "$link_dest \t -> $link_src"
+  if [ $FORCE_FLAG -ne 1 ]; then
+    test -e $link_dest && rm -ir $link_dest
+    ln -s $link_src $link_dest
+  else
+    ln -sf $link_src $link_dest
+  fi
+end
