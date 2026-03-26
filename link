@@ -61,7 +61,7 @@ else
 fi
 
 # sway
-if iscmd sway; then
+if command -v sway &>/dev/null; then
   mkdir -p ${HOME}/.config/sway
   link_src=${HOME}/.consart/X/sway/config
   link_dest=${HOME}/.config/sway/config
@@ -72,4 +72,4 @@ if iscmd sway; then
   else
     ln -sf $link_src $link_dest
   fi
-end
+fi
