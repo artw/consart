@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+local session="${1:-${HOSTNAME:-$(hostname -s)}}"
+if [[ -n "$DISTROBOX" ]]; then
+  cd ~; tmux attach -t "$session" 2>/dev/null \
+    || tmux new-session -s "$session" "distrobox enter $DISTROBOX"
+else
+  cd ~; tmux attach -t "$session" 2>/dev/null \
+    || tmux new-session -s "$session"
+fi
