@@ -1,4 +1,4 @@
-#compdef de
+#compdef dbe
 
 _de() {
   local -a boxes

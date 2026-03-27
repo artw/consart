@@ -1,0 +1,21 @@
+#!/usr/bin/env -S zsh -f
+
+if ! command -v distrobox &>/dev/null; then
+  echo "dbe: distrobox not found" >&2
+  return 1
+fi
+
+if [[ -z $1 ]]; then
+  if [[ -n "$DISTROBOX" ]]; then
+    distrobox enter "$DISTROBOX"
+  elif iscmd fzf; then
+    local box=$(distrobox list --no-color | tail -n +2 | awk -F'|' '{gsub(/^ +| +$/, "", $2); print $2}' | fzf)
+    [[ -z $box ]] && return 1
+    distrobox enter $box
+  else
+    echo "usage: $0 [name]"
+    echo "\tinstall fzf for list menu"
+  fi
+else
+  distrobox enter $1
+fi
