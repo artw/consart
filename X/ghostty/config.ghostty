@@ -1,2 +1,14 @@
+# visual
 theme = Jellybeans
 font-feature = -calt, -liga, -dlig
+
+# window
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+
+# cursor
+cursor-style-blink = true
+mouse-hide-while-typing = true
+shell-integration = detect
+shell-integration-features = no-cursor
