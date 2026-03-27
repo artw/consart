@@ -1,2 +1,2 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 mkdir -p $1 && cd $1

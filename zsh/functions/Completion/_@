@@ -1,0 +1,11 @@
+#compdef @
+
+_@() {
+  if iscmd mosh; then
+    _mosh "$@"
+  else
+    _ssh "$@"
+  fi
+}
+
+_@ "$@"

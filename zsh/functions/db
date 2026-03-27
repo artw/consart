@@ -1,0 +1,12 @@
+#!/usr/bin/env -S zsh -f
+
+if ! command -v distrobox &>/dev/null; then
+  echo "db: distrobox not found" >&2
+  return 1
+fi
+
+if [[ $# -eq 0 ]]; then
+  distrobox enter "${DISTROBOX:-}"
+else
+  distrobox "$@"
+fi

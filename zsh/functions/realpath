@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 # print absolute path of all files specified as arguments
 for f in "$@"; do
   test -f ${f} && echo ${f}(:A);

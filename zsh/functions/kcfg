@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 
 local configs=( ~/.kube/*.yaml(N) ~/.kube/*.yml(N) )
 [[ -f ~/.kube/config ]] && configs=( ~/.kube/config $configs )

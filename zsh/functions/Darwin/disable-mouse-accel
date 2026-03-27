@@ -1,2 +1,2 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 defaults write .GlobalPreferences com.apple.mouse.scaling -1

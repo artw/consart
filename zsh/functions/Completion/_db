@@ -1,0 +1,49 @@
+#compdef db
+
+_db() {
+  local -a subcommands
+  subcommands=(
+    'enter:Enter a distrobox container'
+    'create:Create a new distrobox container'
+    'rm:Remove a distrobox container'
+    'list:List distrobox containers'
+    'stop:Stop a running container'
+    'start:Start a stopped container'
+    'export:Export an application or binary from a container'
+    'ephemeral:Create a temporary distrobox container'
+    'upgrade:Upgrade one or all containers'
+    'assemble:Assemble containers from a manifest file'
+    'generate-entry:Generate a desktop entry for a container'
+    'init:Initialize a container (run inside distrobox)'
+  )
+
+  local -a boxes
+  _distrobox_boxes() {
+    boxes=( ${(f)"$(distrobox list --no-color 2>/dev/null | tail -n +2 | awk -F'|' '{gsub(/^ +| +$/, "", $2); print $2}')"} )
+    _describe 'distrobox container' boxes
+  }
+
+  if (( CURRENT == 2 )); then
+    _describe 'subcommand' subcommands
+    _distrobox_boxes
+  elif (( CURRENT >= 3 )); then
+    case $words[2] in
+      enter|rm|stop|start|upgrade)
+        _distrobox_boxes ;;
+      export)
+        _arguments \
+          '--app[Export application]:' \
+          '--bin[Export binary]:file:_files' \
+          '--export-path[Path to export to]:dir:_directories' \
+          '--extra-flags[Extra flags]:' ;;
+      create)
+        _arguments \
+          '--name[Container name]:' \
+          '--image[Container image]:' ;;
+      assemble)
+        _arguments '*:file:_files' ;;
+    esac
+  fi
+}
+
+_db "$@"

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 # test if specified argument is an executable command
 # it can be either a path, a command in $PATH, a builtin or alias
 if [[ ( -f $1 && -x $1 ) ]] || (( $+commands[$1] )); then

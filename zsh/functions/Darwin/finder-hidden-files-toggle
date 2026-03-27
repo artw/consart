@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env -S zsh -f
 
 local DOMAIN="com.apple.finder" 
 local PARAM="AppleShowAllFiles"

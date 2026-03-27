@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 if [[ $UID == 0 ]]; then
   return 0
 else 

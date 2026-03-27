@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 
 local inv_dir="$HOME/sync/code/ansible/inv"
 local -a invs

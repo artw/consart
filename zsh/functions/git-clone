@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 if [[ -z $1 ]]; then
   echo "usage: $0 <repo address> <local dir>"
   return 1

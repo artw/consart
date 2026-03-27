@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 # set -x
 # Cache sudo availability (checked once via zsh builtin)
 if (( $+commands[sudo] )) && (( $+commands[$1] )); then

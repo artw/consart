@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 # space switching delay when dragging windows to screen borders
 defaults write com.apple.dock workspaces-edge-delay -float 5
 

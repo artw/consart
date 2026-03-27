@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -f
+#!/usr/bin/env -S zsh -f
 fw='/usr/libexec/ApplicationFirewall/socketfilterfw'
 
 mosh_server_sym="$(which mosh-server)"

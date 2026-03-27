@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
    echo server: $1
    echo vmid: $2
    echo vncport: $3

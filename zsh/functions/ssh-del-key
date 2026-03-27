@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env -S zsh -f
 linenum=$1
 filepath="${HOME}/.ssh/known_hosts"
 if [[ $linenum -ge 1 ]]; then
