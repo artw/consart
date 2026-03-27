@@ -147,7 +147,6 @@ if has('gui_running')
   set guioptions-=R           " disable right scrollbar if not needed
   set guioptions-=r           "
   set guioptions=c            " do not use gui popup for simple choices
-  "set guicursor+=a:blinkon0   " disable cursor blinking
 
   set list                    " show hidden chars
   set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
@@ -156,6 +155,18 @@ if has('gui_running')
     let PATH = system("source " . $HOME . "/.zshrc")
   endif
 endif
+" blinking cursor in terminal (vim and nvim)
+if !has('gui_running')
+  if has('nvim')
+    set guicursor+=a:blinkwait700-blinkoff400-blinkon250
+  else
+    let &t_EI = "\e[1 q"  " blinking block  (normal mode)
+    let &t_SI = "\e[5 q"  " blinking bar    (insert mode)
+    let &t_SR = "\e[3 q"  " blinking under  (replace mode)
+    autocmd VimLeave * silent !printf '\e[1 q'  " restore on exit
+  endif
+endif
+
 set bg=dark
 colorscheme jellybeans
 
