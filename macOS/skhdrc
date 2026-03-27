@@ -12,9 +12,8 @@ ctrl + alt + cmd - g : yabai -m space --toggle padding; \
 # cmd - 0x0A : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 # cmd - 0x32 : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
 # alt - escape : osascript ~/.consart/macOS/osascript/new-iterm-window.scpt
-cmd - 0x0A : open -a Ghostty.app --args --quit-after-last-window-closed=true
-cmd - 0x32 : open -a Ghostty.app --args --quit-after-last-window-closed=true
-alt - escape : open -a Ghostty.app --args --quit-after-last-window-closed=true
+cmd - 0x0A -> : open -a Ghostty.app --args --quit-after-last-window-closed=true
+cmd - 0x32 -> : open -a Ghostty.app --args --quit-after-last-window-closed=true
 
 ## mission control
 alt - tab : open -a Mission\ Control
