@@ -1,7 +1,12 @@
-#!/usr/bin/env zsh
-if [[ -z "$2" ]]; then
-  ssh $1
+#!/usr/bin/env -S zsh -f
+
+if iscmd mosh; then
+  mosh "$@"
 else
-  host=$1; shift
-  ssh -t $host '$SHELL' -i -c \"$*\"
+  if [[ $# -le 1 ]]; then
+    ssh $1
+  else
+    local host=$1; shift
+    ssh -t $host '$SHELL' -i -c \"$*\"
+  fi
 fi

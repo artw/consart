@@ -40,7 +40,6 @@ for f in ~/.zsh/functions/Completion/**; do
   compdef $f:t ${${f:t}:1:$}
 done
 
-compdef _ssh '@'
 
 iscmd kubectl && $(source <(command kubectl completion zsh&))
 iscmd k9s && $(source <(command k9s completion zsh&) && compdef _k9s k9s&)
