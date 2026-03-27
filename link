@@ -63,7 +63,7 @@ fi
 # ghostty
 if command -v ghostty &>/dev/null; then
   mkdir -p ${HOME}/.config/ghostty
-  link_src=${HOME}/.consart/X/ghostty/config.ghostty
+  link_src=${HOME}/.consart/X/config.ghostty
   link_dest=${HOME}/.config/ghostty/config.ghostty
   echo "$link_dest \t -> $link_src"
   if [ $FORCE_FLAG -ne 1 ]; then
