@@ -1,0 +1,38 @@
+#!/usr/bin/env -S zsh -f
+
+local name="${1:?usage: proj <name>}"
+local base=~/Sync/code
+
+# find project dir: exact match at top level or one level deep
+local dir
+dir=$(find "$base" -mindepth 1 -maxdepth 2 -type d -name "$name" 2>/dev/null | head -1)
+
+if [[ -z $dir ]]; then
+  echo "proj: no project '$name' found under $base" >&2
+  return 1
+fi
+
+# sanitize session name (tmux dislikes dots and slashes)
+local session="${name//[.\/]/-}"
+
+# attach if session exists
+if tmux has-session -t "$session" 2>/dev/null; then
+  tmux attach -t "$session"
+  return
+fi
+
+# create session with first window in project dir (blank shell)
+tmux new-session -d -s "$session" -c "$dir" -x 220 -y 50
+
+# split vertically: left=lazygit, right=pi -r
+tmux split-window -h -t "$session:0" -c "$dir" "pi -r"
+
+# split left pane horizontally: top=lazygit, bottom=blank shell
+# 0.0 becomes top-left (lazygit), new pane 0.1 is bottom-left (shell)
+tmux split-window -v -t "$session:0.0" -c "$dir"
+tmux send-keys -t "$session:0.0" "lazygit" Enter
+
+# select the shell pane
+tmux select-pane -t "$session:0.1"
+
+tmux attach -t "$session"
