@@ -261,7 +261,7 @@ fi
 if iscmd distrobox; then
   alias db="distrobox"
 fi
-iscmd distrobox-host-exec && alias host-exec="distrobox-host-exec"
+iscmd distrobox-host-exec && alias hexec="distrobox-host-exec"
 
 if iscmd kubectl; then
   alias k="kubectl"
