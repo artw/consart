@@ -1,97 +1,51 @@
-# load zplug if available
-local zplug=~/.zplug/init.zsh
-if [[ -f $zplug ]]; then
+# antidote - plugin manager
+# prefer the self-managed copy (updated via antidote update), fall back to bootstrap
+local _antidote_sh
+for _antidote_sh in \
+  ${ANTIDOTE_HOME}/github.com/mattmc3/antidote/antidote.zsh \
+  ~/.antidote/antidote.zsh; do
+  [[ -f $_antidote_sh ]] && { source $_antidote_sh; break }
+done
+unset _antidote_sh
 
-  zsh_plugins=(
-    #artw/oracle.zsh
-    # chrissicool/zsh-256color
-    # sharat87/zsh-vim-mode
-    zsh-users/zsh-autosuggestions
-    zsh-users/zsh-completions
-    zsh-users/zsh-syntax-highlighting
-    #zsh-users/zsh-history-substring-search
-  )
-  oh_my_zsh_plugins=(
-    # 1password
-    sudo
-  )
+# load plugins (uses ~/.zsh_plugins.txt, generates ~/.zsh_plugins.zsh)
+(( $+functions[antidote] )) && antidote load
 
-  source $zplug
-  for plugin in $oh_my_zsh_plugins; do
-    zplug "plugins/$plugin", from:oh-my-zsh
-  done
-  for bundle in $zsh_plugins; do
-    zplug "$bundle"
-  done
-
-  # Plugins with custom settings
-  #zplug "clvv/fasd", use:fasd
-  zplug "agkozak/zsh-z"
-  #zplug "gcuisinier/jenv", as:command, use:"bin/jenv"
-  #zplug "harelba/q", as:command, use:"bin/q"
-  #zplug "rbenv/rbenv", as:command, use:"bin/rbenv"
-  #zplug "junegunn/fzf", as:command, use:"{bin/fzf-tmux,fzf}"
-
-  if [[ "$P10K_ENABLE" == "yes" && (
-      $TERM == screen* ||
-      $TERM == tmux* ||
-      $TERM == xterm* ||
-      $TERM == *256color
-   ) ]]; then
-    zplug romkatv/powerlevel10k, as:theme, depth:1
-  fi
-  # zplug self manage
-  zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-  # Install plugins if there are plugins that have not been installed
-  # if ! zplug check --verbose; then
-  #     printf "Install? [y/N]: "
-  #     if read -q; then
-  #         echo; zplug install
-  #     fi
-  # fi
-  # load zplug
-  zplug load
-
-  # z + fzf integration
-  if iscmd fzf; then
-    unalias z 2>/dev/null
-    z() {
-      local dir=$(awk -F'|' '{print $1}' ${_Z_DATA:-$HOME/.z} | fzf --tac -q "$*")
-      [[ -n $dir ]] && cd "$dir"
-    }
-  fi
-
-  # atuin - frecency-powered shell history
-  iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
-  #iscmd fasd && eval "$(fasd --init auto)"
-  #iscmd rbenv && eval "$(rbenv init -)"
-  #iscmd fzf && source $ZPLUG_REPOS/junegunn/fzf/shell/*.zsh
+# z + fzf integration
+if iscmd fzf; then
+  unalias z 2>/dev/null
+  function z {
+    local dir=$(awk -F'|' '{print $1}' ${_Z_DATA:-$HOME/.z} | fzf --tac -q "$*")
+    [[ -n $dir ]] && cd "$dir"
+  }
 fi
 
-# load perlbrew if installed
-if [ -f $HOME/.perlbrew/etc/bashrc ]; then
-  function perlbrew() { 
+# atuin - frecency-powered shell history
+iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
+
+# lazy inits (only run if tool is installed; must affect current shell, no &)
+iscmd jenv && eval "$(jenv init -)"
+iscmd thefuck && eval "$(thefuck --alias)"
+
+# perlbrew - lazy load on first use
+if [[ -f $HOME/.perlbrew/etc/bashrc ]]; then
+  function perlbrew() {
     sourceiff $HOME/.perlbrew/etc/bashrc
     perlbrew "$@"
   }
 fi
 
-iscmd jenv && eval "$(jenv init -)"&
-iscmd thefuck && eval "$(thefuck --alias)"&
-
-# load  pkgfile command-not-find addon if installed
+# pkgfile command-not-found handler (arch linux)
 sourceiff /usr/share/doc/pkgfile/command-not-found.zsh
 
-# Go language
-iscmd go && export GOPATH=~/.go; export PATH=$PATH:$GOPATH/bin
+# Go
+if iscmd go; then
+  export GOPATH=~/.go
+  export PATH=$PATH:$GOPATH/bin
+fi
 
-# p10k theme
-iscmd p10k && source ~/.zsh/p10k.zsh
+## installers
 
-## installers for plugins
-
-# perlbrew, perl installation management tool
 function install_perlbrew {
   if [[ -d $HOME/.perlbrew ]]; then
     echo "~/.perlbrew already exists, trying to update instead"
@@ -102,20 +56,22 @@ function install_perlbrew {
   curl -L http://install.perlbrew.pl | sh
 }
 
-# vim-plug, plugin manager for vim
 function install_vimplug {
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-# zplug, plugin manager for zsh
-function install_zplug {
-  git-clone zplug/zplug ~/.zplug
+function install_antidote {
+  if [[ -d ~/.antidote ]]; then
+    echo "~/.antidote already exists — run 'antidote update' to update"
+    return
+  fi
+  git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote
+  echo "antidote installed — restart shell or run: source ~/.antidote/antidote.zsh && antidote load"
 }
 
-# tmux plugin manager
 function install_tpm {
-  git-clone tmux-plugins/tpm ~/.tmux/plugins/tpm 
+  git-clone tmux-plugins/tpm ~/.tmux/plugins/tpm
   local runline="run '~/.tmux/plugins/tpm/tpm'"
   local conf="$HOME/.tmux.conf"
   grep $runline $conf &> /dev/null || echo $runline >> $conf

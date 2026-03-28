@@ -136,6 +136,9 @@ foreach editor in $editors
   fi
 end
 
+# antidote plugin home (persistent, not cache — plugins survive cache clears)
+export ANTIDOTE_HOME=~/.local/share/antidote
+
 # unbind C-S and C-Q for use in vim maps
 # if which stty > /dev/null;then
 #   stty -ixon

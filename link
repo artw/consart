@@ -48,6 +48,17 @@ else
   ln -sf $link_src $link_dest
 fi
 
+# antidote plugins list
+link_src=${HOME}/.consart/zsh/zsh_plugins.txt
+link_dest=${HOME}/.zsh_plugins.txt
+echo "$link_dest \t -> $link_src"
+if [ $FORCE_FLAG -ne 1 ]; then
+  test -e $link_dest && rm -ir $link_dest
+  ln -s $link_src $link_dest
+else
+  ln -sf $link_src $link_dest
+fi
+
 # neovim to use vimrc
 mkdir -p ${HOME}/.config/nvim
 link_src=${HOME}/.consart/misc/config-nvim-init.vim

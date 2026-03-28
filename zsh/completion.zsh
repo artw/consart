@@ -41,7 +41,14 @@ for f in ~/.zsh/functions/Completion/**; do
 done
 
 
-iscmd kubectl && $(source <(command kubectl completion zsh&))
-iscmd k9s && $(source <(command k9s completion zsh&) && compdef _k9s k9s&)
-# iscmd rclone && source <(command rclone completion zsh)
-iscmd gog && source <(command gog completion zsh&)
+# defer slow cli completions until after first prompt
+if (( $+functions[zsh-defer] )); then
+  iscmd kubectl && zsh-defer -c 'source <(kubectl completion zsh)'
+  iscmd k9s    && zsh-defer -c 'source <(k9s completion zsh); compdef _k9s k9s'
+  # iscmd rclone && zsh-defer -c 'source <(rclone completion zsh)'
+  iscmd gog    && zsh-defer -c 'source <(gog completion zsh)'
+else
+  iscmd kubectl && source <(kubectl completion zsh)
+  iscmd k9s    && { source <(k9s completion zsh); compdef _k9s k9s }
+  iscmd gog    && source <(gog completion zsh)
+fi

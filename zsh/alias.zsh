@@ -123,6 +123,10 @@ solaris*)
 ;;
 esac
 
+## p10k git status toggle (off by default, gitstatus slows startup)
+function giton { export P10K_GIT=1; source ~/.zsh/p10k.zsh }
+function gitoff { unset P10K_GIT; source ~/.zsh/p10k.zsh }
+
 ## universal aliases
 alias rezsh="source ~/.zshrc"
 # do not correct some commands
