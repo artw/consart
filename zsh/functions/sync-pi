@@ -1,0 +1,16 @@
+#!/usr/bin/env -S zsh -f
+local pi_dir=$HOME/.pi
+local sync_dir=$HOME/Sync/code/pi
+
+if [[ -d $pi_dir ]]; then
+  echo $pi_dir is already a dir, clean up before linking
+  return 1
+else
+  mkdir -p $pi_dir
+  pushd $pi_dir >/dev/null
+  for f in $sync_dir/*; do
+    ln -s $f
+  done
+  ln -s . agent
+  popd >/dev/null
+fi
