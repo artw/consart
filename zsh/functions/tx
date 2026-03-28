@@ -1,14 +1,12 @@
 #!/usr/bin/env -S zsh -f
 
 local session="${1:-${HOSTNAME:-$(hostname -s)}}"
-if [[ -n "$DISTROBOX" ]]; then
-  if ! command -v distrobox &>/dev/null; then
-    echo "tx: distrobox not found (DISTROBOX=$DISTROBOX)" >&2
-    return 1
-  fi
+if [[ -n "$DISTROBOX" ]] && command -v distrobox &>/dev/null; then
+  # Called from host — enter the distrobox and attach/create tmux there
   cd ~; distrobox enter "$DISTROBOX" -- tmux attach -t "$session" 2>/dev/null \
     || distrobox enter "$DISTROBOX" -- tmux new-session -s "$session"
 else
+  # Either no DISTROBOX set, or already inside a distrobox (distrobox not in PATH)
   cd ~; tmux attach -t "$session" 2>/dev/null \
     || tmux new-session -s "$session"
 fi
