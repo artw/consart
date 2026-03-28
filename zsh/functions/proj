@@ -24,15 +24,21 @@ fi
 # create session with first window in project dir (blank shell)
 tmux new-session -d -s "$session" -c "$dir" -x 220 -y 50
 
-# split vertically: left=lazygit, right=pi -r
-tmux split-window -h -t "$session:0" -c "$dir" "pi -r"
+# capture the initial pane ID (avoids base-index assumptions)
+local first_pane
+first_pane=$(tmux display-message -t "$session" -p '#{pane_id}')
 
-# split left pane horizontally: top=lazygit, bottom=blank shell
-# 0.0 becomes top-left (lazygit), new pane 0.1 is bottom-left (shell)
-tmux split-window -v -t "$session:0.0" -c "$dir"
-tmux send-keys -t "$session:0.0" "lazygit" Enter
+# split horizontally: right pane gets pi -r
+tmux split-window -h -t "$first_pane" -c "$dir" "pi -r"
 
-# select the shell pane
-tmux select-pane -t "$session:0.1"
+# split left pane vertically: bottom pane = blank shell
+local shell_pane
+shell_pane=$(tmux split-window -v -t "$first_pane" -c "$dir" -P -F '#{pane_id}')
+
+# send lazygit to top-left (original) pane
+tmux send-keys -t "$first_pane" "lazygit" Enter
+
+# select the shell pane (bottom-left)
+tmux select-pane -t "$shell_pane"
 
 tmux attach -t "$session"
