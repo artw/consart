@@ -237,15 +237,18 @@ iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
 alias cup="cd ~/.consart && git pull"
 
 if iscmd podman; then
-  alias p="podman"
-  alias pe="podman exec"
-  alias pes="podman exec -ti sh -c"
-  alias pr="podman run -ti --rm"
-  alias prs="podman run -ti --rm --entrypoint sh"
-  alias sp="${sudo}podman"
-  alias spe="${sudo}podman"
-  alias spr="${sudo}podman run -ti --rm"
-  alias sprs="${sudo}podman run -ti --rm --entrypoint sh"
+  local _dhe=""
+  [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec && _dhe="distrobox-host-exec "
+  alias p="${_dhe}podman"
+  alias pe="${_dhe}podman exec"
+  alias pes="${_dhe}podman exec -ti sh -c"
+  alias pr="${_dhe}podman run -ti --rm"
+  alias prs="${_dhe}podman run -ti --rm --entrypoint sh"
+  alias sp="${_dhe}${sudo}podman"
+  alias spe="${_dhe}${sudo}podman exec"
+  alias spr="${_dhe}${sudo}podman run -ti --rm"
+  alias sprs="${_dhe}${sudo}podman run -ti --rm --entrypoint sh"
+  unset _dhe
 fi
 
 # if iscmd docker; then
@@ -256,8 +259,9 @@ fi
 # fi
 
 if iscmd distrobox; then
-  alias d="distrobox"
+  alias db="distrobox"
 fi
+iscmd distrobox-host-exec && alias host-exec="distrobox-host-exec"
 
 if iscmd kubectl; then
   alias k="kubectl"
