@@ -98,6 +98,9 @@ set smartcase                  "  ignore case when lowercase, don't ignore if no
 set cursorline                 "  highlight the line with cursor
 set cursorcolumn               "  highlight the column with cursor
 
+set foldmethod=indent          "  fold by indentation
+set foldlevel=99               "  start with all folds open
+
 " set relativenumber           "  show relative line numbers
 
 " enable mouse if available
