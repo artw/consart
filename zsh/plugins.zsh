@@ -8,8 +8,15 @@ for _antidote_sh in \
 done
 unset _antidote_sh
 
-# load plugins (uses ~/.zsh_plugins.txt, generates ~/.zsh_plugins.zsh)
-(( $+functions[antidote] )) && antidote load
+# load plugins — bundle file lives in dotfiles (~/.zsh/), static file in $HOME
+if (( $+functions[antidote] )); then
+  local _bundle=~/.zsh/zsh_plugins.txt
+  local _static=${ANTIDOTE_HOME}/zsh_plugins.zsh
+  if [[ ! -f $_static || $_bundle -nt $_static ]]; then
+    antidote bundle <$_bundle >$_static
+  fi
+  source $_static
+fi
 
 # z + fzf integration
 if iscmd fzf; then
