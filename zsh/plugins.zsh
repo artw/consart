@@ -13,9 +13,10 @@ if (( $+functions[antidote] )); then
   local _bundle=~/.zsh/zsh_plugins.txt
   local _static=${ANTIDOTE_HOME}/zsh_plugins.zsh
   if [[ ! -f $_static || $_bundle -nt $_static ]]; then
+    mkdir -p ${_static:h}
     antidote bundle <$_bundle >$_static
   fi
-  source $_static
+  [[ -f $_static ]] && source $_static
 fi
 
 # z + fzf integration
