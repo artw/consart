@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'dbext.vim',           { 'for': 'sql' }
 "Plug 'dhruvasagar/vim-table-mode'
 "Plug 'edkolev/tmuxline.vim'
-Plug 'fcpg/vim-osc52'
+"Plug 'fcpg/vim-osc52'
 "Plug 'gmarik/sudo-gui.vim'
 "Plug 'mcchrish/nnn.vim'
 "Plug 'mileszs/ack.vim',     { 'on': 'Ack' }
@@ -90,6 +90,10 @@ set autoread                  "  autoreload files after they are changed
 set updatetime=1000            "  check every 1s
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
 "set clipboard=unnamed         "  use system clipboard register by default
+if has('nvim')
+  set clipboard=unnamedplus
+  lua vim.g.clipboard = { name = 'OSC 52', copy = { ['+'] = require('vim.ui.clipboard.osc52').copy('+'), ['*'] = require('vim.ui.clipboard.osc52').copy('*') }, paste = { ['+'] = require('vim.ui.clipboard.osc52').paste('+'), ['*'] = require('vim.ui.clipboard.osc52').paste('*') } }
+endif
 "set virtualedit=onemore       "  allow cursor beyond last character
 "set virtualedit=all           "  put cursor anywhere in the file
 set ignorecase                 "
@@ -251,9 +255,7 @@ nmap <C-f> :Rg<CR>
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
-" vim-osc52
-vmap <C-c> y:Oscyank<CR>
-xmap <F7> y:Oscyank<CR>
+" OSC 52 — handled via built-in clipboard provider above (nvim 0.10+)
 
 " gitgutter
 nmap <Leader>n <Plug>(GitGutterNextHunk)
