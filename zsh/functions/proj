@@ -15,9 +15,13 @@ fi
 # sanitize session name (tmux dislikes dots and slashes)
 local session="${name//[.\/]/-}"
 
-# attach if session exists
+# attach or switch to existing session
 if tmux has-session -t "$session" 2>/dev/null; then
-  tmux attach -t "$session"
+  if [[ -n $TMUX ]]; then
+    tmux switch-client -t "$session"
+  else
+    tmux attach -t "$session"
+  fi
   return
 fi
 
@@ -41,4 +45,8 @@ tmux send-keys -t "$first_pane" "lazygit" Enter
 # select the shell pane (bottom-left)
 tmux select-pane -t "$shell_pane"
 
-tmux attach -t "$session"
+if [[ -n $TMUX ]]; then
+  tmux switch-client -t "$session"
+else
+  tmux attach -t "$session"
+fi
