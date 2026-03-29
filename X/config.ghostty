@@ -2,12 +2,7 @@
 #theme = Jellybeans
 font-feature = -calt, -liga, -dlig
 
-# window
-window-padding-x = 4
-window-padding-y = 4
-window-padding-balance = true
 macos-titlebar-style = hidden
-
 confirm-close-surface = false
 
 # cursor
