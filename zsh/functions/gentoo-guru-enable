@@ -1,0 +1,27 @@
+#!/usr/bin/env -S zsh -f
+# Enable and sync the Gentoo GURU overlay
+# https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users
+
+if [[ $(source /etc/os-release; echo $ID) != gentoo ]]; then
+  echo "error: not a Gentoo system" >&2
+  return 1
+fi
+
+local sudo=
+(( UID != 0 )) && sudo=sudo
+
+# ensure prerequisites are installed
+for pkg in app-eselect/eselect-repository dev-vcs/git; do
+  if ! qlist -I "$pkg" &>/dev/null; then
+    echo ">>> Installing $pkg ..."
+    $sudo emerge --ask --noreplace "$pkg"
+  fi
+done
+
+echo ">>> Enabling GURU repository ..."
+$sudo eselect repository enable guru
+
+echo ">>> Syncing GURU repository ..."
+$sudo emaint sync -r guru
+
+echo ">>> GURU is ready. You can now emerge packages from it."
