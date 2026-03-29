@@ -300,3 +300,6 @@ if iscmd drill && ! iscmd dig; then
 fi
 
 iscmd python3 && alias py=python3
+
+alias pi-install='npm install -g @mariozechner/pi-coding-agent'
+alias pi-update='npm install -g @mariozechner/pi-coding-agent'
