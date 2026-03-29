@@ -1,0 +1,19 @@
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+gui:
+  # don't prompt "press enter to return" after editor/subprocess exits
+  promptToReturnFromSubprocess: false
+  # nerd fonts icons (v3)
+  nerdFontsVersion: "3"
+  # show file tree instead of flat list in staging area
+  showFileTree: true
+  # hide the bottom keybinding hint bar
+  showBottomLine: false
+
+git:
+  # fetch all remotes on auto-fetch
+  fetchAll: true
+  # use delta for nicer diffs (requires delta installed)
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never

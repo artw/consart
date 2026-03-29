@@ -60,6 +60,20 @@ else
   ln -sf $link_src $link_dest
 fi
 
+# lazygit
+if command -v lazygit &>/dev/null; then
+  mkdir -p ${HOME}/.config/lazygit
+  link_src=${HOME}/.consart/misc/lazygit/config.yml
+  link_dest=${HOME}/.config/lazygit/config.yml
+  echo "$link_dest \t -> $link_src"
+  if [ $FORCE_FLAG -ne 1 ]; then
+    test -e $link_dest && rm -ir $link_dest
+    ln -s $link_src $link_dest
+  else
+    ln -sf $link_src $link_dest
+  fi
+fi
+
 # ghostty
 if command -v ghostty &>/dev/null; then
   mkdir -p ${HOME}/.config/ghostty
