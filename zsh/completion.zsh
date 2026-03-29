@@ -41,6 +41,17 @@ for f in ~/.zsh/functions/Completion/**; do
 done
 
 
+# distrobox: wire db alias and dbe to completions
+if iscmd distrobox; then
+  compdef _distrobox db
+  _dbe() {
+    local -a boxes
+    boxes=( ${(f)"$(distrobox list --no-color 2>/dev/null | tail -n +2 | awk -F'|' '{gsub(/^ +| +$/, "", $2); print $2}')"} )
+    _describe 'distrobox container' boxes
+  }
+  compdef _dbe dbe
+fi
+
 # defer slow cli completions until after first prompt
 if (( $+functions[zsh-defer] )); then
   iscmd kubectl && zsh-defer -c 'source <(kubectl completion zsh)'

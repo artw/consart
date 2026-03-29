@@ -260,6 +260,7 @@ fi
 
 if iscmd distrobox; then
   alias db="distrobox"
+  dbe() { distrobox enter "${1:-$DISTROBOX}"; }
 fi
 iscmd distrobox-host-exec && alias hexec="distrobox-host-exec"
 
