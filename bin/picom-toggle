@@ -1,8 +1,0 @@
-#!/bin/sh
-PID=`pidof picom`
-
-if [ -z $PID  ]; then
-  picom -b
-else 
-  kill $PID
-fi
