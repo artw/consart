@@ -52,35 +52,3 @@ if iscmd go; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
-## installers
-
-function install_perlbrew {
-  if [[ -d $HOME/.perlbrew ]]; then
-    echo "~/.perlbrew already exists, trying to update instead"
-    perlbrew self-upgrade
-    return
-  fi
-  export PERLBREW_ROOT=$HOME/.perlbrew
-  curl -L http://install.perlbrew.pl | sh
-}
-
-function install_vimplug {
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
-
-function install_antidote {
-  if [[ -d ~/.antidote ]]; then
-    echo "~/.antidote already exists — run 'antidote update' to update"
-    return
-  fi
-  git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote
-  echo "antidote installed — restart shell or run: source ~/.antidote/antidote.zsh && antidote load"
-}
-
-function install_tpm {
-  git-clone tmux-plugins/tpm ~/.tmux/plugins/tpm
-  local runline="run '~/.tmux/plugins/tpm/tpm'"
-  local conf="$HOME/.tmux.conf"
-  grep $runline $conf &> /dev/null || echo $runline >> $conf
-}
