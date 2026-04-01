@@ -17,6 +17,8 @@ source $HOME/.zsh/plugins.zsh
 source $HOME/.zsh/hooks.zsh
 source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/alias.zsh
+source $HOME/.zsh/tools.zsh
+source $HOME/.zsh/crypt.zsh
 
 # load zshrc.local2
 if [[ -f $HOME/.zshrc.local2 ]] then
