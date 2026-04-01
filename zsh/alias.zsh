@@ -304,3 +304,14 @@ iscmd python3 && alias py=python3
 
 alias pi-install='npm install -g @mariozechner/pi-coding-agent'
 alias pi-update='npm install -g @mariozechner/pi-coding-agent'
+
+# image display in terminal (chafa with kitty protocol + tmux passthrough)
+if iscmd chafa; then
+  function icat {
+    if [[ -n $TMUX ]]; then
+      chafa --format=kitty --passthrough=tmux "$@"
+    else
+      chafa --format=kitty "$@"
+    fi
+  }
+fi
