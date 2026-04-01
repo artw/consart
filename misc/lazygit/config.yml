@@ -9,11 +9,10 @@ gui:
   showFileTree: true
   # hide the bottom keybinding hint bar
   showBottomLine: false
-
 git:
   # fetch all remotes on auto-fetch
   fetchAll: true
   # use delta for nicer diffs (requires delta installed)
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  # pagers:
+    # - colorArg: always
+      # pager: delta --dark --paging=never
