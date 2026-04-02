@@ -1,6 +1,6 @@
 #!/usr/bin/env -S zsh -f
 local pi_dir=$HOME/.pi
-local sync_dir=$HOME/Sync/code/pi
+local sync_dir=$HOME/sync/code/pi
 
 if [[ -d $pi_dir ]]; then
   echo $pi_dir is already a dir, clean up before linking
