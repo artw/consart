@@ -1,0 +1,8 @@
+#compdef tx
+
+local -a sessions
+sessions=( ${(f)"$(tmux list-sessions -F '#{session_name}' 2>/dev/null)"} )
+
+_arguments \
+  '-l[list sessions]' \
+  '1:session:compadd -a sessions'
