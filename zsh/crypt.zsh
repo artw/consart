@@ -33,7 +33,21 @@ function crypt-mount {
     return 1
   fi
   [[ -d "$CRYPT_MNT" ]] || mkdir -p "$CRYPT_MNT"
-  gocryptfs "$CRYPT_ENC" "$CRYPT_MNT"
+  local -a _gocryptfs_opts=()
+  [[ $(stat -f -c %T "$CRYPT_ENC" 2>/dev/null) == btrfs ]] && _gocryptfs_opts+=(-noprealloc)
+  gocryptfs $_gocryptfs_opts "$CRYPT_ENC" "$CRYPT_MNT" || return 1
+  # in distrobox, mount propagation is broken — offer to also mount on the host
+  if [[ -n "$DISTROBOX_ENTER_PATH" ]]; then
+    if ! distrobox-host-exec bash -c "mountpoint -q $CRYPT_MNT" 2>/dev/null; then
+      printf "Also mount on the host? [y/N]: "
+      if read -q; then
+        echo
+        distrobox-host-exec gocryptfs $_gocryptfs_opts "$CRYPT_ENC" "$CRYPT_MNT"
+      else
+        echo
+      fi
+    fi
+  fi
 }
 
 function crypt-umount {
