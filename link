@@ -104,6 +104,20 @@ if command -v waybar &>/dev/null; then
   done
 fi
 
+# podman registry auth (from encrypted vault)
+if command -v podman &>/dev/null && [[ -f ${HOME}/.crypt/containers/auth.json ]]; then
+  mkdir -p ${HOME}/.config/containers
+  link_src=${HOME}/.crypt/containers/auth.json
+  link_dest=${HOME}/.config/containers/auth.json
+  echo "$link_dest \t -> $link_src"
+  if [ $FORCE_FLAG -ne 1 ]; then
+    test -e $link_dest && rm -ir $link_dest
+    ln -s $link_src $link_dest
+  else
+    ln -sf $link_src $link_dest
+  fi
+fi
+
 # sway
 if command -v sway &>/dev/null; then
   mkdir -p ${HOME}/.config/sway
