@@ -90,8 +90,8 @@ set autoread                  "  autoreload files after they are changed
 set updatetime=1000            "  check every 1s
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
 "set clipboard=unnamed         "  use system clipboard register by default
+"set clipboard=unnamedplus     "  yanks/deletes go to local registers; use <Leader>y/p for clipboard
 if has('nvim')
-  set clipboard=unnamedplus
   lua vim.g.clipboard = { name = 'OSC 52', copy = { ['+'] = require('vim.ui.clipboard.osc52').copy('+'), ['*'] = require('vim.ui.clipboard.osc52').copy('*') }, paste = { ['+'] = require('vim.ui.clipboard.osc52').paste('+'), ['*'] = require('vim.ui.clipboard.osc52').paste('*') } }
 endif
 "set virtualedit=onemore       "  allow cursor beyond last character
@@ -184,8 +184,15 @@ let mapleader = ","
 " chdir to current file
 command! CD cd %:p:h
 
-" copy all to system clipboard
-command! Y %y*
+" system clipboard (+ register via OSC 52)
+nmap <Leader>y "+y
+vmap <Leader>y "+y
+nmap <Leader>Y "+yy
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+command! Y %y+
 
 "" (re)map keys:
 if !has('nvim')
