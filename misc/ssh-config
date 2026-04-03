@@ -3,6 +3,9 @@ ControlPersist  1
 ControlMaster   auto
 ControlPath     ~/.ssh/tmp/%h_%p_%r
 
+# Suppress post-quantum key exchange warning (OpenSSH 10+)
+WarnWeakCrypto  no-pq-kex
+
 # macOS keychain integration for keys
 #UseKeychain yes
 #AddKeysToAgent yes
