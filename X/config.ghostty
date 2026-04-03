@@ -8,6 +8,7 @@ confirm-close-surface = false
 # cursor
 cursor-style-blink = true
 mouse-hide-while-typing = true
+copy-on-select = false
 # shell-integration-features = no-cursor
 
 # keybinds
