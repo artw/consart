@@ -236,11 +236,14 @@ iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
 #alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
 
-if iscmd podman || { [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; }; then
+if (( $+commands[podman] )) && [[ -f $commands[podman] && -x $commands[podman] ]]; then
   local _podman="podman"
-  if ! iscmd podman && [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
-    _podman="distrobox-host-exec podman"
-  fi
+elif [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
+  local _podman="distrobox-host-exec podman"
+else
+  _podman=
+fi
+if [[ -n $_podman ]]; then
   alias p="${_podman}"
   alias pe="${_podman} exec"
   alias pes="${_podman} exec -ti sh -c"
