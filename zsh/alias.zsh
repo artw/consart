@@ -46,18 +46,28 @@ linux*)
     sudalias $cmd
   done
 
-  if iscmd systemctl; then
-    sudalias systemctl
+  # systemctl — direct or via distrobox host-exec
+  if (( $+commands[systemctl] )) && [[ -f $commands[systemctl] && -x $commands[systemctl] ]]; then
+    iamuser && iscmd sudo && alias systemctl="sudo systemctl"
     alias sc="systemctl"
     alias scu="/usr/bin/systemctl --user"
     alias zzz="systemctl suspend"
     alias halt="systemctl poweroff"
+  elif [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
+    alias sc="distrobox-host-exec sudo systemctl"
+    alias scu="distrobox-host-exec systemctl --user"
+    alias zzz="distrobox-host-exec sudo systemctl suspend"
+    alias halt="distrobox-host-exec sudo systemctl poweroff"
   fi
 
-  if iscmd journalctl; then
-    sudalias journalctl
+  # journalctl — direct or via distrobox host-exec
+  if (( $+commands[journalctl] )) && [[ -f $commands[journalctl] && -x $commands[journalctl] ]]; then
+    iamuser && iscmd sudo && alias journalctl="sudo journalctl"
     alias j="journalctl -xe"
     alias ju="/usr/bin/journalctl -xe --user"
+  elif [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
+    alias j="distrobox-host-exec sudo journalctl -xe"
+    alias ju="distrobox-host-exec journalctl -xe --user"
   fi
 
   # zfs requires root on ZoL
