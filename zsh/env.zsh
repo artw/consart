@@ -139,9 +139,6 @@ end
 # antidote plugin home (persistent, not cache — plugins survive cache clears)
 export ANTIDOTE_HOME=~/.local/share/antidote
 
-# podman registry auth (persistent, lives in encrypted vault)
-[[ -f ~/.crypt/containers/auth.json ]] && export REGISTRY_AUTH_FILE=~/.crypt/containers/auth.json
-
 # unbind C-S and C-Q for use in vim maps
 # if which stty > /dev/null;then
 #   stty -ixon
