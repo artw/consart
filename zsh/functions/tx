@@ -1,5 +1,10 @@
 #!/usr/bin/env -S zsh -f
 
+if [[ "$1" == "-l" ]]; then
+  tmux list-sessions 2>/dev/null || echo "no sessions"
+  return
+fi
+
 local session="${1:-${HOSTNAME:-$(hostname -s)}}"
 if [[ -n "$DISTROBOX" ]] && command -v distrobox &>/dev/null; then
   # Called from host — enter the distrobox and attach/create tmux there
