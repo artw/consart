@@ -7,6 +7,11 @@ function chpwd {
 }
 
 function precmd {
+  # pin prompt to bottom of screen (once on shell start)
+  if [[ -z $_prompt_pinned ]]; then
+    printf '\n%.0s' {1..$((LINES-1))}
+    _prompt_pinned=1
+  fi
   vcs_info
   title "${TITLE_PREFIX}${PWD/$HOME/~}"
 }
