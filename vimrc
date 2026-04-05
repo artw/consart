@@ -40,6 +40,8 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-perl/vim-perl',      { 'for': 'perl' }
 Plug 'yko/mojo.vim',           { 'for': 'perl' }
 
+Plug 'chrisbra/Colorizer'
+
 " colorthemes
 " Plug 'romgrk/doom-one.vim'
 Plug 'nanotech/jellybeans.vim'
@@ -49,6 +51,10 @@ Plug 'nanotech/jellybeans.vim'
 "Plug 'xoria256.vim'
 
 call plug#end()
+
+" chrisbra/Colorizer
+let g:colorizer_auto_filetype = 'css,html,yaml,conf'
+let g:colorizer_colornames    = 0
 
 " save all temporary files in one dir, make it if it does not exist
 if ! isdirectory($HOME . "/.vim")
