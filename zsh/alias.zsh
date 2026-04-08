@@ -19,6 +19,7 @@ linux*)
     sudalias emerge
     alias em="emerge -qav"
     alias udav="emerge -quDavN world"
+    [[ -r ~/.zsh/functions/Linux/portage ]] && source ~/.zsh/functions/Linux/portage
   fi
   # debian
   if iscmd apt-get; then
@@ -46,6 +47,11 @@ linux*)
     sudalias $cmd
   done
 
+  local _sudo=
+  iamuser && iscmd sudo && _sudo="sudo "
+  local _distrobox=
+  [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec && _distrobox="distrobox-host-exec "
+
   # systemctl — direct or via distrobox host-exec
   if (( $+commands[systemctl] )) && [[ -f $commands[systemctl] && -x $commands[systemctl] ]]; then
     iamuser && iscmd sudo && alias systemctl="sudo systemctl"
@@ -53,11 +59,11 @@ linux*)
     alias scu="/usr/bin/systemctl --user"
     alias zzz="systemctl suspend"
     alias halt="systemctl poweroff"
-  elif [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
-    alias sc="distrobox-host-exec sudo systemctl"
-    alias scu="distrobox-host-exec systemctl --user"
-    alias zzz="distrobox-host-exec sudo systemctl suspend"
-    alias halt="distrobox-host-exec sudo systemctl poweroff"
+  elif [[ -n $_distrobox ]]; then
+    alias sc="${_distrobox}${_sudo}systemctl"
+    alias scu="${_distrobox}systemctl --user"
+    alias zzz="${_distrobox}${_sudo}systemctl suspend"
+    alias halt="${_distrobox}${_sudo}systemctl poweroff"
   fi
 
   # journalctl — direct or via distrobox host-exec
@@ -65,9 +71,9 @@ linux*)
     iamuser && iscmd sudo && alias journalctl="sudo journalctl"
     alias j="journalctl -xe"
     alias ju="/usr/bin/journalctl -xe --user"
-  elif [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
-    alias j="distrobox-host-exec sudo journalctl -xe"
-    alias ju="distrobox-host-exec journalctl -xe --user"
+  elif [[ -n $_distrobox ]]; then
+    alias j="${_distrobox}${_sudo}journalctl -xe"
+    alias ju="${_distrobox}journalctl -xe --user"
   fi
 
   # zfs requires root on ZoL
@@ -75,6 +81,7 @@ linux*)
     sudalias zfs
     sudalias zpool
   fi
+
 ;;
 
 darwin*)
@@ -246,23 +253,25 @@ iscmd curl && alias weather="curl wttr.in/riga | grep -v Follow"
 #alias rezsh="rehash && source $HOME/.zshrc"
 alias cup="cd ~/.consart && git pull"
 
-if (( $+commands[podman] )) && [[ -f $commands[podman] && -x $commands[podman] ]]; then
-  local _podman="podman"
-elif [[ -n $DISTROBOX_ENTER_PATH ]] && iscmd distrobox-host-exec; then
-  local _podman="distrobox-host-exec podman"
-else
-  _podman=
+if iscmd podman; then
+  alias p="podman"
+  alias pe="podman exec"
+  alias pes="podman exec -ti sh -c"
+  alias pr="podman run -ti --rm"
+  alias prs="podman run -ti --rm --entrypoint sh"
+elif [[ -n $_distrobox ]]; then
+  alias p="${_distrobox}podman"
+  alias pe="${_distrobox}podman exec"
+  alias pes="${_distrobox}podman exec -ti sh -c"
+  alias pr="${_distrobox}podman run -ti --rm"
+  alias prs="${_distrobox}podman run -ti --rm --entrypoint sh"
 fi
-if [[ -n $_podman ]]; then
-  alias p="${_podman}"
-  alias pe="${_podman} exec"
-  alias pes="${_podman} exec -ti sh -c"
-  alias pr="${_podman} run -ti --rm"
-  alias prs="${_podman} run -ti --rm --entrypoint sh"
-  alias sp="${sudo}${_podman}"
-  alias spe="${sudo}${_podman} exec"
-  alias spr="${sudo}${_podman} run -ti --rm"
-  alias sprs="${sudo}${_podman} run -ti --rm --entrypoint sh"
+if iscmd podman || [[ -n $_distrobox ]]; then
+  alias sp="${_distrobox}${_sudo}podman"
+  alias spe="${_distrobox}${_sudo}podman exec"
+  alias spr="${_distrobox}${_sudo}podman run -ti --rm"
+  alias sprs="${_distrobox}${_sudo}podman run -ti --rm --entrypoint sh"
+  iscmd ollama || alias ollama="${_distrobox}${_sudo}podman exec -ti ollama ollama"
 fi
 
 # if iscmd docker; then
