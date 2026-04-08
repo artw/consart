@@ -31,6 +31,9 @@ fi
 # atuin - frecency-powered shell history
 iscmd atuin && eval "$(atuin init zsh --disable-up-arrow)"
 
+# mise - dev tool version manager (env activation, PATH injection per project)
+iscmd mise && eval "$(mise activate zsh)"
+
 # lazy inits (only run if tool is installed; must affect current shell, no &)
 iscmd jenv && eval "$(jenv init -)"
 iscmd thefuck && eval "$(thefuck --alias)"
