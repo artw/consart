@@ -1,0 +1,6 @@
+#!/usr/bin/env -S zsh -f
+
+# Reset terminal: restore attrs, clear screen, restart shell (reloads all dotfiles)
+tput reset        # reset terminal attributes + clear screen (incl. scrollback on many terms)
+printf '\033c'    # hard terminal reset (ESC c) — clears SGR, cursor, scroll region, etc.
+exec zsh

@@ -12,6 +12,11 @@ if [[ -n "$DISTROBOX" ]] && command -v distrobox &>/dev/null; then
     || distrobox enter "$DISTROBOX" -- tmux new-session -s "$session"
 else
   # Either no DISTROBOX set, or already inside a distrobox (distrobox not in PATH)
-  cd ~; tmux attach -t "$session" 2>/dev/null \
-    || tmux new-session -s "$session"
+  if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t "$session" 2>/dev/null \
+      || tmux new-session -ds "$session" && tmux switch-client -t "$session"
+  else
+    cd ~; tmux attach -t "$session" 2>/dev/null \
+      || tmux new-session -s "$session"
+  fi
 fi

@@ -1,0 +1,109 @@
+#!/usr/bin/env -S zsh -f
+
+function _portage_atom_shortname {
+  local atom=${1%%::*}
+  atom=${atom#[<>=~]##}
+  atom=${atom#*/}
+  atom=${atom%%:*}
+
+  if [[ $atom == *-[0-9]* ]]; then
+    local base=$atom tail
+    while [[ $base == *-* ]]; do
+      tail=${base##*-}
+      if [[ $tail == [0-9]* ]]; then
+        atom=${base%-${tail}}
+        break
+      fi
+      base=${base%-*}
+    done
+  fi
+
+  print -r -- $atom
+}
+
+function _portage_install_tmp {
+  local src=$1 dst=$2
+  local -a sudo_cmd=()
+  (( EUID != 0 )) && iscmd sudo && sudo_cmd=(sudo)
+  "${sudo_cmd[@]}" install -Dm644 "$src" "$dst"
+}
+
+function _portage_write_text {
+  local file=$1 text=$2 tmp
+  tmp=$(mktemp) || return 1
+  print -r -- "$text" > "$tmp" || { rm -f "$tmp"; return 1 }
+  _portage_install_tmp "$tmp" "$file"
+  local rc=$?
+  rm -f "$tmp"
+  return $rc
+}
+
+function _portage_upsert_line {
+  local file=$1 key=$2 line=$3 tmp
+  tmp=$(mktemp) || return 1
+
+  if [[ -f $file ]]; then
+    awk -v key="$key" -v line="$line" '
+      $1 == key { print line; seen=1; next }
+      { print }
+      END { if (!seen) print line }
+    ' "$file" > "$tmp" || { rm -f "$tmp"; return 1 }
+  else
+    print -r -- "$line" > "$tmp" || { rm -f "$tmp"; return 1 }
+  fi
+
+  _portage_install_tmp "$tmp" "$file"
+  local rc=$?
+  rm -f "$tmp"
+  return $rc
+}
+
+function portage-cd {
+  cd /etc/portage
+}
+
+function portage-find {
+  local pattern=${1:-.}
+  if iscmd rg; then
+    rg -n --hidden --glob '!*.bak' --glob '!*.swp' --glob '!*.tmp' --glob '!*.orig' "$pattern" /etc/portage
+  else
+    grep -RIn --exclude='*.bak' --exclude='*.swp' --exclude='*.tmp' --exclude='*.orig' "$pattern" /etc/portage
+  fi
+}
+
+function portage-kw {
+  local atom=$1; shift
+  [[ -z $atom ]] && { echo 'usage: portage-kw <atom> [keywords...]' >&2; return 1; }
+  local -a keywords
+  if (( $# == 0 )); then
+    keywords=(~amd64)
+  else
+    keywords=($@)
+  fi
+  local shortname=$(_portage_atom_shortname "$atom")
+  local line="$atom ${(j: :)keywords}"
+  _portage_write_text "/etc/portage/package.accept_keywords/$shortname" "$line"
+}
+
+function portage-use {
+  local atom=$1; shift
+  [[ -z $atom || $# -eq 0 ]] && { echo 'usage: portage-use <atom> <flags...>' >&2; return 1; }
+  local shortname=$(_portage_atom_shortname "$atom")
+  local line="$atom $*"
+  _portage_write_text "/etc/portage/package.use/$shortname" "$line"
+}
+
+function portage-mask {
+  local atom=$1
+  [[ -z $atom ]] && { echo 'usage: portage-mask <atom>' >&2; return 1; }
+  local shortname=$(_portage_atom_shortname "$atom")
+  _portage_write_text "/etc/portage/package.mask/$shortname" "$atom"
+}
+
+function portage-license {
+  local atom=$1; shift
+  [[ -z $atom || $# -eq 0 ]] && { echo 'usage: portage-license <atom> <licenses...>' >&2; return 1; }
+  local shortname=$(_portage_atom_shortname "$atom")
+  local line="$atom $*"
+  _portage_upsert_line "/etc/portage/package.license/00-local" "$shortname" "$line"
+}
