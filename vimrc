@@ -182,6 +182,8 @@ endif
 
 set bg=dark
 colorscheme jellybeans
+highlight StatusLine gui=NONE cterm=NONE
+highlight StatusLineNC gui=NONE cterm=NONE
 
 " set leader key to comma:
 let mapleader = ","
@@ -189,6 +191,7 @@ let mapleader = ","
 "" Extra commands:
 " chdir to current file
 command! CD cd %:p:h
+command! RR source $MYVIMRC
 
 " system clipboard (+ register via OSC 52)
 nmap <Leader>y "+y
@@ -199,6 +202,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 command! Y %y+
+
+" ansible-vault helpers
+execute 'source ' . fnameescape(expand('<sfile>:p:h') . '/vim/vault.vim')
 
 "" (re)map keys:
 if !has('nvim')
