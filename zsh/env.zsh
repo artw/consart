@@ -2,6 +2,7 @@
 local -a path_dirs
 path_dirs=(
   $HOME/.bin
+  $HOME/.local/bin
   $HOME/.vim/dist/bin
   $HOME/.zplug/bin
   $HOME/.krew/bin
